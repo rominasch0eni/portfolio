@@ -422,6 +422,7 @@
   <div id="page-project-4" class="page"></div>
   <div id="page-project-5" class="page"></div>
   <div id="page-project-6" class="page"></div>
+  <div id="page-project-7" class="page"></div>
 
   <!-- ABOUT PAGE -->
   <div id="page-about" class="page">
@@ -738,6 +739,37 @@
             text: 'Als einzige Designerin in einem frühen Startup zu sein kann überwältigend sein. Es gibt viel zu tun und noch mehr Entscheidungen zu treffen. Was mir geholfen hat: Feedback von anderen Designerinnen und Coaches aktiv einzuholen, statt alles alleine durchzudenken. Und den Mut zu haben, zu experimentieren, denn genau darin liegt die Chance zu wachsen.'
           }
         },
+        nextProject: { id: 7, name: 'Hackathon Hack Zurich' }
+      },
+      {
+        id: 7, num: '07', folder: 'hackathon',
+        name: 'Hackathon Hack Zurich',
+        type: 'AR · VR · Prototyping · Unity',
+        meta: [
+          { label: 'Rolle', value: 'Teilnehmerin' },
+          { label: 'Zeitraum', value: 'Ein Wochenende' },
+          { label: 'Team', value: '3 Personen' },
+          { label: 'Veranstaltung', value: 'Hack Zurich' }
+        ],
+        content: {
+          leftTitle: 'Überblick',
+          leftText: '<p>Innerhalb eines Wochenendes entwickelten wir in einem Dreierteam eine AR- und VR-Idee sowie Prototypen für ein bestehendes Problem.</p><p>Als Reaktion auf den wachsenden Klimawandel und die zunehmende Bedrohung durch Naturkatastrophen wie Überschwemmungen erarbeiteten wir ein Konzept, das besser auf diese Herausforderungen vorbereitet.</p>',
+          rightTitle: 'Meine Aufgaben',
+          rightText: '<p>Ich war verantwortlich für das Finden einer passenden Lösung, die Erstellung einer Wassersimulation in Unity, das Ausarbeiten des Storyline für das Video sowie die Videoproduktion mit Stock-Material.</p><p>Das Konzept ist im begleitenden Video illustriert, das den Ansatz und die prototypischen Umsetzungen zeigt.</p>'
+        },
+        process: {
+          title: 'Vorgehen',
+          steps: [
+            { num: '01', title: 'Problemfindung', text: 'Analyse der Herausforderungen rund um Klimawandel und Naturkatastrophen; Entwicklung einer fokussierten AR/VR-Lösungsidee.' },
+            { num: '02', title: 'Wassersimulation', text: 'Technische Umsetzung einer Wassersimulation in Unity als zentrales Element des AR-Prototyps.' },
+            { num: '03', title: 'Storytelling & Video', text: 'Ausarbeitung der Storyline und Produktion des Konzeptvideos mit Stock-Material zur Visualisierung der Idee.' },
+            { num: '04', title: 'Präsentation', text: 'Pitchen des Konzepts vor der Jury am Hackathon.' }
+          ]
+        },
+        outcome: {
+          customOutcome: true,
+          text: 'Wir schafften es bis zu den Gesamtfinalistinnen und gewannen Silber in der Challenge. Ein Wochenende unter extremem Zeitdruck hat mir gezeigt, wie viel möglich ist, wenn ein Team fokussiert an einem Ziel arbeitet. Die Badge für unsere Platzierung findest du hier: <a href="javascript:void(0)" style="color:var(--accent);">Badge ansehen</a>'
+        },
         nextProject: { id: 1, name: 'Elektronische Identität', labelOverride: 'Erstes Projekt' }
       }
     ];
@@ -749,7 +781,8 @@
       'exchange': ['exchange', 'movetia', 'learning-by-going'],
       'animation': ['showreel', 'animation', 'motion'],
       'brand': ['brand', 'identity', 'logo', 'rimon-brand'],
-      'cube': ['cat', 'katze', 'T09-43-29']
+      'cube': ['cat', 'katze', 'T09-43-29'],
+      'hackathon': ['hackathon', 'hack', 'zurich', 'flood', 'ar-vr']
     };
 
     function detectFolder(filename) {
