@@ -404,10 +404,16 @@
 
     <div class="page-connect">
       <h2>Lass uns vernetzen</h2>
-      <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>
-        LinkedIn
-      </a>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;">
+        <a href="mailto:romina.schoeni@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          romina.schoeni@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
     </div>
 
     <footer><span>© 2026 Romina Schöni</span><span>UX Portfolio</span></footer>
@@ -503,7 +509,7 @@
     <div class="about-contact">
       <h2>Lass uns vernetzen</h2>
       <div class="contact-links">
-        <a href="javascript:void(0)">romina.schoeni@gmail.com</a>
+        <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="javascript:void(0)">Lebenslauf</a>
 		<a href="javascript:void(0)">Arbeitszeugnisse</a>
@@ -1031,9 +1037,13 @@
         '</div></div>';
 
       html += '<div class="page-connect"><h2>Lass uns vernetzen</h2>' +
+        '<div style="display:flex;gap:32px;flex-wrap:wrap;">' +
+        '<a href="mailto:romina.schoeni@gmail.com">' +
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>' +
+        'romina.schoeni@gmail.com</a>' +
         '<a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">' +
         '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>' +
-        'LinkedIn</a></div>';
+        'LinkedIn</a></div></div>';
       html += '<footer><span>© 2026 Romina</span><span>Mit Intention gestaltet</span></footer>';
 
       page.innerHTML = html;
