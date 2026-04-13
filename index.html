@@ -982,17 +982,6 @@
         html += '</div></div>';
       }
 
-      // Einzelnes Video (nicht Showreel)
-      if (p.videos && p.videos.main && !p.isShowreel) {
-        html += '<div class="project-gallery"><h2>Video</h2>' +
-          '<div class="video-container">' +
-          '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\')">' +
-          '<img class="thumb-img" src="https://img.youtube.com/vi/' + p.videos.main.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
-          '<div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
-          '<span class="video-label">' + p.videos.main.label + '</span>' +
-          '</div></div></div>';
-      }
-
       // Showreel-Block als Variable — wird am Schluss eingefügt
       var showreelHTML = '';
       if (p.isShowreel && p.videos) {
@@ -1062,6 +1051,17 @@
             '</a></div>';
         }
         html += '</div>';
+      }
+
+      // Einzelnes Video (nicht Showreel) — nach Outcome
+      if (p.videos && p.videos.main && !p.isShowreel) {
+        html += '<div class="project-gallery"><h2>Video</h2>' +
+          '<div class="video-container">' +
+          '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\')">' +
+          '<img class="thumb-img" src="https://img.youtube.com/vi/' + p.videos.main.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
+          '<div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
+          '<span class="video-label">' + p.videos.main.label + '</span>' +
+          '</div></div></div>';
       }
 
       // Showreel-Einblicke — immer am Schluss
