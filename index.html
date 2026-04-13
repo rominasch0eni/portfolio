@@ -771,7 +771,11 @@
         },
         outcome: {
           customOutcome: true,
-          text: 'Wir schafften es bis zu den Gesamtfinalistinnen und gewannen Silber in der Challenge. Ein Wochenende unter extremem Zeitdruck hat mir gezeigt, wie viel möglich ist, wenn ein Team fokussiert an einem Ziel arbeitet. Die Badge für unsere Platzierung findest du hier: <a href="https://www.credly.com/badges/63b47851-eace-4546-985f-eda26d070ff2/linked_in_profile" target="_blank" rel="noopener" style="color:var(--accent);">Badge ansehen</a>'
+          text: 'Wir schafften es bis zu den Gesamtfinalistinnen und gewannen eine Honorable Mention in der Extended Reality Challenge. Ein Wochenende unter extremem Zeitdruck hat mir gezeigt, wie viel möglich ist, wenn ein Team fokussiert an einem Ziel arbeitet.',
+          badge: {
+            img: 'assets/hackathon/badge.png',
+            link: 'https://www.credly.com/badges/63b47851-eace-4546-985f-eda26d070ff2/linked_in_profile'
+          }
         },
         nextProject: { id: 1, name: 'Elektronische Identität', labelOverride: 'Erstes Projekt' }
       }
@@ -978,6 +982,17 @@
         html += '</div></div>';
       }
 
+      // Einzelnes Video (nicht Showreel)
+      if (p.videos && p.videos.main && !p.isShowreel) {
+        html += '<div class="project-gallery"><h2>Video</h2>' +
+          '<div class="video-container">' +
+          '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\')">' +
+          '<img class="thumb-img" src="https://img.youtube.com/vi/' + p.videos.main.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
+          '<div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
+          '<span class="video-label">' + p.videos.main.label + '</span>' +
+          '</div></div></div>';
+      }
+
       // Showreel-Block als Variable — wird am Schluss eingefügt
       var showreelHTML = '';
       if (p.isShowreel && p.videos) {
@@ -1039,6 +1054,12 @@
           html += '<div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);max-width:640px;">' +
             '<h3 style="font-size:22px;margin-bottom:16px;">' + p.outcome.reflection.title + '</h3>' +
             '<p>' + p.outcome.reflection.text + '</p></div>';
+        }
+        if (p.outcome.badge) {
+          html += '<div style="margin-top:40px;">' +
+            '<a href="' + p.outcome.badge.link + '" target="_blank" rel="noopener" style="display:inline-block;">' +
+            '<img src="' + p.outcome.badge.img + '" alt="Badge" style="width:180px;height:180px;object-fit:contain;border-radius:8px;transition:opacity 0.3s;" onmouseover="this.style.opacity=\'0.8\'" onmouseout="this.style.opacity=\'1\'">' +
+            '</a></div>';
         }
         html += '</div>';
       }
