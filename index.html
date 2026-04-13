@@ -204,7 +204,7 @@
     .accordion { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
     .accordion-item { border-bottom: 1px solid var(--border); }
     .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; }
-    .accordion-trigger h4 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: var(--text-primary); margin: 0; }
+    .accordion-trigger h4 { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: var(--text-muted); margin: 0; }
     .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1); }
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
@@ -448,10 +448,10 @@
         <div class="about-photo">
           <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina">
         </div>
-        <div class="about-block" style="padding-bottom:0;">
+        <div class="about-block" style="margin-bottom:0;">
           <h3>Meine Stärken</h3>
         </div>
-        <div class="accordion" style="margin-top:8px;">
+        <div class="accordion" style="margin-top:0;">
 
           <div class="accordion-item">
             <button class="accordion-trigger" onclick="toggleAccordion(this)">
