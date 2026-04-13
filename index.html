@@ -402,17 +402,13 @@
 
     <div class="projects-grid" id="projects-grid-container"></div>
 
-    <div class="page-connect">
+    <div class="about-contact">
       <h2>Lass uns vernetzen</h2>
-      <div style="display:flex;gap:32px;flex-wrap:wrap;">
-        <a href="mailto:romina.schoeni@gmail.com">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          romina.schoeni@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
+      <div class="contact-links">
+        <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
+        <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="javascript:void(0)">Lebenslauf</a>
+        <a href="javascript:void(0)">Arbeitszeugnisse</a>
       </div>
     </div>
 
@@ -431,7 +427,7 @@
   <div id="page-about" class="page">
     <div class="about-hero">
       <div class="about-left">
-        <h1>Immer neugierig, immer hungrig, meistens in der Luft.</h1>
+        <h1>Immer neugierig, <br>immer hungrig, meistens in der Luft.</h1>
         <p>Ich bin Romina, UX-Designerin, Katzenmom von zwei faule Fellknäueln und aktuell tief im One-Piece-Rabbit-Hole versunken. Naja, ich habe noch über 1000 Folgen vor mir, das wird noch ein Weilchen dauern.</p>
         <p>Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.</p>
         <p>Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern, beim Essen oder gemütlich beim Binge-Watchen.</p>
@@ -1036,14 +1032,13 @@
         '<a href="javascript:void(0)" onclick="showPage(\'project-' + p.nextProject.id + '\')">' + p.nextProject.name + ' <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>' +
         '</div></div>';
 
-      html += '<div class="page-connect"><h2>Lass uns vernetzen</h2>' +
-        '<div style="display:flex;gap:32px;flex-wrap:wrap;">' +
-        '<a href="mailto:romina.schoeni@gmail.com">' +
-        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>' +
-        'romina.schoeni@gmail.com</a>' +
-        '<a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">' +
-        '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/></svg>' +
-        'LinkedIn</a></div></div>';
+      html += '<div class="about-contact"><h2>Lass uns vernetzen</h2>' +
+        '<div class="contact-links">' +
+        '<a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>' +
+        '<a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>' +
+        '<a href="javascript:void(0)">Lebenslauf</a>' +
+        '<a href="javascript:void(0)">Arbeitszeugnisse</a>' +
+        '</div></div>';
       html += '<footer><span>© 2026 Romina</span><span>Mit Intention gestaltet</span></footer>';
 
       page.innerHTML = html;
