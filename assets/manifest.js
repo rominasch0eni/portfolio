@@ -1,7 +1,7 @@
 ﻿window.IMAGE_MANIFEST = {
   "e-id": [],
   "banking": ["01.png"],
-  "ar": ["01-hero.png", "augmented0.JPG", "augmented2.png", "augmented3.png", "augmented5.jpg", "augmented6.jpg", "augmented7.jpg", "augmented8.jpg", "augmented9.jpg"],
+  "ar": ["01-hero.png", "augmented0.JPG", "augmented2.png", "augmented3.png", "augmented5.jpg", "augmented6.jpg", "augmented7.jpg", "augmented8.jpg", "augmented90.jpg"],
   "exchange": ["01.%20ahero.jpg", "01-hero.png", "02-screen.png", "03-screen.png", "04-screen.png"],
   "animation": ["animation.png"],
   "brand": ["01.png", "02.gif", "03.png", "04.png", "06.png", "07.jpg", "08.jpg"],
