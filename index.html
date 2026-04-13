@@ -991,7 +991,7 @@
 
         if (p.videos.main) {
           showreelHTML += '<div class="video-container" style="margin-bottom:32px;">' +
-            '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\')">' +
+            '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\', this)">' +
             '<img class="thumb-img" src="https://img.youtube.com/vi/' + p.videos.main.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
             '<div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
             '<span class="video-label">' + p.videos.main.label + '</span>' +
@@ -1003,7 +1003,7 @@
           p.videos.highlights.forEach(function(v) {
             showreelHTML += '<div class="highlight-card">' +
               '<div class="highlight-video"><div class="video-container">' +
-              '<div class="video-thumbnail" onclick="playVideo(\'' + v.id + '\')">' +
+              '<div class="video-thumbnail" onclick="playVideo(\'' + v.id + '\', this)">' +
               '<img class="thumb-img" src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
               '<div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
               '<span class="video-label">Abspielen</span></div></div></div>' +
@@ -1059,7 +1059,7 @@
       if (p.videos && p.videos.main && !p.isShowreel) {
         html += '<div class="project-gallery"><h2>Video</h2>' +
           '<div class="video-container">' +
-          '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\')">' +
+          '<div class="video-thumbnail" onclick="playVideo(\'' + p.videos.main.id + '\', this)">' +
           '<img class="thumb-img" src="https://img.youtube.com/vi/' + p.videos.main.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
           '<div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
           '<span class="video-label">' + p.videos.main.label + '</span>' +
@@ -1107,8 +1107,13 @@
        NAVIGATION & INIT
     ============================================ */
 
-    function playVideo(youtubeId) {
-      window.open('https://www.youtube.com/watch?v=' + youtubeId, '_blank', 'noopener,noreferrer');
+    function playVideo(youtubeId, el) {
+      var container = el ? el.closest('.video-container') : null;
+      if (container) {
+        container.innerHTML = '<iframe src="https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      } else {
+        window.open('https://www.youtube.com/watch?v=' + youtubeId, '_blank', 'noopener,noreferrer');
+      }
     }
 
     function showPage(page) {
