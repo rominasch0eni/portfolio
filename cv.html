@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romina Schöni · Lebenslauf</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --text-primary: #111111;
+      --accent: #8a6500;
+      --text-muted: #6b6b6b;
+      --border: rgba(0,0,0,0.1);
+      --sidebar-bg: #111111;
+      --sidebar-text: #f0f0f0;
+      --sidebar-muted: rgba(240,240,240,0.6);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* PRINT BUTTON */
+    .print-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 100;
+      background: var(--text-primary);
+      color: var(--bg);
+      border: none;
+      padding: 12px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-btn:hover { background: var(--accent); }
+
+    /* PAGE LAYOUT */
+    .cv-page {
+      max-width: 900px;
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    }
+
+    /* SIDEBAR */
+    .cv-sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .cv-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+    .cv-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    .cv-name h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .cv-name p {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--sidebar-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .cv-sidebar-section { display: flex; flex-direction: column; gap: 12px; }
+
+    .cv-sidebar-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .cv-sidebar-item { font-size: 13px; font-weight: 300; color: var(--sidebar-text); line-height: 1.6; }
+    .cv-sidebar-item strong { font-weight: 500; color: #ffffff; display: block; }
+    .cv-sidebar-item a { color: var(--accent); text-decoration: none; }
+    .cv-sidebar-item a:hover { text-decoration: underline; }
+
+    .skill-list { display: flex; flex-direction: column; gap: 8px; }
+    .skill-list span {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--sidebar-text);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .lang-item { margin-bottom: 12px; }
+    .lang-item .lang-name { font-size: 13px; font-weight: 500; color: #ffffff; }
+    .lang-item .lang-level { font-size: 12px; font-weight: 300; color: var(--sidebar-muted); }
+
+    /* MAIN CONTENT */
+    .cv-main {
+      background: var(--bg);
+      padding: 48px 48px 48px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .cv-section { display: flex; flex-direction: column; gap: 20px; }
+
+    .cv-section-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-profile p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* TIMELINE ENTRIES */
+    .cv-entry { display: flex; flex-direction: column; gap: 6px; padding-left: 16px; border-left: 1.5px solid var(--border); }
+    .cv-entry-header { display: flex; flex-direction: column; gap: 2px; }
+    .cv-entry-title { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+    .cv-entry-meta { font-size: 12px; font-weight: 300; color: var(--text-muted); letter-spacing: 0.3px; }
+    .cv-entry ul { margin-top: 6px; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
+    .cv-entry ul li { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    /* PRINT */
+    @media print {
+      .print-btn { display: none !important; }
+      .back-link { display: none !important; }
+      body { background: white; }
+      .cv-page {
+        margin: 0;
+        max-width: 100%;
+        box-shadow: none;
+      }
+      .cv-main { padding: 40px; }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Als PDF speichern
+  </button>
+
+  <div class="cv-page">
+
+    <!-- SIDEBAR -->
+    <div class="cv-sidebar">
+
+      <div class="cv-photo">
+        <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina Schöni">
+      </div>
+
+      <div class="cv-name">
+        <h1>Romina Schöni</h1>
+        <p>UX Design</p>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <div class="cv-sidebar-label">Kontakt</div>
+        <div class="cv-sidebar-item">08.05.1997</div>
+        <div class="cv-sidebar-item">076 515 23 73</div>
+        <div class="cv-sidebar-item"><a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a></div>
+        <div class="cv-sidebar-item"><a href="https://rominasch0eni.github.io/portfolio" target="_blank">Portfolio ansehen</a></div>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <div class="cv-sidebar-label">Fähigkeiten</div>
+        <div class="skill-list">
+          <span>UX Konzept</span>
+          <span>UI Design</span>
+          <span>Figma & Prototyping</span>
+          <span>User Research</span>
+          <span>Usability Testing</span>
+          <span>Storyboarding</span>
+          <span>Motion Design</span>
+          <span>Augmented Reality</span>
+        </div>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <div class="cv-sidebar-label">Sprachen</div>
+        <div class="lang-item"><div class="lang-name">Deutsch</div><div class="lang-level">Muttersprache</div></div>
+        <div class="lang-item"><div class="lang-name">Englisch</div><div class="lang-level">Fliessend</div></div>
+        <div class="lang-item"><div class="lang-name">Französisch</div><div class="lang-level">Grundkenntnisse</div></div>
+      </div>
+
+      <div class="cv-sidebar-section">
+        <div class="cv-sidebar-label">Referenzen</div>
+        <div class="cv-sidebar-item">
+          <strong>Stephanie Herzog</strong>
+          Bison Schweiz AG<br>
+          Team Lead UX<br>
+          <a href="#">Auf Anfrage</a>
+        </div>
+        <div class="cv-sidebar-item" style="margin-top:12px;">
+          <strong>Axel Schäfer</strong>
+          Raiffeisen Schweiz<br>
+          Lead UX Strategist<br>
+          <a href="#">Auf Anfrage</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="cv-main">
+
+      <div class="cv-profile cv-section">
+        <div class="cv-section-title">Profil</div>
+        <p>Ich bin eine kreative Problemlöserin mit einer Leidenschaft für Design und dem Antrieb, etwas zu bewegen. Ich begleite den Designprozess von der Idee bis zur Umsetzung und suche stets nach neuen, innovativen Wegen, die Nutzererfahrung zu optimieren. Die Freude daran, verschiedene Bereiche und Themen zu erkunden, hilft mir, die bestmöglichen Lösungen für aussergewöhnliche User Experiences zu finden.</p>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Beruflicher Werdegang</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">Bison Schweiz AG · UI/UX Design Freelancerin 100%</div>
+            <div class="cv-entry-meta">Zürich · Apr 2025 – Heute</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">Raiffeisen Schweiz · Experience Design Freelancerin 100%</div>
+            <div class="cv-entry-meta">Zürich · Mrz 2024 – Jan 2025</div>
+          </div>
+          <ul>
+            <li>Enge Zusammenarbeit mit Lead UX Strategist, Product Owner, Entwicklern und Business Analysts zur Konzeptentwicklung der neuen E-Banking-Plattform.</li>
+            <li>Entwurf und Aufbau interaktiver Prototypen für Usability-Tests sowie Sicherstellung der Übereinstimmung mit Business- und Nutzerzielen.</li>
+            <li>Durchführung von Usability-Tests und Auswertung von Nutzerverhalten zur iterativen Designverbesserung.</li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">Rimon Technologies · Experience Lead 40–100%</div>
+            <div class="cv-entry-meta">Zürich · Aug 2021 – Dez 2023</div>
+          </div>
+          <ul>
+            <li>Leitung eines dreiköpfigen Entwicklerteams als Product Owner und Product Designerin mit Fokus auf Experience- und Interaktionskonzepte.</li>
+            <li>Massgebliche Mitgestaltung der Produkt-Experience-Strategie durch Marktanalysen, User Research und Identifikation von Wachstumschancen.</li>
+            <li>Redesign der Augmented Reality Mobile- und HoloLens-Apps mit einer Zufriedenheitsrate von 80% bei 14 aktiven Kunden.</li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">Xeit AG · Screen- und Interaction Design 60%</div>
+            <div class="cv-entry-meta">Zürich · Aug 2021 – Mrz 2022</div>
+          </div>
+          <ul>
+            <li>Gestaltung digitaler Medien inkl. Banner, Animationsfilme, Social Posts und Prototypen für Web- und App-Projekte.</li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">CORPMEDIA · Motion Design 80–100%</div>
+            <div class="cv-entry-meta">Zürich · Jul 2019 – Jul 2021</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">TUI Suisse · Digital Communication Specialist 70–100%</div>
+            <div class="cv-entry-meta">Zürich · Sep 2016 – Jun 2019</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">TUI Suisse · Ausbildung Reisebürokauffrau EFZ</div>
+            <div class="cv-entry-meta">Zürich · Aug 2013 – Aug 2016</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Ausbildung</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">FHGR · CAS in Augmented Reality und Virtual Reality</div>
+            <div class="cv-entry-meta">Chur · Aug 2021 – Jul 2022</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">Schule für Gestaltung · Dipl. Designerin HF Interactive Media Design</div>
+            <div class="cv-entry-meta">Zürich · Aug 2017 – Jul 2020</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">KV Business School · Kaufmännische Angestellte EFZ</div>
+            <div class="cv-entry-meta">Zürich · Aug 2013 – Jul 2016</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Weitere Aktivitäten</div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">Jugendrotkreuz · Freiwillige im Programm «Melting Pot»</div>
+            <div class="cv-entry-meta">Zürich · Apr 2022 – Heute</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">NGO Learning Lions · Freiwillige als Design Coach</div>
+            <div class="cv-entry-meta">Kenia · Aug 2022 – Dez 2022</div>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <div class="cv-entry-title">CEVI · Pfadführerin / Vorstandsmitglied</div>
+            <div class="cv-entry-meta">Zürich · Sep 2014 – Apr 2022</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
