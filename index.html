@@ -1187,7 +1187,7 @@
       }
     }
 
-    function showPage(page) {
+    function showPage(page, updateHash) {
       document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
       document.getElementById('page-' + page).classList.add('active');
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -1201,6 +1201,10 @@
       document.querySelectorAll('.nav-links a[data-page]').forEach(function(a) {
         a.classList.toggle('nav-active', a.dataset.page === page);
       });
+      // URL Hash aktualisieren
+      if (updateHash !== false) {
+        history.replaceState(null, '', isMain ? '#' : '#' + page);
+      }
     }
 
     function initPortfolio(manifestData) {
@@ -1210,8 +1214,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      // Aktiven Nav-Link initial setzen
-      showPage('main');
+      // Hash-Routing: beim Laden die richtige Seite anzeigen
+      var hash = window.location.hash.replace('#', '');
+      var startPage = (hash && document.getElementById('page-' + hash)) ? hash : 'main';
+      showPage(startPage, false);
       // Bilder aus manifest.js laden — automatisch alphabetisch sortiert
       initPortfolio(window.IMAGE_MANIFEST || null);
 
