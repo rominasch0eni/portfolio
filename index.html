@@ -182,11 +182,12 @@
     .project-next .next-label { font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; margin-bottom: 8px; }
 
     /* ABOUT PAGE */
-    .about-hero { min-height: 100vh; padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-hero { min-height: 100vh; padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 80px 80px; align-items: start; }
+    .about-left { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .about-photo { grid-column: 2; grid-row: 1; width: 100%; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+    .about-right { grid-column: 2; grid-row: 2; display: flex; flex-direction: column; gap: 48px; }
     .about-left h1 { font-size: clamp(44px, 5.5vw, 72px); margin-bottom: 40px; color: var(--text-primary); }
     .about-left p { max-width: 500px; margin-bottom: 20px; }
-    .about-right { display: flex; flex-direction: column; gap: 48px; }
-    .about-photo { width: 100%; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
     .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     .about-photo-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-muted); opacity: 0.4; }
     .about-photo-placeholder svg { opacity: 0.5; }
@@ -311,7 +312,10 @@
       .mobile-menu.open { pointer-events: all; }
       .section-label { padding: 80px 24px 24px; }
       .projects-grid { grid-template-columns: 1fr; padding: 0 24px 80px; }
-      .about-hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 48px; }
+      .about-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 120px 24px 60px; gap: 40px; }
+      .about-photo { order: 1; grid-column: 1; grid-row: auto; }
+      .about-left { order: 2; grid-column: 1; grid-row: auto; }
+      .about-right { order: 3; grid-column: 1; grid-row: auto; }
       .about-stats { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
       .about-brief { padding: 60px 24px; grid-template-columns: 1fr; gap: 36px; }
       .about-contact { padding: 48px 24px 80px; }
@@ -444,10 +448,10 @@
         <p>Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.</p>
         <p>Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern, beim Essen oder gemütlich beim Binge-Watchen.</p>
       </div>
+      <div class="about-photo">
+        <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina">
+      </div>
       <div class="about-right">
-        <div class="about-photo">
-          <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina">
-        </div>
         <div class="about-block">
           <h3>Meine Stärken</h3>
           <div class="accordion">
