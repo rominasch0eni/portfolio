@@ -200,8 +200,29 @@
     .ref-item strong { font-weight: 500; color: var(--text-primary); display: block; }
 
     /* PRINT */
+    .back-btn {
+      position: fixed;
+      top: 24px;
+      left: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 16px;
+      transition: color 0.3s, border-color 0.3s, gap 0.3s;
+      z-index: 100;
+    }
+    .back-btn:hover { color: var(--accent); border-color: var(--accent); gap: 12px; }
+
     @media print {
       .print-btn { display: none !important; }
+      .back-btn { display: none !important; }
       body { background: white; }
       .cv-page { margin: 0; padding: 32px 48px; max-width: 100%; }
       .cv-header { padding-bottom: 32px; }
@@ -212,6 +233,11 @@
   </style>
 </head>
 <body>
+
+  <a href="index.html" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Zurück zum Portfolio
+  </a>
 
   <button class="print-btn" onclick="window.print()">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
