@@ -124,7 +124,11 @@
     .section-label span { font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; }
 
     /* PROJECTS */
-    .projects-grid { padding: 0 48px 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .projects-grid { padding: 0 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .projects-grid-more { grid-template-columns: 1fr 1fr 1fr; padding-bottom: 120px; }
+    .section-label-secondary { padding: 48px 48px 32px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); }
+    .section-label-secondary h2 { font-size: 24px; }
+    .section-label-secondary span { font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; }
     .project-card { display: flex; flex-direction: column; border-radius: 0; overflow: hidden; cursor: pointer; background: var(--card-bg); border: 1px solid var(--border); transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease; }
     .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
     .project-card:hover .card-visual img { transform: scale(1.04); }
@@ -324,7 +328,9 @@
       .mobile-menu { display: flex; pointer-events: none; }
       .mobile-menu.open { pointer-events: all; }
       .section-label { padding: 80px 24px 24px; }
-      .projects-grid { grid-template-columns: 1fr; padding: 0 24px 80px; }
+      .projects-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
+      .projects-grid-more { grid-template-columns: 1fr; }
+      .section-label-secondary { padding: 40px 24px 24px; }
       .about-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 120px 24px 60px; gap: 40px; }
       .about-photo { order: 1; grid-column: 1; grid-row: auto; }
       .about-left { order: 2; grid-column: 1; grid-row: auto; }
@@ -440,11 +446,18 @@
     </section>
 
     <div class="section-label">
-      <h2>Projektübersicht</h2>
+      <h2>UX Projekte</h2>
       <span>2021 bis 2026</span>
     </div>
 
-    <div class="projects-grid" id="projects-grid-container"></div>
+    <div class="projects-grid" id="projects-grid-ux"></div>
+
+    <div class="section-label-secondary">
+      <h2>Weitere Projekte</h2>
+      <span>Animation · Game · AR</span>
+    </div>
+
+    <div class="projects-grid projects-grid-more" id="projects-grid-more"></div>
 
     <div class="about-contact animate">
       <h2>Lass uns vernetzen</h2>
@@ -961,34 +974,41 @@
        RENDER FUNCTIONS
     ============================================ */
 
+    function buildCardHTML(p) {
+      var imgs = p._resolvedImages || [];
+      var hasImg = imgs.length > 0;
+      var cardHTML = '<div class="project-card animate" onclick="showPage(\'project-' + p.id + '\')">' +
+        '<div class="card-visual visual-' + p.id + '">';
+      if (hasImg) {
+        cardHTML += '<img src="' + imgs[0].src + '" alt="' + p.name + '" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);" ' +
+          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
+          '<div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">' + SVG_FALLBACKS[p.id] + '</div>';
+      } else {
+        cardHTML += '<div style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;">' + SVG_FALLBACKS[p.id] + '</div>';
+      }
+      cardHTML += '</div>' +
+        '<div class="project-overlay">' +
+        '<div class="project-num">' + p.num + '</div>' +
+        '<div class="project-name">' + p.name + '</div>' +
+        '<div class="project-type">' + p.type + '</div>' +
+        '</div></div>';
+      return cardHTML;
+    }
+
     function renderCards() {
-      var grid = document.getElementById('projects-grid-container');
-      if (!grid) return;
-      grid.innerHTML = '';
+      var gridUX = document.getElementById('projects-grid-ux');
+      var gridMore = document.getElementById('projects-grid-more');
+      if (!gridUX || !gridMore) return;
+      gridUX.innerHTML = '';
+      gridMore.innerHTML = '';
 
       PROJECTS.forEach(function(p) {
-        var imgs = p._resolvedImages || [];
-        var hasImg = imgs.length > 0;
-
-        var cardHTML = '<div class="project-card animate" onclick="showPage(\'project-' + p.id + '\')">' +
-          '<div class="card-visual visual-' + p.id + '">';
-
-        if (hasImg) {
-          cardHTML += '<img src="' + imgs[0].src + '" alt="' + p.name + '" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);" ' +
-            'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
-            '<div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">' + SVG_FALLBACKS[p.id] + '</div>';
+        var html = buildCardHTML(p);
+        if (p.id <= 4) {
+          gridUX.innerHTML += html;
         } else {
-          cardHTML += '<div style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;">' + SVG_FALLBACKS[p.id] + '</div>';
+          gridMore.innerHTML += html;
         }
-
-        cardHTML += '</div>' +
-          '<div class="project-overlay">' +
-          '<div class="project-num">' + p.num + '</div>' +
-          '<div class="project-name">' + p.name + '</div>' +
-          '<div class="project-type">' + p.type + '</div>' +
-          '</div></div>';
-
-        grid.innerHTML += cardHTML;
       });
     }
 
