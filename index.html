@@ -203,7 +203,8 @@
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
     .about-strengths { padding: 80px 48px; border-top: 1px solid var(--border); }
-    .about-strengths .section-label { padding-left: 0; padding-right: 0; border-top: none; padding-top: 0; padding-bottom: 40px; }
+    .about-strengths > h2 { margin-bottom: 40px; }
+    .strengths-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
     .accordion { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
     .accordion-item { border-bottom: 1px solid var(--border); }
     .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; }
@@ -213,8 +214,11 @@
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
+    .about-skills { padding: 80px 48px; border-top: 1px solid var(--border); }
+    .about-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .about-skills .label { color: var(--text-muted); opacity: 0.6; margin-bottom: 20px; }
     .about-testimonials { padding: 80px 48px; border-top: 1px solid var(--border); }
-    .about-testimonials .section-label { border-top: none; padding-top: 0; }
+    .about-testimonials > h2 { margin-bottom: 40px; }
     .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .testimonial-card { padding: 32px; border: 1px solid var(--border); border-radius: 0; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease; }
     .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
@@ -324,7 +328,10 @@
       .about-contact { padding: 48px 24px 80px; }
       .page-connect { padding: 48px 24px 80px; }
       .about-strengths { padding: 48px 24px; }
-      .about-testimonials { padding: 0 24px 60px; }
+      .strengths-cols { grid-template-columns: 1fr; }
+      .about-skills { padding: 48px 24px; }
+      .about-skills-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-testimonials { padding: 48px 24px; }
       .testimonials-grid { grid-template-columns: 1fr; }
       footer { padding: 24px; flex-direction: column; gap: 8px; }
       .project-detail-hero { padding: 120px 24px 60px; }
@@ -463,10 +470,8 @@
     </div>
 
     <div class="about-strengths">
-      <div class="section-label" style="padding-left:0;padding-right:0;border-top:none;padding-top:0;padding-bottom:40px;">
-        <h2>Meine Stärken</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 48px;">
+      <h2>Meine Stärken</h2>
+      <div class="strengths-cols">
         <div class="accordion">
           <div class="accordion-item">
             <button class="accordion-trigger" aria-expanded="false">
@@ -502,10 +507,10 @@
       </div>
     </div>
 
-    <div style="padding:80px 48px;border-top:1px solid var(--border);">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;">
+    <div class="about-skills">
+      <div class="about-skills-grid">
         <div>
-          <div class="label" style="color:var(--text-muted);opacity:0.6;margin-bottom:20px;">Fähigkeiten</div>
+          <div class="label">Fähigkeiten</div>
           <div class="skill-tags">
             <span>Lean UX Research</span>
             <span>UX Konzept & Prototyping</span>
@@ -518,7 +523,7 @@
           </div>
         </div>
         <div>
-          <div class="label" style="color:var(--text-muted);opacity:0.6;margin-bottom:20px;">Werkzeuge</div>
+          <div class="label">Werkzeuge</div>
           <div class="skill-tags">
             <span>Figma</span>
             <span>Jira</span>
@@ -533,9 +538,7 @@
     </div>
 
     <div class="about-testimonials">
-      <div class="section-label" style="padding-left:0;padding-right:0;">
-        <h2>Was andere über mich sagen</h2>
-      </div>
+      <h2>Was andere über mich sagen</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <p class="testimonial-quote">"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten."</p>
