@@ -1015,7 +1015,7 @@
       var heroImg = hasImg ? imgs[0] : null;
       var galleryImgs = hasImg ? imgs.slice(1) : [];
 
-      var html = '<div class="project-detail-hero">' +
+      var html = '<div class="project-detail-hero animate">' +
         '<a href="javascript:void(0)" class="project-detail-back" onclick="showPage(\'main\')">' +
         '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Zurück</a>' +
         '<div class="project-num">' + p.num + '</div>' +
@@ -1043,9 +1043,9 @@
 
 
       // Content
-      html += '<div class="project-detail-content">' +
+      html += '<div class="project-detail-content animate">' +
         '<div><h2>' + p.content.leftTitle + '</h2>' + p.content.leftText + '</div>' +
-        '<div><h2>' + p.content.rightTitle + '</h2>' + p.content.rightText + '</div>' +
+        '<div style="transition-delay:0.12s;"><h2>' + p.content.rightTitle + '</h2>' + p.content.rightText + '</div>' +
         '</div>';
 
       // Extra section (e-banking)
@@ -1065,11 +1065,11 @@
 
       // Process
       if (!p.noProcess) {
-        html += '<div class="project-process">' +
+        html += '<div class="project-process animate">' +
           '<h2>' + p.process.title + '</h2>' +
           '<div class="process-steps">';
-        p.process.steps.forEach(function(s) {
-          html += '<div class="process-step"><div class="step-num">' + s.num + '</div><h4>' + s.title + '</h4><p>' + s.text + '</p></div>';
+        p.process.steps.forEach(function(s, i) {
+          html += '<div class="process-step animate" style="transition-delay:' + (i * 0.1) + 's;"><div class="step-num">' + s.num + '</div><h4>' + s.title + '</h4><p>' + s.text + '</p></div>';
         });
         html += '</div></div>';
       }
@@ -1112,7 +1112,7 @@
 
       // Outcome
       if (!p.noOutcome) {
-        html += '<div class="project-outcome"><h2>' + (p.outcome.customOutcome ? 'Persönliche Learnings' : 'Ergebnis') + '</h2>' +
+        html += '<div class="project-outcome animate"><h2>' + (p.outcome.customOutcome ? 'Persönliche Learnings' : 'Ergebnis') + '</h2>' +
           '<p>' + p.outcome.text + '</p>';
 
         if (p.outcome.customOutcome && p.outcome.learnings) {
@@ -1125,8 +1125,8 @@
           html += '</div>';
         } else if (p.outcome.stats) {
           html += '<div class="outcome-stats">';
-          p.outcome.stats.forEach(function(s) {
-            html += '<div class="outcome-stat"><h4>' + s.value + '</h4><p>' + s.label + '</p></div>';
+          p.outcome.stats.forEach(function(s, i) {
+            html += '<div class="outcome-stat animate" style="transition-delay:' + (i * 0.1) + 's;"><h4>' + s.value + '</h4><p>' + s.label + '</p></div>';
           });
           html += '</div>';
         }
@@ -1151,7 +1151,7 @@
       // Gallery (Einblicke) — immer am Schluss
       var galleryHTML = renderGallery(galleryImgs);
       if (galleryHTML) {
-        html += '<div class="project-gallery"><h2>Einblicke</h2>' +
+        html += '<div class="project-gallery animate"><h2>Einblicke</h2>' +
           '<div class="gallery-grid">' + galleryHTML + '</div></div>';
       }
 
@@ -1168,7 +1168,7 @@
         var videoIds = [p.videos.main];
         if (p.videos.secondary) videoIds.push(p.videos.secondary);
         var gridStyle = videoIds.length > 1 ? 'display:grid;grid-template-columns:1fr 1fr;gap:16px;' : '';
-        html += '<div class="project-gallery"><h2>Video</h2><div style="' + gridStyle + '">';
+        html += '<div class="project-gallery animate"><h2>Video</h2><div style="' + gridStyle + '">';
         videoIds.forEach(function(v) {
           html += '<div class="video-container">' +
             '<div class="video-thumbnail" onclick="playVideo(\'' + v.id + '\', this)">' +
@@ -1182,7 +1182,7 @@
 
       // Next project
       var nextLabel = p.nextProject.labelOverride || 'Nächstes Projekt';
-      html += '<div class="project-next"><div>' +
+      html += '<div class="project-next animate"><div>' +
         '<div class="next-label">' + nextLabel + '</div>' +
         '<a href="javascript:void(0)" onclick="showPage(\'project-' + p.nextProject.id + '\')">' + p.nextProject.name + ' <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>' +
         '</div></div>';
