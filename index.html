@@ -354,6 +354,21 @@
       .tools-grid { grid-template-columns: 1fr 1fr; }
       .video-showcase { padding: 0 24px 48px; }
     }
+
+    /* SCROLL ANIMATIONS */
+    .animate {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .animate.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate { opacity: 1; transform: none; transition: none; }
+    }
   </style>
   <script src="assets/manifest.js"></script>
   <script src="assets/cube/cat.js"></script>
@@ -431,7 +446,7 @@
 
     <div class="projects-grid" id="projects-grid-container"></div>
 
-    <div class="about-contact">
+    <div class="about-contact animate">
       <h2>Lass uns vernetzen</h2>
       <div class="contact-links">
         <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
@@ -456,24 +471,24 @@
   <!-- ABOUT PAGE -->
   <div id="page-about" class="page">
     <div class="about-hero">
-      <div class="about-left">
+      <div class="about-left animate">
         <h1>Immer neugierig, <br>immer hungrig,<br> meistens in der Luft.</h1>
         <p>Ich bin Romina, UX-Designerin und offizielle Dosenöffnerin für zwei verschlafene Katzen.</p>
         <p>Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.</p>
         <p>Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern, beim Essen oder gemütlich beim Binge-Watchen.</p>
       </div>
-      <div class="about-photo">
+      <div class="about-photo animate" style="transition-delay:0.15s;">
         <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina">
       </div>
     </div>
 
     <div class="about-stats">
-      <div class="stat"><h4>7+</h4><p>Jahre Design Erfahrung</p></div>
-      <div class="stat"><h4>5+</h4><p>Jahre UX Erfahrung</p></div>
-      <div class="stat"><h4>150+</h4><p>Usability Tests</p></div>
+      <div class="stat animate"><h4>7+</h4><p>Jahre Design Erfahrung</p></div>
+      <div class="stat animate" style="transition-delay:0.1s;"><h4>5+</h4><p>Jahre UX Erfahrung</p></div>
+      <div class="stat animate" style="transition-delay:0.2s;"><h4>150+</h4><p>Usability Tests</p></div>
     </div>
 
-    <div class="about-profile">
+    <div class="about-profile animate">
       <h2>Was ich mitbringe</h2>
       <div class="profile-grid">
 
@@ -540,31 +555,31 @@
       </div>
     </div>
 
-    <div class="about-testimonials">
+    <div class="about-testimonials animate">
       <h2>Was andere über mich sagen</h2>
       <div class="testimonials-grid">
-        <div class="testimonial-card">
+        <div class="testimonial-card animate">
           <p class="testimonial-quote">"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Axel.png" alt="Axel Schäfer"></div>
             <div><div class="testimonial-name">Axel Schäfer</div><div class="testimonial-role">UX Lead · Raiffeisen</div></div>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card animate" style="transition-delay:0.1s;">
           <p class="testimonial-quote">"Was mir an Rominas Arbeit schon immer gefallen hat, ist ihre Fähigkeit, aus einer vagen Idee etwas völlig Neues entstehen zu lassen. Mit ihr zu arbeiten ist wie Pingpong spielen."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Diana.png" alt="Diana von Ow"></div>
             <div><div class="testimonial-name">Diana von Ow</div><div class="testimonial-role">UX Designer · Liip AG</div></div>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card animate" style="transition-delay:0.2s;">
           <p class="testimonial-quote">"Für jede Organisation, die eine talentierte, erfahrene und leidenschaftliche UX-Designerin sucht, kann ich Romina uneingeschränkt empfehlen. Sie überzeugt nicht nur durch ihr fundiertes Fachwissen, sondern auch durch ihre Kreativität und ihren Innovationsgeist."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Nathaly.png" alt="Nathaly Tschanz"></div>
             <div><div class="testimonial-name">Nathaly Tschanz</div><div class="testimonial-role">Professor & Head of Degree Program · HSLU</div></div>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card animate" style="transition-delay:0.3s;">
           <p class="testimonial-quote">"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Minh%20Tien.png" alt="Minh Tien Mai"></div>
@@ -574,7 +589,7 @@
       </div>
     </div>
 
-    <div class="about-contact">
+    <div class="about-contact animate">
       <h2>Lass uns vernetzen</h2>
       <div class="contact-links">
         <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
@@ -584,7 +599,7 @@
       </div>
     </div>
 
-    <footer><span>© 2026 Romina</span><span>UX Portfolio</span></footer>
+    <footer class="animate"><span>© 2026 Romina</span><span>UX Portfolio</span></footer>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -951,7 +966,7 @@
         var imgs = p._resolvedImages || [];
         var hasImg = imgs.length > 0;
 
-        var cardHTML = '<div class="project-card" onclick="showPage(\'project-' + p.id + '\')">' +
+        var cardHTML = '<div class="project-card animate" onclick="showPage(\'project-' + p.id + '\')">' +
           '<div class="card-visual visual-' + p.id + '">';
 
         if (hasImg) {
@@ -1197,6 +1212,27 @@
       }
     }
 
+    /* ============================================
+       SCROLL ANIMATIONS
+    ============================================ */
+    var scrollObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    function initScrollAnimations(scope) {
+      var root = scope || document;
+      root.querySelectorAll('.animate').forEach(function(el) {
+        // Reset if re-entering page
+        el.classList.remove('in-view');
+        scrollObserver.observe(el);
+      });
+    }
+
     function showPage(page, updateHash) {
       document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
       document.getElementById('page-' + page).classList.add('active');
@@ -1215,12 +1251,17 @@
       if (updateHash !== false) {
         history.replaceState(null, '', isMain ? '#' : '#' + page);
       }
+      // Re-init animations for newly visible page
+      setTimeout(function() {
+        initScrollAnimations(document.getElementById('page-' + page));
+      }, 20);
     }
 
     function initPortfolio(manifestData) {
       resolveProjectImages(manifestData);
       renderCards();
       PROJECTS.forEach(renderProjectPage);
+      setTimeout(initScrollAnimations, 50);
     }
 
     document.addEventListener('DOMContentLoaded', function() {
