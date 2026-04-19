@@ -809,17 +809,17 @@
         ],
         content: {
           leftTitle: 'Ausgangslage',
-          leftText: '<p>Rimon Technologies, ein Schweizer AR-Startup, wollte ihre Technologie auf spielerische Weise erlebbar machen. Im Rahmen meines CAS in Augmented &amp; Virtual Reality an der FHGR entwickelte ich ein vollständiges Konzept für einen Mixed Reality Escape Room.</p><p>Der Escape Room sollte als Showcase dienen: technologieaffine Personen sollten hautnah erleben, was mit der HoloLens möglich ist — ohne Vorkenntnisse, ohne Game Master.</p>',
+          leftText: '<p>Rimon Technologies, ein Schweizer AR-Startup, wollte ihre Technologie auf spielerische Weise erlebbar machen. Im Rahmen meines CAS in Augmented &amp; Virtual Reality an der FHGR entwickelte ich ein vollständiges Konzept für einen Mixed Reality Escape Room.</p><p>Der Escape Room sollte als Showcase dienen: technologieaffine Personen sollten hautnah erleben, was mit der HoloLens möglich ist, ganz ohne Vorkenntnisse und ohne Game Master.</p>',
           rightTitle: 'Mein Ansatz',
-          rightText: '<p>Das Projekt entstand mit vollständiger UX-Methodik: User Research, zwei detaillierte Personas, eine Pixar-Style Narrativstruktur, Storyboard für sechs originelle Puzzles sowie ein vollständiger Asset-Plan über 2D, 3D, Animation und Sound Design.</p><p>Im Zentrum steht Lexi — eine KI-Antagonistin als animierte 3D-Sphäre, die mit batterieverbrauchenden Gefahrenzonen und Glitch-Effekten Spannung erzeugt. Barrierefreiheit war von Beginn weg Teil des Designs.</p>'
+          rightText: '<p>Ich habe das Konzept mit einem vollständigen UX-Prozess entwickelt: von der Nutzerforschung über zwei detaillierte Personas bis zu einem Storyboard für sechs Puzzles und einem kompletten Asset-Plan.</p><p>Im Mittelpunkt steht Lexi, eine KI als animierte 3D-Sphäre, die mit Gefahrenzonen und Glitch-Effekten Spannung erzeugt. Zugänglichkeit war von Anfang an Teil des Designs.</p>'
         },
         process: {
           title: 'Vorgehen',
           steps: [
-            { num: '01', title: 'Research & Personas', text: 'Zielgruppenanalyse und Erstellung zweier detaillierter Personas — darunter ein 55-jähriger Ingenieur mit Farbsehschwäche und eine 28-jährige Startup-Entwicklerin.' },
+            { num: '01', title: 'Research & Personas', text: 'Zielgruppenanalyse und Erstellung zweier detaillierter Personas, darunter ein 55-jähriger Ingenieur mit Farbsehschwäche und eine 28-jährige Startup-Entwicklerin.' },
             { num: '02', title: 'Story & Gameplay', text: 'Narrative Struktur im Pixar-Style: Rimons Holo-Office wurde gehackt, die KI Lexi dreht durch. Die Spielerin hat 30 Minuten, um Lexi zu resetten und das Büro zu verlassen.' },
-            { num: '03', title: 'Puzzle Design', text: 'Sechs originelle Puzzles designed für HoloLens Hand-Tracking und Eye-Tracking — von Skalier-Puzzles über Physiksimulationen bis zu 3D-Logikrätseln.' },
-            { num: '04', title: 'Asset Planning', text: 'Vollständiger Produktionsplan: 2D-Elemente, 3D-Assets mit Animation, Sound Design und Programmieraufwand — Gesamtaufwand geschätzt auf 80–100 Tage.' }
+            { num: '03', title: 'Puzzle Design', text: 'Sechs originelle Puzzles designed für HoloLens Hand-Tracking und Eye-Tracking, von Skalier-Puzzles über Physiksimulationen bis zu 3D-Logikrätseln.' },
+            { num: '04', title: 'Asset Planning', text: 'Vollständiger Produktionsplan für 2D-Elemente, 3D-Assets, Animation, Sound Design und Programmierung. Gesamtaufwand geschätzt auf 80 bis 100 Tage.' }
           ]
         },
         videos: {
@@ -828,7 +828,7 @@
         pdfEmbed: 'assets/game/romina_schoeni_CAS_Konzept_FHGR.pdf',
         outcome: {
           customOutcome: true,
-          text: 'Ein vollständiges Spielkonzept an der Schnittstelle von Gamification und Enterprise AR. Das Projekt zeigte mir, wie weit UX-Methodik reicht — von der Nutzerforschung bis zur Produktionsplanung, vom Narrativ bis zum Sounddesign.',
+          text: 'Ein vollständiges Spielkonzept an der Schnittstelle von Gamification und Enterprise AR. Das Projekt zeigte mir, wie weit UX-Methodik reicht: von der Nutzerforschung bis zur Produktionsplanung, vom Narrativ bis zum Sounddesign.',
           reflection: {
             title: 'Persönliche Learnings',
             text: 'Spieldesign und UX-Design teilen mehr als man denkt: Beide drehen sich um Motivation, Feedback und den richtigen Moment der Überraschung. Die Herausforderung, sechs Puzzles für Hand-Tracking zu designen, hat mein Verständnis für körperliche Interaktion und räumliches Denken deutlich vertieft.'
@@ -1151,13 +1151,12 @@
 
       // PDF Embed
       if (p.pdfEmbed) {
+        var pdfAbsUrl = 'https://rominasch0eni.github.io/portfolio/' + p.pdfEmbed;
+        var viewerUrl = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfAbsUrl) + '&embedded=true';
         html += '<div class="project-gallery animate"><h2>Konzeptdokument</h2>' +
           '<div style="border:1px solid var(--border);overflow:hidden;">' +
-          '<object data="' + p.pdfEmbed + '" type="application/pdf" width="100%" style="height:700px;display:block;">' +
-          '<div style="padding:48px;text-align:center;">' +
-          '<p style="margin-bottom:16px;">PDF-Vorschau nicht verfügbar.</p>' +
-          '<a href="' + p.pdfEmbed + '" target="_blank" style="color:var(--accent);text-decoration:underline;">Konzeptdokument öffnen →</a>' +
-          '</div></object></div>' +
+          '<iframe src="' + viewerUrl + '" width="100%" style="height:700px;display:block;border:none;" allowfullscreen></iframe>' +
+          '</div>' +
           '<div style="margin-top:16px;">' +
           '<a href="' + p.pdfEmbed + '" target="_blank" style="font-size:14px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color 0.3s;" onmouseover="this.style.color=\'var(--accent)\'" onmouseout="this.style.color=\'var(--text-muted)\'">' +
           '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 10v6m0 0l-3-3m3 3l3-3M3 15v4a2 2 0 002 2h14a2 2 0 002-2v-4"/><path d="M7 10V7a5 5 0 0110 0v3"/></svg>' +
