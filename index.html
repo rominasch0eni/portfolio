@@ -196,7 +196,7 @@
     .about-block h3 { font-size: 13px !important; font-family: 'Inter', sans-serif !important; font-weight: 500 !important; letter-spacing: 2px !important; text-transform: uppercase !important; margin-bottom: 16px; color: var(--text-primary); }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .skill-tags span { padding: 8px 16px; border: 1px solid var(--tag-border); border-radius: 100px; font-size: 14px; font-weight: 300; color: var(--text-muted); background: transparent; transition: all 0.3s; }
-    .skill-tags span:hover { border-color: var(--accent); color: var(--accent); background: rgba(184,134,11,0.04); }
+    .skill-tags span { cursor: default; }
 
     .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 80px 48px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
     .stat h4 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
@@ -210,11 +210,16 @@
     .profile-sub-label { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; margin-bottom: 4px; }
     .accordion { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
     .accordion-item { border-bottom: 1px solid var(--border); }
-    .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; }
+    .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; transition: color 0.25s; }
     .accordion-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
-    .accordion-trigger span.accordion-label { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: var(--text-muted); margin: 0; }
-    .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1); }
+    .accordion-trigger span.accordion-label { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: var(--text-muted); margin: 0; transition: color 0.25s; }
+    .accordion-trigger:hover span.accordion-label { color: var(--accent); }
+    .accordion-trigger:hover .accordion-icon { color: var(--accent); transform: rotate(90deg); }
+    .accordion-item { border-bottom: 1px solid var(--border); transition: border-color 0.25s; }
+    .accordion-item:hover { border-color: var(--accent); }
+    .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), color 0.25s; }
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+    .accordion-item.open:hover .accordion-trigger:hover .accordion-icon { transform: rotate(135deg); }
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
     .about-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
