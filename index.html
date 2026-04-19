@@ -1312,6 +1312,13 @@
       // Bilder aus manifest.js laden — automatisch alphabetisch sortiert
       initPortfolio(window.IMAGE_MANIFEST || null);
 
+      // Accordion Event Listener
+      document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          toggleAccordion(this);
+        });
+      });
+
       // Poll for UPLOADED_IMAGES (preview environment only)
       var pollCount = 0;
       var pollInterval = setInterval(function() {
