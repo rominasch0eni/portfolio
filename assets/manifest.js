@@ -1,5 +1,5 @@
 ﻿window.IMAGE_MANIFEST = {
-  "e-id": [],
+  "e-id": ["hero.png"],
   "banking": ["01.png"],
   "ar": ["01-hero.png", "augmented0.JPG", "augmented2.png", "augmented3.png", "augmented5.jpg", "augmented6.jpg", "augmented7.jpg", "augmented8.jpg"],
   "exchange": ["01. ahero.jpg", "01-hero.png", "02-screen.png", "03-screen.png", "04-screen.png"],
