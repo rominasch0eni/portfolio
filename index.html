@@ -196,12 +196,12 @@
     .skill-tags span { padding: 8px 16px; border: 1px solid var(--tag-border); border-radius: 100px; font-size: 14px; font-weight: 300; color: var(--text-muted); background: transparent; transition: all 0.3s; }
     .skill-tags span:hover { border-color: var(--accent); color: var(--accent); background: rgba(184,134,11,0.04); }
 
-    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 80px 48px; border-top: 1px solid var(--border); }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 80px 48px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .stat h4 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
-    .about-strengths { padding: 0 48px 80px; }
-    .about-strengths .section-label { padding-left: 0; padding-right: 0; margin-bottom: 32px; }
+    .about-strengths { padding: 80px 48px; border-top: 1px solid var(--border); }
+    .about-strengths .section-label { padding-left: 0; padding-right: 0; border-top: none; padding-top: 0; padding-bottom: 40px; }
     .accordion { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
     .accordion-item { border-bottom: 1px solid var(--border); }
     .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; }
@@ -210,8 +210,8 @@
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
-    .about-testimonials { padding: 0 48px 80px; }
-    .about-testimonials .section-label { border-top: 1px solid var(--border); }
+    .about-testimonials { padding: 80px 48px; border-top: 1px solid var(--border); }
+    .about-testimonials .section-label { border-top: none; padding-top: 0; }
     .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .testimonial-card { padding: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease; }
     .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
@@ -316,7 +316,7 @@
       .about-photo { order: 1; grid-column: 1; grid-row: auto; }
       .about-left { order: 2; grid-column: 1; grid-row: auto; }
       .about-right { order: 3; grid-column: 1; grid-row: auto; }
-      .about-stats { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
+      .about-stats { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; border-bottom: 1px solid var(--border); }
       .about-brief { padding: 60px 24px; grid-template-columns: 1fr; gap: 36px; }
       .about-contact { padding: 48px 24px 80px; }
       .page-connect { padding: 48px 24px 80px; }
@@ -460,28 +460,26 @@
       <div class="stat"><h4>150+</h4><p>Usability Tests</p></div>
     </div>
 
-    <div class="about-strengths">
-      <div class="about-brief" style="border-top:none;padding:0;">
+    <div class="about-brief" style="padding-top:80px;padding-bottom:80px;border-top:none;">
+      <div class="about-block">
+        <h3>Herangehensweise</h3>
+        <p>Jedes Projekt ist anders: andere Prozesse, andere Probleme, anderes Team, andere Ressourcen. Deshalb versuche ich zuerst ganz einfach die Situation zu verstehen und baue darauf auf. Ich eigne mir neues Wissen rasch an und finde mich schnell in neue Themen und Teams ein.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:32px;">
         <div class="about-block">
-          <h3>Herangehensweise</h3>
-          <p>Jedes Projekt ist anders: andere Prozesse, andere Probleme, anderes Team, andere Ressourcen. Deshalb versuche ich zuerst ganz einfach die Situation zu verstehen und baue darauf auf. Ich eigne mir neues Wissen rasch an und finde mich schnell in neue Themen und Teams ein.</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:32px;">
-          <div class="about-block">
-            <h3>Fähigkeiten</h3>
-            <div class="skill-tags">
-              <span>Lean UX Research</span><span>UX Konzept</span><span>Prototyping</span>
-              <span>Usability-Tests</span><span>Augmented Reality</span>
-              <span>Informationsarchitektur</span><span>Visuelles Design</span>
-              <span>Präsentation</span><span>Design System</span>
-            </div>
+          <h3>Fähigkeiten</h3>
+          <div class="skill-tags">
+            <span>Lean UX Research</span><span>UX Konzept</span><span>Prototyping</span>
+            <span>Usability-Tests</span><span>Augmented Reality</span>
+            <span>Informationsarchitektur</span><span>Visuelles Design</span>
+            <span>Präsentation</span><span>Design System</span>
           </div>
-          <div class="about-block">
-            <h3>Werkzeuge</h3>
-            <div class="skill-tags">
-              <span>Figma</span><span>Jira</span><span>Claude</span>
-              <span>After Effects</span><span>Unity</span><span>Miro</span><span>Maze</span>
-            </div>
+        </div>
+        <div class="about-block">
+          <h3>Werkzeuge</h3>
+          <div class="skill-tags">
+            <span>Figma</span><span>Jira</span><span>Claude</span>
+            <span>After Effects</span><span>Unity</span><span>Miro</span><span>Maze</span>
           </div>
         </div>
       </div>
