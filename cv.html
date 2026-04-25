@@ -252,7 +252,9 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 8px center;
     }
-    .cv-lang-switch .lang-select:hover { color: var(--text-primary); border-color: var(--text-muted); }
+    .cv-lang-switch .lang-select:hover { color: var(--text-primary); border-color: var(--accent); }
+    .cv-lang-switch .lang-select:focus { outline: none; border-color: var(--accent); }
+    .cv-lang-switch .lang-select:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(124,58,237,0.15); }
     @media print { .cv-lang-switch { display:none !important; } }
   </style>
   <script src="translations.js"></script>

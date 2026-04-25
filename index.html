@@ -655,7 +655,9 @@
       background-position: right 8px center;
       padding-right: 26px;
     }
-    .lang-select:hover { color: var(--text-primary); border-color: var(--text-muted); }
+    .lang-select:hover { color: var(--text-primary); border-color: var(--accent); }
+    .lang-select:focus { outline: none; border-color: var(--accent); }
+    .lang-select:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(124,58,237,0.15); }
     body.dark .lang-select { background-color: transparent; color: var(--text-muted); }
     body.dark .lang-select option { background: #1c1c1c; color: var(--text-primary); }
   </style>
