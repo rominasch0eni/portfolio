@@ -477,15 +477,26 @@
     #chat-welcome {
       text-align: center;
       color: #fff;
-      font-size: clamp(22px, 3.5vw, 40px);
-      font-weight: 600;
-      line-height: 1.35;
+      line-height: 1.4;
       padding: 16px 40px 48px;
       flex-shrink: 0;
       max-width: 680px;
       margin: 0 auto;
       width: 100%;
       box-sizing: border-box;
+    }
+    #chat-welcome .welcome-title {
+      display: block;
+      font-size: clamp(24px, 4vw, 44px);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    #chat-welcome .welcome-sub {
+      display: block;
+      font-size: clamp(14px, 2vw, 20px);
+      font-weight: 400;
+      opacity: 0.82;
+      line-height: 1.55;
     }
 
     #chat-messages {
@@ -1813,7 +1824,10 @@
     <div id="chat-header">
       <button id="chat-close" onclick="toggleChat()" aria-label="Chat schliessen">✕</button>
     </div>
-    <div id="chat-welcome">Hi, ich bin Ina!<br>Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</div>
+    <div id="chat-welcome">
+      <span class="welcome-title">Hi, ich bin Ina!</span>
+      <span class="welcome-sub">Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</span>
+    </div>
     <div id="chat-messages"><div class="chat-spacer"></div>
     </div>
     <div id="chat-input-row">
