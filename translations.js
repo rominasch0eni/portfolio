@@ -188,9 +188,9 @@ window.TRANSLATIONS = {
     'acc.4.text':         'As a UX designer I put the user at the centre. But not every project has the same resources. As a solo designer at a startup I learned to think pragmatically: sometimes the second-best UX solution is the best business decision.',
 
     'test.heading':       'What others say about me',
-    'test.1':             '"Working with Romina was a great pleasure: her commitment, ambition and knowledge helped the team enormously in creating great products."',
+    'test.1':             '«I loved working with Romina — her spirit, ambition and knowledge helped the team a lot in shaping great products.»',
     'test.2':             '"What I\'ve always loved about Romina\'s work is her ability to turn a vague idea into something entirely new. Working with her is like playing ping-pong."',
-    'test.3':             '"For any organisation looking for a talented, experienced and passionate UX designer, I can recommend Romina without reservation. She impresses not only with her solid expertise, but also with her creativity and innovative spirit."',
+    'test.3':             '«For any organization looking for a talented, experienced and passionate user experience designer, I can highly recommend Romina. Not only does she have excellent expertise, but she also stands out for her creativity and innovation.»',
     'test.4':             '"I worked closely with Romina. Her expertise in UX and design was instrumental in the company\'s success. She consistently delivered high-quality work, even under tight deadlines. Her innovative thinking was invaluable when it came to finding unique solutions."',
 
     'chat.welcome.title': 'Hi, I\'m Dot!',
