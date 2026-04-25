@@ -420,12 +420,14 @@
       background-size: 300% 300%;
       animation: holographic 4s ease infinite;
       clip-path: inset(calc(100% - 84px) 32px 32px calc(100% - 84px) round 4px);
-      transition: clip-path 0.55s cubic-bezier(0.23,1,0.32,1);
+      transition: clip-path 0.55s cubic-bezier(0.23,1,0.32,1), opacity 0.1s;
       pointer-events: none;
+      opacity: 0;
     }
     #chat-overlay.open {
       clip-path: inset(0px 0px 0px 0px round 0px);
       pointer-events: all;
+      opacity: 1;
     }
 
     /* inner content panel — inset 14px so gradient shows as a frame */
@@ -1704,8 +1706,15 @@
 
     function toggleChat() {
       chatOpen = !chatOpen;
-      document.getElementById('chat-overlay').classList.toggle('open', chatOpen);
-      if (chatOpen) setTimeout(function() { document.getElementById('chat-input').focus(); }, 450);
+      var overlay = document.getElementById('chat-overlay');
+      if (chatOpen) {
+        overlay.style.transition = 'clip-path 0.55s cubic-bezier(0.23,1,0.32,1), opacity 0s';
+        overlay.classList.add('open');
+        setTimeout(function() { document.getElementById('chat-input').focus(); }, 450);
+      } else {
+        overlay.style.transition = 'clip-path 0.55s cubic-bezier(0.23,1,0.32,1), opacity 0.1s 0.45s';
+        overlay.classList.remove('open');
+      }
     }
 
     function sendChat() {
