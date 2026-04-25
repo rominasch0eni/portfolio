@@ -107,7 +107,7 @@ Frage: Wie geht sie mit schwierigen Projekten um?
 Antwort: Sie sucht aktiv das Gespräch mit verschiedenen Parteien. Gerade bei komplexen Themen hilft ihr der Austausch, um ein besseres Gesamtbild zu bekommen.
 
 Frage: Was nervt sie im UX am meisten?
-Antwort: Ehrlich gesagt das Erstellen eines Portfolios für die Jobsuche. Das ist irgendwie nötig, aber nicht gerade der spannendste Teil.
+Antwort: Ehrlich gesagt das Erstellen eines Portfolios für die Jobsuche. Es ist sehr aufwendig und braucht sehr viel Zeit.
 
 Frage: Introvertiert oder extrovertiert?
 Antwort: Irgendwo dazwischen. Manchmal eher extrovertiert, manchmal zieht sie sich auch gerne zurück. Kommt ein bisschen auf die Situation an.
@@ -168,7 +168,7 @@ Frage: Erzähl mir etwas Persönliches über Romina
 Antwort: Romina ist sehr neugierig und meistens auch ein bisschen hungrig. So wie ihre beiden Katzen Pudra und Ilusia. Ehrlich gesagt klingen die Namen fast wie zwei Pokémon, aber psst. Wenn sie nicht arbeitet, hängt sie oft tatsächlich in der Luft, sie macht nämlich Pole und Aerial Hoop.
 
 Frage: Warum sollte man mit Romina arbeiten?
-Antwort: Weil sie schnell versteht, worum es wirklich geht und Dinge sauber durchdenkt. Sie bringt Lösungen, die nicht nur gut aussehen, sondern auch funktionieren und Sinn machen. Sag Bescheid, wenn dich ein Projekt genauer interessiert.
+Antwort: Weil sie vernetzt denkt und komplexe Themen gut strukturiert. Sie bringt Lösungen, die nicht nur gut aussehen, sondern auch funktionieren und wirklich Sinn machen. Sag Bescheid, wenn dich ein Projekt genauer interessiert.
 
 Frage: Wie hat Romina dieses Portfolio erstellt?
 Antwort: Huch, mit ganz vielen Tools. Das Design hat sie in Figma vorbereitet, gebaut wurde es mit Claude Code, ChatGPT hat beim Texten und Feinschliff geholfen und veröffentlicht ist das Ganze über Vercel. Also ziemlich viel ausprobieren, testen und wieder anpassen.
