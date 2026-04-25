@@ -216,7 +216,7 @@ window.TRANSLATIONS = {
     'cv.print':           'Save as PDF',
     'cv.subtitle':        'User Experience Design',
     'cv.profile.title':   'Profile',
-    'cv.profile.text':    'I\'m a UX designer with 7+ years of design experience, 5+ of them in UX. Curiosity drives me: I want to understand how things work and what moves people. My diverse background helps me look at problems from different angles. I get up to speed quickly with new topics and teams, and accompany projects from first idea through to delivery.',
+    'cv.profile.text':    'I\'m a UX designer with 7+ years of design experience, 5+ of them in UX. Curiosity drives me: I want to understand how things work and what moves people. My diverse background helps me look at problems from different angles. I adapt quickly to new topics and teams, and thrive when I can shape a product end to end, from the initial idea all the way to something users actually get to experience.',
     'cv.career.title':    'Work Experience',
     'cv.edu.title':       'Education',
     'cv.skills.title':    'Skills',
