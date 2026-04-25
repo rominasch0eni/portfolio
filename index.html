@@ -1824,6 +1824,7 @@
     var chatOpen = false;
     var chatHistory = [];
     var chatWaiting = false;
+    var skipNextUserAnim = false;
 
     function toggleChat() {
       chatOpen = !chatOpen;
@@ -1890,6 +1891,7 @@
 
       setTimeout(function() {
         clone.remove();
+        skipNextUserAnim = true;
         document.getElementById('chat-input').value = text;
         sendChat();
       }, 480);
@@ -1952,6 +1954,10 @@
       var msgs = document.getElementById('chat-messages');
       var el = document.createElement('div');
       el.className = 'chat-msg ' + type;
+      if (type === 'user' && skipNextUserAnim) {
+        el.style.animation = 'none';
+        skipNextUserAnim = false;
+      }
       el.textContent = text;
       msgs.appendChild(el);
       msgs.scrollTop = msgs.scrollHeight;
