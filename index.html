@@ -511,12 +511,14 @@
     }
     #chat-welcome .welcome-title {
       display: block;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(24px, 4vw, 44px);
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 10px;
     }
     #chat-welcome .welcome-sub {
       display: block;
+      font-family: 'Inter', sans-serif;
       font-size: clamp(14px, 2vw, 20px);
       font-weight: 400;
       opacity: 0.82;
@@ -547,6 +549,7 @@
     }
     .chat-msg {
       max-width: 72%; font-size: 14px; line-height: 1.65; padding: 12px 18px;
+      font-family: 'Inter', sans-serif;
       animation: msg-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
     .chat-msg.slide-in {
@@ -554,7 +557,7 @@
     }
     .chat-msg.bot {
       background: rgba(255,255,255,0.72);
-      color: #1a1a1a;
+      color: #444;
       align-self: flex-start;
       border-radius: 20px 20px 20px 5px;
       backdrop-filter: blur(6px);
