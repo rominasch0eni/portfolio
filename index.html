@@ -1829,10 +1829,9 @@
     var chatWaiting = false;
     var skipNextUserAnim = false;
 
+    var firstSuggestions = ['Wer ist Romina?', 'Wieso mit ihr zusammenarbeiten?'];
     var suggestionPool = [
-      'Wer ist Romina?',
       'Was sind ihre Stärken?',
-      'Warum mit ihr arbeiten?',
       'Etwas Persönliches?',
       'Welche Tools nutzt sie?',
       'Wie arbeitet sie im Team?',
@@ -1852,23 +1851,35 @@
       'Wie kontaktiere ich sie?'
     ];
     var usedSuggestions = [];
+    var firstShown = false;
 
     function renderSuggestions() {
       var container = document.getElementById('chat-suggestions');
       container.innerHTML = '';
-      var available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
-      if (available.length === 0) return; // all shown — hide pills
-      for (var i = 0; i < 2; i++) {
-        available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
-        if (available.length === 0) break;
-        var pick = available[Math.floor(Math.random() * available.length)];
-        usedSuggestions.push(pick);
+
+      var questions = [];
+      if (!firstShown) {
+        questions = firstSuggestions.slice();
+        firstSuggestions.forEach(function(q) { usedSuggestions.push(q); });
+        firstShown = true;
+      } else {
+        for (var i = 0; i < 2; i++) {
+          var available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
+          if (available.length === 0) break;
+          var pick = available[Math.floor(Math.random() * available.length)];
+          usedSuggestions.push(pick);
+          questions.push(pick);
+        }
+      }
+
+      if (questions.length === 0) return;
+      questions.forEach(function(q) {
         var btn = document.createElement('button');
         btn.className = 'chat-suggestion';
-        btn.textContent = pick;
+        btn.textContent = q;
         btn.onclick = function() { askSuggestion(this); };
         container.appendChild(btn);
-      }
+      });
     }
 
     function toggleChat() {
