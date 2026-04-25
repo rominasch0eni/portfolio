@@ -1839,13 +1839,33 @@
       'Was motiviert sie?',
       'Remote oder vor Ort?',
       'Welche Rolle sucht sie?',
-      'Was macht ihr Spass?'
+      'Was macht ihr Spass?',
+      'Was ist das e-ID Projekt?',
+      'Was hat sie bei Raiffeisen gemacht?',
+      'Was ist Aerial Hoop?',
+      'Kaffee oder Tee?',
+      'Chaos oder Struktur?',
+      'Wie geht sie mit Feedback um?',
+      'Was nervt sie im UX?',
+      'Welche Projekte hat sie gemacht?',
+      'Kennt sie AR und VR?',
+      'Was bringt sie in gute Stimmung?',
+      'Introvertiert oder extrovertiert?',
+      'Wie schnell lernt sie Neues?',
+      'Was ist ihr bei Zusammenarbeit wichtig?',
+      'Hat sie Erfahrung mit Usability Testing?',
+      'Wie kontaktiere ich sie?'
     ];
     var usedSuggestions = [];
 
     function getNextSuggestion() {
       var available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
-      if (available.length === 0) { usedSuggestions = []; available = suggestionPool.slice(); }
+      if (available.length === 0) {
+        // All shown — reset but keep last 2 to avoid immediate repeat
+        var keep = usedSuggestions.slice(-2);
+        usedSuggestions = keep;
+        available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
+      }
       var pick = available[Math.floor(Math.random() * available.length)];
       usedSuggestions.push(pick);
       return pick;
