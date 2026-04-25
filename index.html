@@ -407,12 +407,11 @@
       border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 4px 24px rgba(160, 100, 255, 0.35);
-      transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s, opacity 0.25s;
+      transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s;
       color: #fff;
     }
     #chat-btn:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(160, 100, 255, 0.5); }
     #chat-btn svg { width: 22px; height: 22px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
-    #chat-btn.hidden { opacity: 0; pointer-events: none; transform: scale(0.8); }
 
     /* fullscreen overlay */
     #chat-overlay {
@@ -1706,7 +1705,6 @@
     function toggleChat() {
       chatOpen = !chatOpen;
       document.getElementById('chat-overlay').classList.toggle('open', chatOpen);
-      document.getElementById('chat-btn').classList.toggle('hidden', chatOpen);
       if (chatOpen) setTimeout(function() { document.getElementById('chat-input').focus(); }, 450);
     }
 
