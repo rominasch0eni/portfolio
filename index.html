@@ -1718,15 +1718,15 @@
       var overlay = document.getElementById('chat-overlay');
       if (chatOpen) {
         overlay.style.opacity = '1';           // flash visible at button size
-        overlay.style.transition = 'clip-path 0.65s cubic-bezier(0.23,1,0.32,1)';
+        overlay.style.transition = 'clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1)';
         requestAnimationFrame(function() {
           requestAnimationFrame(function() {   // double rAF to ensure repaint
             overlay.classList.add('open');
           });
         });
-        setTimeout(function() { document.getElementById('chat-input').focus(); }, 1100);
+        setTimeout(function() { document.getElementById('chat-input').focus(); }, 1150);
       } else {
-        overlay.style.transition = 'clip-path 0.65s cubic-bezier(0.23,1,0.32,1)';
+        overlay.style.transition = 'clip-path 0.65s cubic-bezier(0.76, 0, 0.24, 1)';
         overlay.classList.remove('open');
         setTimeout(function() { overlay.style.opacity = '0'; }, 680); // hide after contract
       }
