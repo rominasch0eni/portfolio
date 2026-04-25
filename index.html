@@ -393,17 +393,25 @@
     }
 
     /* ── CHAT WIDGET ── */
+    @keyframes holographic {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     #chat-btn {
       position: fixed; bottom: 32px; right: 32px; z-index: 1000;
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--accent); border: none; cursor: pointer;
+      width: 52px; height: 52px; border-radius: 4px;
+      background: linear-gradient(135deg, #74d7f7, #c084fc, #f472b6, #818cf8, #67e8f9, #e879f9);
+      background-size: 300% 300%;
+      animation: holographic 4s ease infinite;
+      border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 4px 24px rgba(160, 100, 255, 0.35);
       transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s;
       color: #fff;
     }
-    #chat-btn:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(0,0,0,0.22); }
-    #chat-btn svg { width: 22px; height: 22px; }
+    #chat-btn:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(160, 100, 255, 0.5); }
+    #chat-btn svg { width: 22px; height: 22px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
 
     #chat-panel {
       position: fixed; bottom: 96px; right: 32px; z-index: 1000;
@@ -457,7 +465,7 @@
     #chat-send:disabled { opacity: 0.4; cursor: default; }
 
     body.dark #chat-panel { background: var(--bg); }
-    body.extreme #chat-btn { background: #ff0066; }
+    body.extreme #chat-btn { background: linear-gradient(135deg, #74d7f7, #c084fc, #f472b6, #818cf8, #67e8f9, #e879f9); background-size: 300% 300%; }
     body.extreme .chat-msg.user { background: #ff0066; }
     body.extreme #chat-input:focus { border-color: #ff0066; }
     body.extreme #chat-send { background: #ff0066; }
