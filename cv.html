@@ -243,18 +243,31 @@
     }
 
     @page { size: A4; margin: 0; }
+    .cv-lang-switch { position:fixed; top:28px; right:130px; z-index:100; display:flex; align-items:center; gap:2px; }
+    .cv-lang-switch .lang-btn { background:none; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:13px; font-weight:400; color:var(--text-muted); padding:4px 6px; border-radius:4px; transition:color 0.2s; }
+    .cv-lang-switch .lang-btn.active { color:var(--text-primary); font-weight:600; }
+    .cv-lang-switch .lang-btn:hover { color:var(--text-primary); }
+    .cv-lang-switch .lang-divider { color:var(--border); font-size:13px; }
+    @media print { .cv-lang-switch { display:none !important; } }
   </style>
+  <script src="translations.js"></script>
 </head>
 <body>
 
   <a href="index.html" class="back-btn">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Zurück zum Portfolio
+    <span data-i18n="cv.back">Zurück zum Portfolio</span>
   </a>
+
+  <div class="cv-lang-switch">
+    <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+    <span class="lang-divider">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 
   <button class="print-btn" onclick="window.print()">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-    Als PDF speichern
+    <span data-i18n="cv.print">Als PDF speichern</span>
   </button>
 
   <div class="cv-page">
@@ -284,65 +297,65 @@
       <div>
 
         <div class="cv-section">
-          <div class="cv-section-title">Profil</div>
+          <div class="cv-section-title" data-i18n="cv.profile.title">Profil</div>
           <div class="cv-profile">
-            <p>Ich bin UX-Designerin mit 7+ Jahren Designerfahrung, davon 5+ im UX-Bereich. Mich treibt Neugier an: Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Mein vielseitiger Hintergrund hilft mir, Probleme aus verschiedenen Perspektiven zu betrachten. Ich finde mich schnell in neue Themen und Teams ein und begleite Projekte von der ersten Idee bis zur Umsetzung.</p>
+            <p data-i18n="cv.profile.text">Ich bin UX-Designerin mit 7+ Jahren Designerfahrung, davon 5+ im UX-Bereich. Mich treibt Neugier an: Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Mein vielseitiger Hintergrund hilft mir, Probleme aus verschiedenen Perspektiven zu betrachten. Ich finde mich schnell in neue Themen und Teams ein und begleite Projekte von der ersten Idee bis zur Umsetzung.</p>
           </div>
         </div>
 
         <div class="cv-section" style="padding-top: 6px;">
-          <div class="cv-section-title">Beruflicher Werdegang</div>
+          <div class="cv-section-title" data-i18n="cv.career.title">Beruflicher Werdegang</div>
           <div class="cv-entries">
 
             <div class="cv-entry">
-              <div class="cv-entry-title">Ironforge Consulting AG · UX Design & Research Freelancerin 100%</div>
-              <div class="cv-entry-meta">Bern · Jul 2025 – Heute</div>
+              <div class="cv-entry-title" data-i18n="cv.ironforge.title">Ironforge Consulting AG · UX Design &amp; Research Freelancerin 100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.ironforge.meta">Bern · Jul 2025 – Heute</div>
               <ul>
-                <li>Planung, Durchführung und Koordination von User-Research-Aktivitäten.</li>
-                <li>Einbindung relevanter Stakeholder aus den Bundesämtern sowie strukturierte Erhebung und Dokumentation der Nutzerbedürfnisse.</li>
-                <li>Konzeption, Durchführung und Auswertung von Usability-Tests (inkl. unmoderierter Tests mit Maze oder Useberry).</li>
-                <li>Aufbau und kontinuierliche Erweiterung eines User-Pools für Tests.</li>
-                <li>Planung interner Testphasen der e-ID für Mitarbeitende sämtlicher Bundesämter.</li>
-                <li>Iterative Weiterentwicklung der Lösungen auf Basis von Nutzerfeedback und Testergebnissen.</li>
+                <li data-i18n="cv.ironforge.b1">Planung, Durchführung und Koordination von User-Research-Aktivitäten.</li>
+                <li data-i18n="cv.ironforge.b2">Einbindung relevanter Stakeholder aus den Bundesämtern sowie strukturierte Erhebung und Dokumentation der Nutzerbedürfnisse.</li>
+                <li data-i18n="cv.ironforge.b3">Konzeption, Durchführung und Auswertung von Usability-Tests (inkl. unmoderierter Tests mit Maze oder Useberry).</li>
+                <li data-i18n="cv.ironforge.b4">Aufbau und kontinuierliche Erweiterung eines User-Pools für Tests.</li>
+                <li data-i18n="cv.ironforge.b5">Planung interner Testphasen der e-ID für Mitarbeitende sämtlicher Bundesämter.</li>
+                <li data-i18n="cv.ironforge.b6">Iterative Weiterentwicklung der Lösungen auf Basis von Nutzerfeedback und Testergebnissen.</li>
               </ul>
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-title">Bison Schweiz AG · UI/UX Design Freelancerin 100%</div>
-              <div class="cv-entry-meta">Sursee · Apr 2025 – Jul 2025</div>
+              <div class="cv-entry-title" data-i18n="cv.bison.title">Bison Schweiz AG · UI/UX Design Freelancerin 100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.bison.meta">Sursee · Apr 2025 – Jul 2025</div>
             </div>
 
             <div class="cv-entry" style="margin-top:140px;">
-              <div class="cv-entry-title">Raiffeisen Schweiz · Experience Design Freelancerin 100%</div>
-              <div class="cv-entry-meta">St. Gallen · Mrz 2024 – Jan 2025</div>
+              <div class="cv-entry-title" data-i18n="cv.raiffeisen.title">Raiffeisen Schweiz · Experience Design Freelancerin 100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.raiffeisen.meta">St. Gallen · Mrz 2024 – Jan 2025</div>
               <ul>
-                <li>Enge Zusammenarbeit mit Lead UX Strategist, Product Owner, Entwicklern und Business Analysts zur Konzeptentwicklung der neuen E-Banking-Plattform.</li>
-                <li>Entwurf und Aufbau interaktiver Prototypen für Usability-Tests.</li>
-                <li>Durchführung von Usability-Tests und Auswertung von Nutzerverhalten zur iterativen Designverbesserung.</li>
+                <li data-i18n="cv.raiffeisen.b1">Enge Zusammenarbeit mit Lead UX Strategist, Product Owner, Entwicklern und Business Analysts zur Konzeptentwicklung der neuen E-Banking-Plattform.</li>
+                <li data-i18n="cv.raiffeisen.b2">Entwurf und Aufbau interaktiver Prototypen für Usability-Tests.</li>
+                <li data-i18n="cv.raiffeisen.b3">Durchführung von Usability-Tests und Auswertung von Nutzerverhalten zur iterativen Designverbesserung.</li>
               </ul>
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-title">Rimon Technologies · Experience Lead 40–100%</div>
-              <div class="cv-entry-meta">Zürich · Aug 2021 – Dez 2023</div>
+              <div class="cv-entry-title" data-i18n="cv.rimon.title">Rimon Technologies · Experience Lead 40–100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.rimon.meta">Zürich · Aug 2021 – Dez 2023</div>
               <ul>
-                <li>Leitung eines dreiköpfigen Entwicklerteams als Product Owner und Product Designerin.</li>
-                <li>Mitgestaltung der Produkt-Experience-Strategie durch Marktanalysen und User Research.</li>
-                <li>Redesign der AR Mobile- und HoloLens-Apps mit 80% Zufriedenheitsrate bei 14 aktiven Kunden.</li>
+                <li data-i18n="cv.rimon.b1">Leitung eines dreiköpfigen Entwicklerteams als Product Owner und Product Designerin.</li>
+                <li data-i18n="cv.rimon.b2">Mitgestaltung der Produkt-Experience-Strategie durch Marktanalysen und User Research.</li>
+                <li data-i18n="cv.rimon.b3">Redesign der AR Mobile- und HoloLens-Apps mit 80% Zufriedenheitsrate bei 14 aktiven Kunden.</li>
               </ul>
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-title">Xeit AG · Screen- und Interaction Design 60%</div>
-              <div class="cv-entry-meta">Zürich · Aug 2021 – Mrz 2022</div>
+              <div class="cv-entry-title" data-i18n="cv.xeit.title">Xeit AG · Screen- und Interaction Design 60%</div>
+              <div class="cv-entry-meta" data-i18n="cv.xeit.meta">Zürich · Aug 2021 – Mrz 2022</div>
               <ul>
-                <li>Gestaltung digitaler Medien inkl. Banner, Animationsfilme und Prototypen für Web- und App-Projekte.</li>
+                <li data-i18n="cv.xeit.b1">Gestaltung digitaler Medien inkl. Banner, Animationsfilme und Prototypen für Web- und App-Projekte.</li>
               </ul>
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-title">CORPMEDIA · Motion Design 80–100%</div>
-              <div class="cv-entry-meta">Zürich · Jul 2019 – Jul 2021</div>
+              <div class="cv-entry-title" data-i18n="cv.corp.title">CORPMEDIA · Motion Design 80–100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.corp.meta">Zürich · Jul 2019 – Jul 2021</div>
             </div>
 
 
@@ -350,22 +363,22 @@
         </div>
 
         <div class="cv-section">
-          <div class="cv-section-title">Ausbildung</div>
+          <div class="cv-section-title" data-i18n="cv.edu.title">Ausbildung</div>
           <div class="cv-entries">
 
             <div class="cv-entry">
-              <div class="cv-entry-title">FHGR · CAS in Augmented Reality und Virtual Reality</div>
-              <div class="cv-entry-meta">Chur · Aug 2021 – Jul 2022</div>
+              <div class="cv-entry-title" data-i18n="cv.edu.fhgr.title">FHGR · CAS in Augmented Reality und Virtual Reality</div>
+              <div class="cv-entry-meta" data-i18n="cv.edu.fhgr.meta">Chur · Aug 2021 – Jul 2022</div>
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-title">Schule für Gestaltung · Dipl. Designerin HF Interactive Media Design</div>
-              <div class="cv-entry-meta">St. Gallen · Aug 2017 – Jul 2020</div>
+              <div class="cv-entry-title" data-i18n="cv.edu.sfg.title">Schule für Gestaltung · Dipl. Designerin HF Interactive Media Design</div>
+              <div class="cv-entry-meta" data-i18n="cv.edu.sfg.meta">St. Gallen · Aug 2017 – Jul 2020</div>
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-title">KV Business School · Kaufmännische Angestellte EFZ</div>
-              <div class="cv-entry-meta">Zürich · Aug 2013 – Jul 2016</div>
+              <div class="cv-entry-title" data-i18n="cv.edu.kv.title">KV Business School · Kaufmännische Angestellte EFZ</div>
+              <div class="cv-entry-meta" data-i18n="cv.edu.kv.meta">Zürich · Aug 2013 – Jul 2016</div>
             </div>
 
           </div>
@@ -378,7 +391,7 @@
       <div>
 
         <div class="cv-sidebar-section">
-          <div class="cv-sidebar-label">Fähigkeiten</div>
+          <div class="cv-sidebar-label" data-i18n="cv.skills.title">Fähigkeiten</div>
           <div class="skill-list">
             <span>UX Konzept</span>
             <span>UI Design</span>
@@ -392,23 +405,23 @@
         </div>
 
         <div class="cv-sidebar-section">
-          <div class="cv-sidebar-label">Sprachen</div>
-          <div class="lang-item"><div class="lang-name">Deutsch</div><div class="lang-level">Muttersprache</div></div>
-          <div class="lang-item"><div class="lang-name">Englisch</div><div class="lang-level">Fliessend</div></div>
-          <div class="lang-item"><div class="lang-name">Französisch</div><div class="lang-level">Grundkenntnisse</div></div>
+          <div class="cv-sidebar-label" data-i18n="cv.langs.title">Sprachen</div>
+          <div class="lang-item"><div class="lang-name" data-i18n="cv.lang.de">Deutsch</div><div class="lang-level" data-i18n="cv.lang.de.lvl">Muttersprache</div></div>
+          <div class="lang-item"><div class="lang-name" data-i18n="cv.lang.en">Englisch</div><div class="lang-level" data-i18n="cv.lang.en.lvl">Fliessend</div></div>
+          <div class="lang-item"><div class="lang-name" data-i18n="cv.lang.fr">Französisch</div><div class="lang-level" data-i18n="cv.lang.fr.lvl">Grundkenntnisse</div></div>
         </div>
 
         <div class="cv-sidebar-section">
-          <div class="cv-sidebar-label">Referenzen</div>
+          <div class="cv-sidebar-label" data-i18n="cv.refs.title">Referenzen</div>
           <div class="ref-item">
             <strong>Roya Allemann</strong>
             Bundesamt für Informatik und Telekommunikation<br>Scrum Master<br>
-            <a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Auf Anfrage</a>
+            <a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;" data-i18n="cv.on.request">Auf Anfrage</a>
           </div>
           <div class="ref-item">
             <strong>Eldin Muratovic</strong>
             Bundesamt für Informatik und Telekommunikation<br>Product Owner<br>
-            <a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Auf Anfrage</a>
+            <a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;" data-i18n="cv.on.request">Auf Anfrage</a>
           </div>
         </div>
 

@@ -632,25 +632,43 @@
     /* Accordion hover border */
     .accordion-item:hover { border-bottom: 2px solid transparent; border-image: var(--accent-gradient) 1; }
   </style>
+  <script src="translations.js"></script>
   <script src="assets/manifest.js"></script>
   <script src="assets/cube/cat.js"></script>
+  <style>
+    /* ── LANG SWITCHER ── */
+    .lang-switch { display:flex; align-items:center; gap:2px; }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400;
+      color: var(--text-muted); padding: 4px 6px; border-radius: 4px;
+      transition: color 0.2s;
+    }
+    .lang-btn.active { color: var(--text-primary); font-weight: 600; }
+    .lang-btn:hover { color: var(--text-primary); }
+    .lang-divider { color: var(--border); font-size: 13px; user-select:none; }
+  </style>
 </head>
 <body>
 
   <!-- Mobile menu overlay -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu()">Arbeiten</a>
-    <a href="javascript:void(0)" onclick="showPage('about'); closeMobileMenu()">Über mich</a>
+    <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu()" data-i18n="mobile.work">Arbeiten</a>
+    <a href="javascript:void(0)" onclick="showPage('about'); closeMobileMenu()" data-i18n="mobile.about">Über mich</a>
   </div>
 
-
   <nav>
-    <div class="logo" onclick="showPage('main')">UX Portfolio</div>
+    <div class="logo" onclick="showPage('main')" data-i18n="nav.logo">UX Portfolio</div>
     <div class="nav-links">
-      <a href="javascript:void(0)" data-page="main" onclick="showPage('main')">Arbeiten</a>
-      <a href="javascript:void(0)" data-page="about" onclick="showPage('about')">Über mich</a>
+      <a href="javascript:void(0)" data-page="main" onclick="showPage('main')" data-i18n="nav.work">Arbeiten</a>
+      <a href="javascript:void(0)" data-page="about" onclick="showPage('about')" data-i18n="nav.about">Über mich</a>
     </div>
     <div class="nav-actions">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+        <span class="lang-divider">·</span>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
       <button id="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode umschalten" style="background:none;border:1px solid var(--border);border-radius:4px;padding:6px 14px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text-muted);font-size:14px;font-weight:400;font-family:'Inter',sans-serif;transition:all 0.3s;white-space:nowrap;">
         <svg id="theme-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <span id="theme-label">Dark</span>
@@ -668,65 +686,65 @@
 
       <div class="hero-content">
         <h1 class="hero-title">ROMINA<span class="hero-dot">.</span></h1>
-        <p class="hero-subtitle">UX Designerin · Zürich</p>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">UX Designerin · Zürich</p>
       </div>
       <div class="scroll-hint">
-        <span>Scrollen</span>
+        <span data-i18n="scroll.hint">Scrollen</span>
         <div class="scroll-line"></div>
       </div>
     </section>
 
     <section class="about-brief">
       <div class="about-brief-text">
-        <h3>Ich löse Probleme: Ob mit 54 Farbfeldern oder 54 User-Interviews</h3>
-        <p>Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.<br><br>Wenn ich nicht gerade designe, findest du mich beim Kuscheln mit meiner Katze, beim Akrobatik-Training oder beim Binge-Watchen von Netflix-Serien und Anime.</p>
+        <h3 data-i18n="brief.heading">Ich löse Probleme: Ob mit 54 Farbfeldern oder 54 User-Interviews</h3>
+        <p data-i18n="brief.text">Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.<br><br>Wenn ich nicht gerade designe, findest du mich beim Kuscheln mit meiner Katze, beim Akrobatik-Training oder beim Binge-Watchen von Netflix-Serien und Anime.</p>
       </div>
       <div class="about-brief-details">
         <div class="about-brief-item">
-          <span class="label">Aktuell</span>
-          <span class="value">UX Designerin, Ironforge Consulting AG</span>
+          <span class="label" data-i18n="brief.label.current">Aktuell</span>
+          <span class="value" data-i18n="brief.val.current">UX Designerin, Ironforge Consulting AG</span>
         </div>
         <div class="about-brief-item">
-          <span class="label">Schwerpunkte</span>
-          <span class="value">UX Konzept, UX Research, Innovation</span>
+          <span class="label" data-i18n="brief.label.focus">Schwerpunkte</span>
+          <span class="value" data-i18n="brief.val.focus">UX Konzept, UX Research, Innovation</span>
         </div>
         <div class="about-brief-item">
-          <span class="label">Zuvor</span>
-          <span class="value">Freelance B2C, Startup B2B, Agency B2C</span>
+          <span class="label" data-i18n="brief.label.before">Zuvor</span>
+          <span class="value" data-i18n="brief.val.before">Freelance B2C, Startup B2B, Agency B2C</span>
         </div>
         <a href="javascript:void(0)" class="about-brief-link" onclick="showPage('about')">
-          <span class="about-brief-label">Mehr über mich erfahren</span>
+          <span class="about-brief-label" data-i18n="brief.more">Mehr über mich erfahren</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </section>
 
     <div class="section-label">
-      <h2>UX Projekte</h2>
-      <span>2021 bis 2026</span>
+      <h2 data-i18n="section.ux">UX Projekte</h2>
+      <span data-i18n="section.ux.year">2021 bis 2026</span>
     </div>
 
     <div class="projects-grid" id="projects-grid-ux"></div>
 
     <div class="section-label-secondary">
-      <h2>Weitere Projekte</h2>
-      <span>2019 bis 2022</span>
+      <h2 data-i18n="section.more">Weitere Projekte</h2>
+      <span data-i18n="section.more.year">2019 bis 2022</span>
     </div>
 
     <div class="projects-grid projects-grid-more" id="projects-grid-more"></div>
 
     <div class="about-contact animate">
-      <h2>Lass uns vernetzen</h2>
+      <h2 data-i18n="contact.heading">Lass uns vernetzen</h2>
       <div class="contact-links">
         <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="cv.html" target="_blank">Lebenslauf</a>
-        <a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener">Arbeitszeugnisse</a>
-        <a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener">Zertifikate</a>
+        <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
+        <a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener" data-i18n="contact.refs">Arbeitszeugnisse</a>
+        <a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener" data-i18n="contact.certs">Zertifikate</a>
       </div>
     </div>
 
-    <footer><span>© 2026 Romina Schöni</span><span>UX Portfolio</span></footer>
+    <footer><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span></footer>
   </div>
 
   <!-- PROJECT DETAIL PAGES -->
@@ -742,10 +760,10 @@
   <div id="page-about" class="page">
     <div class="about-hero">
       <div class="about-left animate">
-        <h1>Immer neugierig, <br>immer hungrig,<br> meistens in der Luft<span class="hero-dot">.</span></h1>
-        <p>Ich bin Romina, UX-Designerin und offizielle Dosenöffnerin für zwei verschlafene Katzen.</p>
-        <p>Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.</p>
-        <p>Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern, beim Essen oder gemütlich beim Binge-Watchen.</p>
+        <h1 data-i18n="about.title">Immer neugierig, <br>immer hungrig,<br> meistens in der Luft<span class="hero-dot">.</span></h1>
+        <p data-i18n="about.p1">Ich bin Romina, UX-Designerin und offizielle Dosenöffnerin für zwei verschlafene Katzen.</p>
+        <p data-i18n="about.p2">Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.</p>
+        <p data-i18n="about.p3">Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern, beim Essen oder gemütlich beim Binge-Watchen.</p>
       </div>
       <div class="about-photo animate" style="transition-delay:0.15s;">
         <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina">
@@ -753,53 +771,53 @@
     </div>
 
     <div class="about-stats">
-      <div class="stat animate"><h4>7+</h4><p>Jahre Design Erfahrung</p></div>
-      <div class="stat animate" style="transition-delay:0.1s;"><h4>5+</h4><p>Jahre UX Erfahrung</p></div>
-      <div class="stat animate" style="transition-delay:0.2s;"><h4>150+</h4><p>Usability Tests</p></div>
+      <div class="stat animate"><h4>7+</h4><p data-i18n="about.stat.1">Jahre Design Erfahrung</p></div>
+      <div class="stat animate" style="transition-delay:0.1s;"><h4>5+</h4><p data-i18n="about.stat.2">Jahre UX Erfahrung</p></div>
+      <div class="stat animate" style="transition-delay:0.2s;"><h4>150+</h4><p data-i18n="about.stat.3">Usability Tests</p></div>
     </div>
 
     <div class="about-profile animate">
-      <h2>Was ich mitbringe</h2>
+      <h2 data-i18n="about.brings">Was ich mitbringe</h2>
       <div class="profile-grid">
 
         <!-- Links: Stärken -->
         <div class="profile-col">
-          <div class="profile-sub-label">Stärken</div>
+          <div class="profile-sub-label" data-i18n="about.strengths">Stärken</div>
           <div class="accordion">
             <div class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
-                <span class="accordion-label">Schnelle Auffassungsgabe</span>
+                <span class="accordion-label" data-i18n="acc.1.label">Schnelle Auffassungsgabe</span>
                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </button>
-              <div class="accordion-body"><p>Neue Domänen, neue Technologien, neue Tools, neue Teams: Ich finde mich schnell zurecht. Die Fähigkeit, komplexe Zusammenhänge rasch zu verstehen, hilft mir, früh sinnvoll beizutragen statt lange zuzuschauen.</p></div>
+              <div class="accordion-body"><p data-i18n="acc.1.text">Neue Domänen, neue Technologien, neue Tools, neue Teams: Ich finde mich schnell zurecht. Die Fähigkeit, komplexe Zusammenhänge rasch zu verstehen, hilft mir, früh sinnvoll beizutragen statt lange zuzuschauen.</p></div>
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
-                <span class="accordion-label">Strukturiertes Problemlösen</span>
+                <span class="accordion-label" data-i18n="acc.2.label">Strukturiertes Problemlösen</span>
                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </button>
-              <div class="accordion-body"><p>Ich gehe Probleme systematisch an: zuerst verstehen, dann priorisieren, dann lösen. Diese Struktur hilft mir, auch unter Zeitdruck klare Entscheidungen zu treffen und nicht im Chaos zu versinken.</p></div>
+              <div class="accordion-body"><p data-i18n="acc.2.text">Ich gehe Probleme systematisch an: zuerst verstehen, dann priorisieren, dann lösen. Diese Struktur hilft mir, auch unter Zeitdruck klare Entscheidungen zu treffen und nicht im Chaos zu versinken.</p></div>
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
-                <span class="accordion-label">Research-driven Design</span>
+                <span class="accordion-label" data-i18n="acc.3.label">Research-driven Design</span>
                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </button>
-              <div class="accordion-body"><p>Meinungen sind wertvoll, aber Menschen haben Annahmen und blinde Flecken. Deshalb nutze ich Research als Entscheidungsgrundlage und teste Hypothesen gezielt – ob per Hallway-Test oder strukturiertem Usability-Test.</p></div>
+              <div class="accordion-body"><p data-i18n="acc.3.text">Meinungen sind wertvoll, aber Menschen haben Annahmen und blinde Flecken. Deshalb nutze ich Research als Entscheidungsgrundlage und teste Hypothesen gezielt – ob per Hallway-Test oder strukturiertem Usability-Test.</p></div>
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
-                <span class="accordion-label">Business-orientiertes Denken</span>
+                <span class="accordion-label" data-i18n="acc.4.label">Business-orientiertes Denken</span>
                 <svg class="accordion-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </button>
-              <div class="accordion-body"><p>Als UX-Designerin stelle ich den Nutzer in den Fokus. Aber nicht jedes Projekt hat dieselben Ressourcen. Als Solo-Designerin in einem Startup habe ich gelernt, pragmatisch zu denken: Manchmal ist die zweitbeste UX-Lösung die beste Business-Entscheidung.</p></div>
+              <div class="accordion-body"><p data-i18n="acc.4.text">Als UX-Designerin stelle ich den Nutzer in den Fokus. Aber nicht jedes Projekt hat dieselben Ressourcen. Als Solo-Designerin in einem Startup habe ich gelernt, pragmatisch zu denken: Manchmal ist die zweitbeste UX-Lösung die beste Business-Entscheidung.</p></div>
             </div>
           </div>
         </div>
 
         <!-- Rechts: Fähigkeiten + Werkzeuge -->
         <div class="profile-col">
-          <div class="profile-sub-label">Fähigkeiten</div>
+          <div class="profile-sub-label" data-i18n="about.skills.lbl">Fähigkeiten</div>
           <div class="skill-tags" style="margin-bottom:40px;">
             <span>Lean UX Research</span>
             <span>UX Konzept & Prototyping</span>
@@ -813,7 +831,7 @@
             <span>Illustrationen</span>
             <span>Storyboarding</span>
           </div>
-          <div class="profile-sub-label">Werkzeuge</div>
+          <div class="profile-sub-label" data-i18n="about.tools.lbl">Werkzeuge</div>
           <div class="skill-tags">
             <span>Figma</span>
             <span>Jira</span>
@@ -829,31 +847,31 @@
     </div>
 
     <div class="about-testimonials animate">
-      <h2>Was andere über mich sagen</h2>
+      <h2 data-i18n="test.heading">Was andere über mich sagen</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card animate">
-          <p class="testimonial-quote">"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten."</p>
+          <p class="testimonial-quote" data-i18n="test.1">"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Axel.png" alt="Axel Schäfer"></div>
             <div><div class="testimonial-name">Axel Schäfer</div><div class="testimonial-role">UX Lead · Raiffeisen</div></div>
           </div>
         </div>
         <div class="testimonial-card animate" style="transition-delay:0.1s;">
-          <p class="testimonial-quote">"Was mir an Rominas Arbeit schon immer gefallen hat, ist ihre Fähigkeit, aus einer vagen Idee etwas völlig Neues entstehen zu lassen. Mit ihr zu arbeiten ist wie Pingpong spielen."</p>
+          <p class="testimonial-quote" data-i18n="test.2">"Was mir an Rominas Arbeit schon immer gefallen hat, ist ihre Fähigkeit, aus einer vagen Idee etwas völlig Neues entstehen zu lassen. Mit ihr zu arbeiten ist wie Pingpong spielen."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Diana.png" alt="Diana von Ow"></div>
             <div><div class="testimonial-name">Diana von Ow</div><div class="testimonial-role">UX Designer · Liip AG</div></div>
           </div>
         </div>
         <div class="testimonial-card animate" style="transition-delay:0.2s;">
-          <p class="testimonial-quote">"Für jede Organisation, die eine talentierte, erfahrene und leidenschaftliche UX-Designerin sucht, kann ich Romina uneingeschränkt empfehlen. Sie überzeugt nicht nur durch ihr fundiertes Fachwissen, sondern auch durch ihre Kreativität und ihren Innovationsgeist."</p>
+          <p class="testimonial-quote" data-i18n="test.3">"Für jede Organisation, die eine talentierte, erfahrene und leidenschaftliche UX-Designerin sucht, kann ich Romina uneingeschränkt empfehlen. Sie überzeugt nicht nur durch ihr fundiertes Fachwissen, sondern auch durch ihre Kreativität und ihren Innovationsgeist."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Nathaly.png" alt="Nathaly Tschanz"></div>
             <div><div class="testimonial-name">Nathaly Tschanz</div><div class="testimonial-role">Professor & Head of Degree Program · HSLU</div></div>
           </div>
         </div>
         <div class="testimonial-card animate" style="transition-delay:0.3s;">
-          <p class="testimonial-quote">"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."</p>
+          <p class="testimonial-quote" data-i18n="test.4">"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Minh%20Tien.png" alt="Minh Tien Mai"></div>
             <div><div class="testimonial-name">Minh Tien Mai</div><div class="testimonial-role">Chief Product Officer · Annanow AG</div></div>
@@ -1147,6 +1165,226 @@
       }
     ];
 
+    /* ── ENGLISH PROJECT DATA ── */
+    PROJECTS[0].en = {
+      name: 'Electronic Identity', type: 'UX Research · UX Concept',
+      meta: [
+        { label: 'Role', value: 'UX Designer, Lead Researcher' },
+        { label: 'Period', value: '2025 to 2026' },
+        { label: 'Team', value: 'PO, Scrum Master, 4 UX Designers & 2 UX Writers' },
+        { label: 'Industry', value: 'Public Administration' }
+      ],
+      content: {
+        leftTitle: 'Overview',
+        leftText: '<p>The project focused on designing a user-friendly digital identity solution for the Swiss population. I joined mid-project and conducted usability studies every two to three weeks to iteratively develop the concept.</p><p>The central question was how to combine complex security requirements with a simple, understandable user experience.</p>',
+        rightTitle: 'Challenge',
+        rightText: '<p>Digital identity is a sensitive topic: trust, privacy and accessibility all had to be addressed equally. Many citizens had reservations about digital solutions.</p><p>The biggest challenge: simplifying complex government processes so they are accessible to all age groups without compromising security.</p>'
+      },
+      process: {
+        title: 'Approach',
+        steps: [
+          { num: '01', title: 'User Research', text: '45+ qualitative interviews with various user groups: understanding needs, fears and expectations.' },
+          { num: '02', title: 'Concept', text: 'Creating personas, contributing to user flows and wireframes. Iterative refinement through regular feedback rounds.' },
+          { num: '03', title: 'Validation', text: 'Organising and conducting various usability studies, presenting results and recommendations for implementation.' }
+        ]
+      },
+      outcome: {
+        text: '',
+        stats: [
+          { value: '45+', label: 'User interviews' },
+          { value: '12+', label: 'Usability studies' },
+          { value: '3', label: 'Maze studies' },
+          { value: '40000', label: 'Test users for internal test phase' }
+        ]
+      },
+      nextProject: { id: 2, name: 'E-Banking Website' }
+    };
+    PROJECTS[1].en = {
+      name: 'E-Banking Website', type: 'UX Concept · Responsive Web · Prototyping',
+      meta: [
+        { label: 'Role', value: 'UX Designer' },
+        { label: 'Period', value: '2024 to 2025' },
+        { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers' },
+        { label: 'Industry', value: 'Financial Services' }
+      ],
+      content: {
+        leftTitle: 'Starting point',
+        leftText: '<p>The existing app concept had originally been developed for mobile: limited screen space, step-by-step flows, clear constraints. The challenge was to translate this concept meaningfully to web without simply making everything bigger.</p><p>Added to this were existing legacy web features that had to be integrated into the new concept — and which often fundamentally contradicted the app concept.</p><p>Instead, the goal was to use the additional space deliberately, account for different user behaviours and maintain consistency with the mobile app.</p>',
+        rightTitle: 'My approach',
+        rightText: '<p>I started with a thorough analysis of the existing app concept, spoke with developers and stakeholders and formed a clear picture of the technical and content constraints.</p><p>From this I developed a web UX concept that plays to the platform\'s strengths: simplified workflows, reduced steps and clear patterns for loading states and error messages.</p>'
+      },
+      process: {
+        title: 'Approach',
+        steps: [
+          { num: '01', title: 'Analysis', text: 'Thorough analysis of the existing app concept, conversations with developers and stakeholders, understanding technical constraints.' },
+          { num: '02', title: 'Concept', text: 'Web UX concept focusing on platform-specific strengths: simplified workflows, reduced steps, clear patterns for edge cases.' },
+          { num: '03', title: 'Prototyping', text: 'Interactive prototypes in Figma, based on the existing design system. Close coordination with UI designer and developers.' },
+          { num: '04', title: 'Validation', text: 'Quarterly tests with 6 participants each from Testingtime.' }
+        ]
+      },
+      outcome: {
+        customOutcome: true,
+        text: 'Large projects thrive on open communication. Better to ask once too many than to work in the wrong direction for too long. And: transparency in the team prevents mistakes before they happen.'
+      },
+      nextProject: { id: 3, name: 'Augmented Reality App' }
+    };
+    PROJECTS[2].en = {
+      name: 'Augmented Reality App', type: 'User Research · Field Research · Interaction Design · Mobile',
+      meta: [
+        { label: 'Role', value: 'Design & Research Lead' },
+        { label: 'Period', value: '2021 to 2023' },
+        { label: 'Team', value: '3 Developers, Product Lead, Business Lead' },
+        { label: 'Industry', value: 'Information Technology' }
+      ],
+      content: {
+        leftTitle: 'Starting point',
+        leftText: '<p>The first MVP of the AR app did not meet the daily needs of service technicians. The result: inefficient workflows, frustration and an AR feature almost nobody used.</p><p>The problems were concrete: hard-to-read text, confusing controls, cluttered screens and navigation that cost more time than it saved.</p>',
+        rightTitle: 'My approach',
+        rightText: '<p>I started with an intensive field research phase directly in the technicians\' work environment. Through observations, ethnographic methods and in-depth interviews, a clear picture emerged of how the technicians actually work and where the app lets them down.</p><p>I also conducted a heuristic evaluation to systematically capture and prioritise usability issues. Building on this, I developed a user-centred design strategy: reduce cognitive load, minimise errors, increase efficiency.</p>'
+      },
+      process: {
+        title: 'Approach',
+        steps: [
+          { num: '01', title: 'Field research', text: 'Observations and ethnographic interviews directly in the service technicians\' work environment, to understand how they actually work.' },
+          { num: '02', title: 'Heuristic evaluation', text: 'Structured analysis of the existing MVP using established usability heuristics: capturing, clustering and prioritising problems.' },
+          { num: '03', title: 'Design & wireframes', text: 'User-centred design strategy focused on cognitive offloading. User flows and wireframes developed iteratively.' },
+          { num: '04', title: 'Testing with real technicians', text: 'Iterative testing in the real work environment — not in a lab but where the app is actually used.' }
+        ]
+      },
+      outcome: {
+        text: 'The redesign had measurable impact: the AR feature was actively used after the redesign, instead of being avoided as before.',
+        stats: [
+          { value: '75%', label: 'Less time on tasks' },
+          { value: '50%', label: 'Fewer user errors' },
+          { value: 'AR active', label: 'Feature is now used' }
+        ],
+        reflection: {
+          title: 'Personal learnings',
+          text: 'Technology alone doesn\'t solve problems. Only by truly understanding how people think and act in their daily work can you build tools that actually work. Field research is not a nice-to-have — it\'s the foundation for everything else.'
+        }
+      },
+      nextProject: { id: 4, name: 'Exchange Programme Website' }
+    };
+    PROJECTS[3].en = {
+      name: 'Exchange Programme Website', type: 'User Interface · Visual Design · Campaign',
+      meta: [
+        { label: 'Role', value: 'Screen Designer' },
+        { label: 'Period', value: '2021–2022' },
+        { label: 'Team', value: 'Screen Designer, Art Director, Project Manager' },
+        { label: 'Industry', value: 'Education' }
+      ],
+      content: {
+        leftTitle: 'About Movetia',
+        leftText: '<p>Movetia is a Swiss organisation promoting exchange programmes and educational mobility for students, teachers and professionals.</p><p>I had the exciting opportunity to contribute to the user interface for the "Learning by Going" campaign: bold, colourful and dynamic. Target audience: young people and young adults.</p>',
+        rightTitle: 'Task & role',
+        rightText: '<p>As screen designer I worked closely with the art director to create a playful and appealing UI that fits the campaign and captures the visual energy of the "Learning by Going" world.</p><p>The design had to work consistently across desktop, tablet and mobile without losing the vibrancy of the visuals.</p>'
+      },
+      process: {
+        title: 'Design focus',
+        steps: [
+          { num: '01', title: 'Desktop design', text: 'Comprehensive layouts for the web experience: large, immersive visuals with clear hierarchy.' },
+          { num: '02', title: 'Mobile interface', text: 'Optimised mobile user experience: adapted navigation and touch-friendly interactions.' },
+          { num: '03', title: 'Visual consistency', text: 'Coherent design across all platforms: same colour world, typography and design language on every device.' },
+          { num: '04', title: 'Campaign integration', text: 'Seamless embedding of campaign visuals in UI components without sacrificing usability.' }
+        ]
+      },
+      outcome: {
+        customOutcome: true,
+        text: 'Working closely with the art director was enriching. The creative ping-pong brought the screens to a higher level than I would have reached alone.<br><br>In hindsight, the UI could have been more consistent, especially around colours and buttons. A lesson that has shaped my work with design systems ever since.'
+      },
+      nextProject: { id: 5, name: 'Animation Showreel' }
+    };
+    PROJECTS[4].en = {
+      name: 'Animation Showreel', type: 'Motion Design · 2D Animation · 3D Animation · Illustration',
+      meta: [
+        { label: 'Role', value: 'Motion Designer' },
+        { label: 'Period', value: '2019 to 2021' },
+        { label: 'Team', value: 'Art Director, Sound Design, Videographers' },
+        { label: 'Industries', value: 'Finance, Insurance, Entertainment, Government etc.' }
+      ],
+      content: {
+        leftTitle: 'Overview',
+        leftText: '<p>With over 2 years of experience as a motion designer, I created animations that bring brands to life — from simple UI transitions to complex 3D animations.</p><p>The showreel compiles work for clients such as PostFinance, UBS and Best of Swiss Web, as well as independent projects including a custom Rubik\'s Cube animation for this portfolio.</p>',
+        rightTitle: 'Context',
+        rightText: '<p>Animation and UX are not opposites for me — they reinforce each other. My motion experience feeds directly into my UX work: through precise micro-animations in prototypes, thoughtful transitions and animated presentations.</p><p>The showreel was created as a personal project to document my animation work and make the bridge between motion design and UX visible.</p>'
+      },
+      process: {
+        title: 'My creative process',
+        steps: [
+          { num: '01', title: 'Concept', text: 'Developing the visual narrative and storyboard before a single frame is animated.' },
+          { num: '02', title: 'Design', text: 'Creating all assets in Illustrator or Blender, optimised and prepared for animation.' },
+          { num: '03', title: 'Animation', text: 'Timing, easing and motion bring the design to life. This is where personality emerges.' },
+          { num: '04', title: 'Compositing', text: 'Combining all layers, sound design and final export for the respective channel.' }
+        ]
+      },
+      outcome: {
+        text: 'Animation is not a separate chapter for me — it\'s an integral part of my design practice. The ability to understand and use motion makes me a better UX designer.'
+      },
+      nextProject: { id: 6, name: 'Game Concept' }
+    };
+    PROJECTS[5].en = {
+      name: 'Game Concept', type: 'Mixed Reality · Game Design · Concept',
+      meta: [
+        { label: 'Role', value: 'UX Designer & Concept Designer' },
+        { label: 'Period', value: '2023' },
+        { label: 'Context', value: 'CAS AR/VR · FHGR' },
+        { label: 'Technology', value: 'Microsoft HoloLens' }
+      ],
+      content: {
+        leftTitle: 'Background',
+        leftText: '<p>Rimon Technologies, a Swiss AR startup, wanted to make their technology experienceable in a playful way. As part of my CAS in Augmented & Virtual Reality at FHGR, I developed a complete concept for a Mixed Reality escape room.</p><p>The escape room was to serve as a showcase: tech-savvy individuals could experience first-hand what is possible with the HoloLens — no prior knowledge required, no game master needed.</p>',
+        rightTitle: 'My approach',
+        rightText: '<p>I developed the concept with a complete UX process: from user research and two detailed personas to a storyboard for six puzzles and a complete asset plan.</p><p>At the centre is Lexi, an AI as an animated 3D sphere that creates tension with danger zones and glitch effects. Accessibility was part of the design from the start.</p>'
+      },
+      process: {
+        title: 'Approach',
+        steps: [
+          { num: '01', title: 'Research & personas', text: 'Target audience analysis and creation of two detailed personas, including a 55-year-old engineer with colour blindness and a 28-year-old startup developer.' },
+          { num: '02', title: 'Story & gameplay', text: 'Pixar-style narrative structure: Rimon\'s holo-office has been hacked, the AI Lexi is going haywire. The player has 30 minutes to reset Lexi and escape the office.' },
+          { num: '03', title: 'Puzzle design', text: 'Six original puzzles designed for HoloLens hand-tracking and eye-tracking, from scaling puzzles to physics simulations to 3D logic puzzles.' },
+          { num: '04', title: 'Asset planning', text: 'Complete production plan for 2D elements, 3D assets, animation, sound design and programming. Total estimated effort: 80 to 100 days.' }
+        ]
+      },
+      outcome: {
+        customOutcome: true,
+        text: 'A complete game concept at the intersection of gamification and enterprise AR. The project showed me how far UX methodology reaches: from user research to production planning, from narrative to sound design.',
+        reflection: {
+          title: 'Personal learnings',
+          text: 'Game design and UX design share more than you might think: both revolve around motivation, feedback and the right moment of surprise. The challenge of designing six puzzles for hand-tracking significantly deepened my understanding of physical interaction and spatial thinking.'
+        }
+      },
+      nextProject: { id: 7, name: 'Hack Zurich' }
+    };
+    PROJECTS[6].en = {
+      name: 'Hack Zurich', type: 'AR · VR · Prototyping · Unity',
+      meta: [
+        { label: 'Role', value: 'Participant' },
+        { label: 'Period', value: 'One weekend' },
+        { label: 'Team', value: '3 people' },
+        { label: 'Event', value: 'Hack Zurich' }
+      ],
+      content: {
+        leftTitle: 'Overview',
+        leftText: '<p>Within a single weekend, our team of three developed an AR and VR idea plus prototypes for an existing problem.</p><p>The challenge was set by Swiss Re: as one of the world\'s leading reinsurers, Swiss Re faces the challenge of correctly insuring companies and buildings in the context of climate change. Natural disasters such as flooding are becoming more frequent and difficult to calculate. Our concept addresses this, aiming to better prepare affected companies for such events.</p>',
+        rightTitle: 'My tasks',
+        rightText: '<p>I designed an appropriate solution, created a water simulation in Unity, developed the storyline for the video and handled video production using stock footage.</p><p>The concept is illustrated in the accompanying video, which shows the approach and the prototype implementations.</p>'
+      },
+      process: {
+        title: 'Approach',
+        steps: [
+          { num: '01', title: 'Problem finding', text: 'Analysing Swiss Re\'s challenge: how can companies and buildings be correctly insured and better prepared as natural disasters like flooding become more frequent? From this we developed a focused AR/VR solution idea.' },
+          { num: '02', title: 'Water simulation', text: 'Technical implementation of a water simulation in Unity as the central element of the AR prototype.' },
+          { num: '03', title: 'Storytelling & video', text: 'Developing the storyline and producing the concept video with stock footage to visualise the idea.' },
+          { num: '04', title: 'Presentation', text: 'Pitching the concept to the jury at the hackathon.' }
+        ]
+      },
+      outcome: {
+        customOutcome: true,
+        text: 'We made it to the overall finalists and won an Honourable Mention in the Extended Reality Challenge. A weekend under extreme time pressure showed me how much is possible when a team works together with focus towards a single goal.'
+      },
+      nextProject: { id: 1, name: 'Electronic Identity', labelOverride: 'First project' }
+    };
+
     var FOLDER_KEYWORDS = {
       'e-id': ['e-id', 'eid', 'identit'],
       'banking': ['ebanking', 'banking', 'raiffeisen'],
@@ -1247,8 +1485,8 @@
       cardHTML += '</div>' +
         '<div class="project-overlay">' +
         '<div class="project-num">' + p.num + '</div>' +
-        '<div class="project-name">' + p.name + '</div>' +
-        '<div class="project-type">' + p.type + '</div>' +
+        '<div class="project-name">' + pl(p,'name') + '</div>' +
+        '<div class="project-type">' + pl(p,'type') + '</div>' +
         '</div></div>';
       return cardHTML;
     }
@@ -1268,6 +1506,10 @@
           gridMore.innerHTML += html;
         }
       });
+    }
+
+    function renderAllProjectPages() {
+      PROJECTS.forEach(function(p) { renderProjectPage(p); });
     }
 
     function renderGallery(images) {
@@ -1297,15 +1539,21 @@
       var heroImg = hasImg ? imgs[0] : null;
       var galleryImgs = hasImg ? imgs.slice(1) : [];
 
+      var _meta = pl(p,'meta');
+      var _content = pl(p,'content');
+      var _process = pl(p,'process');
+      var _outcome = pl(p,'outcome');
+      var _next = pl(p,'nextProject');
+
       var html = '<div class="project-detail-hero animate">' +
         '<a href="javascript:void(0)" class="project-detail-back" onclick="showPage(\'main\')">' +
-        '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Zurück</a>' +
+        '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' + t('proj.back') + '</a>' +
         '<div class="project-num">' + p.num + '</div>' +
-        '<h1>' + p.name + '</h1>' +
-        '<div class="project-type">' + p.type + '</div>' +
+        '<h1>' + pl(p,'name') + '</h1>' +
+        '<div class="project-type">' + pl(p,'type') + '</div>' +
         '<div class="project-meta">';
 
-      p.meta.forEach(function(m) {
+      _meta.forEach(function(m) {
         html += '<div class="project-meta-item"><span class="label">' + m.label + '</span><span class="value">' + m.value + '</span></div>';
       });
       html += '</div></div>';
@@ -1326,8 +1574,8 @@
 
       // Content
       html += '<div class="project-detail-content animate">' +
-        '<div><h2>' + p.content.leftTitle + '</h2>' + p.content.leftText + '</div>' +
-        '<div style="transition-delay:0.12s;"><h2>' + p.content.rightTitle + '</h2>' + p.content.rightText + '</div>' +
+        '<div><h2>' + _content.leftTitle + '</h2>' + _content.leftText + '</div>' +
+        '<div style="transition-delay:0.12s;"><h2>' + _content.rightTitle + '</h2>' + _content.rightText + '</div>' +
         '</div>';
 
       // Extra section (e-banking)
@@ -1348,9 +1596,9 @@
       // Process
       if (!p.noProcess) {
         html += '<div class="project-process animate">' +
-          '<h2>' + p.process.title + '</h2>' +
+          '<h2>' + _process.title + '</h2>' +
           '<div class="process-steps">';
-        p.process.steps.forEach(function(s, i) {
+        _process.steps.forEach(function(s, i) {
           html += '<div class="process-step animate" style="transition-delay:' + (i * 0.1) + 's;"><div class="step-num">' + s.num + '</div><h4>' + s.title + '</h4><p>' + s.text + '</p></div>';
         });
         html += '</div></div>';
@@ -1359,7 +1607,7 @@
       // Showreel-Block als Variable — wird am Schluss eingefügt
       var showreelHTML = '';
       if (p.isShowreel && p.videos) {
-        showreelHTML += '<div class="showreel-highlights"><h2>Einblicke</h2>';
+        showreelHTML += '<div class="showreel-highlights"><h2>' + t('proj.highlights') + '</h2>';
 
         if (p.videos.main) {
           showreelHTML += '<div class="video-container" style="margin-bottom:32px;">' +
@@ -1378,13 +1626,13 @@
               '<div class="video-thumbnail" onclick="playVideo(\'' + v.id + '\', this)">' +
               '<img class="thumb-img" src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" alt="" onerror="this.style.display=\'none\'">' +
               '<div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><polygon points="8,5 20,12 8,19" fill="white"/></svg></div>' +
-              '<span class="video-label">Abspielen</span></div></div></div>' +
+              '<span class="video-label">' + t('proj.play') + '</span></div></div></div>' +
               '<h4>' + v.title + '</h4><p>' + v.text + '</p>' +
               '<div class="tool-tags">';
             v.tools.forEach(function(t) { showreelHTML += '<span class="tool-tag">' + t + '</span>'; });
             showreelHTML += '</div></div>';
           });
-          showreelHTML += '<div class="highlight-card"><h4>Weitere Projekte</h4><p>Motion Graphics, Typografie-Animationen und UI-Animationen für verschiedene Kunden und Kampagnen.</p><div class="tool-tags"><span class="tool-tag">Cinema 4D</span><span class="tool-tag">After Effects</span></div></div>';
+          showreelHTML += '<div class="highlight-card"><h4>' + t('proj.more.work') + '</h4><p>' + t('proj.more.work.text') + '</p><div class="tool-tags"><span class="tool-tag">Cinema 4D</span><span class="tool-tag">After Effects</span></div></div>';
           showreelHTML += '</div>';
         }
 
@@ -1394,29 +1642,29 @@
 
       // Outcome
       if (!p.noOutcome) {
-        html += '<div class="project-outcome animate"><h2>' + (p.outcome.customOutcome ? 'Persönliche Learnings' : 'Ergebnis') + '</h2>' +
-          '<p>' + p.outcome.text + '</p>';
+        html += '<div class="project-outcome animate"><h2>' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2>' +
+          '<p>' + _outcome.text + '</p>';
 
-        if (p.outcome.customOutcome && p.outcome.learnings) {
+        if (_outcome.customOutcome && _outcome.learnings) {
           html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;">';
-          p.outcome.learnings.forEach(function(l) {
+          _outcome.learnings.forEach(function(l) {
             html += '<div style="padding:32px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,0.01);">' +
               '<h4 style="font-family:\'Inter\',sans-serif;font-size:14px;font-weight:500;color:var(--text-primary);margin-bottom:12px;">' + l.title + '</h4>' +
               '<p>' + l.text + '</p></div>';
           });
           html += '</div>';
-        } else if (p.outcome.stats) {
+        } else if (_outcome.stats) {
           html += '<div class="outcome-stats">';
-          p.outcome.stats.forEach(function(s, i) {
+          _outcome.stats.forEach(function(s, i) {
             html += '<div class="outcome-stat animate" style="transition-delay:' + (i * 0.1) + 's;"><h4>' + s.value + '</h4><p>' + s.label + '</p></div>';
           });
           html += '</div>';
         }
 
-        if (p.outcome.reflection) {
+        if (_outcome.reflection) {
           html += '<div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);max-width:640px;">' +
-            '<h3 style="font-size:22px;margin-bottom:16px;">' + p.outcome.reflection.title + '</h3>' +
-            '<p>' + p.outcome.reflection.text + '</p></div>';
+            '<h3 style="font-size:22px;margin-bottom:16px;">' + _outcome.reflection.title + '</h3>' +
+            '<p>' + _outcome.reflection.text + '</p></div>';
         }
         if (p.outcome.badge) {
           html += '<div style="margin-top:40px;">' +
@@ -1431,14 +1679,14 @@
       if (p.pdfEmbed) {
         var pdfAbsUrl = 'https://rominasch0eni.github.io/portfolio/' + p.pdfEmbed;
         var viewerUrl = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfAbsUrl) + '&embedded=true';
-        html += '<div class="project-gallery animate"><h2>Konzeptdokument</h2>' +
+        html += '<div class="project-gallery animate"><h2>' + t('proj.pdf.doc') + '</h2>' +
           '<div style="border:1px solid var(--border);overflow:hidden;">' +
           '<iframe src="' + viewerUrl + '" width="100%" style="height:700px;display:block;border:none;" allowfullscreen></iframe>' +
           '</div>' +
           '<div style="margin-top:16px;">' +
           '<a href="' + p.pdfEmbed + '" target="_blank" style="font-size:14px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color 0.3s;" onmouseover="this.style.color=\'var(--accent)\'" onmouseout="this.style.color=\'var(--text-muted)\'">' +
           '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 10v6m0 0l-3-3m3 3l3-3M3 15v4a2 2 0 002 2h14a2 2 0 002-2v-4"/><path d="M7 10V7a5 5 0 0110 0v3"/></svg>' +
-          'PDF herunterladen</a></div></div>';
+          t('proj.pdf.dl') + '</a></div></div>';
       }
 
       // Showreel-Einblicke — immer am Schluss
@@ -1464,7 +1712,7 @@
         var videoIds = [p.videos.main];
         if (p.videos.secondary) videoIds.push(p.videos.secondary);
         var gridStyle = videoIds.length > 1 ? 'display:grid;grid-template-columns:1fr 1fr;gap:16px;' : '';
-        html += '<div class="project-gallery animate"><h2>Video</h2><div style="' + gridStyle + '">';
+        html += '<div class="project-gallery animate"><h2>' + t('proj.video') + '</h2><div style="' + gridStyle + '">';
         videoIds.forEach(function(v) {
           html += '<div class="video-container">' +
             '<div class="video-thumbnail" onclick="playVideo(\'' + v.id + '\', this)">' +
@@ -1477,21 +1725,22 @@
       }
 
       // Next project
-      var nextLabel = p.nextProject.labelOverride || 'Nächstes Projekt';
+      var _nextLabelKey = _next.labelOverride ? null : 'proj.next';
+      var nextLabel = _next.labelOverride || t('proj.next');
       html += '<div class="project-next animate"><div>' +
         '<div class="next-label">' + nextLabel + '</div>' +
-        '<a href="javascript:void(0)" onclick="showPage(\'project-' + p.nextProject.id + '\')">' + p.nextProject.name + ' <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>' +
+        '<a href="javascript:void(0)" onclick="showPage(\'project-' + _next.id + '\')">' + _next.name + ' <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>' +
         '</div></div>';
 
-      html += '<div class="about-contact"><h2>Lass uns vernetzen</h2>' +
+      html += '<div class="about-contact"><h2>' + t('contact.heading') + '</h2>' +
         '<div class="contact-links">' +
         '<a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>' +
         '<a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>' +
-        '<a href="cv.html" target="_blank">Lebenslauf</a>' +
-        '<a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener">Arbeitszeugnisse</a>' +
-        '<a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener">Zertifikate</a>' +
+        '<a href="cv.html" target="_blank">' + t('contact.cv') + '</a>' +
+        '<a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener">' + t('contact.refs') + '</a>' +
+        '<a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener">' + t('contact.certs') + '</a>' +
         '</div></div>';
-      html += '<footer><span>© 2026 Romina</span><span>UX Portfolio</span></footer>';
+      html += '<footer><span>© 2026 Romina</span><span>' + t('footer.label') + '</span></footer>';
 
       page.innerHTML = html;
     }
@@ -1562,6 +1811,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
+      applyTranslations();
       // Hash-Routing: beim Laden die richtige Seite anzeigen
       var hash = window.location.hash.replace('#', '');
       var startPage = (hash && document.getElementById('page-' + hash)) ? hash : 'main';
@@ -1825,13 +2075,13 @@
       <button id="chat-close" onclick="toggleChat()" aria-label="Chat schliessen">✕</button>
     </div>
     <div id="chat-welcome">
-      <span class="welcome-title">Hi, ich bin Dot!</span>
-      <span class="welcome-sub">Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</span>
+      <span class="welcome-title" data-i18n="chat.welcome.title">Hi, ich bin Dot!</span>
+      <span class="welcome-sub" data-i18n="chat.welcome.sub">Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</span>
     </div>
     <div id="chat-messages"><div class="chat-spacer"></div>
     </div>
     <div id="chat-input-row">
-      <input id="chat-input" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')sendChat()" maxlength="300"/>
+      <input id="chat-input" type="text" placeholder="Deine Frage..." data-i18n-ph="chat.placeholder" onkeydown="if(event.key==='Enter')sendChat()" maxlength="300"/>
       <button id="chat-send" onclick="sendChat()">→</button>
     </div>
     <div id="chat-suggestions"></div>
@@ -2001,7 +2251,7 @@
       fetch('https://portfolio-two-virid-51.vercel.app/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, history: chatHistory.slice(-8) })
+        body: JSON.stringify({ message: msg, history: chatHistory.slice(-8), lang: window.currentLang || 'de' })
       })
       .then(function(r) { return r.json(); })
       .then(function(data) {
