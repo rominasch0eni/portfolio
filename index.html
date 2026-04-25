@@ -419,14 +419,15 @@
       background: linear-gradient(135deg, #74d7f7, #c084fc, #f472b6, #818cf8, #67e8f9, #e879f9);
       background-size: 300% 300%;
       animation: holographic 4s ease infinite;
-      /* closed: clipped to exact button size & position */
       clip-path: inset(calc(100% - 84px) 32px 32px calc(100% - 84px) round 4px);
       transition: clip-path 0.65s cubic-bezier(0.23,1,0.32,1);
       pointer-events: none;
+      opacity: 0; /* hidden by default — real button stays visible */
     }
     #chat-overlay.open {
       clip-path: inset(0px 0px 0px 0px round 0px);
       pointer-events: all;
+      opacity: 1;
     }
 
     /* inner panel: invisible while gradient is expanding */
@@ -1714,8 +1715,21 @@
 
     function toggleChat() {
       chatOpen = !chatOpen;
-      document.getElementById('chat-overlay').classList.toggle('open', chatOpen);
-      if (chatOpen) setTimeout(function() { document.getElementById('chat-input').focus(); }, 1100);
+      var overlay = document.getElementById('chat-overlay');
+      if (chatOpen) {
+        overlay.style.opacity = '1';           // flash visible at button size
+        overlay.style.transition = 'clip-path 0.65s cubic-bezier(0.23,1,0.32,1)';
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {   // double rAF to ensure repaint
+            overlay.classList.add('open');
+          });
+        });
+        setTimeout(function() { document.getElementById('chat-input').focus(); }, 1100);
+      } else {
+        overlay.style.transition = 'clip-path 0.65s cubic-bezier(0.23,1,0.32,1)';
+        overlay.classList.remove('open');
+        setTimeout(function() { overlay.style.opacity = '0'; }, 680); // hide after contract
+      }
     }
 
     function sendChat() {
