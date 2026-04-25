@@ -545,17 +545,18 @@
     }
 
     #chat-suggestions {
-      display: flex; flex-wrap: wrap; gap: 8px; padding: 0 28px 12px;
+      display: flex; gap: 10px; padding: 0 28px 14px;
       max-width: 680px; width: 100%; margin: 0 auto; box-sizing: border-box;
     }
     .chat-suggestion {
+      flex: 1;
       background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
-      color: #fff; font-size: 13px; font-family: 'Inter', sans-serif;
-      padding: 7px 14px; border-radius: 20px; cursor: pointer;
+      color: #fff; font-size: 15px; font-family: 'Inter', sans-serif;
+      padding: 13px 18px; border-radius: 24px; cursor: pointer;
       transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
+      text-align: center; line-height: 1.3;
     }
-    .chat-suggestion:hover { background: rgba(255,255,255,0.3); transform: translateY(-1px); }
+    .chat-suggestion:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
 
     #chat-input-row {
       display: flex; border-top: 1px solid rgba(255,255,255,0.2); padding: 20px 28px;
@@ -1814,13 +1815,7 @@
     <div id="chat-welcome">Hi ich bin Ina, was möchtest du über Romina wissen?</div>
     <div id="chat-messages"><div class="chat-spacer"></div>
     </div>
-    <div id="chat-suggestions">
-      <button class="chat-suggestion" onclick="askSuggestion(this)">Wer ist Romina?</button>
-      <button class="chat-suggestion" onclick="askSuggestion(this)">Was sind ihre Stärken?</button>
-      <button class="chat-suggestion" onclick="askSuggestion(this)">Warum mit ihr arbeiten?</button>
-      <button class="chat-suggestion" onclick="askSuggestion(this)">Etwas Persönliches?</button>
-      <button class="chat-suggestion" onclick="askSuggestion(this)">Welche Tools nutzt sie?</button>
-    </div>
+    <div id="chat-suggestions"></div>
     <div id="chat-input-row">
       <input id="chat-input" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')sendChat()" maxlength="300"/>
       <button id="chat-send" onclick="sendChat()">→</button>
@@ -1834,42 +1829,75 @@
     var chatWaiting = false;
     var skipNextUserAnim = false;
 
+    var suggestionPool = [
+      'Wer ist Romina?',
+      'Was sind ihre Stärken?',
+      'Warum mit ihr arbeiten?',
+      'Etwas Persönliches?',
+      'Welche Tools nutzt sie?',
+      'Wie arbeitet sie im Team?',
+      'Was motiviert sie?',
+      'Remote oder vor Ort?',
+      'Welche Rolle sucht sie?',
+      'Was macht ihr Spass?'
+    ];
+    var usedSuggestions = [];
+
+    function getNextSuggestion() {
+      var available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
+      if (available.length === 0) { usedSuggestions = []; available = suggestionPool.slice(); }
+      var pick = available[Math.floor(Math.random() * available.length)];
+      usedSuggestions.push(pick);
+      return pick;
+    }
+
+    function renderSuggestions() {
+      var container = document.getElementById('chat-suggestions');
+      container.innerHTML = '';
+      for (var i = 0; i < 2; i++) {
+        var btn = document.createElement('button');
+        btn.className = 'chat-suggestion';
+        btn.textContent = getNextSuggestion();
+        btn.onclick = function() { askSuggestion(this); };
+        container.appendChild(btn);
+      }
+    }
+
     function toggleChat() {
       chatOpen = !chatOpen;
       var overlay = document.getElementById('chat-overlay');
       if (chatOpen) {
-        overlay.style.opacity = '1';           // flash visible at button size
+        overlay.style.opacity = '1';
         overlay.style.transition = 'clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1)';
         requestAnimationFrame(function() {
           requestAnimationFrame(function() {
             overlay.classList.add('open');
           });
         });
+        renderSuggestions();
         setTimeout(function() { document.getElementById('chat-input').focus(); }, 1150);
       } else {
         overlay.style.transition = 'clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1)';
         overlay.classList.remove('open');
-        setTimeout(function() { overlay.style.opacity = '0'; }, 680); // hide after contract
+        setTimeout(function() { overlay.style.opacity = '0'; }, 680);
       }
     }
 
     function askSuggestion(btn) {
       var text = btn.textContent.trim();
 
-      // Shrink + fade pill in place
       btn.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
       btn.style.transform = 'scale(0.85)';
       btn.style.opacity = '0';
 
       setTimeout(function() {
-        btn.style.transition = '';
-        btn.style.transform = '';
-        btn.style.opacity = '';
+        renderSuggestions();
         skipNextUserAnim = true;
         document.getElementById('chat-input').value = text;
         sendChat();
       }, 270);
     }
+
 
     function typeWriter(el, text) {
       var i = 0;
