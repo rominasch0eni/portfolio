@@ -134,7 +134,7 @@
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
     .scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); }
     .scroll-hint span { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-    .scroll-line { width: 1.5px; height: 40px; background: var(--accent); animation: scrollPulse 2s ease infinite; }
+    .scroll-line { width: 2.5px; height: 40px; background: var(--accent); animation: scrollPulse 2s ease infinite; }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.5); } 50% { opacity: 1; transform: scaleY(1); } }
 
     /* ABOUT BRIEF */
@@ -573,17 +573,18 @@
     .scroll-line { background: var(--accent-gradient) !important; }
 
     nav .nav-links a.nav-active {
-      border-bottom: 1.5px solid transparent;
+      border-bottom: 2.5px solid transparent;
       border-image: var(--accent-gradient) 1;
     }
 
     .about-contact a::after,
     .page-connect a::after {
       background: var(--accent-gradient) !important;
+      height: 2px !important;
     }
 
     /* Accordion hover border */
-    .accordion-item:hover { border-image: var(--accent-gradient) 1; }
+    .accordion-item:hover { border-bottom: 2px solid transparent; border-image: var(--accent-gradient) 1; }
   </style>
   <script src="assets/manifest.js"></script>
   <script src="assets/cube/cat.js"></script>
