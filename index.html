@@ -489,7 +489,7 @@
 
     #chat-messages {
       flex: 1; overflow-y: auto; padding: 28px 24px;
-      display: flex; flex-direction: column; gap: 14px;
+      display: flex; flex-direction: column; gap: 14px; justify-content: flex-end;
       max-width: 680px; width: 100%; margin: 0 auto; box-sizing: border-box;
     }
     /* scrollbar subtle */
@@ -1845,8 +1845,54 @@
     }
 
     function askSuggestion(btn) {
-      document.getElementById('chat-input').value = btn.textContent;
-      sendChat();
+      var text = btn.textContent.trim();
+
+      // Create flying clone of the pill
+      var rect = btn.getBoundingClientRect();
+      var clone = document.createElement('div');
+      clone.textContent = text;
+      clone.style.cssText = [
+        'position:fixed',
+        'left:' + rect.left + 'px',
+        'top:' + rect.top + 'px',
+        'width:' + rect.width + 'px',
+        'height:' + rect.height + 'px',
+        'padding:7px 14px',
+        'box-sizing:border-box',
+        'border-radius:20px',
+        'background:rgba(255,255,255,0.18)',
+        'border:1px solid rgba(255,255,255,0.35)',
+        'color:#fff',
+        'font-size:13px',
+        'font-family:Inter,sans-serif',
+        'z-index:9999',
+        'pointer-events:none',
+        'transition:left 0.45s cubic-bezier(0.23,1,0.32,1),top 0.45s cubic-bezier(0.23,1,0.32,1),width 0.45s cubic-bezier(0.23,1,0.32,1),border-radius 0.45s,background 0.45s,opacity 0.2s ease 0.3s',
+        'white-space:nowrap'
+      ].join(';');
+      document.body.appendChild(clone);
+
+      // Target: bottom-right of chat-messages area
+      var msgsEl = document.getElementById('chat-messages');
+      var msgsRect = msgsEl.getBoundingClientRect();
+      var targetW = Math.min(rect.width + 40, msgsRect.width * 0.72);
+      var targetLeft = msgsRect.right - targetW - 24;
+      var targetTop = msgsRect.bottom - rect.height - 14;
+
+      requestAnimationFrame(function() { requestAnimationFrame(function() {
+        clone.style.left = targetLeft + 'px';
+        clone.style.top = targetTop + 'px';
+        clone.style.width = targetW + 'px';
+        clone.style.borderRadius = '20px 20px 5px 20px';
+        clone.style.background = 'rgba(0,0,0,0.28)';
+        clone.style.opacity = '0';
+      }); });
+
+      setTimeout(function() {
+        clone.remove();
+        document.getElementById('chat-input').value = text;
+        sendChat();
+      }, 480);
     }
 
     function typeWriter(el, text) {
