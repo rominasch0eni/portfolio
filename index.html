@@ -146,9 +146,10 @@
     .about-brief-item .label { color: var(--text-muted); opacity: 0.6; }
     .about-brief-item .value { font-size: 16px; font-weight: 400; color: var(--text-primary); }
     .about-brief-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; transition: gap 0.3s ease; position: relative; }
-    .about-brief-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--accent-gradient); transition: width 0.3s ease; }
+    .about-brief-label { position: relative; }
+    .about-brief-label::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--accent-gradient); transition: width 0.3s ease; }
     .about-brief-link:hover { gap: 14px; }
-    .about-brief-link:hover::after { width: 100%; }
+    .about-brief-link:hover .about-brief-label::after { width: 100%; }
 
     /* SECTION LABEL */
     .section-label { padding: 100px 48px 40px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); }
@@ -651,7 +652,7 @@
           <span class="value">Freelance B2C, Startup B2B, Agency B2C</span>
         </div>
         <a href="javascript:void(0)" class="about-brief-link" onclick="showPage('about')">
-          Mehr über mich erfahren
+          <span class="about-brief-label">Mehr über mich erfahren</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
