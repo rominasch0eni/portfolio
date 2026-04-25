@@ -145,8 +145,10 @@
     .about-brief-item { display: flex; flex-direction: column; gap: 6px; }
     .about-brief-item .label { color: var(--text-muted); opacity: 0.6; }
     .about-brief-item .value { font-size: 16px; font-weight: 400; color: var(--text-primary); }
-    .about-brief-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; transition: gap 0.3s ease; }
-    .about-brief-link:hover { gap: 14px; color: var(--accent); filter: brightness(1.1); }
+    .about-brief-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; transition: gap 0.3s ease; position: relative; }
+    .about-brief-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--accent-gradient); transition: width 0.3s ease; }
+    .about-brief-link:hover { gap: 14px; }
+    .about-brief-link:hover::after { width: 100%; }
 
     /* SECTION LABEL */
     .section-label { padding: 100px 48px 40px; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); }
