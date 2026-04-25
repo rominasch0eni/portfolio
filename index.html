@@ -351,6 +351,18 @@
       color: var(--text-primary); text-decoration: none; transition: color 0.2s;
     }
     .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu-close {
+      position: absolute; top: 24px; right: 24px;
+      background: none; border: 1px solid var(--border); border-radius: 50%;
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--text-muted); cursor: pointer; transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-menu-close:hover { color: var(--text-primary); border-color: var(--text-muted); }
+    .mobile-lang-select {
+      display: none;
+      font-size: 16px !important; padding: 8px 32px 8px 16px !important;
+      border-color: var(--border) !important; color: var(--text-muted) !important;
+    }
 
     @media (max-width: 768px) {
       nav { padding: 20px 24px; }
@@ -393,6 +405,7 @@
       .video-showcase { padding: 0 24px 48px; }
 
       .lang-select { display: none; }
+      .mobile-lang-select { display: block; }
 
       /* Chat mobile */
       #chat-inner { inset: 0; }
@@ -677,8 +690,13 @@
 
   <!-- Mobile menu overlay -->
   <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Menü schliessen">✕</button>
     <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu()" data-i18n="mobile.work">Arbeiten</a>
     <a href="javascript:void(0)" onclick="showPage('about'); closeMobileMenu()" data-i18n="mobile.about">Über mich</a>
+    <select class="lang-select mobile-lang-select" onchange="setLang(this.value)" aria-label="Language">
+      <option value="de">DE</option>
+      <option value="en">EN</option>
+    </select>
   </div>
 
   <nav>
