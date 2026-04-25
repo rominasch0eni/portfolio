@@ -63,7 +63,7 @@ window.TRANSLATIONS = {
     'test.4':             '"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."',
 
     'chat.welcome.title': 'Hi, ich bin Dot!',
-    'chat.welcome.sub':   'Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?',
+    'chat.welcome.sub':   'Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du über Romina wissen?',
     'chat.placeholder':   'Deine Frage...',
 
     /* Project render strings */
