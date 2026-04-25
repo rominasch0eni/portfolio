@@ -503,9 +503,16 @@
       60%  { transform: scale(1.03) translateY(-1px); }
       100% { opacity: 1; transform: scale(1) translateY(0); }
     }
+    @keyframes msg-slide-right {
+      0%   { opacity: 0; transform: translateX(18px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
     .chat-msg {
       max-width: 72%; font-size: 14px; line-height: 1.65; padding: 12px 18px;
       animation: msg-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    .chat-msg.slide-in {
+      animation: msg-slide-right 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
     }
     .chat-msg.bot {
       background: rgba(255,255,255,0.92);
@@ -1849,58 +1856,19 @@
     function askSuggestion(btn) {
       var text = btn.textContent.trim();
 
-      // Create flying clone of the pill
-      var rect = btn.getBoundingClientRect();
-      var clone = document.createElement('div');
-      clone.textContent = text;
-      clone.style.cssText = [
-        'position:fixed',
-        'left:' + rect.left + 'px',
-        'top:' + rect.top + 'px',
-        'width:' + rect.width + 'px',
-        'height:' + rect.height + 'px',
-        'padding:7px 14px',
-        'box-sizing:border-box',
-        'border-radius:20px',
-        'background:rgba(255,255,255,0.18)',
-        'border:1px solid rgba(255,255,255,0.35)',
-        'color:#fff',
-        'font-size:13px',
-        'font-family:Inter,sans-serif',
-        'z-index:9999',
-        'pointer-events:none',
-        'transition:left 0.45s cubic-bezier(0.23,1,0.32,1),top 0.45s cubic-bezier(0.23,1,0.32,1),width 0.45s cubic-bezier(0.23,1,0.32,1),border-radius 0.45s,background 0.45s,opacity 0.2s ease 0.3s',
-        'white-space:nowrap'
-      ].join(';');
-      document.body.appendChild(clone);
-
-      // Target: bottom-right of chat-messages area
-      var msgsEl = document.getElementById('chat-messages');
-      var msgsRect = msgsEl.getBoundingClientRect();
-      var targetW = Math.min(rect.width + 40, msgsRect.width * 0.72);
-      var targetLeft = msgsRect.right - targetW - 24;
-      var targetTop = msgsRect.bottom - rect.height - 14;
-
-      requestAnimationFrame(function() { requestAnimationFrame(function() {
-        clone.style.left = targetLeft + 'px';
-        clone.style.top = targetTop + 'px';
-        clone.style.width = targetW + 'px';
-        clone.style.borderRadius = '20px 20px 5px 20px';
-        clone.style.background = 'rgba(0,0,0,0.28)';
-        clone.style.opacity = '0';
-      }); });
+      // Shrink + fade pill in place
+      btn.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+      btn.style.transform = 'scale(0.85)';
+      btn.style.opacity = '0';
 
       setTimeout(function() {
-        clone.style.transition = 'none';
-        clone.style.opacity = '0';
-        clone.style.visibility = 'hidden';
-        requestAnimationFrame(function() {
-          clone.remove();
-          skipNextUserAnim = true;
-          document.getElementById('chat-input').value = text;
-          sendChat();
-        });
-      }, 420);
+        btn.style.transition = '';
+        btn.style.transform = '';
+        btn.style.opacity = '';
+        skipNextUserAnim = true;
+        document.getElementById('chat-input').value = text;
+        sendChat();
+      }, 270);
     }
 
     function typeWriter(el, text) {
@@ -1961,7 +1929,7 @@
       var el = document.createElement('div');
       el.className = 'chat-msg ' + type;
       if (type === 'user' && skipNextUserAnim) {
-        el.style.animation = 'none';
+        el.classList.add('slide-in');
         skipNextUserAnim = false;
       }
       el.textContent = text;
