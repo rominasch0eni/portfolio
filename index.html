@@ -530,6 +530,19 @@
       animation: pulse-square 0.9s ease-in-out infinite;
     }
 
+    #chat-suggestions {
+      display: flex; flex-wrap: wrap; gap: 8px; padding: 0 28px 12px;
+      max-width: 680px; width: 100%; margin: 0 auto; box-sizing: border-box;
+    }
+    .chat-suggestion {
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);
+      color: #fff; font-size: 13px; font-family: 'Inter', sans-serif;
+      padding: 7px 14px; border-radius: 20px; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .chat-suggestion:hover { background: rgba(255,255,255,0.3); transform: translateY(-1px); }
+
     #chat-input-row {
       display: flex; border-top: 1px solid rgba(255,255,255,0.2); padding: 20px 28px;
       gap: 12px; flex-shrink: 0;
@@ -1787,6 +1800,13 @@
     <div id="chat-welcome">Hi ich bin Ina, was möchtest du über Romina wissen?</div>
     <div id="chat-messages">
     </div>
+    <div id="chat-suggestions">
+      <button class="chat-suggestion" onclick="askSuggestion(this)">Wer ist Romina?</button>
+      <button class="chat-suggestion" onclick="askSuggestion(this)">Was sind ihre Stärken?</button>
+      <button class="chat-suggestion" onclick="askSuggestion(this)">Warum mit ihr arbeiten?</button>
+      <button class="chat-suggestion" onclick="askSuggestion(this)">Etwas Persönliches?</button>
+      <button class="chat-suggestion" onclick="askSuggestion(this)">Welche Tools nutzt sie?</button>
+    </div>
     <div id="chat-input-row">
       <input id="chat-input" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')sendChat()" maxlength="300"/>
       <button id="chat-send" onclick="sendChat()">→</button>
@@ -1816,6 +1836,12 @@
         overlay.classList.remove('open');
         setTimeout(function() { overlay.style.opacity = '0'; }, 680); // hide after contract
       }
+    }
+
+    function askSuggestion(btn) {
+      document.getElementById('chat-input').value = btn.textContent;
+      document.getElementById('chat-suggestions').style.display = 'none';
+      sendChat();
     }
 
     function sendChat() {
