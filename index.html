@@ -120,6 +120,12 @@
     .hero-content { position: absolute; z-index: 10; text-align: center; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
     .hero-content.hidden { opacity: 0; transform: translateY(-20px); }
     .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(43px, min(7.3vw, 13vh), 107px); font-weight: 700; color: var(--text-primary); line-height: 0.9; letter-spacing: -3px; }
+    .hero-dot {
+      background: linear-gradient(135deg, #3b82f6, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .hero-subtitle { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; margin-top: 20px; color: var(--text-muted); }
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
     .scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); }
@@ -610,7 +616,7 @@
       <canvas id="rubik-canvas"></canvas>
 
       <div class="hero-content">
-        <h1 class="hero-title">ROMINA SCHÖNI</h1>
+        <h1 class="hero-title">ROMINA<span class="hero-dot">.</span></h1>
         <p class="hero-subtitle">UX Designerin · Zürich</p>
       </div>
       <div class="scroll-hint">
