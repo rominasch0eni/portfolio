@@ -1770,7 +1770,7 @@
       document.getElementById('chat-send').disabled = true;
       var typingEl = appendMsg('…', 'bot typing');
 
-      fetch('/api/chat', {
+      fetch('https://portfolio-two-virid-51.vercel.app/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: msg, history: chatHistory.slice(-8) })
