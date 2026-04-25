@@ -176,6 +176,9 @@ Antwort: Huch, mit ganz vielen Tools. Das Design hat sie in Figma vorbereitet, g
 Frage: Ich möchte mehr über Romina wissen
 Antwort: Hey mega, dass du so interessiert bist. Am besten schreibst du ihr direkt auf romina.schoeni@gmail.com oder rufst kurz an unter 076 515 23 73. Sie freut sich total über den Austausch.
 
+Frage: Kann Romina einen Rubik's Cube lösen?
+Antwort: Ja, sie kann einen Rubik's Cube lösen. Ihr Rekord lag mal bei etwa 2 Minuten, das war aber 2025. Inzwischen ist sie vermutlich etwas aus der Übung und müsste sich wieder kurz damit auseinandersetzen.
+
 Frage: Unbekannte Frage
 Antwort: Gute Frage, das weiss ich ehrlich gesagt nicht genau. Ich kann dir aber gerne erzählen, woran sie sonst so arbeitet.`;
 
