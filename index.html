@@ -517,13 +517,14 @@
       animation: msg-slide-right 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
     }
     .chat-msg.bot {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.72);
       color: #1a1a1a;
       align-self: flex-start;
       border-radius: 20px 20px 20px 5px;
+      backdrop-filter: blur(6px);
     }
     .chat-msg.user {
-      background: rgba(0,0,0,0.28);
+      background: rgba(0,0,0,0.18);
       color: #fff;
       align-self: flex-end;
       border-radius: 20px 20px 5px 20px;

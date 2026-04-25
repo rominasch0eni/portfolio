@@ -12,7 +12,8 @@
     :root {
       --bg: #fafafa;
       --text-primary: #111111;
-      --accent: #8a6500;
+      --accent: #7c3aed;
+      --accent-gradient: linear-gradient(135deg, #3b82f6, #7c3aed);
       --text-muted: #6b6b6b;
       --border: rgba(0,0,0,0.1);
     }
@@ -215,6 +216,22 @@
       z-index: 100;
     }
     .back-btn:hover { color: var(--accent); gap: 12px; }
+
+    /* Gradient accent for text elements */
+    .cv-header-right .accent-link,
+    .cv-header-right a:hover,
+    .cv-info-item a,
+    .back-btn:hover {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cv-section-title {
+      border-bottom-color: transparent;
+      border-image: var(--accent-gradient) 1;
+    }
+    .print-btn:hover { background: var(--accent-gradient); }
 
     @media print {
       .print-btn { display: none !important; }
