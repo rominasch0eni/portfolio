@@ -2106,49 +2106,99 @@
     var chatWaiting = false;
     var skipNextUserAnim = false;
 
-    var firstSuggestions = ['Wer ist Romina?', 'Wieso mit ihr zusammenarbeiten?'];
+    var SUGGESTIONS = {
+      de: {
+        first: ['Wer ist Romina?', 'Wieso mit ihr zusammenarbeiten?'],
+        contextMap: [
+          { keys: ['romina', 'wer', 'designerin', 'ux', 'zürich', 'freelanc'],
+            suggest: ['Was sind ihre Stärken?', 'Etwas Persönliches?', 'Welche Tools nutzt sie?'] },
+          { keys: ['stärk', 'skill', 'fähigkeit', 'research', 'konzept', 'lean'],
+            suggest: ['Wie arbeitet sie im Team?', 'Welche Rolle sucht sie?', 'Was ist ihr bei Zusammenarbeit wichtig?'] },
+          { keys: ['team', 'zusammenarb', 'feedback', 'augenhöhe', 'lead'],
+            suggest: ['Wie geht sie mit Feedback um?', 'Remote oder vor Ort?', 'Was motiviert sie?'] },
+          { keys: ['persönlich', 'katze', 'aerial', 'pole', 'hoop', 'hunger', 'chips', 'ramen'],
+            suggest: ['Kaffee oder Tee?', 'Chaos oder Struktur?', 'Introvertiert oder extrovertiert?', 'Was ist Aerial Hoop?'] },
+          { keys: ['tool', 'figma', 'miro', 'notion', 'jira', 'maze'],
+            suggest: ['Wie sieht ihr Arbeitsprozess aus?', 'Welche Rolle sucht sie?', 'Wie schnell lernt sie Neues?'] },
+          { keys: ['rolle', 'job', 'stelle', 'einstell', 'recruit', 'arbeit'],
+            suggest: ['Remote oder vor Ort?', 'Wie arbeitet sie im Team?', 'Wie kontaktiere ich sie?'] },
+          { keys: ['kontakt', 'mail', 'telefon', 'schreib', 'erreich'],
+            suggest: ['Was sind ihre Stärken?', 'Etwas Persönliches?', 'Was motiviert sie?'] },
+          { keys: ['tee', 'kaffee', 'katze', 'hund', 'privat', 'extro', 'intro', 'chaos', 'struktur'],
+            suggest: ['Was bringt sie in gute Stimmung?', 'Was nervt sie im UX?', 'Was macht ihr Spass?'] },
+        ],
+        all: [
+          'Was sind ihre Stärken?', 'Etwas Persönliches?', 'Welche Tools nutzt sie?',
+          'Wie arbeitet sie im Team?', 'Was motiviert sie?', 'Remote oder vor Ort?',
+          'Welche Rolle sucht sie?', 'Was macht ihr Spass?', 'Was ist Aerial Hoop?',
+          'Kaffee oder Tee?', 'Chaos oder Struktur?', 'Wie geht sie mit Feedback um?',
+          'Was nervt sie im UX?', 'Was bringt sie in gute Stimmung?',
+          'Introvertiert oder extrovertiert?', 'Wie schnell lernt sie Neues?',
+          'Was ist ihr bei Zusammenarbeit wichtig?', 'Wie kontaktiere ich sie?'
+        ]
+      },
+      en: {
+        first: ['Who is Romina?', 'Why work with her?'],
+        contextMap: [
+          { keys: ['romina', 'who', 'designer', 'ux', 'zurich', 'freelanc'],
+            suggest: ['What are her strengths?', 'Something personal?', 'Which tools does she use?'] },
+          { keys: ['strength', 'skill', 'research', 'concept', 'lean'],
+            suggest: ['How does she work in a team?', 'What role is she looking for?', 'What matters to her in collaboration?'] },
+          { keys: ['team', 'collaborat', 'feedback', 'lead'],
+            suggest: ['How does she handle feedback?', 'Remote or on-site?', 'What motivates her?'] },
+          { keys: ['personal', 'cat', 'aerial', 'pole', 'hoop', 'hungry', 'chips', 'ramen'],
+            suggest: ['Coffee or tea?', 'Chaos or structure?', 'Introvert or extrovert?', 'What is Aerial Hoop?'] },
+          { keys: ['tool', 'figma', 'miro', 'notion', 'jira', 'maze'],
+            suggest: ['What does her work process look like?', 'What role is she looking for?', 'How quickly does she learn?'] },
+          { keys: ['role', 'job', 'position', 'hire', 'recruit'],
+            suggest: ['Remote or on-site?', 'How does she work in a team?', 'How can I contact her?'] },
+          { keys: ['contact', 'mail', 'phone', 'reach', 'write'],
+            suggest: ['What are her strengths?', 'Something personal?', 'What motivates her?'] },
+          { keys: ['tea', 'coffee', 'cat', 'dog', 'private', 'extro', 'intro', 'chaos', 'structure'],
+            suggest: ['What puts her in a good mood?', 'What annoys her in UX?', 'What does she enjoy?'] },
+        ],
+        all: [
+          'What are her strengths?', 'Something personal?', 'Which tools does she use?',
+          'How does she work in a team?', 'What motivates her?', 'Remote or on-site?',
+          'What role is she looking for?', 'What does she enjoy?', 'What is Aerial Hoop?',
+          'Coffee or tea?', 'Chaos or structure?', 'How does she handle feedback?',
+          'What annoys her in UX?', 'What puts her in a good mood?',
+          'Introvert or extrovert?', 'How quickly does she learn?',
+          'What matters to her in collaboration?', 'How can I contact her?'
+        ]
+      }
+    };
+
     var usedSuggestions = [];
     var firstShown = false;
 
-    // Contextual suggestion map: keywords → follow-up questions
-    var contextMap = [
-      { keys: ['romina', 'wer', 'designerin', 'ux', 'zürich', 'freelanc'],
-        suggest: ['Was sind ihre Stärken?', 'Etwas Persönliches?', 'Welche Tools nutzt sie?'] },
-      { keys: ['stärk', 'skill', 'fähigkeit', 'research', 'konzept', 'lean'],
-        suggest: ['Wie arbeitet sie im Team?', 'Welche Rolle sucht sie?', 'Was ist ihr bei Zusammenarbeit wichtig?'] },
-      { keys: ['team', 'zusammenarb', 'feedback', 'augenhöhe', 'lead'],
-        suggest: ['Wie geht sie mit Feedback um?', 'Remote oder vor Ort?', 'Was motiviert sie?'] },
-      { keys: ['persönlich', 'katze', 'aerial', 'pole', 'hoop', 'hunger', 'chips', 'ramen'],
-        suggest: ['Kaffee oder Tee?', 'Chaos oder Struktur?', 'Introvertiert oder extrovertiert?', 'Was ist Aerial Hoop?'] },
-      { keys: ['tool', 'figma', 'miro', 'notion', 'jira', 'maze'],
-        suggest: ['Wie sieht ihr Arbeitsprozess aus?', 'Welche Rolle sucht sie?', 'Wie schnell lernt sie Neues?'] },
-      { keys: ['rolle', 'job', 'stelle', 'einstell', 'recruit', 'arbeit'],
-        suggest: ['Remote oder vor Ort?', 'Wie arbeitet sie im Team?', 'Wie kontaktiere ich sie?'] },
-      { keys: ['kontakt', 'mail', 'telefon', 'schreib', 'erreich'],
-        suggest: ['Was sind ihre Stärken?', 'Etwas Persönliches?', 'Was motiviert sie?'] },
-      { keys: ['tee', 'kaffee', 'katze', 'hund', 'privat', 'extro', 'intro', 'chaos', 'struktur'],
-        suggest: ['Was bringt sie in gute Stimmung?', 'Was nervt sie im UX?', 'Was macht ihr Spass?'] },
-    ];
+    // Reset chat suggestion state when language changes
+    (function() {
+      var _origSetLang = window.setLang;
+      window.setLang = function(lang) {
+        _origSetLang(lang);
+        usedSuggestions = [];
+        firstShown = false;
+        // Re-render suggestions if chat is already open
+        var overlay = document.getElementById('chat-overlay');
+        if (overlay && overlay.classList.contains('open')) renderSuggestions();
+      };
+    })();
 
-    var allSuggestions = [
-      'Was sind ihre Stärken?', 'Etwas Persönliches?', 'Welche Tools nutzt sie?',
-      'Wie arbeitet sie im Team?', 'Was motiviert sie?', 'Remote oder vor Ort?',
-      'Welche Rolle sucht sie?', 'Was macht ihr Spass?', 'Was ist Aerial Hoop?',
-      'Kaffee oder Tee?', 'Chaos oder Struktur?', 'Wie geht sie mit Feedback um?',
-      'Was nervt sie im UX?', 'Was bringt sie in gute Stimmung?',
-      'Introvertiert oder extrovertiert?', 'Wie schnell lernt sie Neues?',
-      'Was ist ihr bei Zusammenarbeit wichtig?', 'Wie kontaktiere ich sie?'
-    ];
+    function getSuggestionSet() {
+      return SUGGESTIONS[window.currentLang] || SUGGESTIONS.de;
+    }
 
     function getContextualSuggestions() {
+      var set = getSuggestionSet();
       var lastExchange = chatHistory.slice(-2).map(function(m) { return m.content.toLowerCase(); }).join(' ');
       var candidates = [];
 
       // Find matching context
-      for (var i = 0; i < contextMap.length; i++) {
-        var hit = contextMap[i].keys.some(function(k) { return lastExchange.indexOf(k) !== -1; });
+      for (var i = 0; i < set.contextMap.length; i++) {
+        var hit = set.contextMap[i].keys.some(function(k) { return lastExchange.indexOf(k) !== -1; });
         if (hit) {
-          contextMap[i].suggest.forEach(function(q) {
+          set.contextMap[i].suggest.forEach(function(q) {
             if (usedSuggestions.indexOf(q) === -1 && candidates.indexOf(q) === -1) candidates.push(q);
           });
         }
@@ -2156,7 +2206,7 @@
 
       // Fallback: any unused question
       if (candidates.length < 2) {
-        allSuggestions.forEach(function(q) {
+        set.all.forEach(function(q) {
           if (usedSuggestions.indexOf(q) === -1 && candidates.indexOf(q) === -1) candidates.push(q);
         });
       }
@@ -2176,8 +2226,9 @@
 
       var questions = [];
       if (!firstShown) {
-        questions = firstSuggestions.slice();
-        firstSuggestions.forEach(function(q) { usedSuggestions.push(q); });
+        var first = getSuggestionSet().first;
+        questions = first.slice();
+        first.forEach(function(q) { usedSuggestions.push(q); });
         firstShown = true;
       } else {
         questions = getContextualSuggestions();
