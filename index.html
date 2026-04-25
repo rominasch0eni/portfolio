@@ -489,9 +489,10 @@
 
     #chat-messages {
       flex: 1; overflow-y: auto; padding: 28px 24px;
-      display: flex; flex-direction: column; gap: 14px; justify-content: flex-end;
+      display: flex; flex-direction: column; gap: 14px;
       max-width: 680px; width: 100%; margin: 0 auto; box-sizing: border-box;
     }
+    .chat-spacer { flex: 1; min-height: 0; }
     /* scrollbar subtle */
     #chat-messages::-webkit-scrollbar { width: 4px; }
     #chat-messages::-webkit-scrollbar-track { background: transparent; }
@@ -1804,7 +1805,7 @@
       <button id="chat-close" onclick="toggleChat()" aria-label="Chat schliessen">✕</button>
     </div>
     <div id="chat-welcome">Hi ich bin Ina, was möchtest du über Romina wissen?</div>
-    <div id="chat-messages">
+    <div id="chat-messages"><div class="chat-spacer"></div>
     </div>
     <div id="chat-suggestions">
       <button class="chat-suggestion" onclick="askSuggestion(this)">Wer ist Romina?</button>
@@ -1890,11 +1891,16 @@
       }); });
 
       setTimeout(function() {
-        clone.remove();
-        skipNextUserAnim = true;
-        document.getElementById('chat-input').value = text;
-        sendChat();
-      }, 480);
+        clone.style.transition = 'none';
+        clone.style.opacity = '0';
+        clone.style.visibility = 'hidden';
+        requestAnimationFrame(function() {
+          clone.remove();
+          skipNextUserAnim = true;
+          document.getElementById('chat-input').value = text;
+          sendChat();
+        });
+      }, 420);
     }
 
     function typeWriter(el, text) {
