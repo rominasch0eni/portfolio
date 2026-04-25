@@ -391,6 +391,76 @@
     @media (prefers-reduced-motion: reduce) {
       .animate { opacity: 1; transform: none; transition: none; }
     }
+
+    /* ── CHAT WIDGET ── */
+    #chat-btn {
+      position: fixed; bottom: 32px; right: 32px; z-index: 1000;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--accent); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s;
+      color: #fff;
+    }
+    #chat-btn:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(0,0,0,0.22); }
+    #chat-btn svg { width: 22px; height: 22px; }
+
+    #chat-panel {
+      position: fixed; bottom: 96px; right: 32px; z-index: 1000;
+      width: 340px; max-height: 480px;
+      background: var(--bg); border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex; flex-direction: column;
+      opacity: 0; pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.23,1,0.32,1);
+    }
+    #chat-panel.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+    #chat-header {
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    #chat-header span { font-size: 13px; font-weight: 500; letter-spacing: 1px; color: var(--text-primary); }
+    #chat-header small { font-size: 11px; color: var(--text-muted); display: block; margin-top: 2px; }
+    #chat-close { background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 4px; line-height: 1; font-size: 18px; transition: color 0.2s; }
+    #chat-close:hover { color: var(--accent); }
+
+    #chat-messages {
+      flex: 1; overflow-y: auto; padding: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      min-height: 200px;
+    }
+    .chat-msg { max-width: 85%; font-size: 13px; line-height: 1.6; padding: 10px 14px; }
+    .chat-msg.bot { background: var(--card-bg); color: var(--text-primary); align-self: flex-start; }
+    .chat-msg.user { background: var(--accent); color: #fff; align-self: flex-end; }
+    .chat-msg.typing { color: var(--text-muted); font-style: italic; }
+
+    #chat-input-row {
+      display: flex; border-top: 1px solid var(--border); padding: 12px;
+      gap: 8px;
+    }
+    #chat-input {
+      flex: 1; background: none; border: 1px solid var(--border);
+      padding: 8px 12px; font-size: 13px; font-family: 'Inter', sans-serif;
+      color: var(--text-primary); outline: none; resize: none;
+      transition: border-color 0.2s;
+    }
+    #chat-input:focus { border-color: var(--accent); }
+    #chat-input::placeholder { color: var(--text-muted); }
+    #chat-send {
+      background: var(--accent); border: none; color: #fff;
+      padding: 8px 14px; cursor: pointer; font-size: 13px;
+      transition: opacity 0.2s;
+    }
+    #chat-send:hover { opacity: 0.85; }
+    #chat-send:disabled { opacity: 0.4; cursor: default; }
+
+    body.dark #chat-panel { background: var(--bg); }
+    body.extreme #chat-btn { background: #ff0066; }
+    body.extreme .chat-msg.user { background: #ff0066; }
+    body.extreme #chat-input:focus { border-color: #ff0066; }
+    body.extreme #chat-send { background: #ff0066; }
   </style>
   <script src="assets/manifest.js"></script>
   <script src="assets/cube/cat.js"></script>
@@ -1574,6 +1644,88 @@
       var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       applyTheme(saved === 'dark' || (!saved && prefersDark));
     })();
+  </script>
+
+  <!-- CHAT WIDGET -->
+  <button id="chat-btn" aria-label="Chat öffnen" onclick="toggleChat()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+
+  <div id="chat-panel" role="dialog" aria-label="Chat">
+    <div id="chat-header">
+      <div>
+        <span>Frag mich was</span>
+        <small>Beantwortet Fragen über Romina</small>
+      </div>
+      <button id="chat-close" onclick="toggleChat()" aria-label="Chat schliessen">✕</button>
+    </div>
+    <div id="chat-messages">
+      <div class="chat-msg bot">Hallo! Ich beantworte gerne Fragen über Romina — ihre Projekte, Skills oder Erfahrungen. Was möchtest du wissen?</div>
+    </div>
+    <div id="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Deine Frage..." onkeydown="if(event.key==='Enter')sendChat()" maxlength="300"/>
+      <button id="chat-send" onclick="sendChat()">→</button>
+    </div>
+  </div>
+
+  <script>
+    var chatOpen = false;
+    var chatHistory = [];
+    var chatWaiting = false;
+
+    function toggleChat() {
+      chatOpen = !chatOpen;
+      document.getElementById('chat-panel').classList.toggle('open', chatOpen);
+      if (chatOpen) setTimeout(function() { document.getElementById('chat-input').focus(); }, 300);
+    }
+
+    function sendChat() {
+      if (chatWaiting) return;
+      var input = document.getElementById('chat-input');
+      var msg = input.value.trim();
+      if (!msg) return;
+      input.value = '';
+
+      appendMsg(msg, 'user');
+      chatHistory.push({ role: 'user', content: msg });
+
+      chatWaiting = true;
+      document.getElementById('chat-send').disabled = true;
+      var typingEl = appendMsg('…', 'bot typing');
+
+      fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg, history: chatHistory.slice(-8) })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        typingEl.remove();
+        var reply = data.reply || 'Entschuldigung, da ist etwas schiefgelaufen.';
+        appendMsg(reply, 'bot');
+        chatHistory.push({ role: 'assistant', content: reply });
+      })
+      .catch(function() {
+        typingEl.remove();
+        appendMsg('Verbindungsfehler. Bitte versuch es nochmal.', 'bot');
+      })
+      .finally(function() {
+        chatWaiting = false;
+        document.getElementById('chat-send').disabled = false;
+      });
+    }
+
+    function appendMsg(text, type) {
+      var msgs = document.getElementById('chat-messages');
+      var el = document.createElement('div');
+      el.className = 'chat-msg ' + type;
+      el.textContent = text;
+      msgs.appendChild(el);
+      msgs.scrollTop = msgs.scrollHeight;
+      return el;
+    }
   </script>
 </body>
 </html>
