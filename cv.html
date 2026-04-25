@@ -243,11 +243,16 @@
     }
 
     @page { size: A4; margin: 0; }
-    .cv-lang-switch { position:fixed; top:28px; right:130px; z-index:100; display:flex; align-items:center; gap:2px; }
-    .cv-lang-switch .lang-btn { background:none; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:13px; font-weight:400; color:var(--text-muted); padding:4px 6px; border-radius:4px; transition:color 0.2s; }
-    .cv-lang-switch .lang-btn.active { color:var(--text-primary); font-weight:600; }
-    .cv-lang-switch .lang-btn:hover { color:var(--text-primary); }
-    .cv-lang-switch .lang-divider { color:var(--border); font-size:13px; }
+    .cv-lang-switch { position:fixed; top:28px; right:130px; z-index:100; }
+    .cv-lang-switch .lang-select {
+      background: none; border: 1px solid var(--border); border-radius: 4px;
+      padding: 5px 26px 5px 10px; font-family: 'Inter', sans-serif; font-size: 13px;
+      font-weight: 400; color: var(--text-muted); cursor: pointer; transition: color 0.2s, border-color 0.2s;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 8px center;
+    }
+    .cv-lang-switch .lang-select:hover { color: var(--text-primary); border-color: var(--text-muted); }
     @media print { .cv-lang-switch { display:none !important; } }
   </style>
   <script src="translations.js"></script>
@@ -260,9 +265,10 @@
   </a>
 
   <div class="cv-lang-switch">
-    <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
-    <span class="lang-divider">·</span>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <select class="lang-select" onchange="setLang(this.value)" aria-label="Language">
+      <option value="de">DE</option>
+      <option value="en">EN</option>
+    </select>
   </div>
 
   <button class="print-btn" onclick="window.print()">
@@ -430,5 +436,10 @@
     </div>
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      applyTranslations();
+    });
+  </script>
 </body>
 </html>

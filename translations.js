@@ -290,8 +290,8 @@ function applyTranslations() {
     var v = t(el.getAttribute('data-i18n-ph'));
     if (v !== undefined) el.placeholder = v;
   });
-  document.querySelectorAll('.lang-btn').forEach(function(b) {
-    b.classList.toggle('active', b.getAttribute('data-lang') === window.currentLang);
+  document.querySelectorAll('.lang-select').forEach(function(s) {
+    s.value = window.currentLang;
   });
   document.documentElement.lang = window.currentLang;
 }
@@ -302,6 +302,7 @@ function setLang(lang) {
   applyTranslations();
   if (typeof renderCards === 'function') renderCards();
   if (typeof renderAllProjectPages === 'function') renderAllProjectPages();
+  if (typeof initScrollAnimations === 'function') setTimeout(initScrollAnimations, 30);
 }
 
 /* Project field helper: picks EN field when available */
