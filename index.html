@@ -375,6 +375,11 @@
       .about-testimonials { padding: 48px 24px; }
       .testimonials-grid { grid-template-columns: 1fr; }
       footer { padding: 24px; flex-direction: column; gap: 8px; }
+      .scroll-hint { display: none; }
+      #chat-btn { right: auto; left: 50%; transform: translateX(-50%); }
+      #chat-btn:hover { transform: translateX(-50%) scale(1.08); }
+      #chat-overlay { clip-path: circle(26px at 50% calc(100% - 58px)); }
+      #chat-overlay.open { clip-path: circle(150vmax at 50% calc(100% - 58px)); }
       .project-detail-hero { padding: 120px 24px 60px; }
       .project-detail-content { grid-template-columns: 1fr; padding: 48px 24px; gap: 36px; }
       .process-steps { grid-template-columns: 1fr 1fr; }
@@ -424,58 +429,9 @@
       box-shadow: 0 4px 24px rgba(160, 100, 255, 0.35);
       transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s;
       color: #fff;
-      overflow: visible;
     }
     #chat-btn:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(160, 100, 255, 0.5); }
     #chat-btn svg { width: 22px; height: 22px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
-
-    /* ── CAT EARS ── */
-    /*
-      The button is a 52px circle. Its top edge curves down at the sides.
-      At x≈8 the circle top is ~7px below the bounding box top.
-      We set top so the ear base sits 8px INSIDE the button — this ensures
-      the ear base is always behind the circle edge (no floating gap).
-      Both ear + button share the same gradient so the overlap is invisible.
-    */
-    .cat-ear {
-      position: absolute;
-      width: 16px;
-      height: 20px;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      background: linear-gradient(135deg, #74d7f7, #c084fc, #f472b6, #818cf8);
-      background-size: 300% 300%;
-      animation: holographic 14s ease infinite;
-      top: -12px;          /* bottom of ear = -12 + 20 = 8px inside button */
-      transform: translateY(12px) scaleY(0);
-      transform-origin: bottom center;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .cat-ear::after {
-      content: '';
-      position: absolute;
-      bottom: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 7px;
-      height: 10px;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      background: rgba(255, 190, 210, 0.9);
-    }
-    .cat-ear-left  { left: 8px; }
-    .cat-ear-right { right: 8px; }
-
-    @keyframes ears-peek {
-      0%   { transform: translateY(12px) scaleY(0);    opacity: 0; }
-      20%  { transform: translateY(-5px) scaleY(1.2);  opacity: 1; }
-      32%  { transform: translateY(1px)  scaleY(0.92); opacity: 1; }
-      42%  { transform: translateY(0)    scaleY(1);    opacity: 1; }
-      70%  { transform: translateY(0)    scaleY(1);    opacity: 1; }
-      86%  { transform: translateY(2px)  scaleY(0.88); opacity: 0.6; }
-      100% { transform: translateY(12px) scaleY(0);    opacity: 0; }
-    }
-    .cat-ear.peek { animation: ears-peek 3.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
 
     /* fullscreen overlay */
     #chat-overlay {
@@ -1854,10 +1810,7 @@
   </script>
 
   <!-- CHAT WIDGET -->
-  <button id="chat-btn" aria-label="Chat öffnen" onclick="toggleChat()">
-    <div class="cat-ear cat-ear-left"></div>
-    <div class="cat-ear cat-ear-right"></div>
-  </button>
+  <button id="chat-btn" aria-label="Chat öffnen" onclick="toggleChat()"></button>
 
   <div id="chat-overlay" role="dialog" aria-label="Chat" aria-modal="true">
    <div id="chat-inner">
@@ -1968,29 +1921,6 @@
         container.appendChild(btn);
       });
     }
-
-    /* ── CAT EARS PEEK ── */
-    function triggerCatEars() {
-      var overlay = document.getElementById('chat-overlay');
-      if (overlay.classList.contains('open')) {
-        // chat is open – try again later
-        scheduleCatEars(90000);
-        return;
-      }
-      var ears = document.querySelectorAll('.cat-ear');
-      ears.forEach(function(e) {
-        e.classList.remove('peek');
-        void e.offsetWidth; // force reflow so animation restarts
-        e.classList.add('peek');
-      });
-      // schedule next appearance: 2–3 minutes
-      scheduleCatEars(120000 + Math.random() * 60000);
-    }
-    function scheduleCatEars(delay) {
-      setTimeout(triggerCatEars, delay);
-    }
-    // first peek after 20 seconds so you can see it quickly
-    scheduleCatEars(20000);
 
     function toggleChat() {
       chatOpen = !chatOpen;
