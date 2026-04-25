@@ -1858,26 +1858,19 @@
     ];
     var usedSuggestions = [];
 
-    function getNextSuggestion() {
-      var available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
-      if (available.length === 0) {
-        // All shown — reset but keep last 2 to avoid immediate repeat
-        var keep = usedSuggestions.slice(-2);
-        usedSuggestions = keep;
-        available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
-      }
-      var pick = available[Math.floor(Math.random() * available.length)];
-      usedSuggestions.push(pick);
-      return pick;
-    }
-
     function renderSuggestions() {
       var container = document.getElementById('chat-suggestions');
       container.innerHTML = '';
+      var available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
+      if (available.length === 0) return; // all shown — hide pills
       for (var i = 0; i < 2; i++) {
+        available = suggestionPool.filter(function(q) { return usedSuggestions.indexOf(q) === -1; });
+        if (available.length === 0) break;
+        var pick = available[Math.floor(Math.random() * available.length)];
+        usedSuggestions.push(pick);
         var btn = document.createElement('button');
         btn.className = 'chat-suggestion';
-        btn.textContent = getNextSuggestion();
+        btn.textContent = pick;
         btn.onclick = function() { askSuggestion(this); };
         container.appendChild(btn);
       }
