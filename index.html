@@ -1843,6 +1843,21 @@
       sendChat();
     }
 
+    function typeWriter(el, text) {
+      var words = text.split(' ');
+      var i = 0;
+      var msgs = document.getElementById('chat-messages');
+      function next() {
+        if (i < words.length) {
+          el.textContent += (i === 0 ? '' : ' ') + words[i];
+          i++;
+          msgs.scrollTop = msgs.scrollHeight;
+          setTimeout(next, 55);
+        }
+      }
+      next();
+    }
+
     function sendChat() {
       if (chatWaiting) return;
       var input = document.getElementById('chat-input');
@@ -1867,8 +1882,9 @@
       .then(function(data) {
         typingEl.remove();
         var reply = data.reply || 'Entschuldigung, da ist etwas schiefgelaufen.';
-        appendMsg(reply, 'bot');
         chatHistory.push({ role: 'assistant', content: reply });
+        var botEl = appendMsg('', 'bot');
+        typeWriter(botEl, reply);
       })
       .catch(function() {
         typingEl.remove();
