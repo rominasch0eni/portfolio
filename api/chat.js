@@ -182,7 +182,87 @@ Q: Can Romina solve a Rubik's Cube?
 A: Yes, she can solve a Rubik's Cube. Her record was around 2 minutes, but that was back in 2025. By now she's probably a bit out of practice and would need a short refresh.
 
 Q: Unknown question
-A: Good question, honestly I'm not quite sure. I can happily tell you about what else she works on though.`;
+A: Good question, honestly I'm not quite sure. I can happily tell you about what else she works on though.
+
+CV Info:
+Romina Schöni
+
+User Experience Designer
+
+08.05.1997
+076 515 23 73
+romina.schoeni@gmail.com
+
+Profile
+
+I am a UX designer with 7+ years of design experience, including 5+ years in UX. I am driven by curiosity and enjoy understanding how things work and what motivates people. My diverse background allows me to approach problems from different perspectives. I quickly adapt to new topics and teams and enjoy guiding projects from the initial idea through to implementation.
+
+Professional Experience
+
+Ironforge Consulting AG · UX Design & Research Freelancer (100%)
+Bern · Jul 2025 – Present
+
+Planning, conducting and coordinating user research activities
+Collaborating with stakeholders from federal offices and structuring user needs
+Designing, conducting and analysing usability tests, including unmoderated tests using Maze or Useberry
+Building and continuously expanding a user pool for testing
+Planning internal e-ID test phases for employees across federal offices
+Iteratively improving solutions based on user feedback and test results
+
+Bison Schweiz AG · UI/UX Design Freelancer (100%)
+Sursee · Apr 2025 – Jul 2025
+
+Raiffeisen Schweiz · Experience Design Freelancer (100%)
+St. Gallen · Mar 2024 – Jan 2025
+
+Close collaboration with Lead UX Strategist, Product Owner, developers and business analysts on the concept of a new e-banking platform
+Designing and building interactive prototypes for usability testing
+Conducting usability tests and analysing user behaviour to iteratively improve designs
+
+Rimon Technologies · Experience Lead (40–100%)
+Zurich · Aug 2021 – Dec 2023
+
+Led a team of three developers as Product Owner and Product Designer
+Contributed to product experience strategy through market analysis and user research
+Redesigned AR mobile and HoloLens applications with an 80% satisfaction rate across 14 active clients
+
+Xeit AG · Screen and Interaction Design (60%)
+Zurich · Aug 2021 – Mar 2022
+
+Designed digital media including banners, animations and prototypes for web and app projects
+
+CORPMEDIA · Motion Design (80–100%)
+Zurich · Jul 2019 – Jul 2021
+
+Education
+
+FHGR · CAS in Augmented Reality and Virtual Reality
+Chur · Aug 2021 – Jul 2022
+
+School of Design · Advanced Diploma HF in Interactive Media Design
+St. Gallen · Aug 2017 – Jul 2020
+
+KV Business School · Commercial Employee EFZ
+Zurich · Aug 2013 – Jul 2016
+
+Skills
+
+UX Concept
+UI Design
+Figma & Prototyping
+User Research
+Usability Testing
+Storyboarding
+Motion Design
+Augmented Reality
+
+Languages
+
+German – Native
+English – Fluent
+French – Basic
+
+`;
 
   const systemPrompt = `Du heisst Dot und bist ein warmer, freundschaftlicher Assistent auf dem Portfolio von Romina Schöni. Du klingst wie eine gute Kollegin von ihr. Locker, nahbar und respektvoll. Du sprichst Schweizer Hochdeutsch und nutzt eine einfache, natürliche Sprache.
 
@@ -353,7 +433,88 @@ Frage: Kann Romina einen Rubik's Cube lösen?
 Antwort: Ja, sie kann einen Rubik's Cube lösen. Ihr Rekord lag mal bei etwa 2 Minuten, das war aber 2025. Inzwischen ist sie vermutlich etwas aus der Übung und müsste sich wieder kurz damit auseinandersetzen.
 
 Frage: Unbekannte Frage
-Antwort: Gute Frage, das weiss ich ehrlich gesagt nicht genau. Ich kann dir aber gerne erzählen, woran sie sonst so arbeitet.`;
+Antwort: Gute Frage, das weiss ich ehrlich gesagt nicht genau. Ich kann dir aber gerne erzählen, woran sie sonst so arbeitet.
+
+Lebenslauf Info
+Romina Schöni
+User Experience Design
+
+08.05.1997
+076 515 23 73
+romina.schoeni@gmail.com
+---
+
+Profil
+Ich bin UX-Designerin mit 7+ Jahren Designerfahrung, davon 5+ im UX-Bereich. Mich treibt Neugier an: Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Mein vielseitiger Hintergrund hilft mir, Probleme aus verschiedenen Perspektiven zu betrachten. Ich finde mich schnell in neue Themen und Teams ein und begleite Projekte von der ersten Idee bis zur Umsetzung.
+
+---
+Beruflicher Werdegang
+Ironforge Consulting AG · UX Design & Research Freelancerin 100%
+Bern · Jul 2025 – Heute
+Planung, Durchführung und Koordination von User-Research-Aktivitäten.
+Einbindung relevanter Stakeholder aus den Bundesämtern sowie strukturierte Erhebung und Dokumentation der Nutzerbedürfnisse.
+Konzeption, Durchführung und Auswertung von Usability-Tests (inkl. unmoderierter Tests mit Maze oder Useberry).
+Aufbau und kontinuierliche Erweiterung eines User-Pools für Tests.
+Planung interner Testphasen der e-ID für Mitarbeitende sämtlicher Bundesämter.
+Iterative Weiterentwicklung der Lösungen auf Basis von Nutzerfeedback und Testergebnissen.
+---
+
+Bison Schweiz AG · UI/UX Design Freelancerin 100%
+Sursee · Apr 2025 – Jul 2025
+---
+
+Raiffeisen Schweiz · Experience Design Freelancerin 100%
+St. Gallen · Mrz 2024 – Jan 2025
+Enge Zusammenarbeit mit Lead UX Strategist, Product Owner, Entwicklern und Business Analysts zur Konzeptentwicklung der neuen E-Banking-Plattform.
+Entwurf und Aufbau interaktiver Prototypen für Usability-Tests.
+Durchführung von Usability-Tests und Auswertung von Nutzerverhalten zur iterativen Designverbesserung.
+---
+
+Rimon Technologies · Experience Lead 40–100%
+Zürich · Aug 2021 – Dez 2023
+Leitung eines dreiköpfigen Entwicklerteams als Product Owner und Product Designerin.
+Mitgestaltung der Produkt-Experience-Strategie durch Marktanalysen und User Research.
+Redesign der AR Mobile- und HoloLens-Apps mit 80% Zufriedenheitsrate bei 14 aktiven Kunden.
+---
+Xeit AG · Screen- und Interaction Design 60%
+Zürich · Aug 2021 – Mrz 2022
+Gestaltung digitaler Medien inkl. Banner, Animationsfilme und Prototypen für Web- und App-Projekte.
+---
+
+CORPMEDIA · Motion Design 80–100%
+Zürich · Jul 2019 – Jul 2021
+---
+
+Ausbildung
+FHGR · CAS in Augmented Reality und Virtual Reality
+Chur · Aug 2021 – Jul 2022
+Schule für Gestaltung · Dipl. Designerin HF Interactive Media Design
+St. Gallen · Aug 2017 – Jul 2020
+KV Business School · Kaufmännische Angestellte EFZ
+Zürich · Aug 2013 – Jul 2016
+---
+
+Fähigkeiten
+UX Konzept
+UI Design
+Figma & Prototyping
+User Research
+Usability Testing
+Storyboarding
+Motion Design
+Augmented Reality
+---
+
+Sprachen
+Deutsch
+Muttersprache
+Englisch
+Fliessend
+Französisch
+Grundkenntnisse
+
+
+`;
 
   try {
     const messages = [...(history || []), { role: 'user', content: message }];
