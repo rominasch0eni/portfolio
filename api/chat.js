@@ -262,7 +262,76 @@ German – Native
 English – Fluent
 French – Basic
 
+---
+
+Projects
+
+01 · Digital Identity
+Type: UX Research · UX Concept
+Client: Swiss federal administration (e-ID Switzerland)
+Role: UX Designer, Lead Researcher
+Period: 2025–2026
+Team: PO, Scrum Master, 4 UX Designers, 2 UX Writers
+Overview: Designed a user-friendly digital identity solution for the Swiss population. Joined mid-project and ran usability studies every two to three weeks to iteratively improve the concept. Key challenge: balancing complex security requirements with a simple, accessible experience for all age groups.
+Process: 45+ qualitative user interviews, persona creation, wireframing, 12+ usability studies, 3 Maze studies, planning internal test phases for 40,000 employees across federal offices.
+Outcome: 45+ user interviews, 12+ usability studies, 3 Maze studies, 40,000 test users for internal phase.
+
+02 · E-Banking Website
+Type: UX Concept · Responsive Web · Prototyping
+Client: Raiffeisen Switzerland
+Role: UX Designer
+Period: 2024–2025
+Team: UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers
+Overview: Translated an existing mobile banking app concept to web — not just scaling it up, but rethinking it for larger screens, different user behaviour, and legacy web features that had to be integrated.
+Process: Deep analysis of the app concept, stakeholder and developer interviews, web UX concept development, Figma prototyping based on existing design system, quarterly usability tests with 6 participants each via Testingtime.
+Learning: Large projects thrive on open communication. Better to ask once too many than to work in the wrong direction for too long. Transparency prevents mistakes before they happen.
+
+03 · Augmented Reality App
+Type: User Research · Field Research · Interaction Design · Mobile
+Client: Rimon Technologies
+Role: Design & Research Lead
+Period: 2021–2023
+Team: 3 developers, Product Lead, Business Lead
+Overview: The first MVP of the AR app wasn't working for field service technicians — inefficient workflows, confusing UI, and an AR feature nobody used. Redesigned it through intensive field research.
+Process: Field observations and ethnographic interviews in the technicians' real work environment, heuristic evaluation of the existing MVP, user-centred design strategy, iterative testing in the field.
+Outcome: 75% less time on tasks, 50% fewer user errors, AR feature actively used after redesign (previously avoided).
+Learning: Technology alone doesn't solve problems. Only by truly understanding how people think and act in their daily work can you build tools that actually work. Field research is not a nice-to-have.
+
+04 · Exchange Programme Website
+Type: User Interface · Visual Design · Campaign
+Client: Movetia (Learning by Going campaign)
+Role: Screen Designer
+Period: 2021–2022
+Team: Screen Designer, Art Director, Project Manager
+Overview: UI design for Movetia's "Learning by Going" campaign website — bold, colourful, dynamic, aimed at young people. Worked closely with the art director to create a consistent design across desktop, tablet and mobile.
+
+05 · Animation Showreel
+Type: Motion Design · 2D Animation · 3D Animation · Illustration
+Role: Motion Designer
+Period: 2019–2021
+Clients: PostFinance, UBS, Best of Swiss Web, Bernina, and others
+Overview: 2+ years as a motion designer creating animations for brands — from simple UI transitions to complex 3D animations. Motion experience feeds directly into UX work through micro-animations, transitions and animated presentations.
+
+06 · Game Concept (Mixed Reality Escape Room)
+Type: Mixed Reality · Game Design · Concept
+Client: Rimon Technologies (CAS project at FHGR)
+Role: UX Designer & Concept Designer
+Period: 2023
+Technology: Microsoft HoloLens
+Overview: Full concept for a Mixed Reality Escape Room as a showcase for AR technology. Designed with a complete UX process: user research, two detailed personas, storyboard for 6 puzzles, complete asset plan. Central character: Lexi, an AI as an animated 3D sphere.
+Process: Target group analysis, 2 personas, narrative structure (Pixar style), 6 puzzles for HoloLens hand-tracking and eye-tracking, full production plan (80–100 days estimated).
+
+07 · Hack Zurich
+Type: AR · VR · Prototyping · Unity
+Role: Participant
+Period: One weekend
+Team: 3 people
+Challenge: Swiss Re — how can companies and buildings be correctly insured and better prepared as natural disasters like flooding become more frequent?
+Overview: Within one weekend, designed an AR/VR concept and prototypes to help companies prepare for flooding events. Created a water simulation in Unity, developed the storyline and produced the concept video.
+Result: Overall finalists, Honourable Mention in the Extended Reality Challenge.
 `;
+
+
 
   const systemPrompt = `Du heisst Dot und bist ein warmer, freundschaftlicher Assistent auf dem Portfolio von Romina Schöni. Du klingst wie eine gute Kollegin von ihr. Locker, nahbar und respektvoll. Du sprichst Schweizer Hochdeutsch und nutzt eine einfache, natürliche Sprache.
 
@@ -513,7 +582,72 @@ Fliessend
 Französisch
 Grundkenntnisse
 
+---
 
+Projekte
+
+01 · Elektronische Identität
+Art: UX Research · UX Konzept
+Kunde: Schweizer Bundesverwaltung (e-ID Schweiz)
+Rolle: UX Designerin, Lead Researcherin
+Zeitraum: 2025–2026
+Team: PO, Scrum Master, 4 UX Designerinnen, 2 UX Writerinnen
+Überblick: Gestaltung einer benutzerfreundlichen digitalen Identitätslösung für die Schweizer Bevölkerung. Mitten im laufenden Projekt eingestiegen, alle zwei bis drei Wochen Usability-Studien zur iterativen Verbesserung. Kernherausforderung: komplexe Sicherheitsanforderungen mit einer einfachen, zugänglichen Nutzererfahrung für alle Altersgruppen verbinden.
+Vorgehen: 45+ qualitative Nutzerinterviews, Personas, Wireframes, 12+ Usability-Studien, 3 Maze-Studien, Planung interner Testphasen für 40.000 Mitarbeitende der Bundesämter.
+Ergebnis: 45+ Interviews, 12+ Usability-Studien, 3 Maze-Studien, 40.000 Testnutzerinnen für interne Phase.
+
+02 · E-Banking Webseite
+Art: UX Konzept · Responsive Web · Prototyping
+Kunde: Raiffeisen Schweiz
+Rolle: UX Designerin
+Zeitraum: 2024–2025
+Team: UX Lead, Brand Lead, PO, 2 UI Designerinnen, 4 Entwickler
+Überblick: Bestehendes Mobile-App-Konzept auf Web übertragen — nicht einfach grösser machen, sondern für grössere Bildschirme, andere Nutzerverhaltensweisen und Legacy-Webfunktionen neu denken.
+Vorgehen: Analyse des App-Konzepts, Gespräche mit Stakeholdern und Entwicklern, Web-UX-Konzept, Figma-Prototypen auf Basis des Design Systems, Quartalstests mit je 6 Teilnehmenden über Testingtime.
+Learning: Grosse Projekte leben von offener Kommunikation. Lieber einmal zu viel nachfragen als zu lange in die falsche Richtung arbeiten. Transparenz verhindert Fehler, bevor sie entstehen.
+
+03 · Augmented Reality App
+Art: User Research · Feldforschung · Interaction Design · Mobile
+Kunde: Rimon Technologies
+Rolle: Design & Research Lead
+Zeitraum: 2021–2023
+Team: 3 Entwickler, Product Lead, Business Lead
+Überblick: Das erste MVP der AR-App funktionierte für Servicetechniker im Alltag nicht — ineffiziente Abläufe, verwirrende UI, AR-Funktion kaum genutzt. Redesign durch intensive Feldforschung.
+Vorgehen: Feldbeobachtungen und ethnografische Interviews in der realen Arbeitsumgebung, heuristische Evaluation des MVP, nutzerzentrierte Designstrategie, iteratives Testing im Feld.
+Ergebnis: 75% weniger Zeit für Aufgaben, 50% weniger Nutzerfehler, AR-Funktion wird nach dem Redesign aktiv genutzt (vorher gemieden).
+Learning: Technologie allein löst keine Probleme. Feldforschung ist keine Kür, sondern die Grundlage.
+
+04 · Webseite für Austauschprogramm
+Art: User Interface · Visual Design · Kampagne
+Kunde: Movetia (Kampagne «Learning by Going»)
+Rolle: Screen Designerin
+Zeitraum: 2021–2022
+Team: Screen Designerin, Art Director, Project Manager
+Überblick: UI-Design für Movetias «Learning by Going»-Kampagnenwebseite — bold, bunt, dynamisch, Zielgruppe: Jugendliche. Enge Zusammenarbeit mit dem Art Director, konsistentes Design über Desktop, Tablet und Mobile.
+
+05 · Animation Showreel
+Art: Motion Design · 2D Animation · 3D Animation · Illustration
+Rolle: Motion Designerin
+Zeitraum: 2019–2021
+Kunden: PostFinance, UBS, Best of Swiss Web, Bernina u.a.
+Überblick: 2+ Jahre als Motion Designerin, Animationen für Marken erstellt — von einfachen UI-Transitionen bis zu komplexen 3D-Animationen. Motion-Erfahrung fliesst direkt in UX-Arbeit ein.
+
+06 · Game Konzept (Mixed Reality Escape Room)
+Art: Mixed Reality · Game Design · Konzept
+Kunde: Rimon Technologies (CAS-Projekt an der FHGR)
+Rolle: UX Designerin & Konzepterin
+Zeitraum: 2023
+Technologie: Microsoft HoloLens
+Überblick: Vollständiges Konzept für einen Mixed Reality Escape Room als Showcase für AR-Technologie. Entwickelt mit vollständigem UX-Prozess: Nutzerforschung, 2 Personas, Storyboard für 6 Puzzles, kompletter Asset-Plan. Zentrale Figur: Lexi, eine KI als animierte 3D-Sphäre.
+
+07 · Hack Zurich
+Art: AR · VR · Prototyping · Unity
+Rolle: Teilnehmerin
+Zeitraum: Ein Wochenende
+Team: 3 Personen
+Challenge: Swiss Re — Wie können Unternehmen bei steigenden Naturkatastrophen wie Überschwemmungen besser versichert und vorbereitet werden?
+Überblick: Innerhalb eines Wochenendes ein AR/VR-Konzept und Prototypen entwickelt. Wassersimulation in Unity erstellt, Storyline entwickelt, Konzeptvideo produziert.
+Ergebnis: Gesamtfinalistinnen, Honorable Mention in der Extended Reality Challenge.
 `;
 
   try {
