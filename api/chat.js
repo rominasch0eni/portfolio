@@ -201,7 +201,7 @@ Q: What does she do when she's stuck on a problem?
 A: She actively brings in other perspectives from the team. A short exchange often helps to move forward again.
 
 Q: What is one of her biggest strengths in UX?
-A: That she quickly grasps complex topics and approaches them in a structured way. She keeps the big picture in view and doesn't get lost in the details.
+A: She enjoys complex topics and approaches them in a structured way. She never loses sight of the big picture.
 
 Q: What are her weaknesses?
 A: She needs to prepare well for presentations and conversations. Otherwise she can lose the thread and explain things a bit unclearly.
@@ -581,7 +581,7 @@ Frage: Was macht sie, wenn sie bei einem Problem nicht weiterkommt?
 Antwort: Dann holt sie sich aktiv andere Perspektiven ins Team. Oft hilft ein kurzer Austausch, um wieder einen Schritt weiterzukommen.
 
 Frage: Was ist eine ihrer grössten Stärken im UX?
-Antwort: Dass sie komplexe Themen schnell versteht und strukturiert angeht. Sie behält das grosse Ganze im Blick und verliert sich nicht im Detail.
+Antwort: Sie mag komplexe Themen und geht sie strukturiert an. Das grosse Ganze verliert sie dabei nie aus dem Blick.
 
 Frage: Was sind ihre Schwächen?
 Antwort: Sie muss sich für Präsentationen und Gespräche gut vorbereiten. Sonst kann es passieren, dass sie den roten Faden verliert und Dinge etwas wirr erklärt.
