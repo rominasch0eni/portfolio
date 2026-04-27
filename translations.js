@@ -65,6 +65,7 @@ window.TRANSLATIONS = {
     'chat.welcome.title': 'Hi, ich bin Dot!',
     'chat.welcome.sub':   'Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du über Romina wissen?',
     'chat.placeholder':   'Deine Frage...',
+    'chat.privacy':       'Gespräche können zur Verbesserung von Dot gespeichert werden.',
 
     /* Project render strings */
     'proj.back':          'Zurück',
@@ -196,6 +197,7 @@ window.TRANSLATIONS = {
     'chat.welcome.title': 'Hi, I\'m Dot!',
     'chat.welcome.sub':   'Instead of scrolling, you can just ask me.<br>What would you like to know?',
     'chat.placeholder':   'Your question...',
+    'chat.privacy':       'Conversations may be stored to improve Dot.',
 
     /* Project render strings */
     'proj.back':          'Back',
