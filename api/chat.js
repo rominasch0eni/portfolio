@@ -807,7 +807,8 @@ Ergebnis: Gesamtfinalistinnen, Honorable Mention in der Extended Reality Challen
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify({ lang: lang || 'de', message, reply })
-    }).catch(() => {});
+    }).then(r => { if (!r.ok) r.text().then(t => console.error('Supabase error:', r.status, t)); })
+      .catch(e => console.error('Supabase fetch failed:', e));
 
     res.json({ reply });
   } catch (error) {
