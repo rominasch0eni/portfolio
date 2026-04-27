@@ -795,7 +795,21 @@ Ergebnis: Gesamtfinalistinnen, Honorable Mention in der Extended Reality Challen
     }
 
     const data = await response.json();
-    res.json({ reply: data.content[0].text });
+    const reply = data.content[0].text;
+
+    // Log to Supabase (fire and forget)
+    fetch(process.env.SUPABASE_URL + '/rest/v1/chat_logs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': process.env.SUPABASE_SERVICE_KEY,
+        'Authorization': 'Bearer ' + process.env.SUPABASE_SERVICE_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ lang: lang || 'de', message, reply })
+    }).catch(() => {});
+
+    res.json({ reply });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Serverfehler' });
