@@ -797,18 +797,25 @@ Ergebnis: Gesamtfinalistinnen, Honorable Mention in der Extended Reality Challen
     const data = await response.json();
     const reply = data.content[0].text;
 
-    // Log to Supabase (fire and forget)
-    fetch(process.env.SUPABASE_URL + '/rest/v1/chat_logs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': process.env.SUPABASE_SERVICE_KEY,
-        'Authorization': 'Bearer ' + process.env.SUPABASE_SERVICE_KEY,
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify({ lang: lang || 'de', message, reply })
-    }).then(r => { if (!r.ok) r.text().then(t => console.error('Supabase error:', r.status, t)); })
-      .catch(e => console.error('Supabase fetch failed:', e));
+    // Log to Supabase (awaited so it completes before function exits)
+    try {
+      const sbRes = await fetch(process.env.SUPABASE_URL + '/rest/v1/chat_logs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': process.env.SUPABASE_SERVICE_KEY,
+          'Authorization': 'Bearer ' + process.env.SUPABASE_SERVICE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ lang: lang || 'de', message, reply })
+      });
+      if (!sbRes.ok) {
+        const errText = await sbRes.text();
+        console.error('Supabase error:', sbRes.status, errText);
+      }
+    } catch (e) {
+      console.error('Supabase fetch failed:', e);
+    }
 
     res.json({ reply });
   } catch (error) {
