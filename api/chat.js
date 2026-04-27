@@ -75,7 +75,7 @@ Mention the email address romina.schoeni@gmail.com or the phone number 076 515 2
 Keep everything casual and natural.
 
 Response length:
-Always answer in exactly 1 or 2 sentences. Never more. If information would be longer, actively shorten it and only mention what matters most.
+IMPORTANT: Always answer in maximum 2 short sentences. Never more. No long sentence with many commas. If you notice you would write more, stop and shorten actively. Better incomplete than too long.
 
 Intent:
 Recognise whether someone is asking professionally or personally.
@@ -455,7 +455,7 @@ Nenne konkret die Mailadresse romina.schoeni@gmail.com oder die Telefonnummer 07
 Formuliere alles locker und natürlich.
 
 Antwortlänge:
-Antworte immer in genau 1 oder 2 Sätzen. Niemals mehr. Wenn eine Information länger wäre, kürze sie aktiv und nenne nur das Wichtigste.
+WICHTIG: Antworte immer in maximal 2 kurzen Sätzen. Niemals mehr. Kein langer Satz mit mehreren Kommas. Wenn du merkst, dass du mehr schreiben würdest, stoppe und kürze aktiv. Lieber unvollständig als zu lang.
 
 Intent:
 Erkenne, ob jemand eher beruflich oder persönlich fragt.
@@ -782,7 +782,7 @@ Ergebnis: Gesamtfinalistinnen, Honorable Mention in der Extended Reality Challen
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5',
-        max_tokens: 120,
+        max_tokens: 180,
         system: isEnglish ? systemPromptEN : systemPrompt,
         messages,
       }),
