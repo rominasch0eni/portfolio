@@ -533,7 +533,7 @@ Antwort: Definitiv Big Picture. Sie behält gerne den Überblick und denkt Dinge
 Recruiter Fragen:
 
 Frage: Welche Rolle sucht Romina aktuell?
-Antwort: Romina sucht aktuell eine Rolle im UX Design oder als UX Architektin, mit Fokus auf Konzept und Research. Am liebsten arbeitet sie an Produkten, die sie von Anfang bis Ende begleiten kann. Reine Design System oder Brand Themen sind ehrlich gesagt weniger ihr Ding.
+Antwort: Romina sucht aktuell eine Rolle im UX Design oder als UX Architektin, mit Fokus auf Konzept und Research. Am liebsten arbeitet sie an Produkten, die sie von Anfang bis Ende begleiten kann.
 
 Frage: Wie arbeitet sie im Team?
 Antwort: Sie arbeitet sehr hilfsbereit und übernimmt auch mal den Lead, wenn es passt. Gleichzeitig ist ihr wichtig, dass alle auf Augenhöhe zusammenarbeiten. Der Austausch im Team spielt für sie eine grosse Rolle.
