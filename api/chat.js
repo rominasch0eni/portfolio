@@ -292,10 +292,10 @@ Client: Rimon Technologies
 Role: Design & Research Lead
 Period: 2021–2023
 Team: 3 developers, Product Lead, Business Lead
-Overview: The first MVP of the AR app wasn't working for field service technicians — inefficient workflows, confusing UI, and an AR feature nobody used. Redesigned it through intensive field research.
-Process: Field observations and ethnographic interviews in the technicians' real work environment, heuristic evaluation of the existing MVP, user-centred design strategy, iterative testing in the field.
-Outcome: 75% less time on tasks, 50% fewer user errors, AR feature actively used after redesign (previously avoided).
-Learning: Technology alone doesn't solve problems. Only by truly understanding how people think and act in their daily work can you build tools that actually work. Field research is not a nice-to-have.
+Overview: The first MVP of the AR app only worked to a limited extent in the daily routines of service technicians. Processes were inefficient, the UI was confusing and the AR feature was barely used. A redesign based on intensive field research was necessary.
+Process: Field observations and ethnographic interviews directly in the real work environment, supplemented by a heuristic evaluation of the existing MVP and the development of a user-centred design strategy. Solutions were iteratively tested and refined in the field.
+Key insight: The research revealed that the biggest pain point was not guiding work steps, but preserving and sharing knowledge. The focus therefore shifted from classic step-by-step instructions to a knowledge-base solution. Rimon now helps customers capture knowledge through video and audio recordings and convert it into structured content such as texts or instructions using AI.
+Learning: Technology alone doesn't solve problems. What matters is a clear and relevant pain point — without it, the solution remains a nice-to-have.
 
 04 · Exchange Programme Website
 Type: User Interface · Visual Design · Campaign
@@ -612,10 +612,10 @@ Kunde: Rimon Technologies
 Rolle: Design & Research Lead
 Zeitraum: 2021–2023
 Team: 3 Entwickler, Product Lead, Business Lead
-Überblick: Das erste MVP der AR-App funktionierte für Servicetechniker im Alltag nicht — ineffiziente Abläufe, verwirrende UI, AR-Funktion kaum genutzt. Redesign durch intensive Feldforschung.
-Vorgehen: Feldbeobachtungen und ethnografische Interviews in der realen Arbeitsumgebung, heuristische Evaluation des MVP, nutzerzentrierte Designstrategie, iteratives Testing im Feld.
-Ergebnis: 75% weniger Zeit für Aufgaben, 50% weniger Nutzerfehler, AR-Funktion wird nach dem Redesign aktiv genutzt (vorher gemieden).
-Learning: Technologie allein löst keine Probleme. Feldforschung ist keine Kür, sondern die Grundlage.
+Überblick: Das erste MVP der AR-App funktionierte im Alltag von Servicetechnikern nur eingeschränkt. Prozesse waren ineffizient, die UI verwirrend und die AR-Funktion wurde kaum genutzt. Ein Redesign basierend auf intensiver Feldforschung war notwendig.
+Vorgehen: Feldbeobachtungen und ethnografische Interviews direkt in der realen Arbeitsumgebung. Ergänzend dazu eine heuristische Evaluation des bestehenden MVP sowie die Entwicklung einer nutzerzentrierten Designstrategie. Die Lösungen wurden iterativ im Feld getestet und weiterentwickelt.
+Erkenntnis: Durch die Research-Arbeit wurde klar, dass der grösste Pain Point nicht das Anleiten von Arbeitsschritten war, sondern das Bewahren und Weitergeben von Wissen. Der Fokus verschob sich daher von klassischen Schritt-für-Schritt-Anleitungen hin zu einer Knowledge-Base-Lösung. Rimon unterstützt heute Kunden dabei, Wissen durch Videoaufnahmen und Sprachaufzeichnungen festzuhalten und mithilfe von KI in strukturierte Inhalte wie Texte oder Anleitungen zu überführen.
+Learning: Technologie allein löst keine Probleme. Entscheidend ist ein klarer und relevanter Pain Point, sonst bleibt die Lösung ein Nice-to-have.
 
 04 · Webseite für Austauschprogramm
 Art: User Interface · Visual Design · Kampagne
