@@ -410,7 +410,7 @@
       /* Chat mobile */
       #chat-inner { inset: 0; }
       #chat-header { padding: 8px 12px; }
-      #chat-welcome { padding: 4px 20px 20px; }
+      #chat-welcome { padding: 24px 20px 32px; }
       #chat-messages { padding: 8px 16px; }
       #chat-input-row { padding: 0; gap: 8px; margin-top: auto; }
       #chat-suggestions { padding: 6px 0 8px; min-height: 0; gap: 6px; margin: 0; }
@@ -502,11 +502,7 @@
       text-align: center;
       color: #fff;
       line-height: 1.4;
-      padding: 16px 40px 48px;
-      flex-shrink: 0;
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
+      padding: 40px 40px 56px;
       box-sizing: border-box;
     }
     #chat-welcome .welcome-title {
@@ -526,11 +522,9 @@
     }
 
     #chat-messages {
-      flex: 1; overflow-y: auto; padding: 28px 24px;
+      flex: 1; overflow-y: auto; padding: 0 24px 28px;
       display: flex; flex-direction: column; gap: 14px;
       max-width: 860px; width: 100%; margin: 0 auto; box-sizing: border-box;
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
     }
     .chat-spacer { flex: 1; min-height: 0; }
     /* scrollbar subtle */
@@ -2118,11 +2112,12 @@
     <div id="chat-header">
       <button id="chat-close" onclick="toggleChat()" aria-label="Chat schliessen">✕</button>
     </div>
-    <div id="chat-welcome">
-      <span class="welcome-title" data-i18n="chat.welcome.title">Hi, ich bin Dot!</span>
-      <span class="welcome-sub" data-i18n="chat.welcome.sub">Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</span>
-    </div>
-    <div id="chat-messages"><div class="chat-spacer"></div>
+    <div id="chat-messages">
+      <div id="chat-welcome">
+        <span class="welcome-title" data-i18n="chat.welcome.title">Hi, ich bin Dot!</span>
+        <span class="welcome-sub" data-i18n="chat.welcome.sub">Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</span>
+      </div>
+      <div class="chat-spacer"></div>
     </div>
     <div id="chat-input-row">
       <input id="chat-input" type="text" placeholder="Deine Frage..." data-i18n-ph="chat.placeholder" onkeydown="if(event.key==='Enter')sendChat()" maxlength="300"/>
