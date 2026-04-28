@@ -190,6 +190,14 @@
     .project-detail-content { padding: 80px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
     .project-detail-content h2 { margin-bottom: 24px; color: var(--text-primary); }
     .project-detail-content p { margin-bottom: 16px; max-width: 560px; }
+    .project-detail-content.stacked { grid-template-columns: 1fr; gap: 0; }
+    .project-detail-content.stacked > div { padding-bottom: 56px; }
+    .project-detail-content.stacked > div + div { border-top: 1px solid var(--border); padding-top: 56px; }
+    .project-detail-content.stacked p { max-width: 720px; }
+    .resp-item { margin-bottom: 40px; }
+    .resp-item:last-child { margin-bottom: 0; }
+    .resp-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 14px; color: var(--text-primary); }
+    .resp-label { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; color: var(--text-muted); opacity: 0.6; margin-bottom: 4px !important; max-width: none !important; }
 
     .project-process { padding: 80px 48px; border-top: 1px solid var(--border); }
     .project-process h2 { margin-bottom: 48px; color: var(--text-primary); }
@@ -390,6 +398,7 @@
       .scroll-hint { display: none; }
       .project-detail-hero { padding: 120px 24px 60px; }
       .project-detail-content { grid-template-columns: 1fr; padding: 48px 24px; gap: 36px; }
+      .resp-grid { grid-template-columns: 1fr; gap: 32px; }
       .process-steps { grid-template-columns: 1fr 1fr; }
       .project-process { padding: 48px 24px; }
       .project-gallery { padding: 0 24px 48px; }
@@ -990,11 +999,12 @@
           { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designer, 4 Entwickler' },
           { label: 'Branche', value: 'Finanzdienstleistungen' }
         ],
+        stackedContent: true,
         content: {
           leftTitle: 'Ausgangslage',
           leftText: '<p>Das bestehende E-Banking war ursprünglich für Mobile konzipiert. Die Aufgabe war nicht nur die Übertragung auf Web, sondern auch die Integration von Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren.</p><p>Das erforderte enge Zusammenarbeit mit verschiedenen Stakeholdern, um die richtigen Abwägungen zu treffen.</p>',
-          rightTitle: 'Meine Verantwortung',
-          rightText: '<p><strong>Hilfe-Section</strong><br>Benachrichtigungen, Aktivitäten sowie Hilfe und Kontakt waren ursprünglich getrennt und unübersichtlich. Ich entwickelte mehrere Varianten und diskutierte sie mit den Leads. Ein schwebender Button zeigte im Usability-Test das Gegenteil meiner Hypothese – die Nutzer gewöhnten sich schnell daran. Ein gutes Beispiel dafür, warum Testen wichtiger ist als Annehmen.</p><p><strong>Meine Raiffeisenbank</strong><br>Die emotionale Nähe zur eigenen Bank war kaum spürbar. Ich integrierte das Bild der lokalen Bank sowie der persönlichen Beraterin oder des Beraters – für eine direkte, menschliche Verbindung im E-Banking.</p><p><strong>Trading Flow</strong><br>Der bestehende Bereich war für Neulinge zu komplex. Ich strukturierte den Flow nach dem Prinzip der Progressive Disclosure, damit Einsteiger geführt und Erfahrene nicht gebremst werden.</p>'
+          rightTitle: 'Case Studies',
+          rightText: '<div class="resp-item"><h4>Meine Raiffeisenbank</h4><p class="resp-label">Problem</p><p>Die Hilfe-Section war unübersichtlich organisiert und die emotionale Nähe zur eigenen Bank kaum spürbar – beides widersprach dem Markenwert von Raiffeisen.</p><p class="resp-label">Lösung</p><p>Ich entwickelte mehrere Varianten für die Hilfe-Section und diskutierte sie mit den Leads. Ein schwebender Button zeigte im Usability-Test das Gegenteil meiner Hypothese – die Nutzer gewöhnten sich schnell daran. Zusätzlich integrierte ich das Bild der lokalen Bank sowie der persönlichen Beraterin oder des Beraters für eine menschliche Verbindung im E-Banking.</p></div><div class="resp-item"><h4>Trading Flow</h4><p class="resp-label">Problem</p><p>Der bestehende Bereich war für Neulinge zu komplex, ohne erfahrene Trader zu bremsen.</p><p class="resp-label">Lösung</p><p>Ich strukturierte den Flow nach dem Prinzip der Progressive Disclosure: Einsteiger werden schrittweise geführt, Vielnutzende kommen schnell vorwärts.</p></div>'
         },
         process: {
           title: 'Tools',
@@ -1249,11 +1259,12 @@
         { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers' },
         { label: 'Industry', value: 'Financial Services' }
       ],
+      stackedContent: true,
       content: {
         leftTitle: 'Starting point',
         leftText: '<p>The existing e-banking had originally been designed for mobile. The task was not just to transfer it to web, but also to integrate legacy features that were technically available but not very user-friendly.</p><p>This required close collaboration with various stakeholders to make the right trade-offs.</p>',
-        rightTitle: 'My responsibility',
-        rightText: '<p><strong>Help section</strong><br>Notifications, activity and help & contact were originally separated and poorly organised. I developed several variants and discussed them with the leads. A floating button showed the opposite of my hypothesis in usability testing — users adapted quickly. A good example of why testing matters more than assumptions.</p><p><strong>My Raiffeisen</strong><br>The emotional connection to one\'s own bank was barely tangible. I integrated the image of the local branch and the personal advisor — creating a direct, human connection within e-banking.</p><p><strong>Trading flow</strong><br>The existing trading area was too complex for newcomers. I structured the flow around progressive disclosure so beginners are guided without overwhelming them while experienced users can move quickly.</p>'
+        rightTitle: 'Case Studies',
+        rightText: '<div class="resp-item"><h4>My Raiffeisen</h4><p class="resp-label">Problem</p><p>The help section was poorly organised and the emotional connection to one\'s own bank was barely tangible — both contradicted Raiffeisen\'s brand values.</p><p class="resp-label">Solution</p><p>I developed several variants for the help section and discussed them with the leads. A floating button showed the opposite of my hypothesis in usability testing — users adapted quickly. I also integrated the image of the local branch and the personal advisor to create a human connection within e-banking.</p></div><div class="resp-item"><h4>Trading flow</h4><p class="resp-label">Problem</p><p>The existing trading area was too complex for newcomers without slowing down experienced traders.</p><p class="resp-label">Solution</p><p>I structured the flow around progressive disclosure: beginners are guided step by step while frequent users can move quickly.</p></div>'
       },
       process: {
         title: 'Tools',
@@ -1615,9 +1626,10 @@
 
 
       // Content
-      html += '<div class="project-detail-content animate">' +
+      var stackedClass = p.stackedContent ? ' stacked' : '';
+      html += '<div class="project-detail-content animate' + stackedClass + '">' +
         '<div><h2>' + _content.leftTitle + '</h2>' + _content.leftText + '</div>' +
-        '<div style="transition-delay:0.12s;"><h2>' + _content.rightTitle + '</h2>' + _content.rightText + '</div>' +
+        (_content.rightTitle ? '<div style="transition-delay:0.12s;"><h2>' + _content.rightTitle + '</h2>' + _content.rightText + '</div>' : '') +
         '</div>';
 
       // Extra section (e-banking)
