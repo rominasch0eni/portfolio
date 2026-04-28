@@ -342,12 +342,13 @@ Client: Raiffeisen Switzerland
 Role: UX Designer
 Period: 2024–2025
 Team: UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers
-Starting point: The existing e-banking was originally designed for mobile. The task was not just transferring it to web but also integrating legacy features that were technically available but not user-friendly.
+Overview: Raiffeisen's new web e-banking wasn't built from scratch. The foundation was an existing mobile app concept that had to be merged with a grown legacy e-banking system. The central question was not just how to transfer mobile to web, but how to bring two very different worlds together into one coherent, user-friendly experience.
+Challenge: Legacy features that were technically available but not user-friendly had to be integrated. This required close collaboration with various stakeholders to make the right trade-offs between technical possibilities and user needs.
 My Raiffeisen – Problem: Notifications, activities, help and contact were separated across different areas. E-banking also lacked any emotional connection to one's own bank — something that directly contradicts Raiffeisen's brand values.
 My Raiffeisen – Solution: All areas were consolidated under one central floating «R» button. My hypothesis was that a button linking to a page rather than opening a chat would confuse users. Usability testing proved the opposite.
 Trading flow – Problem: The existing area showed all information on one page at once. For newcomers and occasional traders it was simply too much.
-Trading flow – Solution: Before designing, Romina analysed the documentation, had an onboarding conversation with a developer and consulted 9 people. Flow built using progressive disclosure, wireframes based on the existing design system. In quarterly testing all participants navigated through the entire flow without issue and gave positive feedback.
-Learning: In large projects with many stakeholders, communication matters as much as design. Sometimes a test proves your hypothesis wrong — that's a valuable result too.
+Trading flow – Solution: Before designing, Romina analysed the documentation, had an onboarding conversation with a developer and consulted 9 people. Flow built using progressive disclosure, wireframes based on the existing design system. In quarterly testing all participants navigated through the entire flow without issue.
+Outcome: In large projects with many stakeholders, communication matters just as much as design. Better to ask once too many than to work in the wrong direction. And sometimes a test proves your hypothesis wrong — that's a valuable result too.
 
 03 · Augmented Reality App
 Type: User Research · Field Research · Interaction Design · Mobile
@@ -355,10 +356,13 @@ Client: Rimon Technologies
 Role: Design & Research Lead
 Period: 2021–2023
 Team: 3 developers, Product Lead, Business Lead
-Overview: The first MVP of the AR app only worked to a limited extent in the daily routines of service technicians. Processes were inefficient, the UI was confusing and the AR feature was barely used. A redesign based on intensive field research was necessary.
-Process: Field observations and ethnographic interviews directly in the real work environment, supplemented by a heuristic evaluation of the existing MVP and the development of a user-centred design strategy. Solutions were iteratively tested and refined in the field.
-Key insight: The research revealed that the biggest pain point was not guiding work steps, but preserving and sharing knowledge. The focus therefore shifted from classic step-by-step instructions to a knowledge-base solution. Rimon now helps customers capture knowledge through video and audio recordings and convert it into structured content such as texts or instructions using AI.
-Learning: Technology alone doesn't solve problems. What matters is a clear and relevant pain point — without it, the solution remains a nice-to-have.
+Overview: The Rimon app was designed to help service technicians solve complex tasks independently. The first MVP did not meet this goal. The challenge was twofold: an app that works technically but does not fit into the technicians' daily workflow, and technologies like AR and AI that are difficult for everyday users to grasp.
+Challenge: AR and AI sound exciting to tech enthusiasts, but for everyone else they are abstract and hard to relate to. The technicians' actual pain point had nothing to do with technology — it was about knowledge loss and a lack of support in their daily work.
+Process: 01 Field research – Observations and ethnographic interviews directly in the service technicians' work environment. 02 Heuristic evaluation – Structured analysis of the existing MVP using established usability heuristics. 03 Design and wireframes – User-centred design strategy focused on cognitive offloading, developed iteratively. 04 Testing with real technicians – Iterative testing where the app is actually used, not in a lab.
+Highlights – Product solution: Problem: Service technicians leave companies taking years of expertise with them. New employees rely on colleagues, processes become inefficient and knowledge is lost. Solution: Instead of putting AR and AI front and centre, we developed an analogy everyone understands — the digital Walter. Notes, files and recordings are saved, and the digital Walter guides technicians step by step through their tasks.
+Highlights – App: Problem: The Rimon app did not reflect the actual needs of technicians and led to inefficiencies in their daily work. Solution: Based on an extensive research phase we developed a completely redesigned interface. All 6 participants completed the workflow independently and all buttons were immediately recognised.
+Outcome: The research showed that the biggest pain point was not guiding work steps, but preserving and sharing knowledge. The focus shifted from classic step-by-step instructions to a knowledge-base solution. Rimon now helps customers capture knowledge through video and audio recordings and convert it into structured content using AI.
+Personal learnings: Innovation is not automatically a business case. It is easier to define a clear value proposition first and then find the right technology, than to start with a technology and search for a use case.
 
 04 · Exchange Programme Website
 Type: User Interface · Visual Design · Campaign
@@ -725,12 +729,13 @@ Kunde: Raiffeisen Schweiz
 Rolle: UX Designerin
 Zeitraum: 2024–2025
 Team: UX Lead, Brand Lead, PO, 2 UI Designerinnen, 4 Entwickler
-Ausgangslage: Das bestehende E-Banking war ursprünglich für Mobile konzipiert. Die Aufgabe war nicht nur die Übertragung auf Web, sondern auch die Integration von Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren.
+Überblick: Das neue Web E-Banking von Raiffeisen entstand nicht auf der grünen Wiese. Die Grundlage war ein bestehendes Mobile-App-Konzept, das mit einem gewachsenen Legacy E-Banking-System vereint werden musste. Die zentrale Frage war nicht nur wie man Mobile auf Web überträgt, sondern wie man zwei sehr unterschiedliche Welten zu einer kohärenten, nutzerfreundlichen Erfahrung zusammenführt.
+Herausforderung: Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren, mussten integriert werden. Das erforderte enge Zusammenarbeit mit verschiedenen Stakeholdern, um die richtigen Abwägungen zwischen technischen Möglichkeiten und Nutzerbedürfnissen zu treffen.
 Meine Raiffeisenbank – Problem: Benachrichtigungen, Aktivitäten, Hilfe und Kontakt waren getrennt und über verschiedene Bereiche verteilt. Gleichzeitig fehlte jegliche emotionale Verbindung zur eigenen Bank – etwas das dem Markenwert von Raiffeisen direkt widerspricht.
 Meine Raiffeisenbank – Lösung: Alle Bereiche wurden unter einem zentralen schwebenden «R»-Button gebündelt. Meine Hypothese war, dass ein Button der auf eine Seite verlinkt statt einen Chat zu öffnen, verwirren würde. Der Usability-Test bewies das Gegenteil.
 Trading Flow – Problem: Der bestehende Bereich zeigte alle Informationen auf einer Seite auf einmal. Für Neulinge und Gelegenheitstrader war das schlicht zu viel.
 Trading Flow – Lösung: Vor dem Design analysierte Romina die Dokumentation, führte ein Onboarding-Gespräch mit einem Entwickler und konsultierte 9 Personen. Flow nach dem Prinzip der Progressive Disclosure aufgebaut, Wireframes auf Basis des Design Systems. Im Quartalstesting navigierten alle Teilnehmenden problemlos durch den gesamten Flow.
-Learning: In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Manchmal beweist ein Test, dass die eigene Hypothese falsch war – auch das ist ein wertvolles Ergebnis.
+Ergebnis: In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Lieber einmal zu viel nachfragen als in die falsche Richtung arbeiten. Und manchmal beweist ein Test, dass die eigene Hypothese falsch war – auch das ist ein wertvolles Ergebnis.
 
 03 · Augmented Reality App
 Art: User Research · Feldforschung · Interaction Design · Mobile
@@ -738,10 +743,13 @@ Kunde: Rimon Technologies
 Rolle: Design & Research Lead
 Zeitraum: 2021–2023
 Team: 3 Entwickler, Product Lead, Business Lead
-Überblick: Das erste MVP der AR-App funktionierte im Alltag von Servicetechnikern nur eingeschränkt. Prozesse waren ineffizient, die UI verwirrend und die AR-Funktion wurde kaum genutzt. Ein Redesign basierend auf intensiver Feldforschung war notwendig.
-Vorgehen: Feldbeobachtungen und ethnografische Interviews direkt in der realen Arbeitsumgebung. Ergänzend dazu eine heuristische Evaluation des bestehenden MVP sowie die Entwicklung einer nutzerzentrierten Designstrategie. Die Lösungen wurden iterativ im Feld getestet und weiterentwickelt.
-Erkenntnis: Durch die Research-Arbeit wurde klar, dass der grösste Pain Point nicht das Anleiten von Arbeitsschritten war, sondern das Bewahren und Weitergeben von Wissen. Der Fokus verschob sich daher von klassischen Schritt-für-Schritt-Anleitungen hin zu einer Knowledge-Base-Lösung. Rimon unterstützt heute Kunden dabei, Wissen durch Videoaufnahmen und Sprachaufzeichnungen festzuhalten und mithilfe von KI in strukturierte Inhalte wie Texte oder Anleitungen zu überführen.
-Learning: Technologie allein löst keine Probleme. Entscheidend ist ein klarer und relevanter Pain Point, sonst bleibt die Lösung ein Nice-to-have.
+Überblick: Die Rimon App sollte Servicetechnikern helfen, komplexe Aufgaben selbstständig zu lösen. Das erste MVP erfüllte diesen Anspruch nicht. Die Herausforderung war zweigeteilt: einerseits eine App die technisch funktioniert aber im Alltag der Techniker nicht ankommt, andererseits Technologien wie AR und AI die für normale Nutzer wenig greifbar sind.
+Herausforderung: AR und AI klingen für Technikbegeisterte spannend, für alle anderen sind sie abstrakt und wenig aussagekräftig. Der eigentliche Painpoint der Techniker hatte nichts mit Technologie zu tun, sondern mit Wissensverlust und fehlender Unterstützung im Arbeitsalltag.
+Vorgehen: 01 Feldforschung – Beobachtungen und ethnografische Interviews direkt in der Arbeitsumgebung der Servicetechniker. 02 Heuristische Evaluation – Strukturierte Analyse des bestehenden MVP anhand etablierter Usability-Heuristiken. 03 Design und Wireframes – Nutzerzentrierte Designstrategie mit Fokus auf kognitive Entlastung, iterativ entwickelt. 04 Testing mit echten Technikern – Iteratives Testing dort wo die App tatsächlich genutzt wird, nicht im Labor.
+Highlights – Produktlösung: Problem: Servicetechniker verlassen Unternehmen und nehmen dabei jahrelanges Erfahrungswissen mit. Neue Mitarbeitende sind auf Kollegen angewiesen, Prozesse werden ineffizient und Wissen geht verloren. Lösung: Statt AR und AI in den Vordergrund zu stellen, haben wir eine Analogie entwickelt die jeder versteht – den digitalen Walter. Notizen, Dateien und Aufnahmen werden gespeichert und der digitale Walter begleitet Techniker Schritt für Schritt durch ihre Aufgaben.
+Highlights – App: Problem: Die Rimon App entsprach nicht den tatsächlichen Bedürfnissen der Techniker und führte zu Ineffizienzen im Arbeitsalltag. Lösung: Basierend auf einer umfangreichen Research-Phase entwickelten wir ein komplett überarbeitetes Interface. Alle 6 Teilnehmenden schlossen den Workflow selbstständig ab, alle Buttons wurden sofort erkannt.
+Ergebnis: Die Research-Arbeit zeigte, dass der grösste Painpoint nicht das Anleiten von Arbeitsschritten war, sondern das Bewahren und Weitergeben von Wissen. Der Fokus verschob sich von klassischen Schritt-für-Schritt-Anleitungen hin zu einer Knowledge-Base-Lösung. Rimon unterstützt heute Kunden dabei, Wissen durch Video- und Sprachaufnahmen festzuhalten und mithilfe von KI in strukturierte Inhalte zu überführen.
+Persönliche Learnings: Innovation ist nicht automatisch ein Business Case. Es ist einfacher, einen klaren Mehrwert zu definieren und dann die passende Technologie zu suchen, als umgekehrt mit einer Technologie zu starten und nach einem Anwendungsfall zu suchen.
 
 04 · Webseite für Austauschprogramm
 Art: User Interface · Visual Design · Kampagne
