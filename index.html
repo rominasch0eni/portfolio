@@ -197,11 +197,13 @@
     .project-bottom-section { padding: 56px 48px 80px; border-top: 1px solid var(--border); }
     .project-bottom-section h2 { margin-bottom: 40px; color: var(--text-primary); }
     .resp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-    .cs-label { margin-bottom: 2px !important; margin-top: 20px; }
+    .resp-grid > .resp-item { min-width: 0; }
+    .cs-label { margin-bottom: 4px !important; margin-top: 24px !important; }
+    .cs-label strong { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); opacity: 0.7; }
     .cs-label + p { margin-top: 0; }
     .resp-item { margin-bottom: 40px; }
     .resp-item:last-child { margin-bottom: 0; }
-    .resp-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 14px; color: var(--text-primary); }
+    .resp-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); padding-bottom: 14px; border-bottom: 1px solid var(--border); }
     .resp-label { display: block; margin: 14px 0 4px !important; max-width: none !important; color: var(--text-muted); opacity: 0.6; }
 
     .project-process { padding: 80px 48px; border-top: 1px solid var(--border); }
