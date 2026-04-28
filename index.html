@@ -1740,9 +1740,9 @@
       if (!p.noOutcome) {
         if (_outcome.reflection) {
           html += '<div class="project-outcome animate">' +
-            '<div class="project-detail-content">' +
-              '<div><h2>' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2><p>' + _outcome.text + '</p></div>' +
-              '<div><h2>' + _outcome.reflection.title + '</h2><p>' + _outcome.reflection.text + '</p></div>' +
+            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-gap-lg);align-items:start;">' +
+              '<div><h2 style="margin-bottom:var(--sp-gap);color:var(--text-primary);">' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2><p>' + _outcome.text + '</p></div>' +
+              '<div><h2 style="margin-bottom:var(--sp-gap);color:var(--text-primary);">' + _outcome.reflection.title + '</h2><p>' + _outcome.reflection.text + '</p></div>' +
             '</div>';
         } else {
           html += '<div class="project-outcome animate"><h2>' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2>' +
