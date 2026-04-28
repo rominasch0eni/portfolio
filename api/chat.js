@@ -342,9 +342,12 @@ Client: Raiffeisen Switzerland
 Role: UX Designer
 Period: 2024–2025
 Team: UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers
-Overview: Translated an existing mobile banking app concept to web — not just scaling it up, but rethinking it for larger screens, different user behaviour, and legacy web features that had to be integrated.
-Process: Deep analysis of the app concept, stakeholder and developer interviews, web UX concept development, Figma prototyping based on existing design system, quarterly usability tests with 6 participants each via Testingtime.
-Learning: Large projects thrive on open communication. Better to ask once too many than to work in the wrong direction for too long. Transparency prevents mistakes before they happen.
+Starting point: The existing e-banking was originally designed for mobile. The task was not just transferring it to web but also integrating legacy features that were technically available but not user-friendly.
+My Raiffeisen – Problem: Notifications, activities, help and contact were separated across different areas. E-banking also lacked any emotional connection to one's own bank — something that directly contradicts Raiffeisen's brand values.
+My Raiffeisen – Solution: All areas were consolidated under one central floating «R» button. My hypothesis was that a button linking to a page rather than opening a chat would confuse users. Usability testing proved the opposite.
+Trading flow – Problem: The existing area showed all information on one page at once. For newcomers this was simply too much.
+Trading flow – Solution: Flow built using progressive disclosure. Beginners are guided, frequent users move quickly. In usability testing all participants navigated through the entire flow without issue.
+Learning: In large projects with many stakeholders, communication matters as much as design. Sometimes a test proves your hypothesis wrong — that's a valuable result too.
 
 03 · Augmented Reality App
 Type: User Research · Field Research · Interaction Design · Mobile
@@ -722,9 +725,12 @@ Kunde: Raiffeisen Schweiz
 Rolle: UX Designerin
 Zeitraum: 2024–2025
 Team: UX Lead, Brand Lead, PO, 2 UI Designerinnen, 4 Entwickler
-Überblick: Bestehendes Mobile-App-Konzept auf Web übertragen — nicht einfach grösser machen, sondern für grössere Bildschirme, andere Nutzerverhaltensweisen und Legacy-Webfunktionen neu denken.
-Vorgehen: Analyse des App-Konzepts, Gespräche mit Stakeholdern und Entwicklern, Web-UX-Konzept, Figma-Prototypen auf Basis des Design Systems, Quartalstests mit je 6 Teilnehmenden über Testingtime.
-Learning: Grosse Projekte leben von offener Kommunikation. Lieber einmal zu viel nachfragen als zu lange in die falsche Richtung arbeiten. Transparenz verhindert Fehler, bevor sie entstehen.
+Ausgangslage: Das bestehende E-Banking war ursprünglich für Mobile konzipiert. Die Aufgabe war nicht nur die Übertragung auf Web, sondern auch die Integration von Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren.
+Meine Raiffeisenbank – Problem: Benachrichtigungen, Aktivitäten, Hilfe und Kontakt waren getrennt und über verschiedene Bereiche verteilt. Gleichzeitig fehlte jegliche emotionale Verbindung zur eigenen Bank – etwas das dem Markenwert von Raiffeisen direkt widerspricht.
+Meine Raiffeisenbank – Lösung: Alle Bereiche wurden unter einem zentralen schwebenden «R»-Button gebündelt. Meine Hypothese war, dass ein Button der auf eine Seite verlinkt statt einen Chat zu öffnen, verwirren würde. Der Usability-Test bewies das Gegenteil.
+Trading Flow – Problem: Der bestehende Bereich zeigte alle Informationen auf einer Seite auf einmal. Für Neulinge war das zu viel.
+Trading Flow – Lösung: Flow nach dem Prinzip der Progressive Disclosure aufgebaut. Neulinge werden geführt, Vielnutzende kommen schnell vorwärts. Im Usability-Test navigierten alle problemlos durch den Flow.
+Learning: In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Manchmal beweist ein Test, dass die eigene Hypothese falsch war – auch das ist ein wertvolles Ergebnis.
 
 03 · Augmented Reality App
 Art: User Research · Feldforschung · Interaction Design · Mobile
