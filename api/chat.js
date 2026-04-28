@@ -345,8 +345,8 @@ Team: UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers
 Starting point: The existing e-banking was originally designed for mobile. The task was not just transferring it to web but also integrating legacy features that were technically available but not user-friendly.
 My Raiffeisen – Problem: Notifications, activities, help and contact were separated across different areas. E-banking also lacked any emotional connection to one's own bank — something that directly contradicts Raiffeisen's brand values.
 My Raiffeisen – Solution: All areas were consolidated under one central floating «R» button. My hypothesis was that a button linking to a page rather than opening a chat would confuse users. Usability testing proved the opposite.
-Trading flow – Problem: The existing area showed all information on one page at once. For newcomers this was simply too much.
-Trading flow – Solution: Flow built using progressive disclosure. Beginners are guided, frequent users move quickly. In usability testing all participants navigated through the entire flow without issue.
+Trading flow – Problem: The existing area showed all information on one page at once. For newcomers and occasional traders it was simply too much.
+Trading flow – Solution: Before designing, Romina analysed the documentation, had an onboarding conversation with a developer and consulted 9 people. Flow built using progressive disclosure, wireframes based on the existing design system. In quarterly testing all participants navigated through the entire flow without issue and gave positive feedback.
 Learning: In large projects with many stakeholders, communication matters as much as design. Sometimes a test proves your hypothesis wrong — that's a valuable result too.
 
 03 · Augmented Reality App
@@ -728,8 +728,8 @@ Team: UX Lead, Brand Lead, PO, 2 UI Designerinnen, 4 Entwickler
 Ausgangslage: Das bestehende E-Banking war ursprünglich für Mobile konzipiert. Die Aufgabe war nicht nur die Übertragung auf Web, sondern auch die Integration von Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren.
 Meine Raiffeisenbank – Problem: Benachrichtigungen, Aktivitäten, Hilfe und Kontakt waren getrennt und über verschiedene Bereiche verteilt. Gleichzeitig fehlte jegliche emotionale Verbindung zur eigenen Bank – etwas das dem Markenwert von Raiffeisen direkt widerspricht.
 Meine Raiffeisenbank – Lösung: Alle Bereiche wurden unter einem zentralen schwebenden «R»-Button gebündelt. Meine Hypothese war, dass ein Button der auf eine Seite verlinkt statt einen Chat zu öffnen, verwirren würde. Der Usability-Test bewies das Gegenteil.
-Trading Flow – Problem: Der bestehende Bereich zeigte alle Informationen auf einer Seite auf einmal. Für Neulinge war das zu viel.
-Trading Flow – Lösung: Flow nach dem Prinzip der Progressive Disclosure aufgebaut. Neulinge werden geführt, Vielnutzende kommen schnell vorwärts. Im Usability-Test navigierten alle problemlos durch den Flow.
+Trading Flow – Problem: Der bestehende Bereich zeigte alle Informationen auf einer Seite auf einmal. Für Neulinge und Gelegenheitstrader war das schlicht zu viel.
+Trading Flow – Lösung: Vor dem Design analysierte Romina die Dokumentation, führte ein Onboarding-Gespräch mit einem Entwickler und konsultierte 9 Personen. Flow nach dem Prinzip der Progressive Disclosure aufgebaut, Wireframes auf Basis des Design Systems. Im Quartalstesting navigierten alle Teilnehmenden problemlos durch den gesamten Flow.
 Learning: In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Manchmal beweist ein Test, dass die eigene Hypothese falsch war – auch das ist ein wertvolles Ergebnis.
 
 03 · Augmented Reality App
