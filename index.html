@@ -1738,8 +1738,16 @@
 
       // Outcome
       if (!p.noOutcome) {
-        html += '<div class="project-outcome animate"><h2>' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2>' +
-          '<p>' + _outcome.text + '</p>';
+        if (_outcome.reflection) {
+          html += '<div class="project-outcome animate">' +
+            '<div class="project-detail-content">' +
+              '<div><h2>' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2><p>' + _outcome.text + '</p></div>' +
+              '<div><h2>' + _outcome.reflection.title + '</h2><p>' + _outcome.reflection.text + '</p></div>' +
+            '</div>';
+        } else {
+          html += '<div class="project-outcome animate"><h2>' + (_outcome.customOutcome ? t('proj.learnings') : t('proj.result')) + '</h2>' +
+            '<p>' + _outcome.text + '</p>';
+        }
 
         if (_outcome.customOutcome && _outcome.learnings) {
           html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;">';
@@ -1749,18 +1757,12 @@
               '<p>' + l.text + '</p></div>';
           });
           html += '</div>';
-        } else if (_outcome.stats) {
+        } else if (_outcome.stats && _outcome.stats.length) {
           html += '<div class="outcome-stats">';
           _outcome.stats.forEach(function(s, i) {
             html += '<div class="outcome-stat animate" style="transition-delay:' + (i * 0.1) + 's;"><h4>' + s.value + '</h4><p>' + s.label + '</p></div>';
           });
           html += '</div>';
-        }
-
-        if (_outcome.reflection) {
-          html += '<div style="margin-top:var(--sp-section);max-width:640px;">' +
-            '<h2 style="margin-bottom:var(--sp-gap);">' + _outcome.reflection.title + '</h2>' +
-            '<p>' + _outcome.reflection.text + '</p></div>';
         }
         if (p.outcome.badge) {
           html += '<div style="margin-top:40px;">' +
