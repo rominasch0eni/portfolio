@@ -1758,8 +1758,8 @@
         }
 
         if (_outcome.reflection) {
-          html += '<div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--border);max-width:640px;">' +
-            '<h3 style="font-size:22px;margin-bottom:16px;">' + _outcome.reflection.title + '</h3>' +
+          html += '<div style="margin-top:var(--sp-section);max-width:640px;">' +
+            '<h2 style="margin-bottom:var(--sp-gap);">' + _outcome.reflection.title + '</h2>' +
             '<p>' + _outcome.reflection.text + '</p></div>';
         }
         if (p.outcome.badge) {
