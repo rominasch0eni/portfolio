@@ -102,7 +102,7 @@ window.TRANSLATIONS = {
     'cv.on.request':      'Auf Anfrage',
 
     /* CV job bullets */
-    'cv.ironforge.title': 'Ironforge Consulting AG · UX Design &amp; Research Freelancerin 100%',
+    'cv.ironforge.title': 'Ironforge Consulting AG · UX Design &amp; Research<br>Freelancerin 100%',
     'cv.ironforge.meta':  'Bern · Jul 2025 – Heute',
     'cv.ironforge.b1':    'Planung, Durchführung und Koordination von User-Research-Aktivitäten.',
     'cv.ironforge.b2':    'Einbindung relevanter Stakeholder aus den Bundesämtern sowie strukturierte Erhebung und Dokumentation der Nutzerbedürfnisse.',
@@ -235,7 +235,7 @@ window.TRANSLATIONS = {
     'cv.on.request':      'On request',
 
     /* CV job bullets */
-    'cv.ironforge.title': 'Ironforge Consulting AG · UX Design &amp; Research Freelancer 100%',
+    'cv.ironforge.title': 'Ironforge Consulting AG · UX Design &amp; Research<br>Freelancer 100%',
     'cv.ironforge.meta':  'Bern · Jul 2025 – Present',
     'cv.ironforge.b1':    'Planning, conducting and coordinating user research activities.',
     'cv.ironforge.b2':    'Engaging relevant stakeholders from federal offices and structured collection and documentation of user needs.',
