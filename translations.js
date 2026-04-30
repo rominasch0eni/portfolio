@@ -15,7 +15,7 @@ window.TRANSLATIONS = {
     'scroll.hint':        'Scrollen',
 
     'brief.heading':      'Ich löse Probleme: Ob mit 54 Farbfeldern oder 54 User-Interviews',
-    'brief.text':         'Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.<br><br>Wenn ich nicht gerade designe, findest du mich beim Kuscheln mit meiner Katze, beim Akrobatik-Training oder beim Binge-Watchen von Netflix-Serien und Anime.',
+    'brief.text':         'Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.<br><br>Wenn ich nicht gerade designe, findest du mich beim Kuscheln mit meiner Katze oder beim Akrobatik-Training.',
     'brief.label.current':'Aktuell',
     'brief.val.current':  'UX Designerin, Ironforge Consulting AG',
     'brief.label.focus':  'Schwerpunkte',
@@ -147,7 +147,7 @@ window.TRANSLATIONS = {
     'scroll.hint':        'Scroll',
 
     'brief.heading':      'I solve problems: Whether with 54 Rubik\'s Cube squares or 54 user interviews',
-    'brief.text':         'I\'m a UX Designer with 5 years of UX experience and over 2 years in motion design. My biggest driver is curiosity — I want to understand how things work and what moves people in their thinking and feeling.<br><br>When I\'m not designing, you\'ll find me cuddling with my cat, doing acrobatics training, or binge-watching Netflix shows and anime.',
+    'brief.text':         'I\'m a UX Designer with 5 years of UX experience and over 2 years in motion design. My biggest driver is curiosity — I want to understand how things work and what moves people in their thinking and feeling.<br><br>When I\'m not designing, you\'ll find me cuddling with my cat or doing acrobatics training.',
     'brief.label.current':'Currently',
     'brief.val.current':  'UX Designer, Ironforge Consulting AG',
     'brief.label.focus':  'Focus areas',
