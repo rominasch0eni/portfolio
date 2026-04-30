@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romina Schöni · Lebenslauf</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --text-primary: #111111;
+      --accent: #7c3aed;
+      --accent-gradient: linear-gradient(135deg, #3b82f6, #7c3aed);
+      --text-muted: #6b6b6b;
+      --border: rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* PRINT BUTTON */
+    .print-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 100;
+      background: var(--text-primary);
+      color: var(--bg);
+      border: none;
+      padding: 10px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-btn:hover { background: var(--accent); }
+
+    /* PAGE */
+    .cv-page {
+      max-width: 800px;
+      margin: 80px auto 80px;
+      padding: 0 48px;
+    }
+
+    /* HEADER */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 48px;
+      gap: 40px;
+    }
+
+    .cv-header-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .cv-photo {
+      width: 140px;
+      height: 180px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cv-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    .cv-name-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .cv-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .cv-header .subtitle {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cv-header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      padding-top: 4px;
+    }
+
+    .cv-header-right a,
+    .cv-header-right span {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .cv-header-right a:hover { color: var(--accent); }
+    .cv-header-right .accent-link { color: var(--accent); }
+
+    /* BODY GRID */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 64px;
+      padding-top: 40px;
+    }
+
+    /* SECTIONS */
+    .cv-section { margin-bottom: 40px; }
+    .cv-section:last-child { margin-bottom: 0; }
+
+    .cv-section-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* PROFILE */
+    .cv-profile p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1.8;
+    }
+
+    /* ENTRIES */
+    .cv-entries { display: flex; flex-direction: column; gap: 24px; }
+
+    .cv-entry { padding-left: 16px; border-left: 1.5px solid var(--border); }
+    .cv-entry-title { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+    .cv-entry-meta { font-size: 12px; font-weight: 300; color: var(--text-muted); margin-bottom: 8px; }
+    .cv-entry ul { padding-left: 14px; display: flex; flex-direction: column; gap: 4px; }
+    .cv-entry ul li { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
+
+    /* SIDEBAR SECTIONS */
+    .cv-sidebar-section { margin-bottom: 32px; }
+    .cv-sidebar-section:last-child { margin-bottom: 0; }
+
+    .cv-sidebar-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-info-item { margin-bottom: 8px; font-size: 13px; font-weight: 300; color: var(--text-primary); }
+    .cv-info-item a { color: var(--accent); text-decoration: none; }
+    .cv-info-item a:hover { text-decoration: underline; }
+
+    .skill-list { display: flex; flex-direction: column; gap: 4px; padding-left: 14px; list-style: disc; }
+    .skill-list span {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      display: list-item;
+    }
+
+    .lang-item { margin-bottom: 10px; }
+    .lang-name { font-size: 13px; font-weight: 400; color: var(--text-primary); }
+    .lang-level { font-size: 12px; font-weight: 300; color: var(--text-muted); }
+
+    .ref-item { margin-bottom: 16px; font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
+    .ref-item strong { font-weight: 500; color: var(--text-primary); display: block; }
+
+    /* PRINT */
+    .back-btn {
+      position: fixed;
+      top: 28px;
+      left: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s, gap 0.3s;
+      z-index: 100;
+    }
+    .back-btn:hover { color: var(--accent); gap: 12px; }
+
+    /* Gradient accent for text elements */
+    .cv-header-right .accent-link,
+    .cv-header-right a:hover,
+    .cv-info-item a,
+    .back-btn:hover {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cv-section-title {
+      border-bottom-color: var(--border);
+    }
+    .print-btn:hover { background: var(--accent-gradient); }
+
+    .cv-entry-gap { margin-top: 140px; }
+    html[lang="en"] .cv-entry-gap { margin-top: 160px; }
+
+    @media print {
+      .print-btn { display: none !important; }
+      .back-btn { display: none !important; }
+      body { background: white; }
+      .cv-page { margin: 0; padding: 32px 48px; max-width: 100%; }
+      .cv-header { padding-bottom: 32px; }
+      .cv-body { padding-top: 32px; gap: 48px; }
+    }
+
+    @page { size: A4; margin: 0; }
+    .cv-lang-switch { position:fixed; top:28px; right:130px; z-index:100; }
+    .cv-lang-switch .lang-select {
+      background: none; border: 1px solid var(--border); border-radius: 4px;
+      padding: 5px 26px 5px 10px; font-family: 'Inter', sans-serif; font-size: 13px;
+      font-weight: 400; color: var(--text-muted); cursor: pointer; transition: color 0.2s, border-color 0.2s;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 8px center;
+    }
+    .cv-lang-switch .lang-select:hover { color: var(--text-primary); border-color: var(--accent); }
+    .cv-lang-switch .lang-select:focus { outline: none; border-color: var(--accent); }
+    .cv-lang-switch .lang-select:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(124,58,237,0.15); }
+    @media print { .cv-lang-switch { display:none !important; } }
+  </style>
+  <script src="translations.js"></script>
+</head>
+<body>
+
+  <a href="index.html" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-i18n="cv.back">Zurück zum Portfolio</span>
+  </a>
+
+  <div class="cv-lang-switch">
+    <select class="lang-select" onchange="setLang(this.value)" aria-label="Language">
+      <option value="de">DE</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    <span data-i18n="cv.print">Als PDF speichern</span>
+  </button>
+
+  <div class="cv-page">
+
+    <!-- HEADER -->
+    <div class="cv-header">
+      <div class="cv-header-left">
+        <div class="cv-photo">
+          <img src="assets/Romina/Bild%20Romina.jpg" alt="Romina Schöni">
+        </div>
+        <div class="cv-name-block">
+          <h1>Romina Schöni</h1>
+          <p class="subtitle">User Experience Design</p>
+          <div style="display:flex;flex-direction:column;gap:4px;margin-top:12px;">
+            <span style="font-size:13px;font-weight:300;color:var(--text-muted);">08.05.1997</span>
+            <span style="font-size:13px;font-weight:300;color:var(--text-muted);">076 515 23 73</span>
+            <a href="mailto:romina.schoeni@gmail.com" style="font-size:13px;font-weight:300;color:var(--text-muted);text-decoration:none;">romina.schoeni@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="cv-body">
+
+      <!-- LEFT: MAIN CONTENT -->
+      <div>
+
+        <div class="cv-section">
+          <div class="cv-section-title" data-i18n="cv.profile.title">Profil</div>
+          <div class="cv-profile">
+            <p data-i18n="cv.profile.text">Ich bin UX-Designerin mit 7+ Jahren Designerfahrung, davon 5+ im UX-Bereich. Mich treibt Neugier an: Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Mein vielseitiger Hintergrund hilft mir, Probleme aus verschiedenen Perspektiven zu betrachten. Ich finde mich schnell in neue Themen und Teams ein und begleite Projekte von der ersten Idee bis zur Umsetzung.</p>
+          </div>
+        </div>
+
+        <div class="cv-section" style="padding-top: 6px;">
+          <div class="cv-section-title" data-i18n="cv.career.title">Beruflicher Werdegang</div>
+          <div class="cv-entries">
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.ironforge.title">Ironforge Consulting AG · UX Design &amp; Research Freelancerin 100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.ironforge.meta">Bern · Jul 2025 – Heute</div>
+              <ul>
+                <li data-i18n="cv.ironforge.b1">Planung, Durchführung und Koordination von User-Research-Aktivitäten.</li>
+                <li data-i18n="cv.ironforge.b2">Einbindung relevanter Stakeholder aus den Bundesämtern sowie strukturierte Erhebung und Dokumentation der Nutzerbedürfnisse.</li>
+                <li data-i18n="cv.ironforge.b3">Konzeption, Durchführung und Auswertung von Usability-Tests (inkl. unmoderierter Tests mit Maze oder Useberry).</li>
+                <li data-i18n="cv.ironforge.b4">Aufbau und kontinuierliche Erweiterung eines User-Pools für Tests.</li>
+                <li data-i18n="cv.ironforge.b5">Planung interner Testphasen der e-ID für Mitarbeitende sämtlicher Bundesämter.</li>
+                <li data-i18n="cv.ironforge.b6">Iterative Weiterentwicklung der Lösungen auf Basis von Nutzerfeedback und Testergebnissen.</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.bison.title">Bison Schweiz AG · UI/UX Design Freelancerin 100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.bison.meta">Sursee · Apr 2025 – Jul 2025</div>
+            </div>
+
+            <div class="cv-entry cv-entry-gap">
+              <div class="cv-entry-title" data-i18n="cv.raiffeisen.title">Raiffeisen Schweiz · Experience Design Freelancerin 100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.raiffeisen.meta">St. Gallen · Mrz 2024 – Jan 2025</div>
+              <ul>
+                <li data-i18n="cv.raiffeisen.b1">Enge Zusammenarbeit mit Lead UX Strategist, Product Owner, Entwicklern und Business Analysts zur Konzeptentwicklung der neuen E-Banking-Plattform.</li>
+                <li data-i18n="cv.raiffeisen.b2">Entwurf und Aufbau interaktiver Prototypen für Usability-Tests.</li>
+                <li data-i18n="cv.raiffeisen.b3">Durchführung von Usability-Tests und Auswertung von Nutzerverhalten zur iterativen Designverbesserung.</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.rimon.title">Rimon Technologies · Experience Lead 40–100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.rimon.meta">Zürich · Aug 2021 – Dez 2023</div>
+              <ul>
+                <li data-i18n="cv.rimon.b1">Leitung eines dreiköpfigen Entwicklerteams als Product Owner und Product Designerin.</li>
+                <li data-i18n="cv.rimon.b2">Mitgestaltung der Produkt-Experience-Strategie durch Marktanalysen und User Research.</li>
+                <li data-i18n="cv.rimon.b3">Redesign der AR Mobile- und HoloLens-Apps mit 80% Zufriedenheitsrate bei 14 aktiven Kunden.</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.xeit.title">Xeit AG · Screen- und Interaction Design 60%</div>
+              <div class="cv-entry-meta" data-i18n="cv.xeit.meta">Zürich · Aug 2021 – Mrz 2022</div>
+              <ul>
+                <li data-i18n="cv.xeit.b1">Gestaltung digitaler Medien inkl. Banner, Animationsfilme und Prototypen für Web- und App-Projekte.</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.corp.title">CORPMEDIA · Motion Design 80–100%</div>
+              <div class="cv-entry-meta" data-i18n="cv.corp.meta">Zürich · Jul 2019 – Jul 2021</div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <div class="cv-section-title" data-i18n="cv.edu.title">Ausbildung</div>
+          <div class="cv-entries">
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.edu.fhgr.title">FHGR · CAS in Augmented Reality und Virtual Reality</div>
+              <div class="cv-entry-meta" data-i18n="cv.edu.fhgr.meta">Chur · Aug 2021 – Jul 2022</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.edu.sfg.title">Schule für Gestaltung · Dipl. Designerin HF Interactive Media Design</div>
+              <div class="cv-entry-meta" data-i18n="cv.edu.sfg.meta">St. Gallen · Aug 2017 – Jul 2020</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title" data-i18n="cv.edu.kv.title">KV Business School · Kaufmännische Angestellte EFZ</div>
+              <div class="cv-entry-meta" data-i18n="cv.edu.kv.meta">Zürich · Aug 2013 – Jul 2016</div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- RIGHT: SIDEBAR -->
+      <div>
+
+        <div class="cv-sidebar-section">
+          <div class="cv-sidebar-label" data-i18n="cv.skills.title">Fähigkeiten</div>
+          <div class="skill-list">
+            <span>UX Konzept</span>
+            <span>UI Design</span>
+            <span>Figma & Prototyping</span>
+            <span>User Research</span>
+            <span>Usability Testing</span>
+            <span>Storyboarding</span>
+            <span>Motion Design</span>
+            <span>Augmented Reality</span>
+          </div>
+        </div>
+
+        <div class="cv-sidebar-section">
+          <div class="cv-sidebar-label" data-i18n="cv.langs.title">Sprachen</div>
+          <div class="lang-item"><div class="lang-name" data-i18n="cv.lang.de">Deutsch</div><div class="lang-level" data-i18n="cv.lang.de.lvl">Muttersprache</div></div>
+          <div class="lang-item"><div class="lang-name" data-i18n="cv.lang.en">Englisch</div><div class="lang-level" data-i18n="cv.lang.en.lvl">Fliessend</div></div>
+          <div class="lang-item"><div class="lang-name" data-i18n="cv.lang.fr">Französisch</div><div class="lang-level" data-i18n="cv.lang.fr.lvl">Grundkenntnisse</div></div>
+        </div>
+
+        <div class="cv-sidebar-section">
+          <div class="cv-sidebar-label" data-i18n="cv.refs.title">Referenzen</div>
+          <div class="ref-item">
+            <strong>Naomin Sempach</strong>
+            ELCA<br>UX Writer<br>
+            <a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;" data-i18n="cv.on.request">Auf Anfrage</a>
+          </div>
+          <div class="ref-item">
+            <strong>Ivo Baldi</strong>
+            ELCA<br>UX Designer<br>
+            <a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;" data-i18n="cv.on.request">Auf Anfrage</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      applyTranslations();
+    });
+  </script>
+</body>
+</html>
