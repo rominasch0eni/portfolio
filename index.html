@@ -162,9 +162,10 @@
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.5); } 50% { opacity: 1; transform: scaleY(1); } }
 
     /* ABOUT BRIEF */
-    .about-brief { padding: 0 var(--sp-page) 100px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-section); align-items: start; }
-    .about-brief-text h3 { font-size: 20px; font-weight: var(--w-medium); letter-spacing: -0.3px; margin-bottom: 24px; color: var(--text-primary); }
-    .about-brief-text h3 em { color: var(--accent); font-style: italic; }
+    .about-brief { padding: 80px var(--sp-page) 100px; display: grid; grid-template-columns: 5fr 7fr; gap: var(--sp-section); align-items: start; border-top: 1px solid var(--border); }
+    .about-brief-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 4px; }
+    .about-brief-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .about-brief-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.25; color: var(--text-primary); margin-bottom: 20px; }
     .about-brief-details { display: flex; flex-direction: column; gap: var(--sp-card); padding-top: 8px; }
     .about-brief-item { display: flex; flex-direction: column; gap: 6px; }
     .about-brief-item .label { color: var(--text-muted); opacity: 0.6; }
@@ -418,6 +419,7 @@
       .about-right { order: 3; grid-column: 1; grid-row: auto; }
       .about-stats { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; border-bottom: 1px solid var(--border); }
       .about-brief { padding: 60px 24px; grid-template-columns: 1fr; gap: 36px; }
+      .about-brief-img { aspect-ratio: 4/3; }
       .about-contact { padding: 48px 24px 80px; }
       .page-connect { padding: 48px 24px 80px; }
       .about-profile { padding: 48px 24px; }
@@ -777,31 +779,31 @@
       </div>
     </section>
 
-    <div class="section-label">
-      <h2 data-i18n="brief.heading">Ich löse Probleme: Ob mit 54 Farbfeldern oder 54 User-Interviews</h2>
-    </div>
-
     <section class="about-brief">
-      <div class="about-brief-text">
-        <p data-i18n="brief.text">Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.<br><br>Wenn ich nicht gerade designe, findest du mich beim Kuscheln mit meiner Katze, beim Akrobatik-Training oder beim Binge-Watchen von Netflix-Serien und Anime.</p>
+      <div class="about-brief-img">
+        <img src="assets/Romina/Bild Romina.jpg" alt="Romina Schöni" />
       </div>
-      <div class="about-brief-details">
-        <div class="about-brief-item">
-          <span class="label" data-i18n="brief.label.current">Aktuell</span>
-          <span class="value" data-i18n="brief.val.current">UX Designerin, Ironforge Consulting AG</span>
+      <div class="about-brief-content">
+        <h2 data-i18n="brief.heading">Ich löse Probleme:<br>Ob mit 54 Farbfeldern oder 54 User-Interviews</h2>
+        <p data-i18n="brief.text">Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.</p>
+        <div class="about-brief-details">
+          <div class="about-brief-item">
+            <span class="label" data-i18n="brief.label.current">Aktuell</span>
+            <span class="value" data-i18n="brief.val.current">UX Designerin, Ironforge Consulting AG</span>
+          </div>
+          <div class="about-brief-item">
+            <span class="label" data-i18n="brief.label.focus">Schwerpunkte</span>
+            <span class="value" data-i18n="brief.val.focus">UX Konzept, UX Research, Innovation</span>
+          </div>
+          <div class="about-brief-item">
+            <span class="label" data-i18n="brief.label.before">Zuvor</span>
+            <span class="value" data-i18n="brief.val.before">Freelance B2C, Startup B2B, Agency B2C</span>
+          </div>
+          <a href="javascript:void(0)" class="about-brief-link" onclick="showPage('about')">
+            <span class="about-brief-label" data-i18n="brief.more">Mehr über mich erfahren</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-        <div class="about-brief-item">
-          <span class="label" data-i18n="brief.label.focus">Schwerpunkte</span>
-          <span class="value" data-i18n="brief.val.focus">UX Konzept, UX Research, Innovation</span>
-        </div>
-        <div class="about-brief-item">
-          <span class="label" data-i18n="brief.label.before">Zuvor</span>
-          <span class="value" data-i18n="brief.val.before">Freelance B2C, Startup B2B, Agency B2C</span>
-        </div>
-        <a href="javascript:void(0)" class="about-brief-link" onclick="showPage('about')">
-          <span class="about-brief-label" data-i18n="brief.more">Mehr über mich erfahren</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
       </div>
     </section>
 
