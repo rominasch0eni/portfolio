@@ -173,6 +173,9 @@ A: She prefers hybrid. Two days on-site and two to three days at home works pret
 Q: Does she know SAFe and agile ways of working?
 A: Yes, she knows SAFe and is used to working in agile teams. That's honestly just part of her everyday work.
 
+Q: Can she build design systems?
+A: She's worked with design systems a lot and has extended them — but building one completely from scratch hasn't been her main focus so far.
+
 Q: What makes working with her special?
 A: Especially her open and warm manner. She's helpful and actively contributes to the team.
 
@@ -559,6 +562,9 @@ Antwort: Am liebsten hybrid. Zwei Tage vor Ort und zwei bis drei Tage im Homeoff
 
 Frage: Kennt sie SAFe und agile Arbeitsweisen?
 Antwort: Ja, sie kennt SAFe und ist es gewohnt, in agilen Teams zu arbeiten. Das gehört für sie ehrlich gesagt zum Alltag.
+
+Frage: Kann sie Designsysteme erstellen?
+Antwort: Sie hat schon oft mit Designsystemen gearbeitet und diese erweitert — ein Designsystem komplett von Scratch aufzubauen war bisher jedoch nicht ihr Schwerpunkt.
 
 Frage: Was macht die Zusammenarbeit mit ihr besonders?
 Antwort: Vor allem ihre offene und herzliche Art. Sie ist hilfsbereit und bringt sich aktiv ins Team ein.
