@@ -24,6 +24,7 @@ window.TRANSLATIONS = {
     'brief.val.before':   'Freelance B2C, Startup B2B, Agency B2C',
     'brief.more':         'Mehr über mich erfahren',
 
+    'section.about':      'Über mich',
     'section.ux':         'UX Projekte',
     'section.ux.year':    '2021 bis 2026',
     'section.more':       'Weitere Projekte',
@@ -156,6 +157,7 @@ window.TRANSLATIONS = {
     'brief.val.before':   'Freelance B2C, Startup B2B, Agency B2C',
     'brief.more':         'Learn more about me',
 
+    'section.about':      'About',
     'section.ux':         'UX Projects',
     'section.ux.year':    '2021 to 2026',
     'section.more':       'More Projects',
