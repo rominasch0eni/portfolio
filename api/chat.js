@@ -335,7 +335,7 @@ Client: Swiss federal administration (e-ID Switzerland)
 Role: UX Designer, Lead Researcher
 Period: 2025–2026
 Team: PO, Scrum Master, 4 UX Designers, 2 UX Writers
-Overview: Joined mid-project and helped drive the project forward through regular usability testing — every two to three weeks — to iteratively improve the concept. Key challenge: balancing complex security requirements with a simple, accessible experience for all age groups.
+Overview: The e-ID is one of Switzerland's largest digitalisation projects. Romina joined mid-project and helped drive the concept forward through regular usability testing. Key challenge: balancing complex security requirements with a simple, accessible experience for all age groups.
 Process: 45+ qualitative user interviews, persona creation, wireframing, 12+ usability studies, 3 Maze studies, planning internal test phases for 40,000 employees across federal offices.
 Outcome: 45+ user interviews, 12+ usability studies, 3 Maze studies, 40,000 test users for internal phase.
 
@@ -725,7 +725,7 @@ Kunde: Schweizer Bundesverwaltung (e-ID Schweiz)
 Rolle: UX Designerin, Lead Researcherin
 Zeitraum: 2025–2026
 Team: PO, Scrum Master, 4 UX Designerinnen, 2 UX Writerinnen
-Überblick: Mitten im laufenden Projekt eingestiegen und das Projekt durch regelmässige Usability-Tests — alle zwei bis drei Wochen — aktiv vorangetrieben. Kernherausforderung: komplexe Sicherheitsanforderungen mit einer einfachen, zugänglichen Nutzererfahrung für alle Altersgruppen verbinden.
+Überblick: Die E-ID ist eines der grössten Digitalisierungsprojekte der Schweiz. Romina stiess mitten in den Entwicklungsprozess dazu und trieb das Konzept durch regelmässige Usability-Studien aktiv voran. Kernherausforderung: komplexe Sicherheitsanforderungen mit einer einfachen, zugänglichen Nutzererfahrung für alle Altersgruppen verbinden.
 Vorgehen: 45+ qualitative Nutzerinterviews, Personas, Wireframes, 12+ Usability-Studien, 3 Maze-Studien, Planung interner Testphasen für 40.000 Mitarbeitende der Bundesämter.
 Ergebnis: 45+ Interviews, 12+ Usability-Studien, 3 Maze-Studien, 40.000 Testnutzerinnen für interne Phase.
 
