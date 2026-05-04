@@ -164,7 +164,7 @@
     }
     .hero-subtitle { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; margin-top: 24px; color: var(--text-muted); }
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
-    .scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); }
+    .scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); transition: opacity 0.4s ease; }
     .scroll-hint span { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 500; }
     .scroll-line { width: 2.5px; height: 40px; background: var(--accent); animation: scrollPulse 2s ease infinite; }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.5); } 50% { opacity: 1; transform: scaleY(1); } }
@@ -745,7 +745,7 @@
   <!-- Mobile menu overlay -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Menü schliessen">✕</button>
-    <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu()" data-i18n="mobile.work">Arbeiten</a>
+    <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu(); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="mobile.work">Arbeiten</a>
     <a href="javascript:void(0)" onclick="showPage('about'); closeMobileMenu()" data-i18n="mobile.about">Über mich</a>
     <select class="lang-select mobile-lang-select" onchange="setLang(this.value)" aria-label="Language">
       <option value="de">DE</option>
@@ -756,7 +756,7 @@
   <nav>
     <div class="logo" onclick="showPage('main')" data-i18n="nav.logo">UX Portfolio</div>
     <div class="nav-links">
-      <a href="javascript:void(0)" data-page="main" onclick="showPage('main')" data-i18n="nav.work">Arbeiten</a>
+      <a href="javascript:void(0)" data-page="main" onclick="showPage('main'); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="nav.work">Arbeiten</a>
       <a href="javascript:void(0)" data-page="about" onclick="showPage('about')" data-i18n="nav.about">Über mich</a>
     </div>
     <div class="nav-actions">
@@ -817,7 +817,7 @@
       </div>
     </section>
 
-    <div class="section-label">
+    <div class="section-label" id="ux-projects">
       <h2 data-i18n="section.ux">UX Projekte</h2>
       <span data-i18n="section.ux.year">2021 bis 2026</span>
     </div>
@@ -2061,6 +2061,11 @@
       canvas.style.cursor = 'pointer';
 
       window.addEventListener('resize', function() { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+
+      var scrollHint = document.querySelector('.scroll-hint');
+      window.addEventListener('scroll', function() {
+        if (scrollHint) scrollHint.style.opacity = window.scrollY > 40 ? '0' : '';
+      }, { passive: true });
 
       var lastTime = performance.now(), autoRotY = 0;
       var isMainPageVisible = true;
