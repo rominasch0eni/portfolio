@@ -116,7 +116,7 @@ window.TRANSLATIONS = {
     'cv.raiffeisen.meta': 'St. Gallen · Mrz 2024 – Jan 2025',
     'cv.raiffeisen.b1':   'Enge Zusammenarbeit mit Lead UX Strategist, Product Owner, Entwicklern und Business Analysts zur Konzeptentwicklung der neuen E-Banking-Plattform.',
     'cv.raiffeisen.b2':   'Entwurf und Aufbau interaktiver Prototypen für Usability-Tests.',
-    'cv.raiffeisen.b3':   'Protokollierung und Erstellung von Prototypen für Usability-Tests und Auswertung von Nutzerverhalten zur iterativen Designverbesserung.',
+    'cv.raiffeisen.b3':   'Protokollierung und Erstellung von Prototypen für Usability-Tests.',
     'cv.rimon.title':     'Rimon Technologies · Experience Lead 40–100%',
     'cv.rimon.meta':      'Zürich · Aug 2021 – Dez 2023',
     'cv.rimon.b1':        'Leitung eines dreiköpfigen Entwicklerteams als Product Owner und Product Designerin.',
