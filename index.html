@@ -153,8 +153,14 @@
     }
     .hero-dot {
       display: inline-block;
-      margin-left: 6px;
+      width: 0.18em;
+      height: 0.18em;
+      border-radius: 50%;
+      margin-left: 0.06em;
+      vertical-align: 0;
       animation: dot-color 4s ease infinite;
+      background: currentColor;
+      font-size: inherit;
     }
     .hero-subtitle { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; margin-top: 24px; color: var(--text-muted); }
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
@@ -774,7 +780,7 @@
       <canvas id="rubik-canvas"></canvas>
 
       <div class="hero-content">
-        <h1 class="hero-title">ROMINA<span class="hero-dot">.</span></h1>
+        <h1 class="hero-title">ROMINA<span class="hero-dot"></span></h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">UX Designerin · Zürich</p>
       </div>
       <div class="scroll-hint">
