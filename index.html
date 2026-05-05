@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :focus-visible { outline: 2px solid #8a6500; outline-offset: 4px; border-radius: 2px; }
@@ -43,7 +43,7 @@
       --sp-gap-lg: var(--sp-section);
 
       /* typography */
-      --font-serif: 'Playfair Display', serif;
+      --font-serif: 'Source Serif 4', serif;
       --font-sans:  'Inter', sans-serif;
       /* sizes */
       --text-xs:    12px;   /* timestamps, tiny labels */
@@ -106,7 +106,7 @@
 
     h1 { font-family: var(--font-serif); font-weight: var(--w-semi); letter-spacing: -2px; line-height: 1.08; }
     h2 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: -1px; line-height: 1.2; }
-    h3 { font-family: var(--font-sans); font-size: 28px; font-weight: var(--w-medium); letter-spacing: -0.3px; line-height: 1.35; color: var(--text-primary); }
+    h3 { font-family: var(--font-serif); font-size: 28px; font-weight: var(--w-medium); letter-spacing: -0.3px; line-height: 1.35; color: var(--text-primary); }
     p  { font-size: var(--text-body); font-weight: var(--w-light); line-height: 1.7; color: var(--text-muted); }
 
     /* label — small uppercase tag used for section markers, meta, project-num */
@@ -246,7 +246,7 @@
     .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-gap); }
     .process-step { padding: var(--sp-card); border: 1px solid var(--border); border-radius: 12px; background: var(--surface); transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease; }
     .process-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
-    .process-step .step-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600; color: var(--accent); opacity: 0.4; margin-bottom: 16px; }
+    .process-step .step-num { font-family: var(--font-serif); font-size: 36px; font-weight: 600; color: var(--accent); opacity: 0.4; margin-bottom: 16px; }
     .process-step h4 { font-family: var(--font-sans); font-size: var(--text-ui); font-weight: var(--w-medium); color: var(--text-primary); margin-bottom: 10px; }
     .process-step p { font-size: var(--text-ui); }
 
@@ -261,11 +261,11 @@
     .project-outcome { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
     .project-outcome h2 { margin-bottom: var(--sp-gap); color: var(--text-primary); }
     .outcome-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-heading); margin-top: var(--sp-page); }
-    .outcome-stat h4 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
+    .outcome-stat h4 { font-family: var(--font-serif); font-size: 48px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .outcome-stat p { margin-top: 8px; }
 
     .project-next { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    .project-next a { display: inline-flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 500; letter-spacing: -0.5px; color: var(--text-primary); text-decoration: none; transition: color 0.3s, gap 0.3s; }
+    .project-next a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-serif); font-size: 24px; font-weight: 500; letter-spacing: -0.5px; color: var(--text-primary); text-decoration: none; transition: color 0.3s, gap 0.3s; }
     .project-next a:hover { color: var(--accent); gap: 16px; }
     .project-next .next-label { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; margin-bottom: 8px; }
 
@@ -285,7 +285,7 @@
     .skill-tags span { cursor: default; }
 
     .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); text-align: center; }
-    .stat h4 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
+    .stat h4 { font-family: var(--font-serif); font-size: 56px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
     .about-profile { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
@@ -559,7 +559,7 @@
     }
     #chat-welcome .welcome-title {
       display: block;
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-serif);
       font-size: clamp(24px, 4vw, 44px);
       font-weight: 600;
       margin-bottom: 10px;
