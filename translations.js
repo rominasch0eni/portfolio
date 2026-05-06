@@ -14,7 +14,7 @@ window.TRANSLATIONS = {
     'hero.subtitle':      'UX Designerin · Zürich',
     'scroll.hint':        'Scrollen',
 
-    'brief.heading':      'Ich bringe Ordnung in komplexe Systeme.<br>Ob 54 Farbfelder oder 54 User-Interviews.',
+    'brief.heading':      'Ich bringe Ordnung in komplexe Systeme.<span class="brief-br"></span> Ob 54 Farbfelder oder 54 User-Interviews.',
     'brief.text':         'Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.',
     'brief.label.current':'Aktuell',
     'brief.val.current':  'UX Designerin, Ironforge Consulting AG',
@@ -36,7 +36,7 @@ window.TRANSLATIONS = {
     'contact.certs':      'Zertifikate',
     'footer.label':       'UX Portfolio',
 
-    'about.title':        'Immer neugierig, <br>immer hungrig,<br> meistens in der Luft<span class="hero-dot"></span>',
+    'about.title':        'Immer neugierig, <br>immer hungrig,<br> meistens in der <span style="white-space:nowrap">Luft<span class="hero-dot"></span></span>',
     'about.p1':           'Ich bin Romina, UX-Designerin und offizielle Dosenöffnerin für zwei verschlafene Katzen.',
     'about.p2':           'Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.',
     'about.p3':           'Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern oder beim Essen.',
@@ -147,7 +147,7 @@ window.TRANSLATIONS = {
     'hero.subtitle':      'UX Designer · Zurich',
     'scroll.hint':        'Scroll',
 
-    'brief.heading':      'I bring order to complex systems.<br>Whether 54 colour fields or 54 user interviews.',
+    'brief.heading':      'I bring order to complex systems.<span class="brief-br"></span> Whether 54 colour fields or 54 user interviews.',
     'brief.text':         'I\'m a UX Designer with 5 years of UX experience and over 2 years in motion design. My biggest driver is curiosity — I want to understand how things work and what moves people in their thinking and feeling.',
     'brief.label.current':'Currently',
     'brief.val.current':  'UX Designer, Ironforge Consulting AG',
@@ -169,7 +169,7 @@ window.TRANSLATIONS = {
     'contact.certs':      'Certificates',
     'footer.label':       'UX Portfolio',
 
-    'about.title':        'Always curious, <br>always hungry,<br> mostly up in the air<span class="hero-dot"></span>',
+    'about.title':        'Always curious, <br>always hungry,<br> mostly up in the <span style="white-space:nowrap">air<span class="hero-dot"></span></span>',
     'about.p1':           'I\'m Romina, UX designer and official can-opener for two sleepy cats.',
     'about.p2':           'My path into UX design was anything but straightforward. I started in business administration, moved into marketing, made a detour through the animation industry, and finally landed exactly where I belong: in UX and product design.',
     'about.p3':           'When I\'m not solving digital problems, I\'m literally up in the air. I\'ve been doing Pole and Aerial Hoop for three years. Otherwise you\'ll find me hiking or eating.',
