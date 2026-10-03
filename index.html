@@ -1586,7 +1586,6 @@
       }
       cardHTML += '</div>' +
         '<div class="project-overlay">' +
-        '<div class="project-num">' + p.num + '</div>' +
         '<div class="project-name">' + pl(p,'name') + '</div>' +
         '<div class="project-type">' + pl(p,'type') + '</div>' +
         '</div></div>';
@@ -1650,7 +1649,6 @@
       var html = '<div class="project-detail-hero animate">' +
         '<a href="javascript:void(0)" class="project-detail-back" onclick="showPage(\'main\')">' +
         '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> ' + t('proj.back') + '</a>' +
-        '<div class="project-num">' + p.num + '</div>' +
         '<h1>' + pl(p,'name') + '</h1>' +
         '<div class="project-type">' + pl(p,'type') + '</div>' +
         '<div class="project-meta">';
@@ -1696,7 +1694,6 @@
         p.extraSection.steps.forEach(function(s) {
           var style = s.highlight ? 'text-align:center;border-color:var(--accent);background:rgba(184,134,11,0.02);' : 'text-align:center;';
           html += '<div class="process-step" style="' + style + '">' +
-            '<div class="step-num" style="font-size:56px;opacity:' + (s.highlight ? '0.7' : '0.25') + ';">' + s.num + '</div>' +
             '<h4>' + s.title + '</h4><p>' + s.text + '</p></div>';
         });
         html += '</div></div>';
@@ -1708,7 +1705,7 @@
           '<h2>' + _process.title + '</h2>' +
           '<div class="process-steps">';
         _process.steps.forEach(function(s, i) {
-          html += '<div class="process-step animate" style="transition-delay:' + (i * 0.1) + 's;"><div class="step-num">' + s.num + '</div><h4>' + s.title + '</h4><p>' + s.text + '</p></div>';
+          html += '<div class="process-step animate" style="transition-delay:' + (i * 0.1) + 's;"><h4>' + s.title + '</h4><p>' + s.text + '</p></div>';
         });
         html += '</div></div>';
       }
