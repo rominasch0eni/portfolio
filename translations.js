@@ -36,7 +36,7 @@ window.TRANSLATIONS = {
     'contact.certs':      'Zertifikate',
     'footer.label':       'UX Portfolio',
 
-    'about.title':        'Immer neugierig, <br>immer hungrig,<br> meistens in der <span style="white-space:nowrap">Luft<span class="hero-dot"></span></span>',
+    'about.title':        'Immer neugierig, <br>immer hungrig,<br> meistens in der Luft',
     'about.p1':           'Ich bin Romina, UX-Designerin und offizielle Dosenöffnerin für zwei verschlafene Katzen.',
     'about.p2':           'Mein Weg ins UX-Design war alles andere als geradlinig. Ich startete im Kaufmännischen, wechselte ins Marketing, machte einen Abstecher in die Animationsbranche und landete schliesslich genau dort, wo ich hingehöre: im UX und Produktdesign.',
     'about.p3':           'Wenn ich keine digitalen Probleme löse, hänge ich buchstäblich in der Luft. Seit drei Jahren mache ich Pole und Aerial Hoop. Sonst findest du mich beim Wandern oder beim Essen.',
@@ -103,7 +103,7 @@ window.TRANSLATIONS = {
 
     /* CV job bullets */
     'cv.ironforge.title': 'Bundesamt für Informatik und Telekommunikation · UX Design &amp; Research · Freelancerin 100%',
-    'cv.ironforge.meta':  'Bern · Jul 2025 – Heute',
+    'cv.ironforge.meta':  'Bern · Jul 2025 – Jun 2026',
     'cv.ironforge.b1':    'Planung, Durchführung und Koordination von User-Research-Aktivitäten.',
     'cv.ironforge.b2':    'Einbindung relevanter Stakeholder aus den Bundesämtern sowie strukturierte Erhebung und Dokumentation der Nutzerbedürfnisse.',
     'cv.ironforge.b3':    'Konzeption, Durchführung und Auswertung von Usability-Tests (inkl. unmoderierter Tests mit Maze oder Useberry).',
@@ -127,6 +127,12 @@ window.TRANSLATIONS = {
     'cv.xeit.b1':         'Gestaltung digitaler Medien inkl. Banner, Animationsfilme und Prototypen für Web- und App-Projekte.',
     'cv.corp.title':      'CORPMEDIA · Motion Design 80–100%',
     'cv.corp.meta':       'Zürich · Jul 2019 – Jul 2021',
+    'cv.raiffeisen2.title': 'Raiffeisen Schweiz · Konzeption &amp; Research · Freelancerin 100%',
+    'cv.raiffeisen2.meta':  'St. Gallen · Jul 2026 – Heute',
+    'cv.raiffeisen2.b1':    'Grobkonzeption in enger Zusammenarbeit mit Lead Konzepter und Business Analysts.',
+    'cv.raiffeisen2.b2':    'User Research zur Unterstützung der Konzeptphase.',
+    'cv.freelance.since':   'Freiberufliche Tätigkeit · seit Mrz 2024',
+    'cv.projects.title':    'Projekte mit Schwerpunkten',
     'cv.edu.fhgr.title':  'FHGR · CAS in Augmented Reality und Virtual Reality',
     'cv.edu.fhgr.meta':   'Chur · Aug 2021 – Jul 2022',
     'cv.edu.sfg.title':   'Schule für Gestaltung · Dipl. Designerin HF Interactive Media Design',
@@ -169,7 +175,7 @@ window.TRANSLATIONS = {
     'contact.certs':      'Certificates',
     'footer.label':       'UX Portfolio',
 
-    'about.title':        'Always curious, <br>always hungry,<br> mostly up in the <span style="white-space:nowrap">air<span class="hero-dot"></span></span>',
+    'about.title':        'Always curious, <br>always hungry,<br> mostly up in the air',
     'about.p1':           'I\'m Romina, UX designer and official can-opener for two sleepy cats.',
     'about.p2':           'My path into UX design was anything but straightforward. I started in business administration, moved into marketing, made a detour through the animation industry, and finally landed exactly where I belong: in UX and product design.',
     'about.p3':           'When I\'m not solving digital problems, I\'m literally up in the air. I\'ve been doing Pole and Aerial Hoop for three years. Otherwise you\'ll find me hiking or eating.',
@@ -236,7 +242,7 @@ window.TRANSLATIONS = {
 
     /* CV job bullets */
     'cv.ironforge.title': 'Bundesamt für Informatik und Telekommunikation · UX Design &amp; Research<br>Freelancer 100%',
-    'cv.ironforge.meta':  'Bern · Jul 2025 – Present',
+    'cv.ironforge.meta':  'Bern · Jul 2025 – Jun 2026',
     'cv.ironforge.b1':    'Planning, conducting and coordinating user research activities.',
     'cv.ironforge.b2':    'Engaging relevant stakeholders from federal offices and structured collection and documentation of user needs.',
     'cv.ironforge.b3':    'Designing, conducting and evaluating usability tests (incl. unmoderated tests with Maze or Useberry).',
@@ -260,6 +266,12 @@ window.TRANSLATIONS = {
     'cv.xeit.b1':         'Creating digital media including banners, animation films and prototypes for web and app projects.',
     'cv.corp.title':      'CORPMEDIA · Motion Design 80–100%',
     'cv.corp.meta':       'Zurich · Jul 2019 – Jul 2021',
+    'cv.raiffeisen2.title': 'Raiffeisen Switzerland · Concept Design &amp; Research · Freelancer 100%',
+    'cv.raiffeisen2.meta':  'St. Gallen · Jul 2026 – Present',
+    'cv.raiffeisen2.b1':    'Rough concept design in close collaboration with Lead Concepter and Business Analysts.',
+    'cv.raiffeisen2.b2':    'User research to support the concept phase.',
+    'cv.freelance.since':   'Freelance · since Mar 2024',
+    'cv.projects.title':    'Projects &amp; Focus Areas',
     'cv.edu.fhgr.title':  'FHGR · CAS in Augmented Reality and Virtual Reality',
     'cv.edu.fhgr.meta':   'Chur · Aug 2021 – Jul 2022',
     'cv.edu.sfg.title':   'School of Design · Dipl. Designer HF Interactive Media Design',
