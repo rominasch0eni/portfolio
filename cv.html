@@ -26,7 +26,7 @@
       color: var(--text-primary);
       font-size: 14px;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -37,8 +37,7 @@
       border: none; padding: 10px 20px;
       font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400;
       letter-spacing: 1.5px; text-transform: uppercase;
-      cursor: pointer; border-radius: 2px;
-      transition: background 0.3s;
+      cursor: pointer; border-radius: 2px; transition: background 0.3s;
       display: flex; align-items: center; gap: 8px;
     }
     .print-btn:hover { background: var(--accent); }
@@ -65,170 +64,107 @@
     .cv-lang-switch .lang-select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,60,172,0.15); }
 
     /* ── PAGE ── */
-    .cv-page { max-width: 800px; margin: 80px auto 80px; padding: 0 48px; }
+    .cv-page { max-width: 800px; margin: 80px auto; padding: 0 48px; }
 
     /* ── HEADER ── */
     .cv-header {
-      display: flex; align-items: flex-start; gap: 28px;
-      padding-bottom: 40px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 32px;
+      padding-bottom: 36px; border-bottom: 1px solid var(--border);
     }
-    .cv-photo { width: 108px; height: 138px; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+    .cv-photo { width: 104px; height: 132px; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
     .cv-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-
-    .cv-header-info { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+    .cv-header-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
     .cv-header h1 {
       font-family: 'Source Serif 4', serif;
-      font-size: clamp(26px, 3.5vw, 40px);
+      font-size: clamp(28px, 4vw, 38px);
       font-weight: 600; color: var(--text-primary);
       letter-spacing: -0.5px; line-height: 1.05;
     }
     .cv-subtitle {
-      font-size: 11px; font-weight: 400; color: var(--accent);
-      letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px;
+      font-size: 11px; font-weight: 500; color: var(--accent);
+      letter-spacing: 2.5px; text-transform: uppercase; margin-top: 6px;
     }
-    .cv-contact {
-      display: flex; flex-wrap: wrap; gap: 4px 20px;
-      margin-top: 14px;
-    }
+    .cv-contact { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
     .cv-contact span,
-    .cv-contact a {
-      font-size: 12px; font-weight: 300; color: var(--text-muted);
-      text-decoration: none; transition: color 0.2s;
-    }
+    .cv-contact a { font-size: 13px; font-weight: 300; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .cv-contact a:hover { color: var(--accent); }
 
-    /* ── BODY GRID ── */
-    .cv-body {
-      display: grid;
-      grid-template-columns: 1fr 196px;
-      gap: 52px;
-      padding-top: 36px;
-    }
+    /* ── BODY ── */
+    .cv-body { padding-top: 40px; }
 
-    /* ── UNIFIED SECTION LABEL ── */
+    /* ── SECTION ── */
+    .cv-section { margin-bottom: 44px; }
+    .cv-section:last-child { margin-bottom: 0; }
+
+    /* ── SECTION LABEL ── */
     .cv-label {
-      font-size: 10px; font-weight: 500;
+      font-size: 11px; font-weight: 500;
       letter-spacing: 2px; text-transform: uppercase;
-      color: var(--text-muted); opacity: 0.6;
-      margin-bottom: 18px; padding-bottom: 10px;
+      color: var(--text-muted); opacity: 0.5;
+      margin-bottom: 20px; padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
 
-    .cv-section { margin-bottom: 32px; }
-    .cv-section:last-child { margin-bottom: 0; }
-
     /* ── PROFILE ── */
-    .cv-profile p {
-      font-size: 13px; font-weight: 300;
-      color: var(--text-muted); line-height: 1.85;
-    }
+    .cv-profile p { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.75; }
 
-    /* ── CAREER ENTRIES ── */
-    .cv-entries { display: flex; flex-direction: column; gap: 18px; }
+    /* ── ENTRIES ── */
+    .cv-entries { display: flex; flex-direction: column; gap: 24px; }
 
-    .cv-entry { padding-left: 12px; border-left: 2px solid var(--border); }
+    .cv-entry { padding-left: 14px; border-left: 2px solid var(--border); }
 
-    .cv-entry-header {
-      display: flex; justify-content: space-between;
-      align-items: baseline; gap: 10px; margin-bottom: 1px;
-    }
-    .cv-entry-company {
-      font-size: 13px; font-weight: 600; color: var(--text-primary);
-    }
-    .cv-entry-date {
-      font-size: 10.5px; font-weight: 300; color: var(--text-muted);
-      white-space: nowrap; flex-shrink: 0; opacity: 0.8;
-    }
-    .cv-entry-role {
-      font-size: 11.5px; font-weight: 400; color: var(--text-muted);
-      margin-bottom: 7px; opacity: 0.85;
-    }
-    .cv-entry ul {
-      padding-left: 12px; display: flex; flex-direction: column; gap: 3px;
-      margin-bottom: 7px;
-    }
-    .cv-entry ul li {
-      font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.65;
-    }
+    /* reading order: date → company → role → bullets */
+    .cv-entry-date { font-size: 11px; font-weight: 400; color: var(--text-muted); opacity: 0.6; margin-bottom: 3px; }
+    .cv-entry-company { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+    .cv-entry-role { font-size: 13px; font-weight: 400; color: var(--text-muted); margin-bottom: 8px; }
+    .cv-entry ul { padding-left: 14px; display: flex; flex-direction: column; gap: 4px; }
+    .cv-entry ul li { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
 
-    /* ── CLIENT LIST (within freelance block) ── */
-    .cv-entry-current { border-left-color: var(--accent) !important; }
-    .cv-client-list { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
-    .cv-client-name {
-      font-size: 12.5px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px;
-    }
-    .cv-client-period {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
-    }
-    .cv-client-period-role { font-size: 11.5px; font-weight: 400; color: var(--text-muted); }
-    .cv-client-period-date {
-      font-size: 10.5px; font-weight: 300; color: var(--text-muted);
-      white-space: nowrap; flex-shrink: 0; opacity: 0.8;
-    }
-    .cv-client ul {
-      padding-left: 12px; margin-top: 3px;
-      display: flex; flex-direction: column; gap: 2px;
-    }
-    .cv-client ul li {
-      font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.65;
-    }
-    .cv-client-gap { margin-top: 8px; }
+    /* ── CLIENT LIST — visually nested under freelance block ── */
+    .cv-client-list { display: flex; flex-direction: column; gap: 20px; margin-top: 16px; padding-left: 16px; border-left: 1px solid var(--border); }
 
-    /* ── ERA MARKER ── */
-    .cv-era-label {
-      font-size: 9.5px; font-weight: 500; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 14px; display: block;
-    }
-    .cv-era-divider {
-      margin: 16px 0; border: none; border-top: 1px dashed var(--border);
-    }
+    .cv-client { }
 
-    /* ── SIDEBAR ── */
-    .cv-sidebar-section { margin-bottom: 26px; }
-    .cv-sidebar-section:last-child { margin-bottom: 0; }
+    /* same reading order for clients */
+    .cv-client-date { font-size: 11px; font-weight: 400; color: var(--text-muted); opacity: 0.6; margin-bottom: 3px; }
+    .cv-client-co { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+    .cv-client-role { font-size: 13px; font-weight: 400; color: var(--text-muted); margin-bottom: 6px; }
+    .cv-client ul { padding-left: 14px; display: flex; flex-direction: column; gap: 4px; }
+    .cv-client ul li { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
 
-    /* ── SKILL GROUPS ── */
-    .skill-group { margin-bottom: 13px; }
-    .skill-group:last-child { margin-bottom: 0; }
-    .skill-group-label {
-      font-size: 9.5px; font-weight: 500; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--text-muted);
-      opacity: 0.55; margin-bottom: 6px;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-    .skill-pill {
-      font-size: 10.5px; font-weight: 400; color: var(--text-muted);
-      background: rgba(0,0,0,0.055); padding: 2px 8px; border-radius: 100px;
-    }
+    /* ── DIVIDERS ── */
+    .cv-era-divider { margin: 8px 0; border: none; border-top: 1px solid var(--border); }
+    .cv-client-sep { margin: 4px 0; border: none; border-top: 1px dashed var(--border); }
+
+    /* ── SKILLS PROSE ── */
+    .cv-skills-prose p { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+
+    /* ── REFS NOTE ── */
+    .cv-refs-note { font-size: 12px; font-weight: 300; color: var(--text-muted); opacity: 0.5; margin-top: 16px; }
 
     /* ── LANGUAGES ── */
-    .lang-item { margin-bottom: 8px; }
-    .lang-name { font-size: 12.5px; font-weight: 400; color: var(--text-primary); }
-    .lang-level { font-size: 11px; font-weight: 300; color: var(--text-muted); }
+    .cv-langs { display: flex; flex-direction: column; gap: 8px; }
+    .cv-lang-item { display: flex; gap: 8px; align-items: baseline; }
+    .cv-lang-name { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+    .cv-lang-dot { font-size: 13px; font-weight: 300; color: var(--text-muted); opacity: 0.35; }
+    .cv-lang-level { font-size: 13px; font-weight: 300; color: var(--text-muted); }
 
-    /* ── HOVER ACCENTS ── */
-    .cv-contact a:hover,
-    .back-btn:hover {
+    /* ── HOVER ── */
+    .cv-contact a:hover, .back-btn:hover {
       background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     /* ── PRINT ── */
     @page { size: A4; margin: 14mm 16mm; }
-
     @media print {
       *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       .print-btn, .back-btn, .cv-lang-switch { display: none !important; }
       body { background: white; }
       .cv-page { margin: 0; padding: 0; max-width: 100%; }
-      .cv-header { padding-bottom: 28px; }
-      .cv-body { padding-top: 24px; gap: 36px; }
-      .cv-section { margin-bottom: 22px; }
-      .cv-sidebar-section { margin-bottom: 18px; }
-      .lang-item { margin-bottom: 5px; }
+      .cv-header { padding-bottom: 24px; }
+      .cv-body { padding-top: 28px; }
+      .cv-section { margin-bottom: 28px; }
       .cv-entry { break-inside: avoid; }
     }
   </style>
@@ -275,209 +211,147 @@
     <!-- BODY -->
     <div class="cv-body">
 
-      <!-- LEFT: MAIN -->
-      <div>
-
-        <!-- PROFIL -->
-        <div class="cv-section">
-          <div class="cv-label" data-i18n="cv.profile.title">Profil</div>
-          <div class="cv-profile">
-            <p data-i18n="cv.profile.text">Ich bin UX-Designerin mit 7+ Jahren Designerfahrung, davon 5+ im UX-Bereich. Mich treibt Neugier an: Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Mein vielseitiger Hintergrund hilft mir, Probleme aus verschiedenen Perspektiven zu betrachten. Ich finde mich schnell in neue Themen und Teams ein und begleite Projekte von der ersten Idee bis zur Umsetzung.</p>
-          </div>
+      <div class="cv-section">
+        <div class="cv-label" data-i18n="cv.profile.title">Profil</div>
+        <div class="cv-profile">
+          <p data-i18n="cv.profile.text">UX-Designerin mit 7+ Jahren Designerfahrung und 5+ im UX-Bereich. Mich treibt Neugier an – ich möchte verstehen, was Menschen bewegt. Ich finde mich schnell in neue Themen ein und begleite Projekte von der ersten Idee bis zur Umsetzung.</p>
         </div>
-
-        <!-- BERUFLICHER WERDEGANG -->
-        <div class="cv-section">
-          <div class="cv-label" data-i18n="cv.career.title">Beruflicher Werdegang</div>
-          <div class="cv-entries">
-
-            <!-- FREELANCE BLOCK -->
-            <div class="cv-entry cv-entry-current">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.freelance.title">UX Design · Freelancerin</span>
-                <span class="cv-entry-date">Mrz 2024 – heute</span>
-              </div>
-              <div class="cv-client-list">
-
-                <!-- Raiffeisen Schweiz (two periods) -->
-                <div class="cv-client">
-                  <div class="cv-client-name" data-i18n="cv.raiffeisen.company">Raiffeisen Schweiz</div>
-                  <div class="cv-client-period">
-                    <span class="cv-client-period-role" data-i18n="cv.raiffeisen2.role">Konzeption &amp; Research · St. Gallen</span>
-                    <span class="cv-client-period-date">Jul 2026 – heute</span>
-                  </div>
-                  <ul>
-                    <li data-i18n="cv.raiffeisen2.b1">Grobkonzeption in enger Zusammenarbeit mit Lead Konzepter und Business Analysts.</li>
-                    <li data-i18n="cv.raiffeisen2.b2">User Research zur Unterstützung der Konzeptphase.</li>
-                  </ul>
-                  <div class="cv-client-period cv-client-gap">
-                    <span class="cv-client-period-role" data-i18n="cv.raiffeisen.role">Experience Design · St. Gallen</span>
-                    <span class="cv-client-period-date">Mrz 2024 – Jan 2025</span>
-                  </div>
-                  <ul>
-                    <li data-i18n="cv.raiffeisen.b1">Konzeptentwicklung des neuen E-Bankings in enger Zusammenarbeit mit UX Lead, PO, Entwicklern und BAs.</li>
-                    <li data-i18n="cv.raiffeisen.b2">Prototyping und Usability-Tests zur iterativen Verbesserung der Nutzererfahrung.</li>
-                  </ul>
-                </div>
-
-                <!-- BIT -->
-                <div class="cv-client">
-                  <div class="cv-client-name" data-i18n="cv.ironforge.company">Bundesamt für Informatik und Telekommunikation</div>
-                  <div class="cv-client-period">
-                    <span class="cv-client-period-role" data-i18n="cv.ironforge.role">UX Design &amp; Research · Bern</span>
-                    <span class="cv-client-period-date">Jul 2025 – Jun 2026</span>
-                  </div>
-                  <ul>
-                    <li data-i18n="cv.ironforge.b1">45+ qualitative Interviews und 12+ Usability-Studien (moderiert und unmoderiert).</li>
-                    <li data-i18n="cv.ironforge.b2">Aufbau eines User-Pools; Planung der e-ID-Testphasen für 40.000 Bundesangestellte.</li>
-                    <li data-i18n="cv.ironforge.b3">Einbindung und Koordination von Stakeholdern aus verschiedenen Bundesämtern.</li>
-                  </ul>
-                </div>
-
-                <!-- Bison -->
-                <div class="cv-client">
-                  <div class="cv-client-name" data-i18n="cv.bison.company">Bison Schweiz AG</div>
-                  <div class="cv-client-period">
-                    <span class="cv-client-period-role" data-i18n="cv.bison.role">UI/UX Design · Sursee</span>
-                    <span class="cv-client-period-date">Apr 2025 – Jul 2025</span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <hr class="cv-era-divider">
-
-            <!-- Rimon -->
-            <div class="cv-entry">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.rimon.company">Rimon Technologies</span>
-                <span class="cv-entry-date" data-i18n="cv.rimon.meta">Zürich · Aug 2021 – Dez 2023</span>
-              </div>
-              <div class="cv-entry-role" data-i18n="cv.rimon.role">Experience Lead · 40–100%</div>
-              <ul>
-                <li data-i18n="cv.rimon.b1">Product Owner und Lead Designer: Redesign der AR- und HoloLens-Apps mit 80% Zufriedenheitsrate bei 14 Kunden.</li>
-                <li data-i18n="cv.rimon.b2">Feldforschung, Personas und Mitgestaltung der Produkt-Experience-Strategie.</li>
-              </ul>
-            </div>
-
-            <!-- Xeit -->
-            <div class="cv-entry">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.xeit.company">Xeit AG</span>
-                <span class="cv-entry-date" data-i18n="cv.xeit.meta">Zürich · Aug 2021 – Mrz 2022</span>
-              </div>
-              <div class="cv-entry-role" data-i18n="cv.xeit.role">Screen- &amp; Interaction Design · 60%</div>
-            </div>
-
-            <!-- CORPMEDIA -->
-            <div class="cv-entry">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.corp.company">CORPMEDIA</span>
-                <span class="cv-entry-date" data-i18n="cv.corp.meta">Zürich · Jul 2019 – Jul 2021</span>
-              </div>
-              <div class="cv-entry-role" data-i18n="cv.corp.role">Motion Design · 80–100%</div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- AUSBILDUNG -->
-        <div class="cv-section">
-          <div class="cv-label" data-i18n="cv.edu.title">Ausbildung</div>
-          <div class="cv-entries">
-
-            <div class="cv-entry">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.edu.fhgr.company">FHGR</span>
-                <span class="cv-entry-date" data-i18n="cv.edu.fhgr.meta">Chur · Aug 2021 – Jul 2022</span>
-              </div>
-              <div class="cv-entry-role" data-i18n="cv.edu.fhgr.role">CAS Augmented Reality und Virtual Reality</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.edu.sfg.company">Schule für Gestaltung</span>
-                <span class="cv-entry-date" data-i18n="cv.edu.sfg.meta">St. Gallen · Aug 2017 – Jul 2020</span>
-              </div>
-              <div class="cv-entry-role" data-i18n="cv.edu.sfg.role">Dipl. Designerin HF Interactive Media Design</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-header">
-                <span class="cv-entry-company" data-i18n="cv.edu.kv.company">KV Business School</span>
-                <span class="cv-entry-date" data-i18n="cv.edu.kv.meta">Zürich · Aug 2013 – Jul 2016</span>
-              </div>
-              <div class="cv-entry-role" data-i18n="cv.edu.kv.role">Kaufmännische Angestellte EFZ</div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
 
-      <!-- RIGHT: SIDEBAR -->
-      <div>
+      <div class="cv-section">
+        <div class="cv-label" data-i18n="cv.career.title">Beruflicher Werdegang</div>
+        <div class="cv-entries">
 
-        <div class="cv-sidebar-section">
-          <div class="cv-label" data-i18n="cv.skills.title">Fähigkeiten</div>
+          <!-- Freelance block -->
+          <div class="cv-entry">
+            <div class="cv-entry-date">Mrz 2024 – heute</div>
+            <div class="cv-entry-company" data-i18n="cv.freelance.title">UX Design · Freelancerin</div>
+            <div class="cv-client-list">
 
-          <div class="skill-group">
-            <div class="skill-group-label" data-i18n="cv.skills.methods">Methoden</div>
-            <div class="skill-tags">
-              <span class="skill-pill">User Research</span>
-              <span class="skill-pill">Usability Testing</span>
-              <span class="skill-pill">UX Konzept</span>
-              <span class="skill-pill">Prototyping</span>
-              <span class="skill-pill">Stakeholder Mgmt.</span>
+              <div class="cv-client">
+                <div class="cv-client-date">Jul 2026 – heute</div>
+                <div class="cv-client-co" data-i18n="cv.raiffeisen.company">Raiffeisen Schweiz</div>
+                <div class="cv-client-role" data-i18n="cv.raiffeisen2.role">Konzeption &amp; Research · St. Gallen</div>
+                <ul>
+                  <li data-i18n="cv.raiffeisen2.b1">Grobkonzeption mit Lead Konzepter und Business Analysts.</li>
+                  <li data-i18n="cv.raiffeisen2.b2">User Research zur Unterstützung der Konzeptphase.</li>
+                </ul>
+              </div>
+
+              <hr class="cv-client-sep">
+
+              <div class="cv-client">
+                <div class="cv-client-date">Mrz 2024 – Jan 2025</div>
+                <div class="cv-client-co" data-i18n="cv.raiffeisen.company">Raiffeisen Schweiz</div>
+                <div class="cv-client-role" data-i18n="cv.raiffeisen.role">Experience Design · St. Gallen</div>
+                <ul>
+                  <li data-i18n="cv.raiffeisen.b1">Konzeptentwicklung des neuen E-Bankings mit UX Lead, PO und Entwicklern.</li>
+                  <li data-i18n="cv.raiffeisen.b2">Prototyping und Usability-Tests für iterative Verbesserungen.</li>
+                </ul>
+              </div>
+
+              <div class="cv-client">
+                <div class="cv-client-date">Jul 2025 – Jun 2026</div>
+                <div class="cv-client-co" data-i18n="cv.ironforge.company">Bundesamt für Informatik und Telekommunikation</div>
+                <div class="cv-client-role" data-i18n="cv.ironforge.role">UX Design &amp; Research · Bern</div>
+                <ul>
+                  <li data-i18n="cv.ironforge.b1">45+ qualitative Interviews und 12+ Usability-Studien (moderiert &amp; unmoderiert).</li>
+                  <li data-i18n="cv.ironforge.b2">Aufbau eines User-Pools und Testphasen für 40.000 Bundesangestellte (e-ID).</li>
+                  <li data-i18n="cv.ironforge.b3">Koordination von Stakeholdern aus verschiedenen Bundesämtern.</li>
+                </ul>
+              </div>
+
+              <div class="cv-client">
+                <div class="cv-client-date">Apr 2025 – Jul 2025</div>
+                <div class="cv-client-co" data-i18n="cv.bison.company">Bison Schweiz AG</div>
+                <div class="cv-client-role" data-i18n="cv.bison.role">UI/UX Design · Sursee</div>
+              </div>
+
             </div>
           </div>
 
-          <div class="skill-group">
-            <div class="skill-group-label" data-i18n="cv.skills.tools">Tools</div>
-            <div class="skill-tags">
-              <span class="skill-pill">Figma</span>
-              <span class="skill-pill">FigJam</span>
-              <span class="skill-pill">Maze</span>
-              <span class="skill-pill">Useberry</span>
-              <span class="skill-pill">Jira</span>
-              <span class="skill-pill">After Effects</span>
-            </div>
+          <hr class="cv-era-divider">
+
+          <div class="cv-entry">
+            <div class="cv-entry-date" data-i18n="cv.rimon.meta">Zürich · Aug 2021 – Dez 2023</div>
+            <div class="cv-entry-company" data-i18n="cv.rimon.company">Rimon Technologies</div>
+            <div class="cv-entry-role" data-i18n="cv.rimon.role">Experience Lead · 40–100%</div>
+            <ul>
+              <li data-i18n="cv.rimon.b1">Lead Designer: Redesign der AR- und HoloLens-Apps, 80% Zufriedenheitsrate bei 14 Kunden.</li>
+              <li data-i18n="cv.rimon.b2">Feldforschung, Personas und Mitgestaltung der Produkt-Strategie.</li>
+            </ul>
           </div>
 
-          <div class="skill-group">
-            <div class="skill-group-label" data-i18n="cv.skills.creative">Kreatives Design</div>
-            <div class="skill-tags">
-              <span class="skill-pill">UI Design</span>
-              <span class="skill-pill">Motion Design</span>
-              <span class="skill-pill">Augmented Reality</span>
-              <span class="skill-pill">Storyboarding</span>
-            </div>
+          <div class="cv-entry">
+            <div class="cv-entry-date" data-i18n="cv.xeit.meta">Zürich · Aug 2021 – Mrz 2022</div>
+            <div class="cv-entry-company" data-i18n="cv.xeit.company">Xeit AG</div>
+            <div class="cv-entry-role" data-i18n="cv.xeit.role">Screen- &amp; Interaction Design · 60%</div>
+            <ul>
+              <li data-i18n="cv.xeit.b1">Gestaltung digitaler Medien: Banner, Animationsfilme und Prototypen für Web und App.</li>
+            </ul>
+          </div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-date" data-i18n="cv.corp.meta">Zürich · Jul 2019 – Jul 2021</div>
+            <div class="cv-entry-company" data-i18n="cv.corp.company">CORPMEDIA</div>
+            <div class="cv-entry-role" data-i18n="cv.corp.role">Motion Design · 80–100%</div>
           </div>
 
         </div>
+      </div>
 
-        <div class="cv-sidebar-section">
-          <div class="cv-label" data-i18n="cv.langs.title">Sprachen</div>
-          <div class="lang-item">
-            <div class="lang-name" data-i18n="cv.lang.de">Deutsch</div>
-            <div class="lang-level" data-i18n="cv.lang.de.lvl">Muttersprache</div>
+      <div class="cv-section">
+        <div class="cv-label" data-i18n="cv.edu.title">Ausbildung</div>
+        <div class="cv-entries">
+
+          <div class="cv-entry">
+            <div class="cv-entry-date" data-i18n="cv.edu.fhgr.meta">Chur · Aug 2021 – Jul 2022</div>
+            <div class="cv-entry-company" data-i18n="cv.edu.fhgr.company">FHGR</div>
+            <div class="cv-entry-role" data-i18n="cv.edu.fhgr.role">CAS Augmented Reality und Virtual Reality</div>
           </div>
-          <div class="lang-item">
-            <div class="lang-name" data-i18n="cv.lang.en">Englisch</div>
-            <div class="lang-level" data-i18n="cv.lang.en.lvl">Fliessend</div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-date" data-i18n="cv.edu.sfg.meta">St. Gallen · Aug 2017 – Jul 2020</div>
+            <div class="cv-entry-company" data-i18n="cv.edu.sfg.company">Schule für Gestaltung</div>
+            <div class="cv-entry-role" data-i18n="cv.edu.sfg.role">Dipl. Designerin HF Interactive Media Design</div>
           </div>
-          <div class="lang-item">
-            <div class="lang-name" data-i18n="cv.lang.fr">Französisch</div>
-            <div class="lang-level" data-i18n="cv.lang.fr.lvl">Grundkenntnisse</div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-date" data-i18n="cv.edu.kv.meta">Zürich · Aug 2013 – Jul 2016</div>
+            <div class="cv-entry-company" data-i18n="cv.edu.kv.company">KV Business School</div>
+            <div class="cv-entry-role" data-i18n="cv.edu.kv.role">Kaufmännische Angestellte EFZ</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-label" data-i18n="cv.skills.title">Fähigkeiten</div>
+        <div class="cv-skills-prose">
+          <p data-i18n="cv.skills.text">Meine Kernmethoden sind User Research, Usability Testing, UX-Konzeption, Prototyping und Stakeholder Management. Ich arbeite täglich mit Figma, FigJam, Maze, Jira und After Effects. Im kreativen Bereich bringe ich Erfahrung in UI Design, Motion Design und Augmented Reality mit.</p>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-label" data-i18n="cv.langs.title">Sprachen</div>
+        <div class="cv-langs">
+          <div class="cv-lang-item">
+            <span class="cv-lang-name" data-i18n="cv.lang.de">Deutsch</span>
+            <span class="cv-lang-dot">·</span>
+            <span class="cv-lang-level" data-i18n="cv.lang.de.lvl">Muttersprache</span>
+          </div>
+          <div class="cv-lang-item">
+            <span class="cv-lang-name" data-i18n="cv.lang.en">Englisch</span>
+            <span class="cv-lang-dot">·</span>
+            <span class="cv-lang-level" data-i18n="cv.lang.en.lvl">Fliessend</span>
+          </div>
+          <div class="cv-lang-item">
+            <span class="cv-lang-name" data-i18n="cv.lang.fr">Französisch</span>
+            <span class="cv-lang-dot">·</span>
+            <span class="cv-lang-level" data-i18n="cv.lang.fr.lvl">Grundkenntnisse</span>
           </div>
         </div>
-
-        <div class="cv-sidebar-section">
-          <div class="cv-label" data-i18n="cv.refs.title">Referenzen</div>
-          <span style="font-size:12px;font-weight:300;color:var(--text-muted);" data-i18n="cv.on.request">Auf Anfrage</span>
-        </div>
-
+        <p class="cv-refs-note" data-i18n="cv.refs.note">Referenzen auf Anfrage</p>
       </div>
 
     </div>
