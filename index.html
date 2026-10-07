@@ -705,15 +705,26 @@
     }
 
     /* Unfiltered page */
-    .unfiltered-hero { padding: 140px var(--sp-page) 80px; }
+    .unfiltered-hero { padding: 170px var(--sp-page) 40px; }
     .unfiltered-headline { font-size: clamp(44px, 5.5vw, 72px); color: var(--text-primary); max-width: 900px; margin-bottom: 40px; }
-    .unfiltered-gallery { padding: 0 var(--sp-page) 120px; columns: 3; column-gap: 16px; }
-    .unfiltered-gallery-item { break-inside: avoid; margin-bottom: 16px; overflow: hidden; background: var(--card-bg); }
-    .unfiltered-gallery-item img { width: 100%; display: block; transition: transform 0.5s cubic-bezier(0.23,1,0.32,1); }
-    .unfiltered-gallery-item:hover img { transform: scale(1.03); }
-    .unfiltered-gallery-item.placeholder { aspect-ratio: 4/3; background: var(--card-bg); }
-    @media (max-width: 768px) { .unfiltered-gallery { columns: 2; } .unfiltered-hero { padding: 120px 24px 60px; } .unfiltered-gallery { padding: 0 24px 80px; } }
-    @media (max-width: 480px) { .unfiltered-gallery { columns: 1; } }
+    .unfiltered-gallery { padding: 0 var(--sp-page) 120px; }
+    .unfiltered-gallery-featured { width: 100%; margin-bottom: 16px; overflow: hidden; border-radius: 4px; }
+    .unfiltered-gallery-featured img { width: 100%; display: block; }
+    .gallery-row { display: flex; gap: 16px; margin-bottom: 16px; }
+    .unfiltered-gallery-item { overflow: hidden; border-radius: 4px; min-width: 0; }
+    .unfiltered-gallery-item img,
+    .unfiltered-gallery-item video { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+    .unfiltered-gallery-item:hover img,
+    .unfiltered-gallery-item:hover video { transform: scale(1.03); }
+    @media (max-width: 768px) {
+      .unfiltered-gallery { padding: 0 24px 80px; }
+      .unfiltered-hero { padding: 162px 24px 40px; }
+      .gallery-row { flex-wrap: wrap; gap: 8px; aspect-ratio: unset !important; }
+      .gallery-row .unfiltered-gallery-item { flex: none !important; width: calc(50% - 4px); aspect-ratio: var(--ar, 1); }
+    }
+    @media (max-width: 480px) {
+      .gallery-row .unfiltered-gallery-item { width: 100%; }
+    }
 
     /* Gradient for lines & underlines */
     .scroll-hint span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -2203,10 +2214,52 @@
   <!-- UNFILTERED PAGE -->
   <div id="page-unfiltered" class="page">
     <div class="unfiltered-hero">
-      <h1 class="unfiltered-headline">Dinge, die ich mag.<br>Dinge, die ich mache.<br>Dinge, die ich wahrscheinlich nicht dokumentieren müsste.</h1>
+      <h1 class="unfiltered-headline">Dinge, die ich mag.<br>Dinge, die ich mache.<br>Manchmal auch einfach etwas.</h1>
     </div>
     <div class="unfiltered-gallery">
-      <!-- Bilder hier einfügen -->
+      <!-- Banner GIF – immer volle Galeriebreite -->
+      <div class="unfiltered-gallery-featured animate">
+        <img src="assets/unfiltered/n94-8.gif" alt="">
+      </div>
+      <!-- Reihe 2: 4 Bilder -->
+      <div class="gallery-row animate" style="aspect-ratio:1079/291">
+        <div class="unfiltered-gallery-item" style="flex:241;--ar:241/291"><img src="assets/unfiltered/n94-42.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:283;--ar:283/282"><img src="assets/unfiltered/n94-47.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:251;--ar:251/291"><img src="assets/unfiltered/n94-21.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:218;--ar:218/291"><img src="assets/unfiltered/n94-49.jpg" alt="" loading="lazy"></div>
+      </div>
+      <!-- Reihe 3: breites GIF + 2 Bilder -->
+      <div class="gallery-row animate" style="aspect-ratio:1079/381">
+        <div class="unfiltered-gallery-item" style="flex:553;--ar:553/381"><img src="assets/unfiltered/n94-51.gif" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:251;--ar:251/381"><img src="assets/unfiltered/n94-53.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:224;--ar:224/381"><img src="assets/unfiltered/n94-55.jpg" alt="" loading="lazy"></div>
+      </div>
+      <!-- Reihe 4: 3 Bilder -->
+      <div class="gallery-row animate" style="aspect-ratio:1079/291">
+        <div class="unfiltered-gallery-item" style="flex:365;--ar:365/291"><img src="assets/unfiltered/n94-57.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:214;--ar:214/291"><img src="assets/unfiltered/n94-59.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:451;--ar:451/295"><img src="assets/unfiltered/n94-61.jpg" alt="" loading="lazy"></div>
+      </div>
+      <!-- Reihe 5: 3 Bilder -->
+      <div class="gallery-row animate" style="aspect-ratio:1079/377">
+        <div class="unfiltered-gallery-item" style="flex:344;--ar:344/377"><img src="assets/unfiltered/n94-71.png" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:286;--ar:286/381"><img src="assets/unfiltered/n94-69.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:381;--ar:381/381"><img src="assets/unfiltered/n94-67.gif" alt="" loading="lazy"></div>
+      </div>
+      <!-- Reihe 6: breites GIF + 2 Bilder -->
+      <div class="gallery-row animate" style="aspect-ratio:1079/292">
+        <div class="unfiltered-gallery-item" style="flex:519;--ar:519/292"><img src="assets/unfiltered/n94-82.gif" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:206;--ar:206/291"><img src="assets/unfiltered/n94-75.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:274;--ar:274/291"><img src="assets/unfiltered/n94-84.jpg" alt="" loading="lazy"></div>
+      </div>
+      <!-- Reihe 7: 3 Bilder (Video-Platzhalter ausgeblendet bis du video-94-88.mp4 in assets/unfiltered/ legst) -->
+      <div class="gallery-row animate" style="aspect-ratio:1079/265">
+        <div class="unfiltered-gallery-item" style="flex:182;--ar:182/265"><img src="assets/unfiltered/n94-90.jpg" alt="" loading="lazy"></div>
+        <div class="unfiltered-gallery-item" style="flex:444;--ar:444/270; display:none" data-video-placeholder>
+          <video autoplay loop muted playsinline><source src="assets/unfiltered/video-94-88.mp4" type="video/mp4"></video>
+        </div>
+        <div class="unfiltered-gallery-item" style="flex:381;--ar:381/270"><img src="assets/unfiltered/n95-102.png" alt="" loading="lazy"></div>
+      </div>
     </div>
   </div>
 
