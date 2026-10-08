@@ -299,15 +299,13 @@
     }
 
     /* ── PRINT ── */
-    /* margin: 0 removes Chrome's date/title/URL header rows from the PDF */
-    @page { size: A4; margin: 0; }
+    @page { size: A4; margin: 14mm 16mm; }
     @media print {
       :root { --bg: #ffffff; }
       *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       html, body { background: transparent !important; }
       .print-btn, .print-btn-wrap, .back-btn, .cv-lang-switch { display: none !important; }
-      /* compensate: page margin moved into content padding */
-      .cv-page { margin: 0; padding: 14mm 16mm; max-width: 100%; }
+      .cv-page { margin: 0; padding: 0; max-width: 100%; }
       .cv-row { break-inside: avoid; }
       .cv-project { break-inside: avoid; }
       .cv-section { margin-bottom: 36px; }
