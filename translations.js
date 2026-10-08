@@ -279,7 +279,7 @@ window.TRANSLATIONS = {
     'cv.printHint':       'In the dialog: choose «Save as PDF» — not a printer',
     'cv.subtitle':        'User Experience Design',
     'cv.profile.title':   'Profile',
-    'cv.profile.text':    'I want to understand how things work and what drives people. From these insights I develop clear concepts, prototypes and visual solutions. I combine 7+ years of design experience with a versatile background in UX, research, animation and visual design.',
+    'cv.profile.text':    'I want to understand how things work and what drives people. From these insights I develop clear concepts, prototypes and visual solutions. I combine 5+ years of UX experience with a versatile background in research, animation and visual design.',
     'cv.career.title':    'Work Experience',
     'cv.edu.title':       'Education',
     'cv.skills.title':    'Skills',
