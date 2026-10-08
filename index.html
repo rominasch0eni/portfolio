@@ -627,15 +627,15 @@
       position: fixed; inset: 0; z-index: 1001;
       background: var(--chat-bg);
       border: none;
+      clip-path: circle(26px at calc(100% - 104px) calc(100% - 52px));
+      transition: clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1);
       pointer-events: none;
       opacity: 0;
-      transform: scale(1.02);
-      transition: opacity 0.35s ease, transform 0.35s ease;
     }
     #chat-overlay.open {
+      clip-path: circle(150vmax at calc(100% - 104px) calc(100% - 52px));
       pointer-events: all;
       opacity: 1;
-      transform: scale(1);
     }
 
     /* inner panel: transparent so gradient is visible, invisible during expansion */
