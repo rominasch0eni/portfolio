@@ -89,7 +89,7 @@ window.TRANSLATIONS = {
     'cv.printHint':       'Im Dialog: «Als PDF speichern» wählen — nicht den Drucker',
     'cv.subtitle':        'User Experience Design',
     'cv.profile.title':   'Profil',
-    'cv.profile.text':    'Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Aus diesen Erkenntnissen entwickle ich klare Konzepte, Prototypen und visuelle Lösungen. Dabei verbinde ich 7+ Jahre Designerfahrung mit einem vielseitigen Hintergrund in UX, Research, Animation und visueller Gestaltung.',
+    'cv.profile.text':    'Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Aus diesen Erkenntnissen entwickle ich klare Konzepte, Prototypen und visuelle Lösungen. Dabei verbinde ich 5+ Jahre UX Erfahrung mit einem vielseitigen Hintergrund in UX, Research, Animation und visueller Gestaltung.',
     'cv.career.title':    'Beruflicher Werdegang',
     'cv.edu.title':       'Ausbildung',
     'cv.skills.title':    'Fähigkeiten',
