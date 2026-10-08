@@ -221,6 +221,32 @@
     .cv-row-content {
       border-left: 1px solid var(--rail);
       padding-left: 22px;
+      position: relative;
+    }
+
+    .cv-row-content::before,
+    .cv-project::before {
+      content: '';
+      position: absolute;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--text-primary) 3px, var(--bg) 3.5px);
+      border: 1.5px solid var(--rail);
+      z-index: 1;
+    }
+
+    .cv-row-content::before {
+      left: -7px;
+      top: 1px;
+    }
+
+    .cv-project {
+      position: relative;
+    }
+
+    .cv-project::before {
+      left: -29px;
+      top: 1px;
     }
 
     /* ── EMPLOYER TITLE (top of content block) ── */
