@@ -506,19 +506,6 @@
       #chat-input-row { padding: 0; gap: 8px; margin-top: auto; }
       #chat-suggestions { padding: 6px 0 8px; min-height: 0; gap: 6px; margin: 0; }
       .chat-suggestion { font-size: 13px; padding: 10px 14px; }
-      /* Kein clip-path + backdrop-filter auf Mobile (flackert auf iOS) */
-      #chat-overlay {
-        clip-path: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        transform: scale(1.02);
-        opacity: 0;
-        transition: opacity 0.35s ease, transform 0.35s ease;
-      }
-      #chat-overlay.open {
-        transform: scale(1);
-        opacity: 1;
-      }
     }
 
     /* SCROLL ANIMATIONS */
@@ -639,18 +626,16 @@
     #chat-overlay {
       position: fixed; inset: 0; z-index: 1001;
       background: var(--chat-bg);
-      backdrop-filter: blur(40px);
-      -webkit-backdrop-filter: blur(40px);
       border: none;
-      clip-path: circle(26px at calc(100% - 104px) calc(100% - 52px));
-      transition: clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1);
       pointer-events: none;
       opacity: 0;
+      transform: scale(1.02);
+      transition: opacity 0.35s ease, transform 0.35s ease;
     }
     #chat-overlay.open {
-      clip-path: circle(150vmax at calc(100% - 104px) calc(100% - 52px));
       pointer-events: all;
       opacity: 1;
+      transform: scale(1);
     }
 
     /* inner panel: transparent so gradient is visible, invisible during expansion */
