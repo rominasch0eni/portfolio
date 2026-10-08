@@ -86,6 +86,7 @@ window.TRANSLATIONS = {
     /* CV */
     'cv.back':            'Zurück zum Portfolio',
     'cv.print':           'Als PDF speichern',
+    'cv.printHint':       'Im Dialog: «Als PDF speichern» wählen — nicht den Drucker',
     'cv.subtitle':        'User Experience Design',
     'cv.profile.title':   'Profil',
     'cv.profile.text':    'Ich möchte verstehen, wie Dinge funktionieren und was Menschen bewegt. Aus diesen Erkenntnissen entwickle ich klare Konzepte, Prototypen und visuelle Lösungen. Dabei verbinde ich 7+ Jahre Designerfahrung mit einem vielseitigen Hintergrund in UX, Research, Animation und visueller Gestaltung.',
@@ -275,6 +276,7 @@ window.TRANSLATIONS = {
     /* CV */
     'cv.back':            'Back to portfolio',
     'cv.print':           'Save as PDF',
+    'cv.printHint':       'In the dialog: choose «Save as PDF» — not a printer',
     'cv.subtitle':        'User Experience Design',
     'cv.profile.title':   'Profile',
     'cv.profile.text':    'I want to understand how things work and what drives people. From these insights I develop clear concepts, prototypes and visual solutions. I combine 7+ years of design experience with a versatile background in UX, research, animation and visual design.',

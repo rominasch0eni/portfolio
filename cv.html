@@ -42,6 +42,10 @@
       display: flex; align-items: center; gap: 8px;
     }
     .print-btn:hover { box-shadow: 0 8px 32px rgba(13,37,53,0.25); }
+    .print-btn-wrap { position: fixed; top: 24px; right: 24px; z-index: 100; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+    .print-btn-wrap .print-btn { position: static; top: auto; right: auto; }
+    .print-hint { font-family: 'Instrument Sans', sans-serif; font-size: 11px; color: var(--text-faint); text-align: right; line-height: 1.4; opacity: 0; transform: translateY(-4px); transition: opacity 0.2s, transform 0.2s; pointer-events: none; }
+    .print-btn-wrap:hover .print-hint { opacity: 1; transform: translateY(0); }
 
     .back-btn {
       position: fixed; top: 28px; left: 40px; z-index: 100;
@@ -302,7 +306,7 @@
       :root { --bg: #ffffff; }
       *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       html, body { background: transparent !important; -webkit-print-color-adjust: initial !important; print-color-adjust: initial !important; }
-      .print-btn, .back-btn, .cv-lang-switch { display: none !important; }
+      .print-btn, .print-btn-wrap, .back-btn, .cv-lang-switch { display: none !important; }
       .cv-page { margin: 0; padding: 0; max-width: 100%; }
       .cv-row { break-inside: avoid; }
       .cv-section { margin-bottom: 36px; }
@@ -328,10 +332,13 @@
     </select>
   </div>
 
-  <button class="print-btn" onclick="window.print()">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-    <span data-i18n="cv.print">Als PDF speichern</span>
-  </button>
+  <div class="print-btn-wrap">
+    <button class="print-btn" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span data-i18n="cv.print">Als PDF speichern</span>
+    </button>
+    <span class="print-hint" data-i18n="cv.printHint">Im Dialog: «Als PDF speichern» wählen — nicht den Drucker</span>
+  </div>
 
   <div class="cv-page">
 
