@@ -17,7 +17,7 @@ window.TRANSLATIONS = {
     'brief.heading':      'Ich bringe Ordnung in komplexe Systeme.<span class="brief-br"></span> Ob 54 Farbfelder oder 54 User-Interviews.',
     'brief.text':         'Ich bin UX-Designerin mit 5 Jahren Erfahrung in UX und über 2 Jahren in Motion Design. Mich treibt vor allem meine Neugier an. Ich möchte verstehen, wie Dinge funktionieren und was Menschen in ihrem Denken und Fühlen bewegt.',
     'brief.label.current':'Aktuell',
-    'brief.val.current':  'UX Design · Research · Animationerin, Ironforge Consulting AG',
+    'brief.val.current':  'UX Design, Ironforge Consulting AG',
     'brief.label.focus':  'Schwerpunkte',
     'brief.val.focus':    'UX Konzept, UX Research, Innovation',
     'brief.label.before': 'Zuvor',
@@ -64,6 +64,7 @@ window.TRANSLATIONS = {
     'test.3':             '"Für jede Organisation, die eine talentierte, erfahrene und leidenschaftliche UX-Designerin sucht, kann ich Romina uneingeschränkt empfehlen. Sie überzeugt nicht nur durch ihr fundiertes Fachwissen, sondern auch durch ihre Kreativität und ihren Innovationsgeist."',
     'test.4':             '"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."',
 
+    'chat.btn':           'Frag mich was',
     'chat.welcome.title': 'Hi, ich bin Dot!',
     'chat.welcome.sub':   'Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du über Romina wissen?',
     'chat.placeholder':   'Deine Frage...',
@@ -220,9 +221,9 @@ window.TRANSLATIONS = {
     'scroll.hint':        'Scroll',
 
     'brief.heading':      'I bring order to complex systems.<span class="brief-br"></span> Whether 54 colour fields or 54 user interviews.',
-    'brief.text':         'I\'m a UX Design · Research · Animationer with 5 years of UX experience and over 2 years in motion design. My biggest driver is curiosity, I want to understand how things work and what moves people in their thinking and feeling.',
+    'brief.text':         'I\'m a UX designer with 5 years of UX experience and over 2 years in motion design. My biggest driver is curiosity. I want to understand how things work and what moves people in their thinking and feeling.',
     'brief.label.current':'Currently',
-    'brief.val.current':  'UX Design · Research · Animationer, Ironforge Consulting AG',
+    'brief.val.current':  'UX Design, Ironforge Consulting AG',
     'brief.label.focus':  'Focus areas',
     'brief.val.focus':    'UX Concept, UX Research, Innovation',
     'brief.label.before': 'Previously',
@@ -269,6 +270,7 @@ window.TRANSLATIONS = {
     'test.3':             '«For any organization looking for a talented, experienced and passionate user experience designer, I can highly recommend Romina. Not only does she have excellent expertise, but she also stands out for her creativity and innovation.»',
     'test.4':             '"I worked closely with Romina. Her expertise in UX and design was instrumental in the company\'s success. She consistently delivered high-quality work, even under tight deadlines. Her innovative thinking was invaluable when it came to finding unique solutions."',
 
+    'chat.btn':           'Ask me something',
     'chat.welcome.title': 'Hi, I\'m Dot!',
     'chat.welcome.sub':   'Instead of scrolling, you can just ask me.<br>What would you like to know?',
     'chat.placeholder':   'Your question...',

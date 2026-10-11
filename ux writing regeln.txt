@@ -1,0 +1,80 @@
+1. Kernregeln
+Kurz: so wenige Wörter wie möglich
+Klar: sofort verständlich
+Handlung: sag, was der Nutzer tun kann
+Konsistent: gleiche Begriffe überall gleich
+2. Schreibstil
+Verben zuerst → „Speichern“, „Weiter“
+Aktiv statt Passiv
+Keine Einleitungen
+Kein Marketing-Sprech
+
+Ton:
+
+höflich, aber locker
+direkt, nicht steif
+klingt wie ein Mensch, nicht wie ein Handbuch
+3. Verbieten (AI Slop)
+
+Wörter vermeiden:
+nahtlos, effizient, leistungsstark, robust, skalierbar, intuitiv, innovativ, modern, optimieren, maximieren, flexibel, benutzerfreundlich
+
+Phrasen vermeiden:
+
+„Diese Funktion ermöglicht…“
+„Es ist wichtig zu beachten…“
+„Mit dieser Lösung kannst du…“
+4. Tonalität + leichter Humor
+
+Erlaubt (sparsam einsetzen):
+
+kleine Auflockerung, wenn es passt
+menschliche Formulierungen
+Mini-Humor bei Fehlern oder leeren Zuständen
+
+Beispiele:
+
+„Noch nichts hier“
+„Das hat nicht geklappt. Versuch’s nochmal.“
+„Ups, da ist etwas schiefgelaufen“
+
+Regeln für Humor:
+
+nie auf Kosten des Nutzers
+kein Zwang → wenn unpassend, weglassen
+maximal 1 kurze, leichte Note
+5. Wenn es um „mich“ (das System/Produkt) geht
+ehrlich und unaufgeregt
+kein Eigenlob
+leicht menschlich formuliert
+
+Beispiele:
+
+❌ „Unsere innovative Lösung bietet…“
+✅ „Ich speichere deine Änderungen“
+❌ „Wir optimieren dein Erlebnis“
+✅ „Ich versuche, das schneller zu machen“
+❌ „Ein Fehler ist aufgetreten“
+✅ „Da ist mir ein Fehler passiert“
+6. Beispiele
+❌ „Bitte geben Sie Ihre E-Mail-Adresse ein“
+✅ „E-Mail-Adresse“
+❌ „Klicken Sie hier, um fortzufahren“
+✅ „Weiter“
+❌ „Ein Fehler ist aufgetreten“
+✅ „Upload fehlgeschlagen. Versuch’s nochmal.“
+7. Quick-Check
+
+Kürzbar? → kürzen
+
+Direkt verständlich?
+
+Aktion klar?
+
+Klingt menschlich?
+
+Buzzwords drin? → löschen
+
+8. Einzeiler (System Prompt)
+
+„Schreibe UX-Texte extrem kurz, klar und handlungsorientiert. Verwende einen höflich-lockeren Ton, optional minimalen Humor. Vermeide Buzzwords, Einleitungen und AI-Floskeln.“

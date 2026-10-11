@@ -18,17 +18,17 @@
 
     :root {
       --bg: #fafafa;
-      --text-primary: #0d2535;
+      --text-primary: #000000;
       --accent: #A8455E;
       --accent-gradient: var(--accent);
-      --text-muted: #0d2535;
-      --text-secondary: #0d2535;
+      --text-muted: #000000;
+      --text-secondary: #000000;
       --card-bg: #f0f0f0;
-      --border: rgba(13,37,53,0.08);
+      --border: rgba(0,0,0,0.08);
       --nav-bg: rgba(250,250,250,0.88);
       --project-overlay: linear-gradient(0deg, rgba(250,250,250,1) 0%, rgba(250,250,250,0.85) 50%, rgba(250,250,250,0.2) 80%, transparent 100%);
-      --surface: rgba(13,37,53,0.01);
-      --tag-border: #0d2535;
+      --surface: rgba(0,0,0,0.01);
+      --tag-border: #000000;
       --tag-bg: rgba(13,37,53,0.07);
       --visual-bg: #f2f2f2;
       --shadow-sm: 0 12px 40px rgba(0,0,0,0.04);
@@ -44,7 +44,7 @@
       --sp-gap-lg: var(--sp-section);
 
       /* chat overlay – inverted from site */
-      --chat-bg: rgba(13, 37, 53, 0.97);
+      --chat-bg: rgba(0, 0, 0, 0.97);
       --chat-text: #ffffff;
       --chat-text-muted: rgba(255,255,255,0.48);
       --chat-surface: rgba(255,255,255,0.1);
@@ -89,7 +89,7 @@
       --scroll-opacity: 0.75;
       /* chat overlay – inverted (light on dark) */
       --chat-bg: rgba(255, 255, 255, 0.95);
-      --chat-text: #0d2535;
+      --chat-text: #000000;
       --chat-text-muted: rgba(13,37,53,0.48);
       --chat-surface: rgba(0,0,0,0.06);
       --chat-surface-hover: rgba(0,0,0,0.1);
@@ -197,7 +197,63 @@
       font-size: inherit;
     }
     .hero-subtitle { font-family: 'Instrument Sans', sans-serif; font-size: clamp(16px, 2.2vw, 28px); font-weight: 400; letter-spacing: 0.5px; margin-top: 24px; color: var(--text-muted); }
+
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
+
+    /* ── Hero Blob Animation (nach Figma, 6.818s Loop) ── */
+    .hero-blob {
+      position: absolute;
+      left: calc(50% - min(100vw - 5px, 100vh - 6px) / 2);
+      top: 3px;
+      width: min(100vw - 5px, 100vh - 6px);
+      height: calc(100% - 6px);
+      background: #fff;
+      mix-blend-mode: difference;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform-origin: center center;
+      scale: 0.14925 1;
+      clip-path: inset(50% 0 50% 0);
+      transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hero-blob.active {
+      clip-path: inset(0% 0 0% 0);
+      animation: hero-blob-x 9s linear 1 normal forwards, hero-blob-scale 9s linear 1 normal forwards;
+    }
+    .hero-title { pointer-events: auto; }
+
+    @keyframes hero-blob-x {
+      0%      { translate: 0px 0px; }
+      4.741%  { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
+              translate: 0px 0px; }
+      12.204% { translate: -125px 0px; }
+      19.648% { animation-timing-function: linear(0, 0.0254, 0.0915, 0.1845, 0.2929, 0.4074, 0.521, 0.6283, 0.7258, 0.8113, 0.8838, 0.9431, 0.9898, 1.0249, 1.0497, 1.0656, 1.0742, 1.077, 1.0754, 1.0705, 1.0635, 1.0552, 1.0464, 1.0376, 1.0293, 1.0217, 1.015, 1.0094, 1.0047, 1.001, 0.9983, 0.9963, 0.995, 0.9943, 0.9941, 0.9942, 0.9945, 0.9951, 0.9957, 0.9964, 0.9971, 0.9977, 0.9983, 0.9988, 0.9992, 0.9996, 0.9999, 1.0001, 1.0003, 1.0004, 1.0004);
+              translate: -125px 0px; }
+      29.334% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
+              translate: 155px 0px; }
+      43.899% { translate: 3.33px 0px; }
+      49.047% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
+              translate: 3.33px 0px; }
+      56.977% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
+              translate: -98.6px 0px; }
+      69.453% { translate: 92.4px 0px; }
+      73.857% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
+              translate: -98.6px 0px; }
+      88.216% { translate: 0px 0px; }
+      100%    { translate: 0px 0px; }
+    }
+
+    @keyframes hero-blob-scale {
+      0%      { scale: 0.14925 1; }
+      29.334% { animation-timing-function: linear(0, 0.0388, 0.1387, 0.2768, 0.4332, 0.5915, 0.7396, 0.8692, 0.9754, 1.0563, 1.1124, 1.1458, 1.16, 1.1587, 1.146, 1.1258, 1.1014, 1.0757, 1.051, 1.0289, 1.0102, 0.9956, 0.985, 0.9782, 0.9748, 0.9741, 0.9755, 0.9783, 0.9821, 0.9862, 0.9903, 0.994, 0.9972, 0.9999, 1.0018, 1.0031, 1.0039, 1.0042, 1.0041, 1.0037, 1.0031, 1.0025, 1.0018, 1.0012, 1.0006, 1.0002, 0.9998, 0.9996, 0.9994, 0.9993, 0.9993);
+              scale: 0.14925 1; }
+      54.5%   { scale: 1 1; }
+      73.769% { animation-timing-function: linear(0, 0.0315, 0.1132, 0.2272, 0.3583, 0.4943, 0.6257, 0.7459, 0.8505, 0.9371, 1.0053, 1.0557, 1.0897, 1.1096, 1.1178, 1.1168, 1.1091, 1.0968, 1.0818, 1.0658, 1.0499, 1.0351, 1.022, 1.0109, 1.0021, 0.9954, 0.9906, 0.9877, 0.9863, 0.986, 0.9867, 0.988, 0.9896, 0.9915, 0.9934, 0.9952, 0.9969, 0.9983, 0.9994, 1.0003, 1.0009, 1.0014, 1.0016, 1.0017, 1.0016, 1.0015, 1.0013, 1.0011, 1.0009, 1.0006, 1.0004);
+              scale: 1 1; }
+      88.216% { scale: 0.14925 1; }
+      100%    { scale: 0.14925 1; }
+    }
     .scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); transition: opacity 0.4s ease; }
     .scroll-hint span { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 500; }
     .scroll-line { width: 2.5px; height: 40px; background: var(--accent); animation: scrollPulse 2s ease infinite; }
@@ -267,13 +323,48 @@
     .project-detail-content.stacked p { max-width: 720px; }
     .project-bottom-section { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
     .project-bottom-section > h2 { margin-bottom: var(--sp-heading); }
+
+    /* ── swiyu Case Study Layout ── */
+    .cs-section { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
+    .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-gap-lg); align-items: start; }
+    .cs-spread { display: grid; grid-template-columns: 2fr 3fr; gap: var(--sp-gap-lg); align-items: start; }
+    .cs-big-quote { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); text-align: center; }
+    .cs-big-quote p { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 52px); font-weight: 400; line-height: 1.2; letter-spacing: -0.5px; max-width: 900px; margin: 0 auto; }
+    .cs-vorgehen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-gap); margin-top: 32px; }
+    .cs-vorgehen-grid > div { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px 32px; background: rgba(0,0,0,0.01); }
+    .cs-step-num { display: block; font-family: var(--font-serif); font-size: 36px; font-weight: 700; color: var(--text-primary); opacity: 0.25; margin-bottom: 24px; letter-spacing: -1px; line-height: 1; }
+    .cs-half { max-width: 660px; }
+    .cs-col-quote { font-family: var(--font-serif); font-size: clamp(22px, 2.5vw, 36px); color: var(--text-muted); margin-top: 40px; line-height: 1.2; letter-spacing: -0.5px; }
+    .cs-hifi-quote { font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 2.5vw, 32px); margin: 28px 0; line-height: 1.3; letter-spacing: -0.3px; color: var(--text-primary); }
+    .cs-stat-box { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin: 48px 0; }
+    .cs-stat-cell { background: var(--bg); padding: 32px 24px; }
+    .cs-stat-val { display: block; font-family: var(--font-serif); font-size: 44px; font-weight: 300; line-height: 1; margin-bottom: 8px; color: var(--text-primary); }
+    .cs-stat-label { font-size: 13px; color: var(--text-muted); }
+    .cs-img-split { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); min-height: 520px; }
+    .cs-img-side { background: var(--surface); border-right: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 13px; opacity: 0.4; }
+    .cs-img-split > .cs-section { border-top: none; }
+    .cs-section-num { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; margin-bottom: 12px; }
+    .cs-case-subtitle { font-size: 14px; color: var(--text-muted); margin: 6px 0 24px; line-height: 1.5; }
+    .cs-inner-quote { font-family: var(--font-serif); font-size: clamp(19px, 2.2vw, 26px); font-weight: 400; line-height: 1.3; letter-spacing: -0.3px; border-left: 2px solid var(--text-primary); padding-left: 24px; margin: 32px 0; }
+    .cs-sub-h { font-family: var(--font-serif); font-size: 18px; font-weight: 600; letter-spacing: -0.3px; margin: 36px 0 10px; }
+    .cs-meta-label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; margin-bottom: 10px; }
+    .cs-next-link { display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 40px var(--sp-page); border-top: 1px solid var(--border); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); cursor: pointer; }
+    .cs-next-link:hover { color: var(--text-primary); }
+    @media (max-width: 800px) {
+      .cs-two-col, .cs-spread { grid-template-columns: 1fr; }
+      .cs-img-split { grid-template-columns: 1fr; }
+      .cs-img-side { min-height: 260px; border-right: none; border-bottom: 1px solid var(--border); }
+      .cs-vorgehen-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .cs-stat-box { grid-template-columns: 1fr 1fr; }
+    }
     .resp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-gap); }
-    .resp-grid > .resp-item { min-width: 0; padding: var(--sp-card); border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+    .resp-grid > .resp-item { min-width: 0; padding: 28px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
     .cs-label { margin-top: 16px !important; margin-bottom: 0 !important; }
     .cs-label strong { font-family: var(--font-sans); font-size: var(--text-ui); font-weight: var(--w-medium); letter-spacing: 0; text-transform: none; color: var(--text-primary); opacity: 1; }
     .cs-label + p { margin-top: 4px; font-family: var(--font-sans); font-size: var(--text-ui); color: var(--text-muted); margin-bottom: 0; }
     .resp-item { margin-bottom: 0; }
-    .resp-item h4 { font-family: var(--font-sans); font-size: var(--text-ui); font-weight: var(--w-medium); color: var(--text-primary); margin-bottom: 16px; }
+    .resp-item h4 { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--text-primary); margin-bottom: 14px; line-height: 1.3; letter-spacing: -0.3px; }
+    .cs-pullquote { font-family: var(--font-serif); font-size: clamp(20px, 2.2vw, 28px); font-weight: 600; line-height: 1.25; letter-spacing: -0.5px; color: var(--text-primary); margin: 24px 0 8px !important; max-width: none !important; }
     .resp-label { display: block; margin: 14px 0 4px !important; max-width: none !important; color: var(--text-muted); opacity: 0.6; }
 
     .project-process { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
@@ -546,12 +637,12 @@
       width: 42px;
       /* Spring-Ease: leichtes Overshoot für natürliche Bewegung */
       transition: transform 0.48s cubic-bezier(0.34, 1.08, 0.64, 1);
-      color: #0d2535;
+      color: #000000;
       --cat-accent: #ffffff;
     }
     body.dark #chat-cat-container {
       color: #ffffff;
-      --cat-accent: #0d2535;
+      --cat-accent: #000000;
     }
     /* Hover: Katze schaut hinter dem Button hervor */
     #chat-btn-wrapper:hover #chat-cat-container {
@@ -603,10 +694,10 @@
       z-index: 2;            /* Button liegt über der Katze = maskiert sie im Startzustand */
       height: 48px; border-radius: 100px;
       padding: 0 22px; gap: 8px;
-      background: #0d2535;
+      background: #000000;
       border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 24px rgba(13,37,53,0.18);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
       transition: box-shadow 0.3s;
       color: #ffffff;
       font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 500;
@@ -614,10 +705,10 @@
     }
     body.dark #chat-btn {
       background: #ffffff;
-      color: #0d2535;
+      color: #000000;
       box-shadow: 0 4px 24px rgba(0,0,0,0.3);
     }
-    #chat-btn:hover { box-shadow: 0 8px 32px rgba(13,37,53,0.25); }
+    #chat-btn:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
     #chat-btn:active { opacity: 0.9; }
     body.dark #chat-btn:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
     #chat-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
@@ -916,7 +1007,9 @@
 
   <!-- MAIN PAGE -->
   <div id="page-main" class="page active">
+
     <section class="hero">
+      <div class="hero-blob"></div>
       <!-- CUBE – uncomment to restore: <canvas id="rubik-canvas"></canvas> -->
 
       <div class="hero-content">
@@ -952,7 +1045,7 @@
         <div class="about-brief-details">
           <div class="about-brief-item">
             <span class="label" data-i18n="brief.label.current">Aktuell</span>
-            <span class="value" data-i18n="brief.val.current">UX Design · Research · Animationerin, Ironforge Consulting AG</span>
+            <span class="value" data-i18n="brief.val.current">UX Design, Ironforge Consulting AG</span>
           </div>
           <div class="about-brief-item">
             <span class="label" data-i18n="brief.label.focus">Schwerpunkte</span>
@@ -1106,7 +1199,7 @@
           <p class="testimonial-quote" data-i18n="test.2">"Was mir an Rominas Arbeit schon immer gefallen hat, ist ihre Fähigkeit, aus einer vagen Idee etwas völlig Neues entstehen zu lassen. Mit ihr zu arbeiten ist wie Pingpong spielen."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar"><img src="assets/Testimonials/Diana.png" alt="Diana von Ow"></div>
-            <div><div class="testimonial-name">Diana von Ow</div><div class="testimonial-role">UX Design · Research · Animationer · Liip AG</div></div>
+            <div><div class="testimonial-name">Diana von Ow</div><div class="testimonial-role">UX Design · Research · Liip AG</div></div>
           </div>
         </div>
         <div class="testimonial-card animate" style="transition-delay:0.2s;">
@@ -1151,36 +1244,146 @@
       {
         id: 1, num: '01', folder: 'e-id',
         name: 'Elektronische Identität',
-        type: 'UX Research · UX Konzept',
+        type: 'UX Research · Informationsarchitektur · UX-Konzeption',
         meta: [
-          { label: 'Rolle', value: 'UX Design · Research · Animationerin, Lead Researcherin' },
+          { label: 'Rolle', value: 'Lead Researcherin, UX-Konzeption' },
           { label: 'Zeitraum', value: '2025 bis 2026' },
-          { label: 'Team', value: 'PO, Scrum Master, 4 UX Design · Research · Animationer & 2 UX Writer' },
+          { label: 'Team', value: 'PO, Scrum Master, 4 UX Designer & 2 UX Writer' },
           { label: 'Branche', value: 'Öffentliche Verwaltung' }
         ],
-        content: {
-          leftTitle: 'Überblick',
-          leftText: '<p>Die E-ID ist eines der grössten Digitalisierungsprojekte der Schweiz. Ich stiess mitten in den Entwicklungsprozess dazu und trieb das Konzept durch regelmässige Usability-Studien aktiv voran.</p><p>Kernfrage: Wie lassen sich komplexe Sicherheitsanforderungen mit einer einfachen, klaren Nutzererfahrung verbinden?</p>',
-          rightTitle: 'Herausforderung',
-          rightText: '<p>Digitale Identität ist ein sensibles Thema: Vertrauen, Datenschutz und Zugänglichkeit mussten gleichermassen berücksichtigt werden. Viele Bürgerinnen und Bürger hatten Vorbehalte gegenüber digitalen Lösungen.</p><p>Die grösste Herausforderung: komplexe behördliche Prozesse so vereinfachen, dass sie für alle Altersgruppen zugänglich sind, ohne an Sicherheit zu verlieren.</p>'
-        },
-        process: {
-          title: 'Vorgehen',
-          steps: [
-            { num: '01', title: 'User Research', text: '45+ qualitative Interviews mit verschiedenen Nutzergruppen: Bedürfnisse, Ängste und Erwartungen verstehen.' },
-            { num: '02', title: 'Konzept', text: 'Erstellung von Personas, Mitarbeit bei User Flows und Wireframes. Iterative Verfeinerung durch regelmässige Feedback-Runden.' },
-            { num: '03', title: 'Validierung', text: 'Organisieren und durchführen von unterschiedlichen Usability Studien, Ergebnispräsentation und Handlungsempfehlungen für die Umsetzung.' }
-          ]
-        },
-        outcome: {
-          text: 'Das Projekt läuft noch. Aus Vertraulichkeitsgründen werden keine Details kommuniziert.',
-          stats: [
-            { value: '45+', label: 'Nutzer-Interviews' },
-            { value: '12+', label: 'Usability Studien' },
-            { value: '3', label: 'Maze Studien' },
-			{ value: '40000', label: 'Testuser für Interne Testphase' }
-          ]
-        },
+        customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Intro</h2>
+    <p>Die Schweizer e-ID war vielen Menschen bereits ein Begriff. Schliesslich wurde darüber politisch abgestimmt. Aber was ist eigentlich <strong>swiyu</strong>? Ein Start-up? Ein ausländisches Unternehmen? Oder steckt doch der Schweizer Bund dahinter?</p>
+    <p>Solche Fragen begegneten mir in den Interviews und Usability-Tests für swiyu. Sie zeigten, dass es nicht nur darum ging, eine neue Technologie nutzbar zu machen.</p>
+    <p>Die Menschen mussten zuerst verstehen, was <strong>swiyu</strong> ist, wie es funktioniert und wem sie dabei vertrauen.</p>
+    <p class="cs-col-quote">«Aber was ist eigentlich swiyu?»</p>
+  </div>
+  <div>
+    <h2>Meine Rolle bei swiyu</h2>
+    <p>Beim Bundesamt für Informatik arbeitete ich im UX Research und in der UX-Konzeption. Mein Aufgabenbereich umfasste sowohl die swiyu Wallet App als auch die Website <strong>swiyu.admin.ch</strong>. Ich plante, moderierte und analysierte Interviews und Usability-Tests mit Privatpersonen und Organisationen. Dabei untersuchte ich, wie Menschen die Produkte verstehen, welche Fragen bei der Nutzung entstehen und wo Konzepte oder Abläufe noch nicht funktionieren. Aus den Ergebnissen leitete ich Empfehlungen für User Flows, Informationsarchitektur, Produktverständnis und Kommunikation ab. Diese präsentierte ich dem Projektteam sowie Vertreterinnen und Vertretern verschiedener Bundesämter.</p>
+    <p>In der Konzeption und Gestaltung war ich beratend tätig. Die Verantwortung für das Design lag beim jeweiligen Designteam. Neben der Projektarbeit half ich dabei, den Research bei swiyu strukturell weiterzuentwickeln. Ich etablierte standardisierte Prozesse und ein zentrales Research-Repository, mit denen Erkenntnisse aus verschiedenen Studien zugänglich blieben. Gemeinsam mit Marketing trug ich ausserdem dazu bei, den internen User-Pool von 600 auf 6'000 Personen auszubauen.</p>
+  </div>
+</div>
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Die Case Study: swiyu.admin.ch</h2>
+    <p>Für diese Case Study nehme ich dich mit in die Entwicklung von <strong>swiyu.admin.ch</strong>.</p>
+    <p>Das Projektteam entwickelte eine neue Website, die die bisherige Informationsseite zur Schweizer e-ID ablösen sollte. Gleichzeitig sollte sie mehr als eine reine Informationsseite sein. Privatpersonen sollten erfahren, was die swiyu Wallet ist, wie die e-ID und weitere digitale Nachweise darin funktionieren und wie sie die Wallet nutzen können.</p>
+    <p>Organisationen sollten konkrete Anwendungsmöglichkeiten, Produktlösungen und Informationen zum Einstieg in das swiyu-Ökosystem finden.</p>
+    <p>Die Website sollte damit eine zentrale Anlaufstelle für beide Zielgruppen werden. Ich war von Anfang an in die Entwicklung eingebunden.</p>
+  </div>
+  <div>
+    <h2>Die Herausforderung</h2>
+    <p>Die e-ID war für einige Menschen bereits ein bekanntes Thema. Andere hatten sich kaum damit beschäftigt. Doch selbst wer die e-ID kannte, verstand nicht unbedingt, was swiyu damit zu tun hatte. Was ist der Unterschied zwischen e-ID und Wallet? Welche weiteren Nachweise kann man darin speichern? Wer kann solche Nachweise ausstellen?</p>
+    <p>Bei Organisationen kamen andere Fragen hinzu.</p>
+    <p>Welche Lösung passt zu uns? Was unterscheidet das Produkt swiyu Check von swiyu Platform? Was kostet die Integration? Und welche technischen Voraussetzungen müssen wir erfüllen?</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Mein Vorgehen im Überblick</h2>
+  <p style="margin-top:16px;max-width:660px;">Ich begleitete die Website über mehrere Research-Phasen und überprüfte die Konzepte mit beiden Zielgruppen.</p>
+  <div class="cs-vorgehen-grid">
+    <div>
+      <span class="cs-step-num">01</span>
+      <h3>Interviews &amp; Personas</h3>
+      <p>Gespräche mit Privatpersonen und Organisationen geplant, moderiert und ausgewertet. Vorwissen, Erwartungen, Bedürfnisse und Bedenken untersucht. Daraus Personas abgeleitet.</p>
+    </div>
+    <div>
+      <span class="cs-step-num">02</span>
+      <h3>Tree Testing</h3>
+      <p>Zwei Navigationsstrukturen in moderierten Tests überprüft und Empfehlungen für die Informationsarchitektur abgeleitet.</p>
+    </div>
+    <div>
+      <span class="cs-step-num">03</span>
+      <h3>Wireframe-Tests</h3>
+      <p>Usability-Tests mit Privatpersonen und Organisationen geplant, moderiert und protokolliert.</p>
+    </div>
+    <div>
+      <span class="cs-step-num">04</span>
+      <h3>2 × High-Fidelity-Tests</h3>
+      <p>Verständlichkeit, Navigation, Anwendungsfälle und nächste Schritte mit beiden Zielgruppen getestet.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-stat-box">
+  <div class="cs-stat-cell"><span class="cs-stat-val">32</span><span class="cs-stat-label">Usability-Sessions</span></div>
+  <div class="cs-stat-cell"><span class="cs-stat-val">4</span><span class="cs-stat-label">Prototypen getestet</span></div>
+  <div class="cs-stat-cell"><span class="cs-stat-val">19</span><span class="cs-stat-label">Teilnehmende Organisationen</span></div>
+  <div class="cs-stat-cell"><span class="cs-stat-val">13</span><span class="cs-stat-label">Teilnehmende Privatpersonen</span></div>
+</div>
+<div class="cs-section">
+  <div class="cs-half">
+    <span class="cs-section-num">01</span>
+    <h2>Was wissen die Menschen bereits über die e-ID?</h2>
+    <p>Bevor wir die Website im Detail überprüften, war wichtig zu verstehen, mit welchem Vorwissen die Menschen an swiyu herangehen. Die meisten Teilnehmenden hatten bereits von der Schweizer e-ID gehört und eine ungefähre Vorstellung davon, was sie ist. Gleichzeitig gab es Menschen mit wenig oder gar keinem Vorwissen. Nur wenige schätzten ihre Kenntnisse als sehr gut ein.</p>
+    <p>Das war für die Tests besonders interessant. Die Website musste sowohl Menschen abholen, die sich bereits mit der e-ID beschäftigt hatten, als auch solche, die das Thema zum ersten Mal genauer kennenlernen wollten.</p>
+    <p>In den Interviews und Usability-Tests zeigte sich zudem, dass die Bekanntheit der e-ID nicht automatisch bedeutete, dass die Zusammenhänge zwischen e-ID, swiyu Wallet und weiteren digitalen Nachweisen verstanden wurden.</p>
+  </div>
+</div>
+<div class="cs-img-split">
+  <div class="cs-img-side">Bild folgt</div>
+  <div class="cs-section">
+    <span class="cs-section-num">02</span>
+    <h2>Erste Informationsarchitektur und Tree Testing</h2>
+    <p>Am Anfang der Website-Entwicklung stand die Frage, wie sich die unterschiedlichen Inhalte sinnvoll strukturieren lassen. Privatpersonen suchten Informationen über die e-ID, die Wallet und deren Nutzung. Organisationen interessierten sich für Anwendungsfälle, technische Voraussetzungen und die verschiedenen Lösungen. Ich plante und moderierte Tree Tests mit zwei Navigationsvarianten. Die Teilnehmenden sollten bestimmte Informationen finden und zeigen, unter welchen Menüpunkten sie diese erwarteten. Dabei zeigte sich, dass beide Zielgruppen einen eigenen, klar erkennbaren Einstieg beziehungsweise Informationsbereich erwarteten. Aus den Ergebnissen leitete ich Empfehlungen für die weitere Informationsarchitektur ab.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <div class="cs-half">
+    <span class="cs-section-num">03</span>
+    <h2>Funktioniert die Struktur auch als Website?</h2>
+    <p>Auf Basis der Informationsarchitektur entstand ein erster Wireframe-Prototyp. Damit konnten wir überprüfen, wie sich die Inhalte innerhalb einer Website anfühlen und ob sich die beiden Zielgruppen darin orientieren können.</p>
+    <p>Ich plante und moderierte Usability-Tests mit Privatpersonen und Organisationen. Im Mittelpunkt standen die Verständlichkeit der Inhalte, die Navigation und die Erwartungen an die einzelnen Seiten.</p>
+    <p>Die Tests halfen uns, die Konzepte aus Sicht der Nutzenden zu überprüfen, bevor die Website visuell weiter ausgearbeitet wurde.</p>
+  </div>
+</div>
+<div class="cs-img-split">
+  <div class="cs-img-side">Bild folgt</div>
+  <div class="cs-section">
+    <span class="cs-section-num">04</span>
+    <h2>Erster High-Fidelity-Prototyp</h2>
+    <p>Mit dem ersten High-Fidelity-Prototyp konnten wir neben Struktur und Inhalten auch das Zusammenspiel von Sprache, Produktnamen und visueller Gestaltung überprüfen. Ich testete die Website mit Privatpersonen und Organisationen. Dabei wurden mehrere Verständnisprobleme sichtbar.</p>
+    <p class="cs-hifi-quote">«Ist das wirklich eine Website vom Bund?»</p>
+    <p>Einige Teilnehmende erkannten swiyu nicht als Angebot des Schweizer Bundes. Sie vermuteten dahinter ein Start-up, ein privates Unternehmen oder eine eigenständige App. Manche fragten sich, ob sie überhaupt auf der richtigen Website waren, um Informationen zur e-ID zu finden. Die Verbindung zum Bund war für sie nicht selbstverständlich. Aufgrund dieser Beobachtungen ergänzte das Team auf der Startseite eine deutlichere Bundeskennzeichnung. Ausserdem wurde der Begriff «e-ID» in der Hauptnavigation sichtbar gemacht.</p>
+  </div>
+</div>
+<div class="cs-section cs-spread">
+  <div>
+    <span class="cs-section-num">05</span>
+    <h2>Wie finden Organisationen die passende Lösung?</h2>
+    <p class="cs-case-subtitle">Weiterentwickelter High-Fidelity-Prototyp</p>
+  </div>
+  <div>
+    <p>In einer weiteren Testrunde konzentrierte ich mich auf den Organisationsbereich: Sind die verschiedenen Angebote verständlich? Welche Informationen fehlen für eine Entscheidung? Erkennen die Teilnehmenden den nächsten Schritt?</p>
+    <h3 class="cs-sub-h">Vom Produktnamen zum Anwendungsfall</h3>
+    <p>Statt <strong>swiyu Check</strong> als eigenständigen Produktnamen prominent in der Navigation zu platzieren, wurde das Angebot stärker über konkrete Anwendungsfälle erschlossen — zum Beispiel über «e-ID einfach überprüfen». Erst innerhalb dieses Anwendungsfalls begegneten die Nutzenden swiyu Check als mögliche Lösung. Dieser Ansatz funktionierte in den Tests besser.</p>
+    <h3 class="cs-sub-h">Viele lasen nicht alles, sondern scannten</h3>
+    <p>Viele Teilnehmende überflogen die Seiten und bildeten sich aus Überschriften und einzelnen Begriffen eine eigene Erklärung. In der weiteren Entwicklung wurden deshalb Produktnamen in der Navigation zurückgenommen — zugunsten von Begriffen, die näher an den Aufgaben der Nutzenden lagen.</p>
+    <h3 class="cs-sub-h">Was kostet die Integration wirklich?</h3>
+    <p>Bei Organisationen war der Preis häufig nicht die wichtigste Frage. Viel entscheidender waren die Kosten für eine Integration mit einem Partner, der interne Aufwand und die technischen Voraussetzungen. Eine Preisübersicht allein beantwortete diese Fragen nicht.</p>
+  </div>
+</div>
+<div class="cs-section cs-spread">
+  <div>
+    <span class="cs-section-num">06</span>
+    <h2>Die Fragen gingen über die Website hinaus.</h2>
+  </div>
+  <div>
+    <p>Während der verschiedenen Testrunden zeigte sich, dass nicht alle Verständnisprobleme durch eine bessere Navigation oder verständlichere Texte gelöst werden konnten.</p>
+    <p>Einige Teilnehmende verstanden den Zusammenhang zwischen e-ID, Wallet und weiteren digitalen Nachweisen nicht. Andere waren unsicher, weshalb auch nichtstaatliche Organisationen digitale Nachweise ausstellen können.</p>
+    <div class="cs-inner-quote">Wer darf digitale Nachweise ausstellen? Weshalb kann man ihnen vertrauen? Und wie erklären wir das Angebot so, dass Menschen seinen Nutzen verstehen?</div>
+    <p>Ich verdichtete die Ergebnisse zu konkreten Empfehlungen für Informationsarchitektur, Produktkommunikation und User Flows. Diese präsentierte ich dem Projektteam sowie Vertreterinnen und Vertretern verschiedener Bundesämter. Die Erkenntnisse flossen damit auch in Diskussionen ein, die über die Website selbst hinausgingen.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Und wie geht es weiter?</h2>
+  <p style="max-width:680px;margin-top:20px;">Mein letzter Usability-Test für <strong>swiyu.admin.ch</strong> fand im Juni 2026 statt. Bis dahin hatte ich die Website von der frühen Informationsarchitektur über Wireframes bis zu mehreren High-Fidelity-Versionen begleitet.</p>
+  <p style="max-width:680px;margin-top:16px;">Seitdem hat sich die Website weiterentwickelt. Die Screenshots in dieser Case Study zeigen deshalb unterschiedliche Entwicklungsstände und nicht durchgehend die aktuelle Umsetzung.</p>
+  <p style="max-width:680px;margin-top:16px;">Das Projekt läuft weiter, und ich bin gespannt, wie sich swiyu entwickelt.</p>
+</div>
+`,
         nextProject: { id: 2, name: 'E-Banking Webseite' }
       },
       {
@@ -1188,20 +1391,20 @@
         name: 'E-Banking Webseite',
         type: 'UX Konzept · Responsive Web · Prototyping',
         meta: [
-          { label: 'Rolle', value: 'UX Design · Research · Animationerin' },
-          { label: 'Zeitraum', value: '2024 bis 2025' },
+          { label: 'Rolle', value: 'UX Design' },
+          { label: 'Zeitraum', value: '2024–2025 und 2026' },
           { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designer, 4 Entwickler' },
           { label: 'Branche', value: 'Finanzdienstleistungen' }
         ],
         content: {
-          leftTitle: 'Überblick',
-          leftText: '<p>Das Web-Banking Konzept entstand nicht auf einer grünen Wiese. Die Grundlage war ein bestehendes Mobile-App-Konzept, das mit einem gewachsenen Legacy E-Banking-System vereint werden musste. Die zentrale Frage war nicht nur wie man Mobile auf Web überträgt, sondern wie man zwei sehr unterschiedliche Welten zu einem stimmigen Ganzen zusammenführt.</p>',
-          rightTitle: 'Herausforderung',
+          leftTitle: 'Zwei Welten. Ein Design.',
+          leftText: '<p>Das Web-Banking Konzept entstand nicht auf einer grünen Wiese. Die Grundlage war ein bestehendes Mobile-App-Konzept, das mit einem gewachsenen Legacy E-Banking-System vereint werden musste. Die zentrale Frage war nicht nur wie man Mobile auf Web überträgt, sondern wie man zwei sehr unterschiedliche Welten zu einem stimmigen Ganzen zusammenführt.</p><p class="cs-pullquote">Zwei sehr unterschiedliche Welten zu einem stimmigen Ganzen zusammenführen.</p>',
+          rightTitle: 'Legacy neu denken',
           rightText: '<p>Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren, mussten integriert werden. Das erforderte enge Zusammenarbeit mit verschiedenen Stakeholdern, um die richtigen Abwägungen zwischen technischen Möglichkeiten und Nutzerbedürfnissen zu treffen.</p><p style="margin-top:16px;font-size:14px;opacity:0.6;">Die UIs wurden für die Präsentation angepasst. Relevante Flows werden aus Vertraulichkeitsgründen nicht gezeigt.</p>'
         },
         bottomSection: {
           title: 'Highlights',
-          html: '<div class="resp-grid"><div class="resp-item"><h4>Meine Bank</h4><p class="cs-label"><strong>Problem:</strong></p><p>Benachrichtigungen, Aktivitäten, Hilfe und Kontakt waren ursprünglich getrennt und über verschiedene Bereiche verteilt. Gleichzeitig fehlte im E-Banking jegliche emotionale Verbindung zur eigenen Bank und den persönlichen Beratern.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Alle diese Bereiche wurden unter einem zentralen Element gebündelt: einem Floating Button. Ein Klick darauf öffnet den Zugang zu Benachrichtigungen, Aktivitäten, Hilfe, Kontakt sowie der persönlichen Bank mit Bild der Filiale und der eigenen Beratungsperson. Meine Hypothese war, dass ein schwebender Button, der auf eine Seite verlinkt statt einen Chat oder Overlay zu öffnen, die Nutzer verwirren würde. Der Usability-Test bewies das Gegenteil: Die Nutzer gewöhnten sich schnell daran und nutzten ihn intuitiv.</p></div><div class="resp-item"><h4>Trading Flow</h4><p class="cs-label"><strong>Problem:</strong></p><p>Der bestehende Trading-Bereich zeigte alle Informationen auf einmal auf einer einzigen Seite. Für erfahrene Trader funktionierte das, für Neulinge und Gelegenheitstrader war es schlicht zu viel auf einmal.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Bevor ich mit dem Design startete, sammelte ich alle relevanten Informationen: Ich analysierte die Dokumentation, führte ein Onboarding-Gespräch mit einem Entwickler und konsultierte insgesamt 9 Personen, um ein vollständiges Bild des bestehenden Flows und des Legacy-Systems zu erhalten. Den Flow baute ich nach dem Prinzip der Progressive Disclosure auf: Informationen werden schrittweise eingeführt, je nachdem was der Nutzer gerade braucht. Neulinge werden geführt ohne überfordert zu werden, während Vielnutzende schnell vorwärtskommen. Die Wireframes erstellte ich auf Basis des bestehenden Design Systems, mit Fokus auf die ideale User Journey, Edge Cases und Loading Patterns. Im Quartalstesting navigierten alle Teilnehmenden problemlos durch den gesamten Flow und gaben positives Feedback.</p></div></div>'
+          html: '<div class="resp-grid"><div class="resp-item"><h4>Meine Bank</h4><p class="cs-label"><strong>Problem:</strong></p><p>Benachrichtigungen, Aktivitäten, Hilfe und Kontakt waren über verschiedene Bereiche verteilt. Eine emotionale Verbindung zur eigenen Bank fehlte.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Ein Floating Button bündelt alle Bereiche und öffnet Zugang zur persönlichen Bank mit Filiale und Beratungsperson. Im Usability-Test nutzten die Teilnehmenden ihn intuitiv — entgegen meiner ersten Hypothese.</p></div><div class="resp-item"><h4>Trading Flow</h4><p class="cs-label"><strong>Problem:</strong></p><p>Der bestehende Trading-Bereich zeigte alle Informationen auf einmal. Für Neulinge und Gelegenheitstrader war das zu viel.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Progressive Disclosure: Informationen werden schrittweise eingeführt, je nach Bedarf. Neulinge werden geführt ohne überfordert zu werden, Vielnutzende kommen schnell vorwärts. Im Quartalstesting navigierten alle Teilnehmenden problemlos durch den gesamten Flow.</p></div></div>'
         },
         process: {
           title: 'Tools',
@@ -1217,7 +1420,7 @@
         },
         outcome: {
           customOutcome: true,
-          text: 'In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Lieber einmal zu viel nachfragen als in die falsche Richtung arbeiten. Und manchmal beweist ein Test, dass die eigene Hypothese falsch war, auch das ist ein wertvolles Ergebnis.'
+          text: 'In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Lieber einmal zu viel nachfragen als in die falsche Richtung arbeiten. Mehrere der erarbeiteten Empfehlungen wurden übernommen – das ist für mich die schönste Bestätigung, dass gutes Design und gute Recherche zusammenspielen.'
         },
         nextProject: { id: 3, name: 'Augmented Reality App' }
       },
@@ -1232,10 +1435,10 @@
           { label: 'Branche', value: 'Informationstechnologie' }
         ],
         content: {
-          leftTitle: 'Überblick',
+          leftTitle: 'Eine App, die nicht ankam',
           leftText: '<p>Die Rimon App sollte Servicetechnikern helfen, komplexe Aufgaben selbstständig zu lösen. Das erste MVP erfüllte diesen Anspruch nicht. Die Herausforderung war zweigeteilt: einerseits eine App die technisch funktioniert aber im Alltag der Techniker nicht ankommt, andererseits Technologien wie AR und AI die für normale Nutzer wenig greifbar sind.</p>',
-          rightTitle: 'Herausforderung',
-          rightText: '<p>AR und AI klingen für Technikbegeisterte spannend, für alle anderen sind sie abstrakt und wenig aussagekräftig. Der eigentliche Painpoint der Techniker hatte nichts mit Technologie zu tun, sondern mit Wissensverlust und fehlender Unterstützung im Arbeitsalltag.</p>'
+          rightTitle: 'Das Problem war nicht die Technologie',
+          rightText: '<p>AR und AI klingen für Technikbegeisterte spannend, für alle anderen sind sie abstrakt und wenig aussagekräftig. Der eigentliche Painpoint der Techniker hatte nichts mit Technologie zu tun, sondern mit Wissensverlust und fehlender Unterstützung im Arbeitsalltag.</p><p class="cs-pullquote">Der eigentliche Painpoint hatte nichts mit AR zu tun.</p>'
         },
         bottomSection: {
           title: 'Highlights',
@@ -1274,10 +1477,10 @@
           { label: 'Branche', value: 'Bildungsbereich' }
         ],
         content: {
-          leftTitle: 'Überblick',
+          leftTitle: 'Bold. Colorful. Dynamisch.',
           leftText: '<p>Movetia ist eine Schweizer Organisation, die Austauschprogramme und Bildungsmobilität für Schüler, Lehrpersonen und Fachkräfte fördert. Als Screen Designer wirkte ich am User Interface für die «Learning by Going»-Kampagne mit: bold, colorful und dynamisch, mit Jugendlichen und jungen Erwachsenen als Zielgruppe.</p>',
-          rightTitle: 'Herausforderung',
-          rightText: '<p>Die Kampagne lebte von starken Visuals und einer spielerischen Energie. Die Herausforderung war, dieses kreative Versprechen in ein UI zu übersetzen, das über Desktop, Tablet und Mobile hinweg konsistent funktioniert, ohne die Lebendigkeit der Visuals zu verlieren.</p>'
+          rightTitle: 'Kreative Energie ins Interface',
+          rightText: '<p>Die Kampagne lebte von starken Visuals und einer spielerischen Energie. Die Herausforderung war, dieses kreative Versprechen in ein UI zu übersetzen, das über Desktop, Tablet und Mobile hinweg konsistent funktioniert, ohne die Lebendigkeit der Visuals zu verlieren.</p><p class="cs-pullquote">Kreative Energie und Responsive Design sind kein Widerspruch.</p>'
         },
         process: {
           title: 'Designfokus',
@@ -1306,10 +1509,10 @@
           { label: 'Branchen', value: 'Finanz, Versicherung, Unterhaltung, Bund etc.' }
         ],
         content: {
-          leftTitle: 'Überblick',
+          leftTitle: 'Wo Motion Design auf UX trifft',
           leftText: '<p>Mit über 2 Jahren Erfahrung als Motion Designerin habe ich Animationen erstellt, die Marken zum Leben erwecken, von einfachen UI-Transitionen bis hin zu komplexen 3D-Animationen.</p><p>Das Showreel fasst Arbeiten für Kunden wie PostFinance, UBS und Best of Swiss Web zusammen, sowie eigenständige Projekte, darunter eine custom Rubik\'s Cube Animation für dieses Portfolio.</p>',
-          rightTitle: 'Kontext',
-          rightText: '<p>Animation und UX sind für mich kein Widerspruch, sie verstärken sich. Meine Motion-Erfahrung fliesst direkt in meine UX-Arbeit ein: durch präzise Mikro-Animationen in Prototypen, durchdachte Transitionen und animierte Präsentationen.</p><p>Das Showreel entstand als persönliches Projekt, um meine Animationsarbeit zu dokumentieren und die Brücke zwischen Motion Design und UX sichtbar zu machen.</p>'
+          rightTitle: 'Animation als Teil von UX',
+          rightText: '<p class="cs-pullquote">Animation und UX sind kein Widerspruch, sie verstärken sich.</p><p>Meine Motion-Erfahrung fliesst direkt in meine UX-Arbeit ein: durch präzise Mikro-Animationen in Prototypen, durchdachte Transitionen und animierte Präsentationen.</p><p>Das Showreel entstand als persönliches Projekt, um meine Animationsarbeit zu dokumentieren und die Brücke zwischen Motion Design und UX sichtbar zu machen.</p>'
         },
         videos: {
           main: { id: 'iLQsxq8oP2s', label: 'Showreel abspielen' },
@@ -1339,16 +1542,16 @@
         name: 'Game Konzept',
         type: 'Mixed Reality · Game Design · Konzept',
         meta: [
-          { label: 'Rolle', value: 'UX Design · Research · Animationerin & Konzepterin' },
+          { label: 'Rolle', value: 'UX Design & Konzepterin' },
           { label: 'Zeitraum', value: '2023' },
           { label: 'Kontext', value: 'CAS AR/VR · FHGR' },
           { label: 'Technologie', value: 'Microsoft HoloLens' }
         ],
         content: {
-          leftTitle: 'Ausgangslage',
+          leftTitle: 'Ein Escape Room als Showcase',
           leftText: '<p>Rimon Technologies, ein Schweizer AR-Startup, wollte ihre Technologie auf spielerische Weise erlebbar machen. Im Rahmen meines CAS in Augmented &amp; Virtual Reality an der FHGR entwickelte ich ein vollständiges Konzept für einen Mixed Reality Escape Room.</p><p>Der Escape Room sollte als Showcase dienen: technologieaffine Personen sollten hautnah erleben, was mit der HoloLens möglich ist, ganz ohne Vorkenntnisse und ohne Game Master.</p>',
-          rightTitle: 'Mein Ansatz',
-          rightText: '<p>Ich habe das Konzept mit einem vollständigen UX-Prozess entwickelt: von der Nutzerforschung über zwei detaillierte Personas bis zu einem Storyboard für sechs Puzzles und einem kompletten Asset-Plan.</p><p>Im Mittelpunkt steht Lexi, eine KI als animierte 3D-Sphäre, die mit Gefahrenzonen und Glitch-Effekten Spannung erzeugt. Zugänglichkeit war von Anfang an Teil des Designs.</p>'
+          rightTitle: 'Von Persona bis Puzzle',
+          rightText: '<p>Ich habe das Konzept mit einem vollständigen UX-Prozess entwickelt: von der Nutzerforschung über zwei detaillierte Personas bis zu einem Storyboard für sechs Puzzles und einem kompletten Asset-Plan.</p><p>Im Mittelpunkt steht Lexi, eine KI als animierte 3D-Sphäre, die mit Gefahrenzonen und Glitch-Effekten Spannung erzeugt. Zugänglichkeit war von Anfang an Teil des Designs.</p><p class="cs-pullquote">Zugänglichkeit war von Anfang an Teil des Designs.</p>'
         },
         process: {
           title: 'Vorgehen',
@@ -1380,9 +1583,9 @@
           { label: 'Veranstaltung', value: 'Hack Zurich' }
         ],
         content: {
-          leftTitle: 'Überblick',
-          leftText: '<p>Innerhalb eines Wochenendes entwickelten wir in einem Dreierteam eine AR- und VR-Idee sowie Prototypen für ein bestehendes Problem.</p><p>Die Challenge wurde von Swiss Re gestellt: Als einer der weltweit führenden Rückversicherer steht Swiss Re vor der Herausforderung, Unternehmen und Gebäude im Kontext des Klimawandels korrekt zu versichern. Naturkatastrophen wie Überschwemmungen werden häufiger und schwer kalkulierbar. Unser Konzept setzt hier an und soll betroffene Unternehmen besser auf solche Ereignisse vorbereiten.</p>',
-          rightTitle: 'Meine Aufgaben',
+          leftTitle: '48 Stunden. Eine Idee.',
+          leftText: '<p>Innerhalb eines Wochenendes entwickelten wir in einem Dreierteam eine AR- und VR-Idee sowie Prototypen für ein bestehendes Problem.</p><p>Die Challenge wurde von Swiss Re gestellt: Als einer der weltweit führenden Rückversicherer steht Swiss Re vor der Herausforderung, Unternehmen und Gebäude im Kontext des Klimawandels korrekt zu versichern. Naturkatastrophen wie Überschwemmungen werden häufiger und schwer kalkulierbar. Unser Konzept setzt hier an und soll betroffene Unternehmen besser auf solche Ereignisse vorbereiten.</p><p class="cs-pullquote">Wie bereitet man Unternehmen auf das Unvorhersehbare vor?</p>',
+          rightTitle: 'Konzept, Code und Kamera',
           rightText: '<p>Ich konzipierte eine passende Lösung, erstellte eine Wassersimulation in Unity, entwickelte die Storyline für das Video und übernahm die Videoproduktion mit Stock-Material.</p><p>Das Konzept ist im begleitenden Video illustriert, das den Ansatz und die prototypischen Umsetzungen zeigt.</p>'
         },
         process: {
@@ -1411,55 +1614,65 @@
 
     /* ── ENGLISH PROJECT DATA ── */
     PROJECTS[0].en = {
-      name: 'Digital Identity', type: 'UX Research · UX Concept',
+      name: 'Digital Identity', type: 'UX Research · Information Architecture · UX Concept',
       meta: [
-        { label: 'Role', value: 'UX Design · Research · Animationer, Lead Researcher' },
+        { label: 'Role', value: 'Lead Researcher, UX Concept' },
         { label: 'Period', value: '2025 to 2026' },
-        { label: 'Team', value: 'PO, Scrum Master, 4 UX Design · Research · Animationers & 2 UX Writers' },
+        { label: 'Team', value: 'PO, Scrum Master, 4 UX Designers & 2 UX Writers' },
         { label: 'Industry', value: 'Public Administration' }
       ],
       content: {
-        leftTitle: 'Overview',
-        leftText: '<p>The e-ID is one of Switzerland\'s largest digitalisation projects. I joined mid-project and helped drive the concept forward through regular usability testing.</p><p>Core question: how do you balance complex security requirements with a simple, clear experience for everyone?</p>',
-        rightTitle: 'Challenge',
-        rightText: '<p>Digital identity is a sensitive topic: trust, privacy and accessibility all had to be addressed equally. Many citizens had reservations about digital solutions.</p><p>The biggest challenge: simplifying complex government processes so they are accessible to all age groups without compromising security.</p>'
+        leftTitle: 'A digital identity. A thousand questions.',
+        leftText: '<p>The Swiss e-ID was already familiar to many people. After all, it had been put to a public vote.</p><p>But what exactly is <strong>swiyu</strong>? A start-up? A foreign company? Or is it actually backed by the Swiss federal government?</p><p>These were exactly the kinds of questions I encountered in interviews and usability tests. They showed that the goal wasn\'t just to make a new technology usable — people first needed to understand what <strong>swiyu</strong> is, how it works and who they can trust.</p><p>This case study traces the development of <strong>swiyu.admin.ch</strong>: from the first navigation structure and wireframe tests through to several high-fidelity versions with individuals and organisations.</p>',
+        rightTitle: 'My role',
+        rightText: '<p>The <strong>swiyu</strong> website serves two purposes at once: it is an information resource for the public and, at the same time, a platform intended to convince companies and tech-minded people to engage with the ecosystem.</p><p class="cs-pullquote">Awareness is not understanding. Understanding is not trust.</p><p>I planned, moderated and analysed interviews and usability tests with individuals and organisations. I derived recommendations for user flows, information architecture and communication — and presented them to the project team and representatives from various federal offices.</p><p>Alongside this, I helped grow the internal user pool from 600 to 6,000 people together with marketing, and established standardised evaluations and a research repository for the whole team.</p>'
       },
       process: {
         title: 'Approach',
         steps: [
-          { num: '01', title: 'User Research', text: '45+ qualitative interviews with various user groups: understanding needs, fears and expectations.' },
-          { num: '02', title: 'Concept', text: 'Creating personas, contributing to user flows and wireframes. Iterative refinement through regular feedback rounds.' },
-          { num: '03', title: 'Validation', text: 'Organising and conducting various usability studies, presenting results and recommendations for implementation.' }
+          { num: '01', title: 'Interviews & Personas', text: 'Planned, moderated and evaluated conversations with individuals and organisations. Explored prior knowledge, expectations and needs. Together with the lead UX designer, reduced twelve existing personas to four relevant profiles.' },
+          { num: '02', title: 'Tree Testing', text: 'Tested two navigation structures in moderated sessions and derived recommendations for the website\'s information architecture.' },
+          { num: '03', title: 'Wireframe Testing', text: 'Tested the first prototype with individuals and organisations. Focused on content comprehension, navigation and expectations for individual pages.' },
+          { num: '04', title: 'First High-Fidelity Version', text: 'Reviewed language, product names and visual design. Surfaced open questions around trust, federal affiliation and product identity.' },
+          { num: '05', title: 'Second High-Fidelity Version', text: 'Re-tested the organisational area. Focused on product understanding, use cases, integration questions and next steps.' }
         ]
       },
+      bottomSection: {
+        title: 'What I found',
+        html: '<div class="resp-grid"><div class="resp-item"><h4>01 · Familiar is not the same as understood</h4><p>Even those who knew the e-ID did not automatically understand what <strong>swiyu</strong> has to do with it. The connections between e-ID, wallet and digital credentials were not self-explanatory.</p><p class="cs-label"><strong>My recommendation:</strong></p><p>A short introduction creates orientation. Those who want to know more should easily find deeper information.</p></div><div class="resp-item"><h4>02 · A government solution that did not feel governmental</h4><p>The name <strong>swiyu</strong> was not automatically associated with the Swiss federal government. Some assumed it was a start-up or a foreign company.</p><p class="cs-label"><strong>My recommendation:</strong></p><p>Explain the connection between <strong>swiyu</strong>, the e-ID and the federal government early. Trust does not come from design alone.</p></div><div class="resp-item"><h4>03 · Product names triggered wrong expectations</h4><p><strong>swiyu Check</strong> was initially placed in the area for individuals. Some assumed it was a checklist tool, others didn\'t understand why it appeared there when it was primarily relevant for organisations.</p><p class="cs-label"><strong>My recommendation:</strong></p><p>Introduce products through concrete use cases, not product names. "Verify an e-ID easily" led to better outcomes in testing than "swiyu Check".</p></div><div class="resp-item"><h4>04 · The questions went beyond the website</h4><p>Not all comprehension problems could be solved through better navigation or clearer text. Some participants didn\'t understand why non-governmental organisations can also issue digital credentials.</p><p class="cs-label"><strong>My recommendation:</strong></p><p>Fundamental questions about the ecosystem need their own space for explanation — not just better navigation, but answers to the why.</p></div></div><div style="margin-top:32px"><h4 style="margin-bottom:12px">From findings to recommendations</h4><p>For me, research does not end with an analysis. Findings need to be prepared so that others can work with them and make decisions. That is why I condensed the observations from interviews and usability tests into key insights and concrete recommendations.</p><p>For the website, three themes were central.</p><p class="cs-label"><strong>01. Creating clarity</strong></p><p>Explain complex terms simply and make the connections between wallet, e-ID and digital credentials visible.</p><p class="cs-label"><strong>02. Improving orientation</strong></p><p>Structure information so that individuals and organisations can more easily find their questions and next steps.</p><p class="cs-label"><strong>03. Building trust</strong></p><p>Communicate the connection to the Swiss federal government clearly and explain in an understandable way how personal data is protected, used and shared.</p><p style="margin-top:12px;font-size:14px;opacity:0.6">I presented these findings and recommendations to the full project team and representatives from various federal offices. This brought the user perspective into discussions about website communication, the business concept and user flows, and created a basis for further development.</p></div>'
+      },
       outcome: {
-        text: 'This project is still ongoing. For confidentiality reasons, no further details will be shared before the launch.',
+        text: 'Not all comprehension problems could be solved through better navigation or clearer text. Testing made visible that awareness, understanding and trust are three distinct things — people could know the e-ID without understanding the connection to <strong>swiyu</strong>, and successfully complete a flow without fully grasping the concept behind it. I accompanied the website from its first navigation structure through wireframes to several high-fidelity versions, and brought the user perspective through presentations into discussions that went beyond the website itself.',
         stats: [
-          { value: '45+', label: 'User interviews' },
-          { value: '12+', label: 'Usability studies' },
-          { value: '3', label: 'Maze studies' },
-          { value: '40000', label: 'Test users for internal test phase' }
-        ]
+          { value: '45+', label: 'Interviews' },
+          { value: '32', label: 'Usability sessions' },
+          { value: '4', label: 'Prototypes tested' },
+          { value: '6,000', label: 'User pool built' }
+        ],
+        reflection: {
+          title: 'Personal learning',
+          text: 'This project showed me how differently people can perceive the same product. A word can be familiar without being understood. A product can be governmental without feeling governmental. And an interface can work without answering all questions. Good UX does not start at the controls. It starts with understanding.'
+        }
       },
       nextProject: { id: 2, name: 'E-Banking Website' }
     };
     PROJECTS[1].en = {
       name: 'E-Banking Website', type: 'UX Concept · Responsive Web · Prototyping',
       meta: [
-        { label: 'Role', value: 'UX Design · Research · Animationer' },
-        { label: 'Period', value: '2024 to 2025' },
+        { label: 'Role', value: 'UX Design' },
+        { label: 'Period', value: '2024–2025 and 2026' },
         { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers' },
         { label: 'Industry', value: 'Financial Services' }
       ],
       content: {
-        leftTitle: 'Overview',
-        leftText: '<p>A bank\'s new web e-banking wasn\'t built from scratch. The foundation was an existing mobile app concept that had to be merged with a grown legacy e-banking system. The central question was not just how to transfer mobile to web, but how to bring two very different worlds into one consistent whole.</p>',
-        rightTitle: 'Challenge',
+        leftTitle: 'Two worlds. One design.',
+        leftText: '<p>A bank\'s new web e-banking wasn\'t built from scratch. The foundation was an existing mobile app concept that had to be merged with a grown legacy e-banking system. The central question was not just how to transfer mobile to web, but how to bring two very different worlds into one consistent whole.</p><p class="cs-pullquote">Merging two very different worlds into one consistent whole.</p>',
+        rightTitle: 'Rethinking legacy',
         rightText: '<p>Legacy features that were technically available but not user-friendly had to be integrated. This required close collaboration with various stakeholders to make the right trade-offs between technical possibilities and user needs.</p><p style="margin-top:16px;font-size:14px;opacity:0.6;">UIs have been adapted for presentation. Relevant flows are not shown for confidentiality reasons.</p>'
       },
       bottomSection: {
         title: 'Highlights',
-        html: '<div class="resp-grid"><div class="resp-item"><h4>My Bank</h4><p class="cs-label"><strong>Problem:</strong></p><p>Notifications, activities, help and contact were originally separated across different areas. At the same time, e-banking lacked any emotional connection to one\'s own bank and personal advisors.</p><p class="cs-label"><strong>Solution:</strong></p><p>All these areas were consolidated under one central floating button. A single tap opens access to notifications, activities, help, contact and the personal bank — complete with the branch image and one\'s own advisor. My hypothesis was that a floating button linking to a page rather than opening a chat or overlay would confuse users. Usability testing proved the opposite: users adapted quickly and used it intuitively.</p></div><div class="resp-item"><h4>Trading flow</h4><p class="cs-label"><strong>Problem:</strong></p><p>The existing trading area showed all information at once on a single page. For experienced traders this worked fine, but for newcomers and occasional traders it was simply too much at once.</p><p class="cs-label"><strong>Solution:</strong></p><p>Before starting the design, I gathered all relevant information: I analysed the documentation, had an onboarding conversation with a developer and consulted 9 people in total to get a complete picture of the existing flow and legacy system. I structured the flow using progressive disclosure: information is introduced step by step based on what the user needs at that moment. Beginners are guided without being overwhelmed, while frequent users can move quickly. I created the wireframes based on the existing design system, focusing on the ideal user journey, edge cases and loading patterns. In quarterly testing all participants navigated through the entire flow without issue and gave positive feedback.</p></div></div>'
+        html: '<div class="resp-grid"><div class="resp-item"><h4>My Bank</h4><p class="cs-label"><strong>Problem:</strong></p><p>Notifications, activities, help and contact were spread across different areas. E-banking lacked any emotional connection to one\'s own bank and advisors.</p><p class="cs-label"><strong>Solution:</strong></p><p>A floating button consolidates all areas and opens access to the personal bank with branch and advisor. In usability testing, users adopted it intuitively — contrary to my initial hypothesis.</p></div><div class="resp-item"><h4>Trading flow</h4><p class="cs-label"><strong>Problem:</strong></p><p>The existing trading area showed all information at once. For newcomers and occasional traders, it was simply too much.</p><p class="cs-label"><strong>Solution:</strong></p><p>Progressive disclosure: information is introduced step by step based on what the user needs. Beginners are guided without being overwhelmed, frequent users move quickly. In quarterly testing all participants navigated through the entire flow without issue.</p></div></div>'
       },
       process: {
         title: 'Tools',
@@ -1472,7 +1685,7 @@
       },
       outcome: {
         customOutcome: true,
-        text: 'In large projects with many stakeholders, communication matters just as much as design. Better to ask once too many than to work in the wrong direction. And sometimes a test proves your hypothesis wrong, that\'s a valuable result too.'
+        text: 'In large projects with many stakeholders, communication matters just as much as design. Better to ask once too many than to work in the wrong direction. Several of the recommendations I developed were adopted – for me that is the best confirmation that good research and good design work together.'
       },
       nextProject: { id: 3, name: 'Augmented Reality App' }
     };
@@ -1485,10 +1698,10 @@
         { label: 'Industry', value: 'Information Technology' }
       ],
       content: {
-        leftTitle: 'Overview',
+        leftTitle: 'An app that wasn\'t landing',
         leftText: '<p>The Rimon app was designed to help service technicians solve complex tasks independently. The first MVP did not meet this goal. The challenge was twofold: an app that works technically but does not fit into the technicians\' daily workflow, and technologies like AR and AI that are difficult for everyday users to grasp.</p>',
-        rightTitle: 'Challenge',
-        rightText: '<p>AR and AI sound exciting to tech enthusiasts, but for everyone else they are abstract and hard to relate to. The technicians\' actual pain point had nothing to do with technology, it was about knowledge loss and a lack of support in their daily work.</p>'
+        rightTitle: 'The problem wasn\'t the technology',
+        rightText: '<p>AR and AI sound exciting to tech enthusiasts, but for everyone else they are abstract and hard to relate to. The technicians\' actual pain point had nothing to do with technology, it was about knowledge loss and a lack of support in their daily work.</p><p class="cs-pullquote">The real painpoint had nothing to do with AR.</p>'
       },
       bottomSection: {
         title: 'Highlights',
@@ -1522,10 +1735,10 @@
         { label: 'Industry', value: 'Education' }
       ],
       content: {
-        leftTitle: 'Overview',
+        leftTitle: 'Bold. Colourful. Dynamic.',
         leftText: '<p>Movetia is a Swiss organisation promoting exchange programmes and educational mobility for students, teachers and professionals. As screen designer I contributed to the user interface for the "Learning by Going" campaign: bold, colourful and dynamic, targeting young people and young adults.</p>',
-        rightTitle: 'Challenge',
-        rightText: '<p>The campaign was built on strong visuals and a playful energy. The challenge was to translate that creative promise into a UI that works consistently across desktop, tablet and mobile, without losing the vibrancy of the visuals.</p>'
+        rightTitle: 'Visual energy into interface',
+        rightText: '<p>The campaign was built on strong visuals and a playful energy. The challenge was to translate that creative promise into a UI that works consistently across desktop, tablet and mobile, without losing the vibrancy of the visuals.</p><p class="cs-pullquote">Visual energy and responsive design are not opposites.</p>'
       },
       process: {
         title: 'Design focus',
@@ -1551,10 +1764,10 @@
         { label: 'Industries', value: 'Finance, Insurance, Entertainment, Government etc.' }
       ],
       content: {
-        leftTitle: 'Overview',
+        leftTitle: 'Where motion design meets UX',
         leftText: '<p>With over 2 years of experience as a motion designer, I created animations that bring brands to life, from simple UI transitions to complex 3D animations.</p><p>The showreel compiles work for clients such as PostFinance, UBS and Best of Swiss Web, as well as independent projects including a custom Rubik\'s Cube animation for this portfolio.</p>',
-        rightTitle: 'Context',
-        rightText: '<p>Animation and UX are not opposites for me, they reinforce each other. My motion experience feeds directly into my UX work: through precise micro-animations in prototypes, thoughtful transitions and animated presentations.</p><p>The showreel was created as a personal project to document my animation work and make the bridge between motion design and UX visible.</p>'
+        rightTitle: 'Animation as part of UX',
+        rightText: '<p class="cs-pullquote">Animation and UX are not opposites — they reinforce each other.</p><p>My motion experience feeds directly into my UX work: through precise micro-animations in prototypes, thoughtful transitions and animated presentations.</p><p>The showreel was created as a personal project to document my animation work and make the bridge between motion design and UX visible.</p>'
       },
       process: {
         title: 'My creative process',
@@ -1573,16 +1786,16 @@
     PROJECTS[5].en = {
       name: 'Game Concept', type: 'Mixed Reality · Game Design · Concept',
       meta: [
-        { label: 'Role', value: 'UX Design · Research · Animationer & Concept Designer' },
+        { label: 'Role', value: 'UX Design & Concept Designer' },
         { label: 'Period', value: '2023' },
         { label: 'Context', value: 'CAS AR/VR · FHGR' },
         { label: 'Technology', value: 'Microsoft HoloLens' }
       ],
       content: {
-        leftTitle: 'Background',
+        leftTitle: 'An escape room as showcase',
         leftText: '<p>Rimon Technologies, a Swiss AR startup, wanted to make their technology experienceable in a playful way. As part of my CAS in Augmented & Virtual Reality at FHGR, I developed a complete concept for a Mixed Reality escape room.</p><p>The escape room was to serve as a showcase: tech-savvy individuals could experience first-hand what is possible with the HoloLens, no prior knowledge required, no game master needed.</p>',
-        rightTitle: 'My approach',
-        rightText: '<p>I developed the concept with a complete UX process: from user research and two detailed personas to a storyboard for six puzzles and a complete asset plan.</p><p>At the centre is Lexi, an AI as an animated 3D sphere that creates tension with danger zones and glitch effects. Accessibility was part of the design from the start.</p>'
+        rightTitle: 'From persona to puzzle',
+        rightText: '<p>I developed the concept with a complete UX process: from user research and two detailed personas to a storyboard for six puzzles and a complete asset plan.</p><p>At the centre is Lexi, an AI as an animated 3D sphere that creates tension with danger zones and glitch effects. Accessibility was part of the design from the start.</p><p class="cs-pullquote">Accessibility was part of the design from the start.</p>'
       },
       process: {
         title: 'Approach',
@@ -1608,9 +1821,9 @@
         { label: 'Event', value: 'Hack Zurich' }
       ],
       content: {
-        leftTitle: 'Overview',
-        leftText: '<p>Within a single weekend, our team of three developed an AR and VR idea plus prototypes for an existing problem.</p><p>The challenge was set by Swiss Re: as one of the world\'s leading reinsurers, Swiss Re faces the challenge of correctly insuring companies and buildings in the context of climate change. Natural disasters such as flooding are becoming more frequent and difficult to calculate. Our concept addresses this, aiming to better prepare affected companies for such events.</p>',
-        rightTitle: 'My tasks',
+        leftTitle: '48 hours. One idea.',
+        leftText: '<p>Within a single weekend, our team of three developed an AR and VR idea plus prototypes for an existing problem.</p><p>The challenge was set by Swiss Re: as one of the world\'s leading reinsurers, Swiss Re faces the challenge of correctly insuring companies and buildings in the context of climate change. Natural disasters such as flooding are becoming more frequent and difficult to calculate. Our concept addresses this, aiming to better prepare affected companies for such events.</p><p class="cs-pullquote">How do you prepare companies for the unpredictable?</p>',
+        rightTitle: 'Concept, code and camera',
         rightText: '<p>I designed an appropriate solution, created a water simulation in Unity, developed the storyline for the video and handled video production using stock footage.</p><p>The concept is illustrated in the accompanying video, which shows the approach and the prototype implementations.</p>'
       },
       process: {
@@ -1813,18 +2026,26 @@
           '</div>';
       }
 
+      // Full custom case study HTML (bypasses all standard sections)
+      if (p.customHtml) {
+        html += p.customHtml;
+        page.innerHTML = html;
+        return;
+      }
 
       // Content
-      var stackedClass = p.stackedContent ? ' stacked' : '';
-      html += '<div class="project-detail-content animate' + stackedClass + '">' +
-        '<div><h2>' + _content.leftTitle + '</h2>' + _content.leftText + '</div>' +
-        (_content.rightTitle ? '<div style="transition-delay:0.12s;"><h2>' + _content.rightTitle + '</h2>' + _content.rightText + '</div>' : '') +
-        '</div>';
+      if (!p.noContent) {
+        var stackedClass = p.stackedContent ? ' stacked' : '';
+        html += '<div class="project-detail-content animate' + stackedClass + '">' +
+          '<div><h2>' + _content.leftTitle + '</h2>' + _content.leftText + '</div>' +
+          (_content.rightTitle ? '<div style="transition-delay:0.12s;"><h2>' + _content.rightTitle + '</h2>' + _content.rightText + '</div>' : '') +
+          '</div>';
+      }
 
       // Optional bottom section (Case Studies etc.)
       var _bs = pl(p, 'bottomSection');
       if (_bs) {
-        html += '<div class="project-bottom-section animate"><h2>' + _bs.title + '</h2>' + _bs.html + '</div>';
+        html += '<div class="project-bottom-section animate">' + (_bs.title ? '<h2>' + _bs.title + '</h2>' : '') + _bs.html + '</div>';
       }
 
       // Extra section (e-banking)
@@ -2397,7 +2618,7 @@
         <path d="M20.1047 26H17.1047L18.6047 28L20.1047 26Z" fill="#6B3E58"/>
       </svg>
     </div>
-    <button id="chat-btn" aria-label="Chat öffnen" onclick="toggleChat()">
+    <button id="chat-btn" aria-label="Open chat" onclick="toggleChat()" data-i18n="chat.btn">
       Frag mich was
     </button>
   </div>
@@ -2674,6 +2895,28 @@
   </script>
   <script>
     (function() {
+      const heroTitle = document.querySelector('.hero-title');
+      const heroBlob  = document.querySelector('.hero-blob');
+      if (!heroTitle || !heroBlob) return;
+
+      // Adding .active starts the animation fresh (CSS animation only exists on .active).
+      // Removing .active stops it and the eye closes.
+      heroTitle.addEventListener('mouseenter', () => {
+        heroBlob.classList.add('active');
+      });
+
+      // Animation played once → close the eye; user must leave & re-hover to trigger again
+      heroBlob.addEventListener('animationend', (e) => {
+        if (e.animationName !== 'hero-blob-x') return;
+        // rAF ensures the transition fires in a fresh paint frame
+        requestAnimationFrame(() => {
+          heroBlob.classList.remove('active');
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function() {
       const catEar = document.querySelector('.cat-ear');
       if (!catEar) return;
       const svg = document.querySelector('.hero-title svg');
@@ -2698,6 +2941,7 @@
       document.addEventListener('mousemove', onMouseMove);
     })();
   </script>
+
 
 </body>
 </html>

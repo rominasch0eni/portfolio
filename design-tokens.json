@@ -1,0 +1,126 @@
+{
+  "global": {
+    "color": {
+      "light": {
+        "background": { "value": "#fafafa", "type": "color", "description": "Page background" },
+        "text-primary": { "value": "#111111", "type": "color", "description": "Main text color" },
+        "text-muted": { "value": "#6b6b6b", "type": "color", "description": "Secondary text, WCAG AA 5.1:1" },
+        "accent": { "value": "#8a6500", "type": "color", "description": "Brand accent / gold, WCAG AA 5.1:1" },
+        "card-bg": { "value": "#f0f0f0", "type": "color", "description": "Card and surface background" },
+        "visual-bg": { "value": "#f2f2f2", "type": "color", "description": "Visual placeholder background" },
+        "border": { "value": "rgba(0,0,0,0.10)", "type": "color", "description": "Subtle border color" },
+        "tag-border": { "value": "rgba(0,0,0,0.12)", "type": "color", "description": "Tag/badge border" },
+        "tag-bg": { "value": "rgba(0,0,0,0.07)", "type": "color", "description": "Tag/badge background" },
+        "surface": { "value": "rgba(0,0,0,0.01)", "type": "color", "description": "Elevated surface" },
+        "nav-bg": { "value": "rgba(250,250,250,0.88)", "type": "color", "description": "Nav blur background" }
+      },
+      "dark": {
+        "background": { "value": "#0f0f0f", "type": "color" },
+        "text-primary": { "value": "#ededed", "type": "color" },
+        "text-muted": { "value": "#8a8a8a", "type": "color", "description": "WCAG AA 5.5:1" },
+        "accent": { "value": "#c9950d", "type": "color", "description": "Brand accent dark mode, WCAG AA 6.9:1" },
+        "card-bg": { "value": "#1c1c1c", "type": "color" },
+        "visual-bg": { "value": "#1e1e1e", "type": "color" },
+        "border": { "value": "rgba(255,255,255,0.09)", "type": "color" },
+        "tag-border": { "value": "rgba(255,255,255,0.12)", "type": "color" },
+        "tag-bg": { "value": "rgba(255,255,255,0.07)", "type": "color" },
+        "surface": { "value": "rgba(255,255,255,0.02)", "type": "color" },
+        "nav-bg": { "value": "rgba(15,15,15,0.88)", "type": "color" }
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "body": { "value": "Inter, sans-serif", "type": "fontFamilies" },
+        "display": { "value": "Playfair Display, serif", "type": "fontFamilies" }
+      },
+      "fontWeight": {
+        "light": { "value": "300", "type": "fontWeights" },
+        "regular": { "value": "400", "type": "fontWeights" },
+        "medium": { "value": "500", "type": "fontWeights" },
+        "semibold": { "value": "600", "type": "fontWeights" },
+        "bold": { "value": "700", "type": "fontWeights" }
+      },
+      "fontSize": {
+        "xs": { "value": "12px", "type": "fontSizes", "description": "Tiny labels, scroll hint" },
+        "sm": { "value": "13px", "type": "fontSizes", "description": "Labels, tags, meta" },
+        "base": { "value": "14px", "type": "fontSizes", "description": "Small body text" },
+        "md": { "value": "15px", "type": "fontSizes", "description": "Nav links, body" },
+        "body": { "value": "16px", "type": "fontSizes", "description": "Default body text" },
+        "h3": { "value": "28px", "type": "fontSizes", "description": "Section headings" },
+        "h2": { "value": "36px", "type": "fontSizes", "description": "Page headings" },
+        "project-name": { "value": "22px", "type": "fontSizes", "description": "Project card title" },
+        "hero": { "value": "107px", "type": "fontSizes", "description": "Hero display (max)" }
+      },
+      "lineHeight": {
+        "tight": { "value": "1.08", "type": "lineHeights", "description": "h1 hero" },
+        "heading": { "value": "1.2", "type": "lineHeights", "description": "h2" },
+        "subheading": { "value": "1.35", "type": "lineHeights", "description": "h3" },
+        "body": { "value": "1.7", "type": "lineHeights", "description": "Body text, paragraphs" }
+      },
+      "letterSpacing": {
+        "label": { "value": "2px", "type": "letterSpacing", "description": "Uppercase labels" },
+        "h1": { "value": "-3px", "type": "letterSpacing" },
+        "h2": { "value": "-1px", "type": "letterSpacing" },
+        "h3": { "value": "-0.5px", "type": "letterSpacing" },
+        "project-name": { "value": "-0.5px", "type": "letterSpacing" }
+      },
+      "textCase": {
+        "label": { "value": "uppercase", "type": "textCase" }
+      }
+    },
+    "spacing": {
+      "4": { "value": "4px", "type": "spacing" },
+      "6": { "value": "6px", "type": "spacing" },
+      "8": { "value": "8px", "type": "spacing" },
+      "12": { "value": "12px", "type": "spacing" },
+      "16": { "value": "16px", "type": "spacing" },
+      "20": { "value": "20px", "type": "spacing" },
+      "24": { "value": "24px", "type": "spacing" },
+      "32": { "value": "32px", "type": "spacing" },
+      "40": { "value": "40px", "type": "spacing" },
+      "48": { "value": "48px", "type": "spacing", "description": "Default page horizontal padding" },
+      "60": { "value": "60px", "type": "spacing" },
+      "64": { "value": "64px", "type": "spacing" },
+      "80": { "value": "80px", "type": "spacing" },
+      "100": { "value": "100px", "type": "spacing" },
+      "120": { "value": "120px", "type": "spacing" },
+      "140": { "value": "140px", "type": "spacing" }
+    },
+    "borderRadius": {
+      "sm": { "value": "4px", "type": "borderRadius", "description": "Cards, images, photo" },
+      "md": { "value": "12px", "type": "borderRadius", "description": "Project cards, testimonial cards" },
+      "full": { "value": "100px", "type": "borderRadius", "description": "Tags, badges, pills" }
+    },
+    "borderWidth": {
+      "default": { "value": "1px", "type": "borderWidth" },
+      "nav-active": { "value": "1.5px", "type": "borderWidth" }
+    },
+    "shadow": {
+      "sm": { "value": "0 12px 40px rgba(0,0,0,0.04)", "type": "boxShadow", "description": "Card hover shadow light" },
+      "md": { "value": "0 20px 60px rgba(0,0,0,0.06)", "type": "boxShadow", "description": "Project card hover" }
+    }
+  },
+  "components": {
+    "nav": {
+      "height": { "value": "72px", "type": "sizing" },
+      "paddingX": { "value": "{global.spacing.48}", "type": "spacing" },
+      "paddingY": { "value": "{global.spacing.24}", "type": "spacing" },
+      "blur": { "value": "20px", "type": "other" }
+    },
+    "projectCard": {
+      "borderRadius": { "value": "{global.borderRadius.md}", "type": "borderRadius" },
+      "aspectRatio": { "value": "4/3", "type": "other" },
+      "hoverTranslateY": { "value": "-6px", "type": "other" }
+    },
+    "tag": {
+      "paddingX": { "value": "16px", "type": "spacing" },
+      "paddingY": { "value": "8px", "type": "spacing" },
+      "borderRadius": { "value": "{global.borderRadius.full}", "type": "borderRadius" },
+      "fontSize": { "value": "{global.typography.fontSize.base}", "type": "fontSizes" }
+    },
+    "testimonialCard": {
+      "padding": { "value": "32px", "type": "spacing" },
+      "borderRadius": { "value": "{global.borderRadius.md}", "type": "borderRadius" }
+    }
+  }
+}
