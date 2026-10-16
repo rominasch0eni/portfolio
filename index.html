@@ -127,7 +127,7 @@
     }
 
     h1 { font-family: var(--font-serif); font-weight: var(--w-semi); letter-spacing: -2px; line-height: 1.08; }
-    h2 { font-family: var(--font-serif); font-size: 36px; font-weight: 600; letter-spacing: -1px; line-height: 1.2; }
+    h2 { font-family: var(--font-serif); font-size: clamp(22px, 5vw, 36px); font-weight: 600; letter-spacing: -1px; line-height: 1.2; }
     h3 { font-family: var(--font-serif); font-size: 28px; font-weight: var(--w-medium); letter-spacing: -0.3px; line-height: 1.35; color: var(--text-primary); }
     p  { font-size: var(--text-body); font-weight: var(--w-light); line-height: 1.7; color: var(--text-muted); }
 
@@ -546,6 +546,30 @@
 
       .lang-select { display: none; }
       .mobile-lang-select { display: block; }
+
+      /* Case study mobile type scale */
+      .cs-section p { font-size: 16px; }
+      /* Case study mobile grids — horizontal swipe carousel */
+      .cs-phase-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px !important;
+        padding-bottom: 12px;
+        margin-right: -24px;
+      }
+      .cs-phase-grid > div { flex: 0 0 78%; scroll-snap-align: start; }
+      .cs-stat-numbers {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px !important;
+        padding-bottom: 12px;
+        margin-right: -24px;
+      }
+      .cs-stat-numbers > div { flex: 0 0 44%; scroll-snap-align: start; }
 
       /* Chat mobile */
       #chat-inner { inset: 0; }
@@ -1281,7 +1305,7 @@
 <div class="cs-section">
   <h2>Mein Vorgehen im Überblick</h2>
   <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">Ich begleitete die Website über mehrere Research-Phasen und überprüfte die Konzepte mit beiden Zielgruppen.</p>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;">
+  <div class="cs-phase-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;">
     <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
       <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">01</div>
       <h4 style="margin-bottom:8px;">Interviews &amp; Personas</h4>
@@ -1305,7 +1329,7 @@
   </div>
   <div style="border-top:1px solid var(--border);margin-top:48px;padding-top:40px;">
     <h4 style="margin-bottom:20px;">Teilnehmende &amp; Umfang</h4>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+    <div class="cs-stat-numbers" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
       <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
         <h4 style="margin-bottom:10px;">Usability-Tests</h4>
         <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;color:var(--text-muted);">32</div>
@@ -1427,7 +1451,7 @@
     <p>Einige Teilnehmende erkannten swiyu nicht als Angebot des Schweizer Bundes. Sie vermuteten dahinter ein Start-up, ein privates Unternehmen oder eine eigenständige App. Manche fragten sich, ob sie überhaupt auf der richtigen Website waren, um Informationen zur e-ID zu finden.</p>
     <div class="cs-result">
       <span class="cs-result-label">Ergebnis</span>
-      <p>Ich empfahl, die Bundeskennzeichnung in der Navigation zu platzieren und «e-ID» sowie «swiyu Wallet» dort sichtbar zu machen. Das Team wollte zunächst prüfen, ob eine stärkere Kennzeichnung auf der Startseite ausreicht, um das swiyu-Branding nicht zu übertrumpfen. Im Folgetest stellten vereinzelt noch Teilnehmende die Frage, ob es sich wirklich um eine Bundesseite handelt.</p>
+      <p>Ich empfahl, die Bundeskennzeichnung in der Navigation zu platzieren und «e-ID» sowie «swiyu Wallet» dort sichtbar zu machen. Das Team wollte zunächst prüfen, ob eine stärkere Kennzeichnung auf der Startseite ausreicht, um das swiyu-Branding nicht zu übertrumpfen.</p>
     </div>
   </div>
 </div>
