@@ -1693,7 +1693,7 @@
           leftTitle: 'Wo Motion Design auf UX trifft',
           leftText: '<p>Mit über 2 Jahren Erfahrung als Motion Designerin habe ich Animationen erstellt, die Marken zum Leben erwecken, von einfachen UI-Transitionen bis hin zu komplexen 3D-Animationen.</p><p>Das Showreel fasst Arbeiten für Kunden wie PostFinance, UBS und Best of Swiss Web zusammen, sowie eigenständige Projekte, darunter eine custom Rubik\'s Cube Animation für dieses Portfolio.</p>',
           rightTitle: 'Animation als Teil von UX',
-          rightText: '<p class="cs-pullquote">Animation und UX sind kein Widerspruch, sie verstärken sich.</p><p>Meine Motion-Erfahrung fliesst direkt in meine UX-Arbeit ein: durch präzise Mikro-Animationen in Prototypen, durchdachte Transitionen und animierte Präsentationen.</p><p>Das Showreel entstand als persönliches Projekt, um meine Animationsarbeit zu dokumentieren und die Brücke zwischen Motion Design und UX sichtbar zu machen.</p>'
+          rightText: '<p>Animation und UX sind kein Widerspruch, sie verstärken sich. Meine Motion-Erfahrung fliesst direkt in meine UX-Arbeit ein: durch präzise Mikro-Animationen in Prototypen, durchdachte Transitionen und animierte Präsentationen.</p><p>Das Showreel entstand als persönliches Projekt, um meine Animationsarbeit zu dokumentieren und die Brücke zwischen Motion Design und UX sichtbar zu machen.</p>'
         },
         videos: {
           main: { id: 'iLQsxq8oP2s', label: 'Showreel abspielen' },
@@ -1728,29 +1728,68 @@
           { label: 'Kontext', value: 'CAS AR/VR · FHGR' },
           { label: 'Technologie', value: 'Microsoft HoloLens' }
         ],
-        content: {
-          leftTitle: 'Ein Escape Room als Showcase',
-          leftText: '<p>Rimon Technologies, ein Schweizer AR-Startup, wollte ihre Technologie auf spielerische Weise erlebbar machen. Im Rahmen meines CAS in Augmented &amp; Virtual Reality an der FHGR entwickelte ich ein vollständiges Konzept für einen Mixed Reality Escape Room.</p><p>Der Escape Room sollte als Showcase dienen: technologieaffine Personen sollten hautnah erleben, was mit der HoloLens möglich ist, ganz ohne Vorkenntnisse und ohne Game Master.</p>',
-          rightTitle: 'Von Persona bis Puzzle',
-          rightText: '<p>Ich habe das Konzept mit einem vollständigen UX-Prozess entwickelt: von der Nutzerforschung über zwei detaillierte Personas bis zu einem Storyboard für sechs Puzzles und einem kompletten Asset-Plan.</p><p>Im Mittelpunkt steht Lexi, eine KI als animierte 3D-Sphäre, die mit Gefahrenzonen und Glitch-Effekten Spannung erzeugt. Zugänglichkeit war von Anfang an Teil des Designs.</p><p class="cs-pullquote">Zugänglichkeit war von Anfang an Teil des Designs.</p>'
-        },
-        process: {
-          title: 'Vorgehen',
-          steps: [
-            { num: '01', title: 'Research & Personas', text: 'Zielgruppenanalyse und Erstellung zweier detaillierter Personas, darunter ein 55-jähriger Ingenieur mit Farbsehschwäche und eine 28-jährige Startup-Entwicklerin.' },
-            { num: '02', title: 'Story & Gameplay', text: 'Narrative Struktur im Pixar-Style: Rimons Holo-Office wurde gehackt, die KI Lexi dreht durch. Die Spielerin hat 30 Minuten, um Lexi zu resetten und das Büro zu verlassen.' },
-            { num: '03', title: 'Puzzle Design', text: 'Sechs originelle Puzzles designed für HoloLens Hand-Tracking und Eye-Tracking, von Skalier-Puzzles über Physiksimulationen bis zu 3D-Logikrätseln.' },
-            { num: '04', title: 'Asset Planning', text: 'Vollständiger Produktionsplan für 2D-Elemente, 3D-Assets, Animation, Sound Design und Programmierung. Gesamtaufwand geschätzt auf 80 bis 100 Tage.' }
-          ]
-        },
-        videos: {
-          main: { id: '0MKtp6Q-SbM', label: 'Konzeptvideo abspielen' }
-        },
-        pdfEmbed: 'assets/game/romina_schoeni_CAS_Konzept_FHGR.pdf',
-        outcome: {
-          customOutcome: true,
-          text: 'Ein vollständiges Spielkonzept an der Schnittstelle von Gamification und Enterprise AR. Das Projekt zeigte mir, wie weit UX-Methodik reicht: von der Nutzerforschung bis zur Produktionsplanung, vom Narrativ bis zum Sounddesign.'
-        },
+        customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Ein Escape Room als Showcase</h2>
+    <p>Rimon Technologies, ein Schweizer AR-Startup, wollte ihre Technologie auf spielerische Weise erlebbar machen. Im Rahmen meines CAS in Augmented &amp; Virtual Reality an der FHGR entwickelte ich ein vollständiges Konzept für einen Mixed Reality Escape Room auf der Microsoft HoloLens.</p>
+    <p>Der Escape Room sollte als Showcase dienen: technologieaffine Personen sollten hautnah erleben, was mit der HoloLens möglich ist, ganz ohne Vorkenntnisse und ohne Game Master.</p>
+  </div>
+  <div>
+    <h2>Meine Rolle</h2>
+    <p>Ich entwickelte das gesamte Konzept eigenständig: von der Nutzerforschung über Story und Puzzle-Design bis zum vollständigen Asset-Plan für Produktion und Programmierung. Zugänglichkeit war von Anfang an Teil des Designs.</p>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/game/hero.png" style="width:100%;display:block;" alt="Rimon Mixed Reality Escape Room">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Die Herausforderung</h2>
+    <p>Wie lässt sich eine komplexe Technologie wie Mixed Reality für Neueinsteiger zugänglich und gleichzeitig unvergesslich machen? Das Erlebnis musste ohne Einweisung funktionieren, alle Zielgruppen einschliessen und trotzdem technologisch beeindrucken.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Mein Vorgehen</h2>
+  <div class="cs-process-grid" style="grid-template-columns:repeat(2,1fr);">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Research &amp; Personas</h4>
+      <p>Zielgruppenanalyse und Erstellung zweier detaillierter Personas, darunter ein 55-jähriger Ingenieur mit Farbsehschwäche und eine 28-jährige Startup-Entwicklerin.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Story &amp; Gameplay</h4>
+      <p>Narrative Struktur im Pixar-Stil: Rimons Holo-Office wurde gehackt, die KI Lexi dreht durch. Die Spielerin hat 30 Minuten, um Lexi zu resetten und das Büro zu verlassen.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Puzzle Design</h4>
+      <p>Sechs originelle Puzzles für HoloLens Hand-Tracking und Eye-Tracking, von Skalier-Puzzles über Physiksimulationen bis zu 3D-Logikrätseln.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Asset Planning</h4>
+      <p>Vollständiger Produktionsplan für 2D-Elemente, 3D-Assets, Animation, Sound Design und Programmierung. Geschätzter Gesamtaufwand: 80 bis 100 Tage.</p>
+    </div>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/game/paper titelpicture (1) 1.png" style="width:100%;display:block;" alt="Game Konzept Dokument">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Das Ergebnis</h2>
+    <p>Ein vollständiges Spielkonzept an der Schnittstelle von Gamification und Enterprise AR. Konzept, Story, Puzzles und Produktionsplanung sind im Konzeptdokument festgehalten.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was ich mitnehme</h2>
+    <p>Das Projekt hat mir gezeigt, wie weit UX-Methodik reicht: von der Nutzerforschung bis zur Produktionsplanung, vom Narrativ bis zum Sounddesign. Game Design und UX denken erstaunlich ähnlich.</p>
+  </div>
+</div>
+`,
         nextProject: { id: 7, name: 'Hack Zurich' }
       },
       {
@@ -1763,32 +1802,68 @@
           { label: 'Team', value: '3 Personen' },
           { label: 'Veranstaltung', value: 'Hack Zurich' }
         ],
-        content: {
-          leftTitle: '48 Stunden. Eine Idee.',
-          leftText: '<p>Innerhalb eines Wochenendes entwickelten wir in einem Dreierteam eine AR- und VR-Idee sowie Prototypen für ein bestehendes Problem.</p><p>Die Challenge wurde von Swiss Re gestellt: Als einer der weltweit führenden Rückversicherer steht Swiss Re vor der Herausforderung, Unternehmen und Gebäude im Kontext des Klimawandels korrekt zu versichern. Naturkatastrophen wie Überschwemmungen werden häufiger und schwer kalkulierbar. Unser Konzept setzt hier an und soll betroffene Unternehmen besser auf solche Ereignisse vorbereiten.</p><p class="cs-pullquote">Wie bereitet man Unternehmen auf das Unvorhersehbare vor?</p>',
-          rightTitle: 'Konzept, Code und Kamera',
-          rightText: '<p>Ich konzipierte eine passende Lösung, erstellte eine Wassersimulation in Unity, entwickelte die Storyline für das Video und übernahm die Videoproduktion mit Stock-Material.</p><p>Das Konzept ist im begleitenden Video illustriert, das den Ansatz und die prototypischen Umsetzungen zeigt.</p>'
-        },
-        process: {
-          title: 'Vorgehen',
-          steps: [
-            { num: '01', title: 'Problemfindung', text: 'Analyse der Herausforderung von Swiss Re: Wie können Unternehmen und Gebäude bei steigender Häufigkeit von Naturkatastrophen wie Überschwemmungen korrekt versichert und besser vorbereitet werden? Daraus entwickelten wir eine fokussierte AR/VR-Lösungsidee.' },
-            { num: '02', title: 'Wassersimulation', text: 'Technische Umsetzung einer Wassersimulation in Unity als zentrales Element des AR-Prototyps.' },
-            { num: '03', title: 'Storytelling & Video', text: 'Ausarbeitung der Storyline und Produktion des Konzeptvideos mit Stock-Material zur Visualisierung der Idee.' },
-            { num: '04', title: 'Präsentation', text: 'Pitchen des Konzepts vor der Jury am Hackathon.' }
-          ]
-        },
-        videos: {
-          main: { id: 'DvFLXHt3AIo', label: 'Konzeptvideo abspielen' }
-        },
-        outcome: {
-          customOutcome: true,
-          text: 'Wir schafften es bis zu den Gesamtfinalistinnen und gewannen eine Honorable Mention in der Extended Reality Challenge. Ein Wochenende unter extremem Zeitdruck hat mir gezeigt, wie viel möglich ist, wenn ein Team fokussiert an einem Ziel arbeitet.',
-          badge: {
-            img: 'assets/hackathon/badge.png',
-            link: 'https://www.credly.com/badges/63b47851-eace-4546-985f-eda26d070ff2/linked_in_profile'
-          }
-        },
+        customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>48 Stunden. Eine Idee.</h2>
+    <p>Innerhalb eines Wochenendes entwickelten wir in einem Dreierteam eine AR- und VR-Idee sowie Prototypen für ein bestehendes Problem.</p>
+    <p>Die Challenge wurde von Swiss Re gestellt: Als einer der weltweit führenden Rückversicherer steht Swiss Re vor der Herausforderung, Unternehmen und Gebäude im Kontext des Klimawandels korrekt zu versichern. Naturkatastrophen wie Überschwemmungen werden häufiger und schwerer kalkulierbar.</p>
+  </div>
+  <div>
+    <h2>Meine Rolle</h2>
+    <p>Ich konzipierte die Lösung, erstellte eine Wassersimulation in Unity, entwickelte die Storyline für das Konzeptvideo und übernahm die Videoproduktion mit Stock-Material.</p>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/hackathon/hero.jpg" style="width:100%;display:block;" alt="Hack Zurich">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Die Herausforderung</h2>
+    <p>Wie bereitet man Unternehmen auf das Unvorhersehbare vor? Naturkatastrophen wie Überschwemmungen werden durch den Klimawandel häufiger und schwerer kalkulierbar. Unser Konzept sollte betroffene Unternehmen mit AR und VR besser auf solche Ereignisse vorbereiten.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Mein Vorgehen</h2>
+  <div class="cs-process-grid" style="grid-template-columns:repeat(2,1fr);">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Problemanalyse</h4>
+      <p>Analyse der Swiss Re Challenge: Wie können Unternehmen bei steigender Häufigkeit von Naturkatastrophen besser vorbereitet werden? Daraus entwickelten wir eine fokussierte AR/VR-Lösungsidee.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Wassersimulation</h4>
+      <p>Technische Umsetzung einer Wassersimulation in Unity als zentrales Element des AR-Prototyps.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Storytelling &amp; Video</h4>
+      <p>Ausarbeitung der Storyline und Produktion des Konzeptvideos mit Stock-Material zur Visualisierung der Idee.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Pitch</h4>
+      <p>Präsentation des Konzepts vor der Jury am Hackathon.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Das Ergebnis</h2>
+    <p>Wir schafften es bis zu den Gesamtfinalistinnen und gewannen eine Honorable Mention in der Extended Reality Challenge.</p>
+    <a href="https://www.credly.com/badges/63b47851-eace-4546-985f-eda26d070ff2/linked_in_profile" target="_blank" rel="noopener" style="display:inline-block;margin-top:24px;">
+      <img src="assets/hackathon/badge.png" style="height:120px;display:block;" alt="Hack Zurich Extended Reality Challenge Badge">
+    </a>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was ich mitnehme</h2>
+    <p>Ein Wochenende unter extremem Zeitdruck hat mir gezeigt, wie viel möglich ist, wenn ein Team fokussiert an einem Ziel arbeitet. Idee, Prototyp und Pitch in 48 Stunden: Das schärft den Blick für das Wesentliche.</p>
+  </div>
+</div>
+`,
         nextProject: { id: 1, name: 'Elektronische Identität', labelOverride: 'Erstes Projekt' }
       }
     ];
@@ -2081,7 +2156,7 @@
         leftTitle: 'Where motion design meets UX',
         leftText: '<p>With over 2 years of experience as a motion designer, I created animations that bring brands to life, from simple UI transitions to complex 3D animations.</p><p>The showreel compiles work for clients such as PostFinance, UBS and Best of Swiss Web, as well as independent projects including a custom Rubik\'s Cube animation for this portfolio.</p>',
         rightTitle: 'Animation as part of UX',
-        rightText: '<p class="cs-pullquote">Animation and UX are not opposites — they reinforce each other.</p><p>My motion experience feeds directly into my UX work: through precise micro-animations in prototypes, thoughtful transitions and animated presentations.</p><p>The showreel was created as a personal project to document my animation work and make the bridge between motion design and UX visible.</p>'
+        rightText: '<p>Animation and UX are not opposites, they reinforce each other. My motion experience feeds directly into my UX work: through precise micro-animations in prototypes, thoughtful transitions and animated presentations.</p><p>The showreel was created as a personal project to document my animation work and make the bridge between motion design and UX visible.</p>'
       },
       process: {
         title: 'My creative process',
@@ -2105,25 +2180,68 @@
         { label: 'Context', value: 'CAS AR/VR · FHGR' },
         { label: 'Technology', value: 'Microsoft HoloLens' }
       ],
-      content: {
-        leftTitle: 'An escape room as showcase',
-        leftText: '<p>Rimon Technologies, a Swiss AR startup, wanted to make their technology experienceable in a playful way. As part of my CAS in Augmented & Virtual Reality at FHGR, I developed a complete concept for a Mixed Reality escape room.</p><p>The escape room was to serve as a showcase: tech-savvy individuals could experience first-hand what is possible with the HoloLens, no prior knowledge required, no game master needed.</p>',
-        rightTitle: 'From persona to puzzle',
-        rightText: '<p>I developed the concept with a complete UX process: from user research and two detailed personas to a storyboard for six puzzles and a complete asset plan.</p><p>At the centre is Lexi, an AI as an animated 3D sphere that creates tension with danger zones and glitch effects. Accessibility was part of the design from the start.</p><p class="cs-pullquote">Accessibility was part of the design from the start.</p>'
-      },
-      process: {
-        title: 'Approach',
-        steps: [
-          { num: '01', title: 'Research & personas', text: 'Target audience analysis and creation of two detailed personas, including a 55-year-old engineer with colour blindness and a 28-year-old startup developer.' },
-          { num: '02', title: 'Story & gameplay', text: 'Pixar-style narrative structure: Rimon\'s holo-office has been hacked, the AI Lexi is going haywire. The player has 30 minutes to reset Lexi and escape the office.' },
-          { num: '03', title: 'Puzzle design', text: 'Six original puzzles designed for HoloLens hand-tracking and eye-tracking, from scaling puzzles to physics simulations to 3D logic puzzles.' },
-          { num: '04', title: 'Asset planning', text: 'Complete production plan for 2D elements, 3D assets, animation, sound design and programming. Total estimated effort: 80 to 100 days.' }
-        ]
-      },
-      outcome: {
-        customOutcome: true,
-        text: 'A complete game concept at the intersection of gamification and enterprise AR. The project showed me how far UX methodology reaches: from user research to production planning, from narrative to sound design.'
-      },
+      customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>An Escape Room as Showcase</h2>
+    <p>Rimon Technologies, a Swiss AR startup, wanted to make their technology experienceable in a playful way. As part of my CAS in Augmented &amp; Virtual Reality at FHGR, I developed a complete concept for a Mixed Reality escape room.</p>
+    <p>The escape room was to serve as a showcase: tech-savvy individuals could experience first-hand what is possible with the HoloLens, no prior knowledge required, no game master needed.</p>
+  </div>
+  <div>
+    <h2>My Role</h2>
+    <p>I developed the entire concept independently: from user research and two detailed personas to a storyboard for six puzzles and a complete asset plan. At the centre is Lexi, an AI as an animated 3D sphere that creates tension with danger zones and glitch effects. Accessibility was part of the design from the start.</p>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/game/hero.png" style="width:100%;display:block;" alt="Rimon Mixed Reality Escape Room">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The Challenge</h2>
+    <p>How do you make a complex technology like Mixed Reality accessible and memorable for newcomers? The escape room had to be intuitive enough for first-time HoloLens users while still showcasing the full range of the technology's capabilities.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>My Approach</h2>
+  <div class="cs-process-grid" style="grid-template-columns:repeat(2,1fr);">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Research &amp; Personas</h4>
+      <p>Target audience analysis and creation of two detailed personas, including a 55-year-old engineer with colour blindness and a 28-year-old startup developer.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Story &amp; Gameplay</h4>
+      <p>Pixar-style narrative structure: Rimon's holo-office has been hacked, the AI Lexi is going haywire. The player has 30 minutes to reset Lexi and escape the office.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Puzzle Design</h4>
+      <p>Six original puzzles designed for HoloLens hand-tracking and eye-tracking, from scaling puzzles to physics simulations to 3D logic puzzles.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Asset Planning</h4>
+      <p>Complete production plan for 2D elements, 3D assets, animation, sound design and programming. Total estimated effort: 80 to 100 days.</p>
+    </div>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/game/paper titelpicture (1) 1.png" style="width:100%;display:block;" alt="Game Concept Document">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The Result</h2>
+    <p>A complete game concept at the intersection of gamification and enterprise AR, ready for production. The concept document covers every layer: narrative, interaction design, accessibility, and a full asset plan.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>What I Take Away</h2>
+    <p>This project showed me how far UX methodology reaches, from user research to production planning, from narrative to sound design. Designing for a medium that most users have never touched demands extra clarity at every step. The constraints of the HoloLens turned into creative drivers rather than limitations.</p>
+  </div>
+</div>
+`,
       nextProject: { id: 7, name: 'Hack Zurich' }
     };
     PROJECTS[6].en = {
@@ -2134,25 +2252,68 @@
         { label: 'Team', value: '3 people' },
         { label: 'Event', value: 'Hack Zurich' }
       ],
-      content: {
-        leftTitle: '48 hours. One idea.',
-        leftText: '<p>Within a single weekend, our team of three developed an AR and VR idea plus prototypes for an existing problem.</p><p>The challenge was set by Swiss Re: as one of the world\'s leading reinsurers, Swiss Re faces the challenge of correctly insuring companies and buildings in the context of climate change. Natural disasters such as flooding are becoming more frequent and difficult to calculate. Our concept addresses this, aiming to better prepare affected companies for such events.</p><p class="cs-pullquote">How do you prepare companies for the unpredictable?</p>',
-        rightTitle: 'Concept, code and camera',
-        rightText: '<p>I designed an appropriate solution, created a water simulation in Unity, developed the storyline for the video and handled video production using stock footage.</p><p>The concept is illustrated in the accompanying video, which shows the approach and the prototype implementations.</p>'
-      },
-      process: {
-        title: 'Approach',
-        steps: [
-          { num: '01', title: 'Problem finding', text: 'Analysing Swiss Re\'s challenge: how can companies and buildings be correctly insured and better prepared as natural disasters like flooding become more frequent? From this we developed a focused AR/VR solution idea.' },
-          { num: '02', title: 'Water simulation', text: 'Technical implementation of a water simulation in Unity as the central element of the AR prototype.' },
-          { num: '03', title: 'Storytelling & video', text: 'Developing the storyline and producing the concept video with stock footage to visualise the idea.' },
-          { num: '04', title: 'Presentation', text: 'Pitching the concept to the jury at the hackathon.' }
-        ]
-      },
-      outcome: {
-        customOutcome: true,
-        text: 'We made it to the overall finalists and won an Honourable Mention in the Extended Reality Challenge. A weekend under extreme time pressure showed me how much is possible when a team works together with focus towards a single goal.'
-      },
+      customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>48 Hours. One Idea.</h2>
+    <p>Within a single weekend, our team of three developed an AR and VR idea plus prototypes for an existing problem.</p>
+    <p>The challenge was set by Swiss Re: as one of the world's leading reinsurers, Swiss Re faces the challenge of correctly insuring companies and buildings in the context of climate change. Natural disasters such as flooding are becoming more frequent and harder to calculate.</p>
+  </div>
+  <div>
+    <h2>My Role</h2>
+    <p>I designed the solution, created a water simulation in Unity, developed the storyline for the concept video and handled video production with stock footage.</p>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/hackathon/hero.jpg" style="width:100%;display:block;" alt="Hack Zurich">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The Challenge</h2>
+    <p>How do you prepare companies for the unpredictable? Natural disasters like flooding are becoming more frequent and harder to calculate due to climate change. Our concept aimed to better prepare affected companies with AR and VR.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>My Approach</h2>
+  <div class="cs-process-grid" style="grid-template-columns:repeat(2,1fr);">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Problem Analysis</h4>
+      <p>Analysing Swiss Re's challenge: how can companies be better prepared as natural disasters become more frequent? From this we developed a focused AR/VR solution idea.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Water Simulation</h4>
+      <p>Technical implementation of a water simulation in Unity as the central element of the AR prototype.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Storytelling &amp; Video</h4>
+      <p>Developing the storyline and producing the concept video with stock footage to visualise the idea.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Pitch</h4>
+      <p>Presenting the concept to the jury at the hackathon.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The Result</h2>
+    <p>We made it to the overall finalists and won an Honourable Mention in the Extended Reality Challenge.</p>
+    <a href="https://www.credly.com/badges/63b47851-eace-4546-985f-eda26d070ff2/linked_in_profile" target="_blank" rel="noopener" style="display:inline-block;margin-top:24px;">
+      <img src="assets/hackathon/badge.png" style="height:120px;display:block;" alt="Hack Zurich Extended Reality Challenge Badge">
+    </a>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>What I Take Away</h2>
+    <p>A weekend under extreme time pressure showed me how much is possible when a team works with focus towards a single goal. Idea, prototype and pitch in 48 hours: it sharpens your eye for what really matters.</p>
+  </div>
+</div>
+`,
       nextProject: { id: 1, name: 'Digital Identity', labelOverride: 'First project' }
     };
 
