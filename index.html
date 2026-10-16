@@ -42,6 +42,8 @@
       --sp-col:     64px;   /* two-column grid gap (profile, meta) */
       --sp-section: 80px;   /* section vertical padding */
       --sp-gap-lg: var(--sp-section);
+      --sp-page-mobile:    20px;  /* mobile horizontal padding */
+      --sp-section-mobile: 48px;  /* mobile section vertical padding */
 
       /* chat overlay – inverted from site */
       --chat-bg: rgba(0, 0, 0, 0.97);
@@ -547,6 +549,9 @@
       .lang-select { display: none; }
       .mobile-lang-select { display: block; }
 
+      /* Case study mobile spacing */
+      .cs-section { padding: var(--sp-section-mobile) var(--sp-page-mobile); }
+      .cs-caption { padding-left: var(--sp-page-mobile); padding-right: var(--sp-page-mobile); }
       /* Case study mobile type scale */
       .cs-section p { font-size: 16px; }
       /* Case study mobile grids — horizontal swipe carousel */
