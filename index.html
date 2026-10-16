@@ -21,7 +21,7 @@
       --text-primary: #000000;
       --accent: #A8455E;
       --accent-gradient: var(--accent);
-      --text-muted: #000000;
+      --text-muted: #767676;   /* 4.54:1 Kontrast auf #fafafa — WCAG AA */
       --text-secondary: #000000;
       --card-bg: #f0f0f0;
       --border: rgba(0,0,0,0.08);
@@ -144,7 +144,7 @@
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
-      padding: 24px 48px;
+      padding: 24px max(48px, calc((100% - 1440px) / 2 + 48px));
       display: flex; justify-content: space-between; align-items: center;
       background: var(--nav-bg);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -162,7 +162,8 @@
 
     /* PAGES */
     .page { display: none; min-height: 100vh; }
-    .page.active { display: block; }
+    .page.active { display: block; max-width: 1440px; margin: 0 auto; }
+    .hero { width: 100vw; margin-left: calc(-50vw + 50%); }
 
     /* HERO */
     .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 0 48px; }
@@ -277,7 +278,11 @@
     .cs-section { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
     .cs-section p { font-size: 18px; text-wrap: pretty; hyphens: none; text-align: left; }
     .cs-caption { font-size: 13px; color: var(--text-muted); padding: 10px var(--sp-page) 28px; margin: 0; display: block; text-align: center; font-style: italic; }
-    .cs-section h2, .cs-section h4 { text-wrap: balance; hyphens: none; }
+    .cs-result { border-left: 4px solid currentColor; padding: 6px 0 6px 20px; margin-top: 36px; }
+    .cs-result-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-bottom: 10px; display: block; }
+    .cs-result p { font-size: 16px !important; margin: 0; }
+    .cs-section h2 { margin-bottom: 20px; text-wrap: balance; hyphens: none; }
+    .cs-section h4 { text-wrap: balance; hyphens: none; }
     .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-gap-lg); align-items: start; }
     .cs-spread { display: grid; grid-template-columns: 2fr 3fr; gap: var(--sp-gap-lg); align-items: start; }
     .cs-big-quote { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); text-align: center; }
@@ -1237,7 +1242,7 @@
         name: 'Elektronische Identität',
         type: 'UX Research · Informationsarchitektur · UX-Konzeption',
         meta: [
-          { label: 'Rolle', value: 'Lead Researcherin, UX-Konzeption' },
+          { label: 'Rolle', value: 'UX Research, UX-Konzeption' },
           { label: 'Zeitraum', value: '2025 bis 2026' },
           { label: 'Team', value: 'PO, Scrum Master, 4 UX Designer & 2 UX Writer' },
           { label: 'Branche', value: 'Öffentliche Verwaltung' }
@@ -1245,14 +1250,14 @@
         customHtml: `
 <div class="cs-section cs-two-col">
   <div>
-    <h2>Intro</h2>
-    <p>Die Schweizer e-ID war vielen Menschen bereits ein Begriff. Schliesslich wurde darüber politisch abgestimmt. Aber was ist eigentlich swiyu? Ein Start-up? Ein ausländisches Unternehmen? Oder steckt doch der Schweizer Bund dahinter? Vielleicht fragst du dich das selber, denn solche Fragen begegneten mir in den Interviews und Usability-Tests für swiyu.</p>
-    <p>swiyu ist eine digitale Brieftasche, bei der deine e-ID, dein Führerausweis wie auch dein Strafregisterauszug aufbewahrt werden kann. Es besitzt unterschiedliche Technologien, um die Sicherheit wichtiger Dokumente zu gewährleisten.</p>
+    <h2>Was ist swiyu?</h2>
+    <p>Die Schweizer e-ID war vielen Menschen bereits ein Begriff. Aber was ist eigentlich swiyu? Ein Start-up? Ein ausländisches Unternehmen? Oder steckt doch der Schweizer Bund dahinter? Diese Fragen begegneten mir in jedem Interview und Usability-Test, denn swiyu ist neu, unbekannt, und sein Verhältnis zur e-ID nicht offensichtlich.</p>
+    <p>swiyu ist eine digitale Brieftasche, in der deine e-ID, dein Führerausweis und weitere offizielle Nachweise sicher gespeichert werden können.</p>
   </div>
   <div>
     <h2>Meine Rolle bei swiyu</h2>
     <p>Beim Bundesamt für Informatik arbeitete ich im UX Research und in der UX-Konzeption. Mein Aufgabenbereich umfasste das ganze swiyu Ökosystem. Ich plante, moderierte und analysierte Interviews und Usability-Tests mit Privatpersonen und Organisationen. Aus den Ergebnissen leitete ich Empfehlungen für User Flows, Informationsarchitektur, Produktverständnis und Kommunikation ab. Diese präsentierte ich dem Projektteam sowie Vertreterinnen und Vertretern verschiedener Bundesämter.</p>
-    <p>In der Konzeption und Gestaltung war ich beratend tätig. Die Verantwortung für das Design lag beim jeweiligen Designteam und die Konzeption beim Service Design Team.</p>
+    <p>Ich verantwortete den gesamten UX Research und war beratend in der UX-Konzeption tätig. Die Verantwortung für das Design lag beim Designteam, die Konzeption beim Service Design.</p>
   </div>
 </div>
 <div style="border-top:1px solid var(--border);">
@@ -1263,77 +1268,169 @@
     <h2>Die Case Study: swiyu.admin.ch</h2>
     <p>Für diese Case Study nehme ich dich mit in die Entwicklung von <strong>swiyu.admin.ch</strong>. Das Projektteam entwickelte eine neue Website, die die bisherige Informationsseite zur Schweizer e-ID ablösen sollte. Gleichzeitig sollte sie mehr als eine reine Informationsseite sein. Privatpersonen sollten erfahren, was die swiyu Wallet ist, wie die e-ID und weitere digitale Nachweise darin funktionieren und wie sie die Wallet nutzen können.</p>
     <p>Organisationen sollten konkrete Anwendungsmöglichkeiten, Produktlösungen und Informationen zum Einstieg in das swiyu-Ökosystem finden. Die Website sollte damit eine zentrale Anlaufstelle für beide Zielgruppen werden. Ich war von Anfang an in die Entwicklung eingebunden.</p>
+    <div style="margin-top:32px;background:var(--bg-secondary,rgba(0,0,0,0.04));border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;opacity:0.5;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <p style="margin:0;font-size:0.875rem;line-height:1.6;color:var(--text-muted);">swiyu.admin.ch ist weiterhin in Entwicklung und hat sich in der Zwischenzeit verändert. Die Screenshots zeigen verschiedene Entwicklungsstände. Inhalte und Branding wurden seither weiterentwickelt. Mein Fokus lag auf Informationsarchitektur, Kommunikation, Auffindbarkeit und Content.</p>
+    </div>
     <h2 style="margin-top:60px;">Die Herausforderung</h2>
     <p>Die e-ID war für einige Menschen bereits ein bekanntes Thema. Andere hatten sich kaum damit beschäftigt. Doch selbst wer die e-ID kannte, verstand nicht unbedingt, was swiyu damit zu tun hatte. Was ist der Unterschied zwischen e-ID und Wallet? Welche weiteren Nachweise kann man darin speichern? Wer kann solche Nachweise ausstellen?</p>
-    <p>Bei Organisationen kamen andere Fragen hinzu.</p>
-    <p>Welche Lösung passt zu uns? Was unterscheidet das Produkt swiyu Check von swiyu Platform? Was kostet die Integration? Und welche technischen Voraussetzungen müssen wir erfüllen?</p>
+    <p>Bei Organisationen kamen weitere Fragen hinzu: Welche Lösung passt zu uns? Was unterscheidet swiyu Check von swiyu Platform? Was kostet die Integration? Und welche technischen Voraussetzungen müssen wir erfüllen?</p>
   </div>
 </div>
 <div class="cs-section">
   <h2>Mein Vorgehen im Überblick</h2>
   <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">Ich begleitete die Website über mehrere Research-Phasen und überprüfte die Konzepte mit beiden Zielgruppen.</p>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;">
-    <div>
-      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
-      <h4 style="margin-bottom:12px;">Interviews &amp; Personas</h4>
-      <p>Gespräche mit Privatpersonen und Organisationen geplant, moderiert und ausgewertet. Vorwissen, Erwartungen, Bedürfnisse und Bedenken untersucht. Daraus Personas abgeleitet.</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;">
+    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
+      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">01</div>
+      <h4 style="margin-bottom:8px;">Interviews &amp; Personas</h4>
+      <p style="color:var(--text-muted);">Bedürfnisse, Erwartungen und Bedenken beider Zielgruppen untersucht. Personas abgeleitet.</p>
     </div>
-    <div>
-      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
-      <h4 style="margin-bottom:12px;">Tree Testing</h4>
-      <p>Zwei Navigationsstrukturen in moderierten Tests überprüft und Empfehlungen für die Informationsarchitektur abgeleitet.</p>
+    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
+      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">02</div>
+      <h4 style="margin-bottom:8px;">Tree Testing</h4>
+      <p style="color:var(--text-muted);">Zwei Menüstrukturen mit Nutzenden geprüft. Empfehlungen zur Struktur abgeleitet.</p>
     </div>
-    <div>
-      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
-      <h4 style="margin-bottom:12px;">Wireframe-Tests</h4>
-      <p>Usability-Tests mit Privatpersonen und Organisationen geplant, moderiert und protokolliert.</p>
+    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
+      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">03</div>
+      <h4 style="margin-bottom:8px;">Wireframe-Tests</h4>
+      <p style="color:var(--text-muted);">Inhalte, Navigation und Struktur mit beiden Zielgruppen getestet.</p>
     </div>
-    <div>
-      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
-      <h4 style="margin-bottom:12px;">2 &times; High-Fidelity-Tests</h4>
-      <p>Verständlichkeit, Navigation, Anwendungsfälle und nächste Schritte mit beiden Zielgruppen getestet.</p>
+    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
+      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">04</div>
+      <h4 style="margin-bottom:8px;">2 &times; High-Fidelity-Tests</h4>
+      <p style="color:var(--text-muted);">Verständlichkeit, Sprache und Anwendungsfälle im fertigen Design überprüft.</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--border);margin-top:48px;padding-top:40px;">
+    <h4 style="margin-bottom:20px;">Teilnehmende &amp; Umfang</h4>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+        <h4 style="margin-bottom:10px;">Usability-Tests</h4>
+        <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;">32</div>
+        <p style="color:var(--text-muted);margin:6px 0 0;">je 60 Min.</p>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+        <h4 style="margin-bottom:10px;">Prototypen</h4>
+        <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;">4</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+        <h4 style="margin-bottom:10px;">Organisationen</h4>
+        <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;">19</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+        <h4 style="margin-bottom:10px;">Privatpersonen</h4>
+        <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;">13</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+        <h4 style="margin-bottom:16px;">Altersgruppen</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>18–29 J.</span><span style="color:var(--text-muted);">19 %</span></div>
+            <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:19%;height:100%;background:currentColor;border-radius:2px;opacity:0.3;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>30–49 J.</span><span style="color:var(--text-muted);">47 %</span></div>
+            <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:47%;height:100%;background:currentColor;border-radius:2px;opacity:0.7;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>50–64 J.</span><span style="color:var(--text-muted);">25 %</span></div>
+            <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:25%;height:100%;background:currentColor;border-radius:2px;opacity:0.5;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>65+ J.</span><span style="color:var(--text-muted);">9 %</span></div>
+            <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:9%;height:100%;background:currentColor;border-radius:2px;opacity:0.2;"></div></div>
+          </div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+        <h4 style="margin-bottom:16px;">Geschlecht</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Weiblich</span><span style="color:var(--text-muted);">47 %</span></div>
+            <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:47%;height:100%;background:currentColor;border-radius:2px;opacity:0.5;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Männlich</span><span style="color:var(--text-muted);">53 %</span></div>
+            <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:53%;height:100%;background:currentColor;border-radius:2px;opacity:0.7;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-top:16px;">
+      <h4 style="margin-bottom:16px;">Nutzerkenntnisse zur e-ID</h4>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Keine Kenntnisse</span><span style="color:var(--text-muted);">13 %</span></div>
+          <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:13%;height:100%;background:currentColor;border-radius:2px;opacity:0.2;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Wenig Kenntnisse</span><span style="color:var(--text-muted);">13 %</span></div>
+          <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:13%;height:100%;background:currentColor;border-radius:2px;opacity:0.3;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Grundlegende Kenntnisse</span><span style="color:var(--text-muted);">19 %</span></div>
+          <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:19%;height:100%;background:currentColor;border-radius:2px;opacity:0.4;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Gute Kenntnisse</span><span style="color:var(--text-muted);">39 %</span></div>
+          <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:39%;height:100%;background:currentColor;border-radius:2px;opacity:0.7;"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Sehr gute Kenntnisse</span><span style="color:var(--text-muted);">16 %</span></div>
+          <div style="height:3px;background:var(--border);border-radius:2px;"><div style="width:16%;height:100%;background:currentColor;border-radius:2px;opacity:0.5;"></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cs-section" style="text-align:center;padding-top:60px;padding-bottom:60px;">
   <h2 style="font-size:clamp(48px,7vw,96px);font-weight:400;letter-spacing:-0.02em;line-height:1;">Insights</h2>
 </div>
-<div style="border-top:1px solid var(--border);">
-  <div style="overflow:hidden;"><img src="assets/e-id/cs-team.png" style="width:100%;display:block;" alt="Research Session"></div>
-  <span class="cs-caption">Remote-Usability-Test via Microsoft Teams</span>
+<div class="cs-section" style="display:flex;justify-content:center;border-top:none;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was brauchen Privatpersonen und Organisationen?</h2>
+    <p>Um Bedürfnisse, Einstellungen und Hürden beider Zielgruppen zu verstehen, führte ich Interviews mit Privatpersonen und Organisationen durch. Ich erfragte digitale Gewohnheiten, Vertrauen und Datenschutz, mögliche Anwendungsfälle sowie Voraussetzungen für Nutzung und Einführung sowie, bei Organisationen, Entscheidungswege und Integration.</p>
+    <div class="cs-result">
+      <span class="cs-result-label">Ergebnis</span>
+      <p>Privatpersonen nutzen swiyu eher, wenn der konkrete Nutzen klar ist und die Anwendung einfach wirkt. Vertrauen entsteht durch verständliche Informationen zu Sicherheit und Datenschutz. Organisationen sehen mögliche Anwendungsfälle, benötigen für die Einführung aber klare Informationen zu Kosten, rechtlichen Anforderungen und Integration.</p>
+    </div>
+  </div>
+</div>
+<div>
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-team.webp" style="width:100%;display:block;" alt="Research Session"></div>
+  <span class="cs-caption">Remote-Interview via Microsoft Teams</span>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
   <div style="max-width:72ch;width:100%;">
-    <h2>Was wissen die Menschen bereits über die e-ID?</h2>
-    <p>Bevor wir die Website im Detail überprüften, war es wichtig zu verstehen, mit welchem Vorwissen die Menschen an swiyu herangehen. Die meisten Teilnehmenden hatten bereits von der Schweizer e-ID gehört und eine ungefähre Vorstellung davon, was sie ist. Gleichzeitig gab es Menschen mit wenig oder gar keinem Vorwissen. Nur wenige schätzten ihre Kenntnisse als sehr gut ein.</p>
-    <p>Das war für die Tests besonders interessant. Die Website musste sowohl Menschen abholen, die sich bereits mit der e-ID beschäftigt hatten, als auch solche, die das Thema zum ersten Mal genauer kennenlernen wollten.</p>
-    <p>In den Interviews und Usability-Tests zeigte sich zudem, dass die Bekanntheit der e-ID nicht automatisch bedeutete, dass die Zusammenhänge zwischen e-ID, swiyu Wallet und weiteren digitalen Nachweisen verstanden wurden.</p>
+    <h2>Wie sollte die Website strukturiert sein?</h2>
+    <p>Aus den Interviewerkenntnissen entwickelten wir gemeinsam mit dem Service Design zwei Navigationsvarianten. Ich plante und moderierte Tree Tests, bei denen die Teilnehmenden zeigen sollten, unter welchen Menüpunkten sie bestimmte Informationen erwarteten. Die Ergebnisse bildeten die Grundlage für meine Empfehlungen zur Informationsarchitektur.</p>
+    <div class="cs-result">
+      <span class="cs-result-label">Ergebnis</span>
+      <p>Beide Zielgruppen erwarteten einen eigenen, klar abgegrenzten Informationsbereich. Auf Basis der Testergebnisse empfahl ich eine getrennte Navigation für Privatpersonen und Organisationen. Das Team wollte zunächst eine weitere Navigationsvariante prüfen. Im HiFi-Prototyp wurde die getrennte Struktur schliesslich umgesetzt.</p>
+    </div>
   </div>
 </div>
-<div style="border-top:1px solid var(--border);">
-  <div style="overflow:hidden;"><img src="assets/e-id/cs-02.png" style="width:100%;display:block;" alt="Vorwissen Chart"></div>
-  <span class="cs-caption">Selbsteingeschätztes Vorwissen der Teilnehmenden zur e-ID</span>
-</div>
-<div class="cs-section" style="display:flex;justify-content:center;">
-  <div style="max-width:72ch;width:100%;">
-    <h2>Erste Informationsarchitektur und Tree Testing</h2>
-    <p>Am Anfang der Website-Entwicklung stand die Frage, wie sich die unterschiedlichen Inhalte sinnvoll strukturieren lassen. Privatpersonen suchten Informationen über die e-ID, die Wallet und deren Nutzung. Organisationen interessierten sich für Anwendungsfälle, technische Voraussetzungen und die verschiedenen Lösungen.</p>
-    <p>Ich plante und moderierte Tree Tests mit zwei Navigationsvarianten, die gemeinsam mit dem Service Design erarbeitet wurden. Die Teilnehmenden sollten bestimmte Informationen finden und zeigen, unter welchen Menüpunkten sie diese erwarteten. Dabei zeigte sich, dass beide Zielgruppen einen eigenen, klar erkennbaren Einstieg beziehungsweise Informationsbereich erwarteten. Aus den Ergebnissen leitete ich Empfehlungen für die weitere Informationsarchitektur ab.</p>
-  </div>
-</div>
-<div style="border-top:1px solid var(--border);">
+<div>
   <div style="overflow:hidden;"><img src="assets/e-id/cs-tree.png" style="width:100%;display:block;" alt="Tree Testing Struktur"></div>
   <span class="cs-caption">Navigationsstruktur für den Tree Test</span>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
   <div style="max-width:72ch;width:100%;">
-    <h2>Funktioniert die Struktur auch als Website?</h2>
-    <p>Auf Basis der Informationsarchitektur entstand ein erster Wireframe-Prototyp. Damit konnten wir überprüfen, wie sich die Inhalte innerhalb einer Website anfühlen und ob sich die beiden Zielgruppen darin orientieren können. Im Mittelpunkt standen die Verständlichkeit der Inhalte, die Navigation und die Erwartungen an die einzelnen Seiten. Die Tests halfen uns, die Konzepte aus Sicht der Nutzenden zu überprüfen, bevor die Website visuell weiter ausgearbeitet wurde.</p>
+    <h2>Kommen die Inhalte bei den Nutzenden an?</h2>
+    <p>Der erste Wireframe-Prototyp ermöglichte es, die Inhalte im Kontext einer Website zu testen. Im Mittelpunkt standen: Verstehen die Nutzenden, was sie lesen? Finden sie die Informationen, die sie suchen? Und entsprechen die Seiteninhalte ihren Erwartungen?</p>
+    <p>Eine Frage tauchte dabei immer wieder auf:</p>
     <p class="cs-pullquote">«Ist das wirklich eine Website vom Bund?»</p>
-    <p>Einige Teilnehmende erkannten swiyu nicht als Angebot des Schweizer Bundes. Sie vermuteten dahinter ein Start-up, ein privates Unternehmen oder eine eigenständige App. Manche fragten sich, ob sie überhaupt auf der richtigen Website waren, um Informationen zur e-ID zu finden. Die Verbindung zum Bund war für sie nicht selbstverständlich. Aufgrund dieser Beobachtungen ergänzte das Team auf der Startseite eine deutlichere Bundeskennzeichnung. Ausserdem wurden der Begriff «e-ID» und swiyu wallet in der Hauptnavigation sichtbar gemacht.</p>
+    <p>Einige Teilnehmende erkannten swiyu nicht als Angebot des Schweizer Bundes. Sie vermuteten dahinter ein Start-up, ein privates Unternehmen oder eine eigenständige App. Manche fragten sich, ob sie überhaupt auf der richtigen Website waren, um Informationen zur e-ID zu finden.</p>
+    <div class="cs-result">
+      <span class="cs-result-label">Ergebnis</span>
+      <p>Ich empfahl, die Bundeskennzeichnung in der Navigation zu platzieren und «e-ID» sowie «swiyu Wallet» dort sichtbar zu machen. Das Team wollte zunächst prüfen, ob eine stärkere Kennzeichnung auf der Startseite ausreicht, um das swiyu-Branding nicht zu übertrumpfen. Im Folgetest stellten vereinzelt noch Teilnehmende die Frage, ob es sich wirklich um eine Bundesseite handelt.</p>
+    </div>
   </div>
 </div>
-<div style="border-top:1px solid var(--border);">
+<div>
   <div style="overflow:hidden;"><img src="assets/e-id/cs-03.png" style="width:100%;display:block;" alt="swiyu Website Mockup"></div>
   <span class="cs-caption">Wireframe-Prototyp der Startseite</span>
 </div>
@@ -1341,25 +1438,29 @@
   <div style="max-width:72ch;width:100%;">
     <h2>Was beschäftigt Privatpersonen?</h2>
     <p>Mit den High-Fidelity-Prototypen konnten wir neben der Struktur und den Inhalten auch das Zusammenspiel von Sprache, Produktnamen und visueller Gestaltung überprüfen. Die verwendeten Bilder waren zu diesem Zeitpunkt noch KI-generierte Platzhalter.</p>
-    <p>Das moderne Design wurde mehrfach gelobt. Gleichzeitig wirkte die Website trotz sichtbarer Bundeskennzeichnung auf einige Teilnehmende zu wenig offiziell, was Zweifel an der Vertrauenswürdigkeit auslöste. Die Informationsarchitektur funktionierte hingegen gut: Privatpersonen fanden die relevanten Themen problemlos. Meine Empfehlung: Die Bundeskennzeichnung in der Navigation platzieren und das swiyu-Branding dezenter und bundesnäher gestalten, ohne den modernen Charakter zu verlieren.</p>
+    <p>Das moderne Design wurde mehrfach gelobt. Gleichzeitig wirkte die Website trotz sichtbarer Bundeskennzeichnung auf einige Teilnehmende zu wenig offiziell, was Zweifel an der Vertrauenswürdigkeit auslöste. Die Informationsarchitektur funktionierte hingegen gut: Privatpersonen fanden die relevanten Themen problemlos.</p>
+    <div class="cs-result">
+      <span class="cs-result-label">Ergebnis</span>
+      <p>Ich empfahl erneut, die Bundeskennzeichnung in der Navigation zu platzieren und das swiyu-Branding dezenter und bundesnäher zu gestalten, ohne den modernen Charakter zu verlieren. Das Team setzte beides um. Am abschliessenden Test war ich nicht mehr beteiligt. Mir wurde rückgemeldet, dass die Bundeszugehörigkeit in den darauffolgenden Tests nicht mehr hinterfragt wurde.</p>
+    </div>
   </div>
 </div>
-<div style="border-top:1px solid var(--border);">
+<div>
   <div style="overflow:hidden;"><img src="assets/e-id/cs-04a.png" style="width:100%;display:block;" alt="swiyu Website"></div>
   <span class="cs-caption">High-Fidelity-Prototyp: Startseite für Privatpersonen</span>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
   <div style="max-width:72ch;width:100%;">
     <h2>Was beschäftigt Organisationen?</h2>
-    <p>Bei den Organisationen zeigte sich deutlich mehr Klärungsbedarf. Verstehen sie die verschiedenen Angebote? Finden sie die Informationen, die sie für eine Entscheidung benötigen? Und wissen sie, wie sie starten können?</p>
-    <p><strong>Besonders die Produktnamen sorgten für Verwirrung</strong></p>
-    <p>Begriffe wie «swiyu Check», «swiyu Platform» oder «Vertrauensinfrastruktur» waren für viele nicht selbsterklärend. Da die Teilnehmenden die Seiten häufig nur überflogen, entwickelten sie anhand einzelner Begriffe teilweise falsche Vorstellungen. Statt die Produkte prominent in der Navigation aufzuführen, rückten wir deshalb konkrete Anwendungsfälle in den Vordergrund, beispielsweise «e-ID einfach überprüfen». Erst dort wurde swiyu Check als passende Lösung vorgestellt. Dieser aufgabenorientierte Einstieg funktionierte in den Tests besser.</p>
-    <p>Auch bei den Kosten zeigte sich eine wichtige Erkenntnis: Nicht der Produktpreis war entscheidend, sondern der tatsächliche Integrationsaufwand. Organisationen wollten wissen, welche Kosten durch externe Partner entstehen, welche internen Ressourcen nötig sind und welche technischen Voraussetzungen sie erfüllen müssen.</p>
-    <p class="cs-label"><strong>Meine Empfehlungen</strong></p>
-    <p>Den Produkteinstieg an konkreten Aufgaben und Anwendungsfällen ausrichten, statt die internen Produktnamen in den Vordergrund zu stellen. Gleichzeitig sollten die Unterschiede zwischen den Lösungen sowie Integrationsaufwand, technische Voraussetzungen und nächste Schritte verständlicher erklärt werden.</p>
+    <p>Bei Organisationen zeigte sich mehr Klärungsbedarf als bei Privatpersonen: Verstehen sie die Angebote, finden sie die nötigen Informationen und wissen sie, wie sie starten?</p>
+    <p>Besonders die Produktnamen erzeugten Verwirrung. Begriffe wie «swiyu Check», «swiyu Platform» oder «Vertrauensinfrastruktur» waren für viele nicht selbsterklärend. Da Teilnehmende die Seiten häufig nur überflogen, entstanden anhand einzelner Begriffe falsche Vorstellungen.</p>
+    <div class="cs-result">
+      <span class="cs-result-label">Ergebnis</span>
+      <p>Ich empfahl, den Produkteinstieg an konkreten Anwendungsfällen statt an internen Produktnamen auszurichten. Das Team setzte dies um. Im Folgetest war die Verwirrung bei den Produktnamen deutlich geringer. Das Video zeigt, wie die Website in den weiteren Iterationen weiterentwickelt wurde.</p>
+    </div>
   </div>
 </div>
-<div style="border-top:1px solid var(--border);">
+<div>
   <div style="overflow:hidden;position:relative;" onclick="(function(el){var v=el.querySelector('video'),b=el.querySelector('.cs-play-btn');if(v.paused){v.play();b.style.opacity='0';}else{v.pause();b.style.opacity='1';}})(this)">
     <video src="assets/e-id/swiyu_1.mp4" style="width:100%;display:block;" muted playsinline></video>
     <div class="cs-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.2s;cursor:pointer;">
@@ -1368,14 +1469,13 @@
       </div>
     </div>
   </div>
-  <span class="cs-caption">Screenrecording der Live-Website swiyu.admin.ch</span>
+  <span class="cs-caption">Screenrecording des High-Fidelity-Prototyps swiyu.admin.ch</span>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
   <div style="max-width:72ch;width:100%;">
-    <h2>Und wie geht es weiter?</h2>
-    <p>Mein letzter Usability-Test für <strong>swiyu.admin.ch</strong> fand im Juni 2026 statt. Bis dahin hatte ich die Website von der frühen Informationsarchitektur über Wireframes bis zu mehreren High-Fidelity-Versionen begleitet.</p>
-    <p>Seitdem hat sich die Website weiterentwickelt. Die Screenshots in dieser Case Study zeigen deshalb unterschiedliche Entwicklungsstände und nicht durchgehend die aktuelle Umsetzung.</p>
-    <p>Das Projekt läuft weiter, und ich bin gespannt, wie sich swiyu entwickelt.</p>
+    <h2>Was ich mitgenommen habe</h2>
+    <p>Was mich am meisten fasziniert hat: Vertrauen in ein digitales Produkt entsteht durch viele Parameter gleichzeitig. In einem so politisch aufgeladenen Thema wie der e-ID zeigt sich das besonders deutlich. swiyu war für viele Menschen neu, was die Frage aufwarf, wie ein Team Sicherheit und Glaubwürdigkeit aufbaut. Die Antwort lag im direkten Dialog mit den Nutzenden, auch bei Fragen rund um Branding und Sprache.</p>
+    <p>Auf der Prozessseite habe ich mein Verständnis für Stakeholder-Management vertieft: wie man alle Beteiligten rechtzeitig abholt, Feedback strukturiert einholt und Abstimmungsformate findet, die wirklich helfen. Diese Erfahrung hat mir gezeigt, dass Research nur dann seine volle Wirkung entfaltet, wenn es fest im Projektrhythmus verankert ist.</p>
   </div>
 </div>
 `,
