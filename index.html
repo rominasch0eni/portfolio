@@ -350,17 +350,9 @@
     .outcome-stat h4 { font-family: var(--font-serif); font-size: 48px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .outcome-stat p { margin-top: 8px; }
 
-    .project-next { padding: var(--sp-section) var(--sp-page); background: var(--text-primary); }
-    .project-next .next-eyebrow { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
-    .next-card-link { display: flex; align-items: center; justify-content: space-between; gap: 48px; text-decoration: none; cursor: pointer; }
-    .next-card-link:hover .next-title { opacity: 0.7; }
-    .next-card-link:hover .next-thumb img { transform: scale(1.04); }
-    .next-card-text { flex: 1; }
-    .next-title { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 48px); font-weight: 500; letter-spacing: -1px; color: #fff; transition: opacity 0.3s; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; }
-    .next-title svg path { stroke: #fff; }
-    .next-type { font-size: 16px; color: rgba(255,255,255,0.5); font-weight: var(--w-light); }
-    .next-thumb { width: 260px; flex-shrink: 0; aspect-ratio: 16/9; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); }
-    .next-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .project-next { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); display: flex; justify-content: flex-end; }
+    .next-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 14px; font-weight: var(--w-medium); letter-spacing: 0.04em; color: var(--text-primary); border: 1px solid var(--border); padding: 12px 20px; border-radius: 2px; transition: border-color 0.2s, gap 0.2s; cursor: pointer; background: none; }
+    .next-btn:hover { border-color: var(--text-primary); gap: 14px; }
 
     /* ABOUT PAGE */
     .about-hero { padding: 140px var(--sp-page) var(--sp-section); display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-section); align-items: center; }
@@ -548,8 +540,7 @@
       .gallery-item.full-width { aspect-ratio: 4/3; }
       .project-outcome { padding: 48px 24px; }
       .outcome-stats { grid-template-columns: 1fr; gap: 24px; }
-      .project-next { padding: 48px 24px; }
-      .next-thumb { display: none; }
+      .project-next { padding: 32px 24px; }
       .highlights-grid { grid-template-columns: 1fr; }
       .tools-grid { grid-template-columns: 1fr 1fr; }
       .video-showcase { padding: 0 24px 48px; }
@@ -2342,15 +2333,9 @@
       var _nextImgs = _nextP._resolvedImages || [];
       var nextImgSrc = _nextImgs.length > 0 ? _nextImgs[0].src : '';
       html += '<div class="project-next animate">' +
-        '<div class="next-eyebrow">' + nextLabel + '</div>' +
-        '<a class="next-card-link" href="javascript:void(0)" onclick="showPage(\'project-' + _next.id + '\')">' +
-          '<div class="next-card-text">' +
-            '<div class="next-title">' + _next.name +
-              '<svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-            '</div>' +
-            (nextType ? '<div class="next-type">' + nextType + '</div>' : '') +
-          '</div>' +
-          (nextImgSrc ? '<div class="next-thumb"><img src="' + nextImgSrc + '" alt=""></div>' : '') +
+        '<a class="next-btn" href="javascript:void(0)" onclick="showPage(\'project-' + _next.id + '\')">' +
+          nextLabel + ': ' + _next.name +
+          '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         '</a>' +
       '</div>';
 
