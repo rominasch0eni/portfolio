@@ -138,7 +138,7 @@
       font-family: var(--font-sans) !important;
       font-size: var(--text-label) !important;
       font-weight: var(--w-medium) !important;
-      letter-spacing: 2px !important;
+      letter-spacing: 1px !important;
       text-transform: uppercase !important;
       line-height: 1.4 !important;
     }
@@ -252,7 +252,7 @@
     .visual-1, .visual-2, .visual-3, .visual-4, .visual-5, .visual-6 { background: var(--visual-bg); }
 
     /* PROJECT DETAIL */
-    .project-detail-hero { min-height: 70vh; padding: 140px var(--sp-page) var(--sp-section); display: flex; flex-direction: column; justify-content: flex-end; border-bottom: 1px solid var(--border); }
+    .project-detail-hero { min-height: 45vh; padding: 120px var(--sp-page) var(--sp-section); display: flex; flex-direction: column; justify-content: flex-end; border-bottom: 1px solid var(--border); }
     .project-detail-back { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 400; color: var(--text-muted); text-decoration: none; margin-bottom: 60px; transition: color 0.3s, gap 0.3s; }
     .project-detail-back:hover { color: var(--accent); gap: 12px; }
     .project-detail-hero h1 { font-size: clamp(40px, 6vw, 72px); margin-bottom: 20px; color: var(--text-primary); }
@@ -280,8 +280,9 @@
     .cs-section { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
     .cs-section p { font-size: 18px; text-wrap: pretty; hyphens: none; text-align: left; }
     .cs-caption { font-size: 13px; color: var(--text-muted); padding: 10px var(--sp-page) 28px; margin: 0; display: block; text-align: center; font-style: italic; }
+    .cs-process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
     .cs-result { border-left: 4px solid currentColor; padding: 6px 0 6px 20px; margin-top: 36px; }
-    .cs-result-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 10px; display: block; }
+    .cs-result-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 12px; display: block; }
 
     .cs-result p { font-size: 16px !important; margin: 0; color: var(--text-primary); }
     .cs-section h2 { margin-bottom: 20px; text-wrap: balance; hyphens: none; }
@@ -529,7 +530,7 @@
       .testimonials-grid { grid-template-columns: 1fr; }
       footer { padding: 24px; flex-direction: column; gap: 8px; }
       .scroll-hint { display: none; }
-      .project-detail-hero { padding: 120px 24px 60px; }
+      .project-detail-hero { padding: 72px 24px 60px; }
       .project-detail-content { grid-template-columns: 1fr; padding: 48px 24px; gap: 36px; }
       .resp-grid { grid-template-columns: 1fr; gap: 32px; }
       .process-steps { grid-template-columns: 1fr 1fr; }
@@ -568,6 +569,7 @@
       }
       .cs-phase-grid::-webkit-scrollbar { display: none; }
       .cs-phase-grid > div { flex: 0 0 78%; scroll-snap-align: start; }
+      .cs-process-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
       .cs-stat-numbers {
         display: flex !important;
         overflow-x: auto;
@@ -1316,37 +1318,35 @@
 <div class="cs-section">
   <h2>Mein Vorgehen im Überblick</h2>
   <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">Ich begleitete die Website über mehrere Research-Phasen und überprüfte die Konzepte mit beiden Zielgruppen.</p>
-  <div class="cs-phase-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;">
-    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
-      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">01</div>
-      <h4 style="margin-bottom:8px;">Interviews &amp; Personas</h4>
-      <p style="color:var(--text-muted);">Bedürfnisse, Erwartungen und Bedenken beider Zielgruppen untersucht. Personas abgeleitet.</p>
-      <p style="color:var(--text-muted);font-size:13px;margin-top:12px;">24 Teilnehmende · je 30 Min.</p>
+  <div class="cs-process-grid">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Interviews &amp; Personas</h4>
+      <p>Bedürfnisse, Erwartungen und Bedenken beider Zielgruppen untersucht. Personas abgeleitet.</p>
+      <p style="font-size:14px;margin-top:12px;">24 Teilnehmende · je 30 Min.</p>
     </div>
-    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
-      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">02</div>
-      <h4 style="margin-bottom:8px;">Tree Testing</h4>
-      <p style="color:var(--text-muted);">Zwei Menüstrukturen mit Nutzenden geprüft. Empfehlungen zur Struktur abgeleitet.</p>
-      <p style="color:var(--text-muted);font-size:13px;margin-top:12px;">10 Teilnehmende · je 45 Min.</p>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Tree Testing</h4>
+      <p>Zwei Menüstrukturen mit Nutzenden geprüft. Empfehlungen zur Struktur abgeleitet.</p>
+      <p style="font-size:14px;margin-top:12px;">10 Teilnehmende · je 45 Min.</p>
     </div>
-    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
-      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">03</div>
-      <h4 style="margin-bottom:8px;">Wireframe-Tests</h4>
-      <p style="color:var(--text-muted);">Inhalte, Navigation und Struktur mit beiden Zielgruppen getestet.</p>
-      <p style="color:var(--text-muted);font-size:13px;margin-top:12px;">12 Teilnehmende · je 60 Min.</p>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Wireframe-Tests</h4>
+      <p>Inhalte, Navigation und Struktur mit beiden Zielgruppen getestet.</p>
+      <p style="font-size:14px;margin-top:12px;">12 Teilnehmende · je 60 Min.</p>
     </div>
-    <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;overflow:hidden;">
-      <div style="font-size:clamp(28px,2.5vw,40px);font-weight:300;line-height:1;margin-bottom:14px;color:var(--text-muted);">04</div>
-      <h4 style="margin-bottom:8px;">2 &times; High-Fidelity-Tests</h4>
-      <p style="color:var(--text-muted);">Verständlichkeit, Sprache und Anwendungsfälle im fertigen Design überprüft.</p>
-      <p style="color:var(--text-muted);font-size:13px;margin-top:12px;">18 Teilnehmende · je 60 Min.</p>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">2 &times; High-Fidelity-Tests</h4>
+      <p>Verständlichkeit, Sprache und Anwendungsfälle im fertigen Design überprüft.</p>
+      <p style="font-size:14px;margin-top:12px;">18 Teilnehmende · je 60 Min.</p>
     </div>
   </div>
 
 </div>
-<div class="cs-section" style="text-align:center;padding-top:60px;padding-bottom:0;">
-  <h2 style="font-size:clamp(48px,7vw,96px);font-weight:400;letter-spacing:-0.02em;line-height:1;">Insights</h2>
-</div>
+<div style="border-top:1px solid var(--border);"></div>
 <div class="cs-section" style="display:flex;justify-content:center;border-top:none;">
   <div style="max-width:72ch;width:100%;">
     <h2>Was brauchen Privatpersonen und Organisationen?</h2>
@@ -1461,7 +1461,7 @@
   </div>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
-  <div style="max-width:610px;width:100%;">
+  <div style="max-width:72ch;width:100%;">
     <h2>Die Herausforderung</h2>
     <p>Für das neue E-Banking wurden bereits zahlreiche Konzepte erstellt. Meine Aufgabe ist es, diese mit den Funktionen und Abläufen des bisherigen E-Bankings abzugleichen, offene Punkte zu identifizieren und darauf aufbauend Konzepte und Designs für Web und App zu erstellen.</p>
   </div>
@@ -1469,7 +1469,7 @@
 <div class="cs-section">
   <h2>Mein Vorgehen</h2>
   <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">Von der Analyse bestehender Funktionen bis zum Testen neuer Konzepte.</p>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;">
+  <div class="cs-process-grid">
     <div>
       <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
       <h4 style="margin-bottom:12px;">Abgleichen</h4>
@@ -1493,11 +1493,10 @@
   </div>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
-  <div style="max-width:610px;width:100%;">
-    <div class="cs-result">
-      <span class="cs-result-label">Was ich mitnehme</span>
-      <p>Bei einem über Jahre gewachsenen Produkt lohnt es sich, zuerst genau hinzuschauen: Was funktioniert bereits? Was wird tatsächlich genutzt? Und wo braucht es eine neue Lösung?</p>
-    </div>
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was ich mitnehme</h2>
+    <p>Ich nehme mit, wie ich datenbasiert arbeite: Systemdaten aus dem bestehenden E-Banking und Beobachtungen aus Usability-Tests zusammenzuführen und daraus fundierte Designentscheidungen abzuleiten.</p>
+    <p>Zudem habe ich gelernt, wie man mit einem über Jahre gewachsenen Produkt umgeht. Nicht bei null anfangen, sondern verstehen, was bereits da ist: welche Flows funktionieren, welche Muster sich bewährt haben, und gezielt dort ansetzen, wo eine neue Lösung wirklich nötig ist.</p>
   </div>
 </div>
 `,
@@ -1755,7 +1754,7 @@
   </div>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
-  <div style="max-width:610px;width:100%;">
+  <div style="max-width:72ch;width:100%;">
     <h2>The challenge</h2>
     <p>Numerous concepts have already been created for the new e-banking. My task is to compare these with the features and workflows of the existing e-banking, identify open points, and build on that to create concepts and designs for web and app.</p>
   </div>
@@ -1763,7 +1762,7 @@
 <div class="cs-section">
   <h2>My approach</h2>
   <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">From analysing existing features to testing new concepts.</p>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;">
+  <div class="cs-process-grid">
     <div>
       <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
       <h4 style="margin-bottom:12px;">Align</h4>
@@ -1787,11 +1786,9 @@
   </div>
 </div>
 <div class="cs-section" style="display:flex;justify-content:center;">
-  <div style="max-width:610px;width:100%;">
-    <div class="cs-result">
-      <span class="cs-result-label">What I take away</span>
-      <p>With a product that has grown over years, it pays to look closely first: what already works? What is actually used? And where is a new solution needed?</p>
-    </div>
+  <div style="max-width:72ch;width:100%;">
+    <h2>What I take away</h2>
+    <p>I learned how to work in a data-driven way: combining system data from the existing e-banking with observations from usability tests to derive well-founded design decisions.</p>
   </div>
 </div>
 `,
