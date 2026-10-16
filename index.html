@@ -350,11 +350,9 @@
     .outcome-stat h4 { font-family: var(--font-serif); font-size: 48px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .outcome-stat p { margin-top: 8px; }
 
-    .project-next { padding: var(--sp-section) var(--sp-page); display: flex; justify-content: space-between; align-items: center; }
-    .next-btn, .back-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 14px; font-weight: var(--w-medium); letter-spacing: 0.04em; color: var(--text-primary); border: 1px solid var(--border); padding: 12px 20px; border-radius: 2px; transition: border-color 0.2s; cursor: pointer; background: none; }
-    .next-btn:hover, .back-btn:hover { border-color: var(--text-primary); }
-    .next-btn:hover { gap: 14px; }
-    .back-btn:hover { gap: 6px; }
+    .project-next { padding: var(--sp-section) var(--sp-page); display: flex; justify-content: flex-end; }
+    .next-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 400; color: var(--text-muted); text-decoration: none; transition: color 0.3s, gap 0.3s; cursor: pointer; background: none; border: none; padding: 0; }
+    .next-btn:hover { color: var(--accent); gap: 12px; }
 
     /* ABOUT PAGE */
     .about-hero { padding: 140px var(--sp-page) var(--sp-section); display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-section); align-items: center; }
@@ -2335,10 +2333,6 @@
       var _nextImgs = _nextP._resolvedImages || [];
       var nextImgSrc = _nextImgs.length > 0 ? _nextImgs[0].src : '';
       html += '<div class="project-next animate">' +
-        '<a class="back-btn" href="javascript:void(0)" onclick="showPage(\'main\')">' +
-          '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-          t('nav.work') +
-        '</a>' +
         '<a class="next-btn" href="javascript:void(0)" onclick="showPage(\'project-' + _next.id + '\')">' +
           nextLabel + ': ' + _next.name +
           '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
