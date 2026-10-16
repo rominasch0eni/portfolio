@@ -282,6 +282,8 @@
     .cs-caption { font-size: 13px; color: var(--text-muted); padding: 10px var(--sp-page) 28px; margin: 0; display: block; text-align: center; font-style: italic; }
     .cs-result { border-left: 4px solid currentColor; padding: 6px 0 6px 20px; margin-top: 36px; }
     .cs-result-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 10px; display: block; }
+    .cs-accordion summary::-webkit-details-marker { display: none; }
+    .cs-accordion[open] .cs-accordion-icon { transform: rotate(45deg); }
     .cs-result p { font-size: 16px !important; margin: 0; color: var(--text-primary); }
     .cs-section h2 { margin-bottom: 20px; text-wrap: balance; hyphens: none; }
     .cs-section h4 { text-wrap: balance; hyphens: none; }
@@ -1337,8 +1339,12 @@
       <p style="color:var(--text-muted);">Verständlichkeit, Sprache und Anwendungsfälle im fertigen Design überprüft.</p>
     </div>
   </div>
-  <div style="border-top:1px solid var(--border);margin-top:48px;padding-top:40px;">
-    <h4 style="margin-bottom:20px;">Teilnehmende &amp; Umfang</h4>
+  <details style="border-top:1px solid var(--border);margin-top:48px;padding-top:40px;" class="cs-accordion">
+    <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;margin-bottom:0;">
+      <h4 style="margin:0;">Teilnehmende &amp; Umfang</h4>
+      <span class="cs-accordion-icon" style="font-size:18px;color:var(--text-muted);transition:transform 0.2s;">+</span>
+    </summary>
+    <div style="margin-top:20px;">
     <div class="cs-stat-numbers" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
       <div style="border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
         <h4 style="margin-bottom:10px;">Usability-Tests</h4>
@@ -1420,6 +1426,7 @@
       </div>
     </div>
   </div>
+  </details>
 </div>
 <div class="cs-section" style="text-align:center;padding-top:60px;padding-bottom:0;">
   <h2 style="font-size:clamp(48px,7vw,96px);font-weight:400;letter-spacing:-0.02em;line-height:1;">Insights</h2>
