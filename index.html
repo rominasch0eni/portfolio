@@ -1519,39 +1519,66 @@
       {
         id: 2, num: '02', folder: 'banking',
         name: 'E-Banking Webseite',
-        type: 'UX Konzept · Responsive Web · Prototyping',
+        type: 'UX Konzeption · UX Design · UX Research',
         meta: [
-          { label: 'Rolle', value: 'UX Design' },
-          { label: 'Zeitraum', value: '2024–2025 und 2026' },
-          { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designer, 4 Entwickler' },
+          { label: 'Rolle', value: 'UX Konzeption, UX Design, UX Research' },
+          { label: 'Zeitraum', value: '2024 bis 2026' },
           { label: 'Branche', value: 'Finanzdienstleistungen' }
         ],
-        content: {
-          leftTitle: 'Zwei Welten. Ein Design.',
-          leftText: '<p>Das Web-Banking Konzept entstand nicht auf einer grünen Wiese. Die Grundlage war ein bestehendes Mobile-App-Konzept, das mit einem gewachsenen Legacy E-Banking-System vereint werden musste. Die zentrale Frage war nicht nur wie man Mobile auf Web überträgt, sondern wie man zwei sehr unterschiedliche Welten zu einem stimmigen Ganzen zusammenführt.</p><p class="cs-pullquote">Zwei sehr unterschiedliche Welten zu einem stimmigen Ganzen zusammenführen.</p>',
-          rightTitle: 'Legacy neu denken',
-          rightText: '<p>Legacy-Features, die zwar technisch vorhanden aber wenig nutzerfreundlich waren, mussten integriert werden. Das erforderte enge Zusammenarbeit mit verschiedenen Stakeholdern, um die richtigen Abwägungen zwischen technischen Möglichkeiten und Nutzerbedürfnissen zu treffen.</p><p style="margin-top:16px;font-size:14px;opacity:0.6;">Die UIs wurden für die Präsentation angepasst. Relevante Flows werden aus Vertraulichkeitsgründen nicht gezeigt.</p>'
-        },
-        bottomSection: {
-          title: 'Highlights',
-          html: '<div class="resp-grid"><div class="resp-item"><h4>Meine Bank</h4><p class="cs-label"><strong>Problem:</strong></p><p>Benachrichtigungen, Aktivitäten, Hilfe und Kontakt waren über verschiedene Bereiche verteilt. Eine emotionale Verbindung zur eigenen Bank fehlte.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Ein Floating Button bündelt alle Bereiche und öffnet Zugang zur persönlichen Bank mit Filiale und Beratungsperson. Im Usability-Test nutzten die Teilnehmenden ihn intuitiv — entgegen meiner ersten Hypothese.</p></div><div class="resp-item"><h4>Trading Flow</h4><p class="cs-label"><strong>Problem:</strong></p><p>Der bestehende Trading-Bereich zeigte alle Informationen auf einmal. Für Neulinge und Gelegenheitstrader war das zu viel.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Progressive Disclosure: Informationen werden schrittweise eingeführt, je nach Bedarf. Neulinge werden geführt ohne überfordert zu werden, Vielnutzende kommen schnell vorwärts. Im Quartalstesting navigierten alle Teilnehmenden problemlos durch den gesamten Flow.</p></div></div>'
-        },
-        process: {
-          title: 'Tools',
-          steps: [
-            { num: '01', title: 'Figma', text: 'Wireframes, Konzept und interaktive Prototypen auf Basis des bestehenden Design Systems.' },
-            { num: '02', title: 'FigJam', text: 'Workshops und kollaborative Arbeitsformate mit Stakeholdern und dem Team.' },
-            { num: '03', title: 'Jira', text: 'Aufgaben- und Projektmanagement in einem grossen, agilen Projektumfeld.' },
-            { num: '04', title: 'Confluence', text: 'Dokumentation von Entscheidungen, Konzepten und Abstimmungen.' }
-          ]
-        },
-        videos: {
-          main: { id: '_Ut7Eki1tXk', label: 'Video abspielen' }
-        },
-        outcome: {
-          customOutcome: true,
-          text: 'In grossen Projekten mit vielen Stakeholdern ist Kommunikation genauso wichtig wie Design. Lieber einmal zu viel nachfragen als in die falsche Richtung arbeiten. Mehrere der erarbeiteten Empfehlungen wurden übernommen – das ist für mich die schönste Bestätigung, dass gutes Design und gute Recherche zusammenspielen.'
-        },
+        customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Worum geht es?</h2>
+    <p>Raiffeisen entwickelt sein E-Banking für Web und App neu. Über 20 Jahre sind zahlreiche Funktionen und Abläufe entstanden, die nun in neuen Anwendungen zusammengeführt werden.</p>
+  </div>
+  <div>
+    <h2>Meine Rolle</h2>
+    <p>Ich arbeite an der UX Konzeption für Web und App, erstelle Designs und Prototypen und führe Usability-Tests durch.</p>
+    <p>Da sich das neue E-Banking noch in Entwicklung befindet und ich eine Geheimhaltungsvereinbarung (NDA) unterzeichnet habe, kann ich keine Entwürfe oder vertraulichen Projektdetails zeigen. Meine Aufgaben und mein Vorgehen kann ich jedoch beschreiben.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:610px;width:100%;">
+    <h2>Die Herausforderung</h2>
+    <h3 style="margin-top:24px;margin-bottom:16px;font-size:18px;font-weight:400;">Was gibt es bereits? Was fehlt noch?</h3>
+    <p>Für das neue E-Banking wurden bereits zahlreiche Konzepte erstellt. Meine Aufgabe ist es, diese mit den Funktionen und Abläufen des bisherigen E-Bankings abzugleichen, offene Punkte zu identifizieren und darauf aufbauend Konzepte und Designs für Web und App zu erstellen.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Mein Vorgehen</h2>
+  <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">Von der Analyse bestehender Funktionen bis zum Testen neuer Konzepte.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Abgleichen</h4>
+      <p>Ich vergleiche das bisherige E-Banking mit den neuen Konzepten. Dabei prüfe ich, welche Funktionen bereits berücksichtigt wurden und wo noch Lösungen fehlen.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Nutzungsdaten analysieren</h4>
+      <p>Ich analysiere Daten aus dem bestehenden E-Banking und leite daraus Designentscheidungen ab. Wie häufig wird eine Funktion genutzt? Wie viele Zahlungsempfänger verwalten Nutzende im Median? Diese Informationen helfen mir, Funktionen zu priorisieren und visuelle Hierarchien festzulegen.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Konzipieren</h4>
+      <p>Ich erstelle Konzepte, Designs und Prototypen für Web und App mit Komponenten aus dem bestehenden Designsystem. Wo diese nicht ausreichen, schlage ich neue Komponenten vor.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Testen</h4>
+      <p>Ich moderiere Usability-Tests, werte die Beobachtungen gemeinsam mit dem Team aus und erarbeite Empfehlungen für die Weiterentwicklung.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:610px;width:100%;">
+    <div class="cs-result">
+      <span class="cs-result-label">Was ich mitnehme</span>
+      <p>Bei einem über Jahre gewachsenen Produkt lohnt es sich, zuerst genau hinzuschauen: Was funktioniert bereits? Was wird tatsächlich genutzt? Und wo braucht es eine neue Lösung?</p>
+    </div>
+  </div>
+</div>
+`,
         nextProject: { id: 3, name: 'Augmented Reality App' }
       },
       {
@@ -1787,36 +1814,66 @@
       nextProject: { id: 2, name: 'E-Banking Website' }
     };
     PROJECTS[1].en = {
-      name: 'E-Banking Website', type: 'UX Concept · Responsive Web · Prototyping',
+      name: 'E-Banking Website', type: 'UX Conception · UX Design · UX Research',
       meta: [
-        { label: 'Role', value: 'UX Design' },
-        { label: 'Period', value: '2024–2025 and 2026' },
-        { label: 'Team', value: 'UX Lead, Brand Lead, PO, 2 UI Designers, 4 Developers' },
+        { label: 'Role', value: 'UX Conception, UX Design, UX Research' },
+        { label: 'Period', value: '2024 to 2026' },
         { label: 'Industry', value: 'Financial Services' }
       ],
-      content: {
-        leftTitle: 'Two worlds. One design.',
-        leftText: '<p>A bank\'s new web e-banking wasn\'t built from scratch. The foundation was an existing mobile app concept that had to be merged with a grown legacy e-banking system. The central question was not just how to transfer mobile to web, but how to bring two very different worlds into one consistent whole.</p><p class="cs-pullquote">Merging two very different worlds into one consistent whole.</p>',
-        rightTitle: 'Rethinking legacy',
-        rightText: '<p>Legacy features that were technically available but not user-friendly had to be integrated. This required close collaboration with various stakeholders to make the right trade-offs between technical possibilities and user needs.</p><p style="margin-top:16px;font-size:14px;opacity:0.6;">UIs have been adapted for presentation. Relevant flows are not shown for confidentiality reasons.</p>'
-      },
-      bottomSection: {
-        title: 'Highlights',
-        html: '<div class="resp-grid"><div class="resp-item"><h4>My Bank</h4><p class="cs-label"><strong>Problem:</strong></p><p>Notifications, activities, help and contact were spread across different areas. E-banking lacked any emotional connection to one\'s own bank and advisors.</p><p class="cs-label"><strong>Solution:</strong></p><p>A floating button consolidates all areas and opens access to the personal bank with branch and advisor. In usability testing, users adopted it intuitively — contrary to my initial hypothesis.</p></div><div class="resp-item"><h4>Trading flow</h4><p class="cs-label"><strong>Problem:</strong></p><p>The existing trading area showed all information at once. For newcomers and occasional traders, it was simply too much.</p><p class="cs-label"><strong>Solution:</strong></p><p>Progressive disclosure: information is introduced step by step based on what the user needs. Beginners are guided without being overwhelmed, frequent users move quickly. In quarterly testing all participants navigated through the entire flow without issue.</p></div></div>'
-      },
-      process: {
-        title: 'Tools',
-        steps: [
-          { num: '01', title: 'Figma', text: 'Wireframes, concepts and interactive prototypes built on the existing design system.' },
-          { num: '02', title: 'FigJam', text: 'Workshops and collaborative formats with stakeholders and the team.' },
-          { num: '03', title: 'Jira', text: 'Task and project management in a large agile project environment.' },
-          { num: '04', title: 'Confluence', text: 'Documentation of decisions, concepts and alignment outcomes.' }
-        ]
-      },
-      outcome: {
-        customOutcome: true,
-        text: 'In large projects with many stakeholders, communication matters just as much as design. Better to ask once too many than to work in the wrong direction. Several of the recommendations I developed were adopted – for me that is the best confirmation that good research and good design work together.'
-      },
+      customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>What is it about?</h2>
+    <p>Raiffeisen is rebuilding its e-banking for web and app. Over 20 years, numerous features and workflows have accumulated — now being brought together in new applications.</p>
+  </div>
+  <div>
+    <h2>My role</h2>
+    <p>I work on UX conception for web and app, create designs and prototypes, and conduct usability tests.</p>
+    <p>Since the new e-banking is still under development and I have signed a non-disclosure agreement (NDA), I cannot show any designs or confidential project details. However, I can describe my tasks and approach.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:610px;width:100%;">
+    <h2>The challenge</h2>
+    <h3 style="margin-top:24px;margin-bottom:16px;font-size:18px;font-weight:400;">What already exists? What is still missing?</h3>
+    <p>Numerous concepts have already been created for the new e-banking. My task is to compare these with the features and workflows of the existing e-banking, identify open points, and build on that to create concepts and designs for web and app.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>My approach</h2>
+  <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">From analysing existing features to testing new concepts.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Align</h4>
+      <p>I compare the existing e-banking with the new concepts, checking which features have already been addressed and where solutions are still missing.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Analyse usage data</h4>
+      <p>I analyse data from the existing e-banking and derive design decisions from it. How often is a feature used? How many payment recipients do users manage on average? This helps me prioritise features and define visual hierarchies.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Conceive</h4>
+      <p>I create concepts, designs and prototypes for web and app using components from the existing design system. Where these are insufficient, I propose new components.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Test</h4>
+      <p>I moderate usability tests, analyse observations together with the team, and develop recommendations for further development.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:610px;width:100%;">
+    <div class="cs-result">
+      <span class="cs-result-label">What I take away</span>
+      <p>With a product that has grown over years, it pays to look closely first: what already works? What is actually used? And where is a new solution needed?</p>
+    </div>
+  </div>
+</div>
+`,
       nextProject: { id: 3, name: 'Augmented Reality App' }
     };
     PROJECTS[2].en = {
