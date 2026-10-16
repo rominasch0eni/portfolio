@@ -1512,36 +1512,71 @@
           { label: 'Team', value: '3 Entwickler, Product Lead, Business Lead' },
           { label: 'Branche', value: 'Informationstechnologie' }
         ],
-        content: {
-          leftTitle: 'Eine App, die nicht ankam',
-          leftText: '<p>Die Rimon App sollte Servicetechnikern helfen, komplexe Aufgaben selbstständig zu lösen. Das erste MVP erfüllte diesen Anspruch nicht. Die Herausforderung war zweigeteilt: einerseits eine App die technisch funktioniert aber im Alltag der Techniker nicht ankommt, andererseits Technologien wie AR und AI die für normale Nutzer wenig greifbar sind.</p>',
-          rightTitle: 'Das Problem war nicht die Technologie',
-          rightText: '<p>AR und AI klingen für Technikbegeisterte spannend, für alle anderen sind sie abstrakt und wenig aussagekräftig. Der eigentliche Painpoint der Techniker hatte nichts mit Technologie zu tun, sondern mit Wissensverlust und fehlender Unterstützung im Arbeitsalltag.</p><p class="cs-pullquote">Der eigentliche Painpoint hatte nichts mit AR zu tun.</p>'
-        },
-        bottomSection: {
-          title: 'Highlights',
-          html: '<div class="resp-grid"><div class="resp-item"><h4>Produktlösung</h4><p class="cs-label"><strong>Problem:</strong></p><p>Servicetechniker verlassen Unternehmen und nehmen dabei jahrelanges Erfahrungswissen mit. Neue Mitarbeitende sind auf Kollegen angewiesen, Prozesse werden ineffizient und Wissen geht verloren.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Statt AR und AI in den Vordergrund zu stellen, haben wir eine Analogie entwickelt die jeder versteht. Stell dir vor, dein Kollege Walter der seit 30 Jahren im Unternehmen arbeitet, geht in Pension. Sein gesamtes Wissen verschwindet mit ihm. Genau dafür haben wir den digitalen Walter erfunden: Notizen, Dateien und Aufnahmen werden gespeichert und der digitale Walter begleitet Techniker Schritt für Schritt durch ihre Aufgaben.</p></div><div class="resp-item"><h4>App</h4><p class="cs-label"><strong>Problem:</strong></p><p>Die Rimon App sollte Servicetechniker mit Schritt-für-Schritt-Anleitungen unterstützen. In der Praxis entsprach sie nicht den tatsächlichen Bedürfnissen der Techniker und führte zu Ineffizienzen im Arbeitsalltag.</p><p class="cs-label"><strong>Lösung:</strong></p><p>Basierend auf einer umfangreichen Research-Phase entwickelten wir ein komplett überarbeitetes Interface. Unklare Buttons wurden durch eindeutige, gut erkennbare Elemente ersetzt, die AR-Funktion wurde vereinfacht und in den natürlichen Workflow integriert und die Navigation wurde so umstrukturiert, dass Techniker Aufgaben selbstständig abschliessen können. Das Ergebnis sprach für sich: Alle 6 Teilnehmenden schlossen den Workflow selbstständig ab, alle Buttons wurden sofort erkannt und niemand vermisste relevante Informationen.</p></div></div>'
-        },
-        process: {
-          title: 'Vorgehen',
-          steps: [
-            { num: '01', title: 'Feldforschung', text: 'Beobachtungen und ethnografische Interviews direkt in der Arbeitsumgebung der Servicetechniker.' },
-            { num: '02', title: 'Heuristische Evaluation', text: 'Strukturierte Analyse des bestehenden MVP anhand etablierter Usability-Heuristiken.' },
-            { num: '03', title: 'Design und Wireframes', text: 'Nutzerzentrierte Designstrategie mit Fokus auf kognitive Entlastung, iterativ entwickelt.' },
-            { num: '04', title: 'Testing mit echten Technikern', text: 'Iteratives Testing dort wo die App tatsächlich genutzt wird, nicht im Labor.' }
-          ]
-        },
-        videos: {
-          main: { id: '1BYXDm5p9sY', label: 'Video abspielen' }
-        },
-        outcome: {
-          text: 'Die Research-Arbeit zeigte, dass der grösste Painpoint nicht das Anleiten von Arbeitsschritten war, sondern das Bewahren und Weitergeben von Wissen. Der Fokus verschob sich von klassischen Schritt-für-Schritt-Anleitungen hin zu einer Knowledge-Base-Lösung. Rimon unterstützt heute Kunden dabei, Wissen durch Video- und Sprachaufnahmen festzuhalten und mithilfe von KI in strukturierte Inhalte zu überführen.',
-          stats: [],
-          reflection: {
-            title: 'Persönliche Learnings',
-            text: 'Innovation ist nicht automatisch ein Business Case. Es ist einfacher, einen klaren Mehrwert zu definieren und dann die passende Technologie zu suchen, als umgekehrt mit einer Technologie zu starten und nach einem Anwendungsfall zu suchen.'
-          }
-        },
+        customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Eine App, die nicht ankam</h2>
+    <p>Rimon entwickelte eine Augmented-Reality-App, mit der Unternehmen digitale Anleitungen erstellen und direkt am Einsatzort abrufen konnten.</p>
+    <p>Die Technologie funktionierte. Doch die Resonanz blieb hinter den Erwartungen zurück. Wir mussten herausfinden, weshalb.</p>
+  </div>
+  <div>
+    <h2>Meine Rolle</h2>
+    <p>Als Experience Lead war ich für die UX-Arbeit verantwortlich. Ich untersuchte Kundenbedürfnisse, führte Interviews und Feldstudien durch und arbeitete an der Weiterentwicklung der Produktidee.</p>
+    <p>Daneben gestaltete ich die App mit und beteiligte mich an der Marketingstrategie und am Storytelling.</p>
+  </div>
+</div>
+<div style="padding:0 var(--sp-page) var(--sp-section);">
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;">
+    <iframe src="https://www.youtube.com/embed/1BYXDm5p9sY" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Die Hürde</h2>
+    <p>Das Problem war nicht die Technologie. Wir hatten eine funktionierende Lösung. Aber wussten wir genug darüber, wann und wofür unsere Kunden sie tatsächlich benötigten?</p>
+    <p>Statt weitere Funktionen zu entwickeln, wollten wir zuerst verstehen, welche Schwierigkeiten im Arbeitsalltag bestehen und welche Rolle unsere App dabei spielen könnte.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Mein Vorgehen</h2>
+  <div class="cs-process-grid">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Mit Kunden sprechen</h4>
+      <p>In Interviews untersuchte ich, wie Unternehmen ihre Mitarbeitenden anleiten, Wissen weitergeben und mit wiederkehrenden Problemen umgehen.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Vor Ort beobachten</h4>
+      <p>Bei Feldstudien begleitete ich Mitarbeitende in ihrem Arbeitsumfeld. So konnte ich sehen, wie Aufgaben tatsächlich erledigt werden und wo Schwierigkeiten entstehen.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Produktidee hinterfragen</h4>
+      <p>Erkenntnisse aus Gesprächen und Beobachtungen nutzten wir, um den bisherigen Fokus auf AR-Anleitungen zu überprüfen. Dabei rückte eine grössere Frage in den Vordergrund: Wie können Unternehmen das Wissen erfahrener Mitarbeitender festhalten und anderen zugänglich machen?</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Lösung weiterentwickeln</h4>
+      <p>Ich arbeitete an der Weiterentwicklung der Produktidee und der App. Gleichzeitig beschäftigte ich mich damit, wie wir den Nutzen der Lösung verständlich kommunizieren können.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Das Ergebnis</h2>
+    <p>Aus der ursprünglichen Idee einer AR-Anleitungs-App entwickelte sich ein breiterer Ansatz zur Sicherung und Weitergabe von Expertenwissen.</p>
+    <p>AR blieb eine mögliche Form der Wissensvermittlung, stand aber nicht mehr allein im Mittelpunkt.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was ich mitnehme</h2>
+    <p>Eine funktionierende Technologie beantwortet noch nicht die Frage, ob Menschen sie brauchen.</p>
+    <p>Bei Rimon habe ich gelernt, wie wichtig es ist, eine bestehende Produktidee infrage zu stellen, auch wenn bereits viel Arbeit darin steckt.</p>
+  </div>
+</div>
+`,
         nextProject: { id: 4, name: 'Webseite für Austauschprogramm' }
       },
       {
@@ -1802,33 +1837,71 @@
         { label: 'Team', value: '3 Developers, Product Lead, Business Lead' },
         { label: 'Industry', value: 'Information Technology' }
       ],
-      content: {
-        leftTitle: 'An app that wasn\'t landing',
-        leftText: '<p>The Rimon app was designed to help service technicians solve complex tasks independently. The first MVP did not meet this goal. The challenge was twofold: an app that works technically but does not fit into the technicians\' daily workflow, and technologies like AR and AI that are difficult for everyday users to grasp.</p>',
-        rightTitle: 'The problem wasn\'t the technology',
-        rightText: '<p>AR and AI sound exciting to tech enthusiasts, but for everyone else they are abstract and hard to relate to. The technicians\' actual pain point had nothing to do with technology, it was about knowledge loss and a lack of support in their daily work.</p><p class="cs-pullquote">The real painpoint had nothing to do with AR.</p>'
-      },
-      bottomSection: {
-        title: 'Highlights',
-        html: '<div class="resp-grid"><div class="resp-item"><h4>Product solution</h4><p class="cs-label"><strong>Problem:</strong></p><p>Service technicians leave companies taking years of expertise with them. New employees rely on colleagues, processes become inefficient and knowledge is lost.</p><p class="cs-label"><strong>Solution:</strong></p><p>Instead of putting AR and AI front and centre, we developed an analogy everyone understands. Imagine your colleague Walter, who has worked at the company for 30 years, retires. All his knowledge disappears with him. That\'s exactly why we created the digital Walter: notes, files and recordings are saved, and the digital Walter guides technicians step by step through their tasks.</p></div><div class="resp-item"><h4>App</h4><p class="cs-label"><strong>Problem:</strong></p><p>The Rimon app was meant to support service technicians with step-by-step instructions. In practice it did not reflect their actual needs and led to inefficiencies in their daily work.</p><p class="cs-label"><strong>Solution:</strong></p><p>Based on an extensive research phase we developed a completely redesigned interface. Unclear buttons were replaced with distinct, easily recognisable elements, the AR feature was simplified and integrated into the natural workflow, and navigation was restructured so that technicians can complete tasks independently. The result spoke for itself: all 6 participants completed the workflow independently, all buttons were immediately recognised and nobody missed relevant information.</p></div></div>'
-      },
-      process: {
-        title: 'Approach',
-        steps: [
-          { num: '01', title: 'Field research', text: 'Observations and ethnographic interviews directly in the service technicians\' work environment.' },
-          { num: '02', title: 'Heuristic evaluation', text: 'Structured analysis of the existing MVP using established usability heuristics.' },
-          { num: '03', title: 'Design and wireframes', text: 'User-centred design strategy focused on cognitive offloading, developed iteratively.' },
-          { num: '04', title: 'Testing with real technicians', text: 'Iterative testing where the app is actually used, not in a lab.' }
-        ]
-      },
-      outcome: {
-        text: 'The research showed that the biggest pain point was not guiding work steps, but preserving and sharing knowledge. The focus shifted from classic step-by-step instructions to a knowledge-base solution. Rimon now helps customers capture knowledge through video and audio recordings and convert it into structured content using AI.',
-        stats: [],
-        reflection: {
-          title: 'Personal learnings',
-          text: 'Innovation is not automatically a business case. It is easier to define a clear value proposition first and then find the right technology, than to start with a technology and search for a use case.'
-        }
-      },
+      customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>An app that wasn't landing</h2>
+    <p>Rimon developed an augmented reality app that allowed companies to create digital instructions and access them directly on-site.</p>
+    <p>The technology worked. But the response fell short of expectations. We had to find out why.</p>
+  </div>
+  <div>
+    <h2>My role</h2>
+    <p>As Experience Lead I was responsible for the UX work. I investigated customer needs, conducted interviews and field studies, and worked on developing the product idea further.</p>
+    <p>I also contributed to the app design and was involved in the marketing strategy and storytelling.</p>
+  </div>
+</div>
+<div style="padding:0 var(--sp-page) var(--sp-section);">
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;">
+    <iframe src="https://www.youtube.com/embed/1BYXDm5p9sY" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The hurdle</h2>
+    <p>The problem wasn't the technology. We had a working solution. But did we know enough about when and for what our customers actually needed it?</p>
+    <p>Instead of developing more features, we wanted to first understand what difficulties exist in everyday work and what role our app could play in that.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>My approach</h2>
+  <div class="cs-process-grid">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Talking to customers</h4>
+      <p>In interviews I explored how companies guide their employees, share knowledge, and handle recurring problems.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Observing on-site</h4>
+      <p>During field studies I accompanied employees in their work environment. This let me see how tasks are actually carried out and where difficulties arise.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Questioning the product idea</h4>
+      <p>We used insights from conversations and observations to reassess the existing focus on AR instructions. A broader question moved to the forefront: how can companies capture the knowledge of experienced employees and make it accessible to others?</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">Developing the solution</h4>
+      <p>I worked on developing both the product idea and the app further. At the same time I explored how we could communicate the value of the solution clearly.</p>
+    </div>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The outcome</h2>
+    <p>The original idea of an AR instruction app evolved into a broader approach for capturing and sharing expert knowledge.</p>
+    <p>AR remained a possible form of knowledge transfer, but was no longer the sole focus.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>What I take away</h2>
+    <p>A working technology doesn't answer whether people actually need it.</p>
+    <p>At Rimon I learned how important it is to question an existing product idea, even when a lot of work has already gone into it.</p>
+  </div>
+</div>
+`,
       nextProject: { id: 4, name: 'Exchange Programme Website' }
     };
     PROJECTS[3].en = {
