@@ -1607,32 +1607,75 @@
       {
         id: 4, num: '04', folder: 'exchange',
         name: 'Webseite für Austauschprogramm',
-        type: 'User Interface · Visual Design · Kampagne',
+        type: 'Visual Design · Responsive Webdesign',
         meta: [
           { label: 'Rolle', value: 'Screen Designer' },
-          { label: 'Zeitraum', value: '2021-2022' },
+          { label: 'Zeitraum', value: '2021–2022' },
           { label: 'Team', value: 'Screen Designer, Art Director, Project Manager' },
           { label: 'Branche', value: 'Bildungsbereich' }
         ],
-        content: {
-          leftTitle: 'Bold. Colorful. Dynamisch.',
-          leftText: '<p>Movetia ist eine Schweizer Organisation, die Austauschprogramme und Bildungsmobilität für Schüler, Lehrpersonen und Fachkräfte fördert. Als Screen Designer wirkte ich am User Interface für die «Learning by Going»-Kampagne mit: bold, colorful und dynamisch, mit Jugendlichen und jungen Erwachsenen als Zielgruppe.</p>',
-          rightTitle: 'Kreative Energie ins Interface',
-          rightText: '<p>Die Kampagne lebte von starken Visuals und einer spielerischen Energie. Die Herausforderung war, dieses kreative Versprechen in ein UI zu übersetzen, das über Desktop, Tablet und Mobile hinweg konsistent funktioniert, ohne die Lebendigkeit der Visuals zu verlieren.</p><p class="cs-pullquote">Kreative Energie und Responsive Design sind kein Widerspruch.</p>'
-        },
-        process: {
-          title: 'Designfokus',
-          steps: [
-            { num: '01', title: 'Desktop Design', text: 'Layouts für Desktop: grosse Visuals mit klarer Hierarchie.' },
-            { num: '02', title: 'Mobile Interface', text: 'Navigation und Touch-Interaktionen auf Mobile ausgerichtet.' },
-            { num: '03', title: 'Visuelle Konsistenz', text: 'Gleiche Farbwelt, Typografie und Designsprache auf jedem Gerät.' },
-            { num: '04', title: 'Kampagnen-Integration', text: 'Kampagnen-Visuals direkt in UI-Komponenten eingebettet, Usability bleibt erhalten.' }
-          ]
-        },
-        outcome: {
-          customOutcome: true,
-          text: 'Die enge Arbeit mit dem Art Director war bereichernd. Das kreative Ping-Pong hat die Screens auf ein höheres Level gebracht als ich allein erreicht hätte.<br><br>Rückblickend hätte das UI konsistenter sein können, besonders bei Farben und Buttons. Eine Erkenntnis, die meine Arbeit mit Design Systems seither geprägt hat.'
-        },
+        customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Bold. Colorful. Dynamisch.</h2>
+    <p>Eine Website, die Lust auf einen Austausch macht. Für Learning by Going gestaltete ich einen farbenfrohen Webauftritt mit kräftigen Kontrasten, grosszügiger Typografie und verspielten Illustrationen.</p>
+  </div>
+  <div>
+    <h2>Meine Rolle</h2>
+    <p>Ich war für die visuelle Gestaltung der Website und die Umsetzung der Designs für Desktop, Tablet und Mobile verantwortlich.</p>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/exchange/01-hero.png" style="width:100%;display:block;" alt="Learning by Going Website">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Die Herausforderung</h2>
+    <p class="cs-pullquote">Auffallen, ohne die Orientierung zu verlieren.</p>
+    <p>Die Website sollte die Energie eines Austauschs vermitteln und junge Menschen ansprechen. Gleichzeitig mussten die Inhalte gut lesbar und die Seiten einfach zu bedienen bleiben.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>Mein Vorgehen</h2>
+  <div class="cs-process-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Visuelle Richtung</h4>
+      <p>Eine auffällige Farbwelt mit Typografie und Illustrationen kombinieren.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Interface Design</h4>
+      <p>Layouts und wiederkehrende Elemente gestalten, die trotz unterschiedlicher Farben zusammenpassen.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Responsive Design</h4>
+      <p>Die Gestaltung für Desktop, Tablet und Mobile ausarbeiten.</p>
+    </div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/exchange/02-screen.png" style="width:100%;display:block;" alt="Learning by Going Screen"></div>
+  <div style="overflow:hidden;"><img src="assets/exchange/03-screen.png" style="width:100%;display:block;" alt="Learning by Going Screen"></div>
+</div>
+<div style="border-bottom:1px solid var(--border);overflow:hidden;">
+  <img src="assets/exchange/04-screen.png" style="width:100%;display:block;" alt="Learning by Going Screen">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Das Ergebnis</h2>
+    <p>Ein eigenständiger, farbenfroher Webauftritt, der mit grossen Schriften, Illustrationen und wechselnden Farbwelten spielt, ohne die Inhalte aus dem Blick zu verlieren.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was ich mitnehme</h2>
+    <p class="cs-pullquote">Laut darf sein. Unübersichtlich nicht.</p>
+    <p>Gerade bei einer ausdrucksstarken Gestaltung braucht es klare Hierarchien. Sonst konkurrieren Farben, Formen und Inhalte um dieselbe Aufmerksamkeit.</p>
+  </div>
+</div>
+`,
         nextProject: { id: 5, name: 'Animation Showreel' }
       },
       {
@@ -1955,32 +1998,75 @@
       nextProject: { id: 4, name: 'Exchange Programme Website' }
     };
     PROJECTS[3].en = {
-      name: 'Exchange Programme Website', type: 'User Interface · Visual Design · Campaign',
+      name: 'Exchange Programme Website', type: 'Visual Design · Responsive Web Design',
       meta: [
         { label: 'Role', value: 'Screen Designer' },
         { label: 'Period', value: '2021–2022' },
         { label: 'Team', value: 'Screen Designer, Art Director, Project Manager' },
         { label: 'Industry', value: 'Education' }
       ],
-      content: {
-        leftTitle: 'Bold. Colourful. Dynamic.',
-        leftText: '<p>Movetia is a Swiss organisation promoting exchange programmes and educational mobility for students, teachers and professionals. As screen designer I contributed to the user interface for the "Learning by Going" campaign: bold, colourful and dynamic, targeting young people and young adults.</p>',
-        rightTitle: 'Visual energy into interface',
-        rightText: '<p>The campaign was built on strong visuals and a playful energy. The challenge was to translate that creative promise into a UI that works consistently across desktop, tablet and mobile, without losing the vibrancy of the visuals.</p><p class="cs-pullquote">Visual energy and responsive design are not opposites.</p>'
-      },
-      process: {
-        title: 'Design focus',
-        steps: [
-          { num: '01', title: 'Desktop design', text: 'Layouts for desktop: large visuals with clear hierarchy.' },
-          { num: '02', title: 'Mobile interface', text: 'Navigation and touch interactions adapted for mobile.' },
-          { num: '03', title: 'Visual consistency', text: 'Same colour palette, typography and design language on every device.' },
-          { num: '04', title: 'Campaign integration', text: 'Campaign visuals embedded directly in UI components, usability stays intact.' }
-        ]
-      },
-      outcome: {
-        customOutcome: true,
-        text: 'Working closely with the art director was enriching. The creative ping-pong brought the screens to a higher level than I would have reached alone.<br><br>In hindsight, the UI could have been more consistent, especially around colours and buttons. A lesson that has shaped my work with design systems ever since.'
-      },
+      customHtml: `
+<div class="cs-section cs-two-col">
+  <div>
+    <h2>Bold. Colourful. Dynamic.</h2>
+    <p>A website that makes you want to go on exchange. For Learning by Going, I designed a colourful web presence with bold contrasts, generous typography, and playful illustrations.</p>
+  </div>
+  <div>
+    <h2>My Role</h2>
+    <p>I was responsible for the visual design of the website and the implementation of designs for desktop, tablet, and mobile.</p>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);overflow:hidden;">
+  <img src="assets/exchange/01-hero.png" style="width:100%;display:block;" alt="Learning by Going Website">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The Challenge</h2>
+    <p class="cs-pullquote">Stand out without losing clarity.</p>
+    <p>The website needed to convey the energy of an exchange and appeal to young people. At the same time, the content had to remain readable and the pages easy to use.</p>
+  </div>
+</div>
+<div class="cs-section">
+  <h2>My Approach</h2>
+  <div class="cs-process-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Visual Direction</h4>
+      <p>Combining a bold colour palette with typography and illustrations.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Interface Design</h4>
+      <p>Designing layouts and recurring elements that hold together despite shifting colour worlds.</p>
+    </div>
+    <div>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Responsive Design</h4>
+      <p>Adapting the design for desktop, tablet, and mobile.</p>
+    </div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/exchange/02-screen.png" style="width:100%;display:block;" alt="Learning by Going Screen"></div>
+  <div style="overflow:hidden;"><img src="assets/exchange/03-screen.png" style="width:100%;display:block;" alt="Learning by Going Screen"></div>
+</div>
+<div style="border-bottom:1px solid var(--border);overflow:hidden;">
+  <img src="assets/exchange/04-screen.png" style="width:100%;display:block;" alt="Learning by Going Screen">
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>The Outcome</h2>
+    <p>A distinctive, colourful web presence that plays with large type, illustrations, and shifting colour worlds — without losing sight of the content.</p>
+  </div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>What I Take Away</h2>
+    <p class="cs-pullquote">Bold is fine. Cluttered is not.</p>
+    <p>Especially in expressive design, clear hierarchies are essential. Otherwise colours, shapes, and content compete for the same attention.</p>
+  </div>
+</div>
+`,
       nextProject: { id: 5, name: 'Animation Showreel' }
     };
     PROJECTS[4].en = {
