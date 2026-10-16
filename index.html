@@ -350,10 +350,17 @@
     .outcome-stat h4 { font-family: var(--font-serif); font-size: 48px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .outcome-stat p { margin-top: 8px; }
 
-    .project-next { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    .project-next a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-serif); font-size: 24px; font-weight: 500; letter-spacing: -0.5px; color: var(--text-primary); text-decoration: none; transition: color 0.3s, gap 0.3s; }
-    .project-next a:hover { color: var(--accent); gap: 16px; }
-    .project-next .next-label { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; margin-bottom: 8px; }
+    .project-next { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
+    .project-next .next-eyebrow { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; }
+    .next-card-link { display: flex; align-items: center; justify-content: space-between; gap: 48px; text-decoration: none; cursor: pointer; }
+    .next-card-link:hover .next-title { color: var(--accent); }
+    .next-card-link:hover .next-thumb img { transform: scale(1.04); }
+    .next-card-text { flex: 1; }
+    .next-num { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; display: block; margin-bottom: 10px; }
+    .next-title { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 48px); font-weight: 500; letter-spacing: -1px; color: var(--text-primary); transition: color 0.3s; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; }
+    .next-type { font-size: 16px; color: var(--text-muted); font-weight: var(--w-light); }
+    .next-thumb { width: 260px; flex-shrink: 0; aspect-ratio: 16/9; overflow: hidden; border-radius: 4px; border: 1px solid var(--border); }
+    .next-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 
     /* ABOUT PAGE */
     .about-hero { padding: 140px var(--sp-page) var(--sp-section); display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-section); align-items: center; }
@@ -541,7 +548,8 @@
       .gallery-item.full-width { aspect-ratio: 4/3; }
       .project-outcome { padding: 48px 24px; }
       .outcome-stats { grid-template-columns: 1fr; gap: 24px; }
-      .project-next { padding: 48px 24px; flex-direction: column; gap: 24px; align-items: flex-start; }
+      .project-next { padding: 48px 24px; }
+      .next-thumb { display: none; }
       .highlights-grid { grid-template-columns: 1fr; }
       .tools-grid { grid-template-columns: 1fr 1fr; }
       .video-showcase { padding: 0 24px 48px; }
@@ -2157,12 +2165,11 @@
           '</div>';
       }
 
-      // Full custom case study HTML (bypasses all standard sections)
+      // Full custom case study HTML (bypasses all standard sections except next/contact/footer)
       if (p.customHtml) {
         html += p.customHtml;
-        page.innerHTML = html;
-        return;
-      }
+        // fall through to next-project, contact, footer below
+      } else {
 
       // Content
       if (!p.noContent) {
@@ -2325,14 +2332,28 @@
         });
         html += '</div></div>';
       }
+      } // end else (standard sections)
 
       // Next project
-      var _nextLabelKey = _next.labelOverride ? null : 'proj.next';
       var nextLabel = _next.labelOverride || t('proj.next');
-      html += '<div class="project-next animate"><div>' +
-        '<div class="next-label">' + nextLabel + '</div>' +
-        '<a href="javascript:void(0)" onclick="showPage(\'project-' + _next.id + '\')">' + _next.name + ' <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>' +
-        '</div></div>';
+      var _nextP = PROJECTS.find(function(pr) { return pr.id === _next.id; }) || {};
+      var nextType = pl(_nextP, 'type') || '';
+      var nextNum = _nextP.num || '';
+      var _nextImgs = _nextP._resolvedImages || [];
+      var nextImgSrc = _nextImgs.length > 0 ? _nextImgs[0].src : '';
+      html += '<div class="project-next animate">' +
+        '<div class="next-eyebrow">' + nextLabel + '</div>' +
+        '<a class="next-card-link" href="javascript:void(0)" onclick="showPage(\'project-' + _next.id + '\')">' +
+          '<div class="next-card-text">' +
+            (nextNum ? '<span class="next-num">' + nextNum + '</span>' : '') +
+            '<div class="next-title">' + _next.name +
+              '<svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+            '</div>' +
+            (nextType ? '<div class="next-type">' + nextType + '</div>' : '') +
+          '</div>' +
+          (nextImgSrc ? '<div class="next-thumb"><img src="' + nextImgSrc + '" alt=""></div>' : '') +
+        '</a>' +
+      '</div>';
 
       html += '<div class="about-contact"><h2>' + t('contact.heading') + '</h2>' +
         '<div class="contact-links">' +
