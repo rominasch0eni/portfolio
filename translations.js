@@ -206,6 +206,12 @@ window.TRANSLATIONS = {
     'cv.edu.sfg.meta':    'St. Gallen · Aug 2017 – Jul 2020',
     'cv.edu.kv.title':    'Kaufmännische Angestellte EFZ',
     'cv.edu.kv.meta':     'Zürich · Aug 2013 – Jul 2016',
+
+    'pw.label':  'Geschützter Inhalt',
+    'pw.title':  'Passwort eingeben',
+    'pw.desc':   'Diese Case Study ist passwortgeschützt.',
+    'pw.error':  'Falsches Passwort',
+    'pw.back':   '← Zurück',
   },
 
   en: {
@@ -412,6 +418,12 @@ window.TRANSLATIONS = {
     'cv.edu.sfg.meta':    'St. Gallen · Aug 2017 – Jul 2020',
     'cv.edu.kv.title':    'Commercial Employee EFZ',
     'cv.edu.kv.meta':     'Zurich · Aug 2013 – Jul 2016',
+
+    'pw.label':  'Protected Content',
+    'pw.title':  'Enter password',
+    'pw.desc':   'This case study is password protected.',
+    'pw.error':  'Wrong password',
+    'pw.back':   '← Back',
   }
 };
 

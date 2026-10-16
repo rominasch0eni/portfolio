@@ -201,60 +201,9 @@
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
 
     /* ── Hero Blob Animation (nach Figma, 6.818s Loop) ── */
-    .hero-blob {
-      position: absolute;
-      left: calc(50% - min(100vw - 5px, 100vh - 6px) / 2);
-      top: 3px;
-      width: min(100vw - 5px, 100vh - 6px);
-      height: calc(100% - 6px);
-      background: #fff;
-      mix-blend-mode: difference;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform-origin: center center;
-      scale: 0.14925 1;
-      clip-path: inset(50% 0 50% 0);
-      transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .hero-blob.active {
-      clip-path: inset(0% 0 0% 0);
-      animation: hero-blob-x 9s linear 1 normal forwards, hero-blob-scale 9s linear 1 normal forwards;
-    }
     .hero-title { pointer-events: auto; }
 
-    @keyframes hero-blob-x {
-      0%      { translate: 0px 0px; }
-      4.741%  { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
-              translate: 0px 0px; }
-      12.204% { translate: -125px 0px; }
-      19.648% { animation-timing-function: linear(0, 0.0254, 0.0915, 0.1845, 0.2929, 0.4074, 0.521, 0.6283, 0.7258, 0.8113, 0.8838, 0.9431, 0.9898, 1.0249, 1.0497, 1.0656, 1.0742, 1.077, 1.0754, 1.0705, 1.0635, 1.0552, 1.0464, 1.0376, 1.0293, 1.0217, 1.015, 1.0094, 1.0047, 1.001, 0.9983, 0.9963, 0.995, 0.9943, 0.9941, 0.9942, 0.9945, 0.9951, 0.9957, 0.9964, 0.9971, 0.9977, 0.9983, 0.9988, 0.9992, 0.9996, 0.9999, 1.0001, 1.0003, 1.0004, 1.0004);
-              translate: -125px 0px; }
-      29.334% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
-              translate: 155px 0px; }
-      43.899% { translate: 3.33px 0px; }
-      49.047% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
-              translate: 3.33px 0px; }
-      56.977% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
-              translate: -98.6px 0px; }
-      69.453% { translate: 92.4px 0px; }
-      73.857% { animation-timing-function: linear(0, 0.0188, 0.0679, 0.1374, 0.2195, 0.308, 0.3978, 0.4856, 0.5686, 0.6452, 0.7142, 0.7753, 0.8283, 0.8735, 0.9113, 0.9423, 0.9671, 0.9866, 1.0014, 1.0123, 1.0198, 1.0247, 1.0274, 1.0283, 1.0281, 1.0268, 1.025, 1.0227, 1.0202, 1.0177, 1.0152, 1.0128, 1.0106, 1.0085, 1.0068, 1.0052, 1.0039, 1.0028, 1.0018, 1.0011, 1.0005, 1, 0.9997, 0.9995, 0.9993, 0.9992, 0.9992, 0.9992, 0.9992, 0.9993, 0.9993);
-              translate: -98.6px 0px; }
-      88.216% { translate: 0px 0px; }
-      100%    { translate: 0px 0px; }
-    }
-
-    @keyframes hero-blob-scale {
-      0%      { scale: 0.14925 1; }
-      29.334% { animation-timing-function: linear(0, 0.0388, 0.1387, 0.2768, 0.4332, 0.5915, 0.7396, 0.8692, 0.9754, 1.0563, 1.1124, 1.1458, 1.16, 1.1587, 1.146, 1.1258, 1.1014, 1.0757, 1.051, 1.0289, 1.0102, 0.9956, 0.985, 0.9782, 0.9748, 0.9741, 0.9755, 0.9783, 0.9821, 0.9862, 0.9903, 0.994, 0.9972, 0.9999, 1.0018, 1.0031, 1.0039, 1.0042, 1.0041, 1.0037, 1.0031, 1.0025, 1.0018, 1.0012, 1.0006, 1.0002, 0.9998, 0.9996, 0.9994, 0.9993, 0.9993);
-              scale: 0.14925 1; }
-      54.5%   { scale: 1 1; }
-      73.769% { animation-timing-function: linear(0, 0.0315, 0.1132, 0.2272, 0.3583, 0.4943, 0.6257, 0.7459, 0.8505, 0.9371, 1.0053, 1.0557, 1.0897, 1.1096, 1.1178, 1.1168, 1.1091, 1.0968, 1.0818, 1.0658, 1.0499, 1.0351, 1.022, 1.0109, 1.0021, 0.9954, 0.9906, 0.9877, 0.9863, 0.986, 0.9867, 0.988, 0.9896, 0.9915, 0.9934, 0.9952, 0.9969, 0.9983, 0.9994, 1.0003, 1.0009, 1.0014, 1.0016, 1.0017, 1.0016, 1.0015, 1.0013, 1.0011, 1.0009, 1.0006, 1.0004);
-              scale: 1 1; }
-      88.216% { scale: 0.14925 1; }
-      100%    { scale: 0.14925 1; }
-    }
-    .scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); transition: opacity 0.4s ease; }
+.scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: var(--scroll-opacity, 0.5); transition: opacity 0.4s ease; }
     .scroll-hint span { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 500; }
     .scroll-line { width: 2.5px; height: 40px; background: var(--accent); animation: scrollPulse 2s ease infinite; }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.5); } 50% { opacity: 1; transform: scaleY(1); } }
@@ -326,6 +275,9 @@
 
     /* ── swiyu Case Study Layout ── */
     .cs-section { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
+    .cs-section p { font-size: 18px; text-wrap: pretty; hyphens: none; text-align: left; }
+    .cs-caption { font-size: 13px; color: var(--text-muted); padding: 10px var(--sp-page) 28px; margin: 0; display: block; text-align: center; font-style: italic; }
+    .cs-section h2, .cs-section h4 { text-wrap: balance; hyphens: none; }
     .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-gap-lg); align-items: start; }
     .cs-spread { display: grid; grid-template-columns: 2fr 3fr; gap: var(--sp-gap-lg); align-items: start; }
     .cs-big-quote { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); text-align: center; }
@@ -937,6 +889,46 @@
 
     /* Accordion hover border */
     .accordion-item:hover { border-bottom: 2px solid var(--accent); }
+
+    /* ── Password Gate ── */
+    .pw-modal {
+      position: fixed; inset: 0; z-index: 99999;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pw-modal[hidden] { display: none; }
+    .pw-box {
+      display: flex; flex-direction: column; gap: 24px;
+      width: 320px; padding: 48px 0;
+    }
+    .pw-box h2 { font-size: clamp(22px,3vw,28px); font-weight: 400; margin: 0; line-height: 1.2; }
+    .pw-box .pw-desc { font-size: 14px; color: var(--text-muted, #888); margin: 0; }
+    .pw-input-row { display: flex; gap: 0; border-bottom: 1.5px solid var(--text); }
+    .pw-input-row input[type="password"] {
+      flex: 1; background: transparent; border: none; outline: none;
+      font-size: 16px; padding: 10px 0; color: var(--text);
+      font-family: inherit; letter-spacing: 2px;
+    }
+    .pw-input-row button {
+      background: none; border: none; cursor: pointer; padding: 10px 0 10px 12px;
+      color: var(--text); display: flex; align-items: center;
+    }
+    .pw-input-row button svg { display: block; }
+    .pw-error {
+      font-size: 13px; color: #c0392b; margin: 0;
+      animation: pwShake 0.35s ease;
+    }
+    .pw-back {
+      font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text-muted, #888); background: none; border: none;
+      cursor: pointer; padding: 0; text-align: left; font-family: inherit;
+    }
+    .pw-back:hover { color: var(--accent); }
+    @keyframes pwShake {
+      0%,100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
   </style>
   <script src="translations.js"></script>
   <script src="assets/manifest.js"></script>
@@ -1009,7 +1001,6 @@
   <div id="page-main" class="page active">
 
     <section class="hero">
-      <div class="hero-blob"></div>
       <!-- CUBE – uncomment to restore: <canvas id="rubik-canvas"></canvas> -->
 
       <div class="hero-content">
@@ -1255,27 +1246,24 @@
 <div class="cs-section cs-two-col">
   <div>
     <h2>Intro</h2>
-    <p>Die Schweizer e-ID war vielen Menschen bereits ein Begriff. Schliesslich wurde darüber politisch abgestimmt. Aber was ist eigentlich <strong>swiyu</strong>? Ein Start-up? Ein ausländisches Unternehmen? Oder steckt doch der Schweizer Bund dahinter?</p>
-    <p>Solche Fragen begegneten mir in den Interviews und Usability-Tests für swiyu. Sie zeigten, dass es nicht nur darum ging, eine neue Technologie nutzbar zu machen.</p>
-    <p>Die Menschen mussten zuerst verstehen, was <strong>swiyu</strong> ist, wie es funktioniert und wem sie dabei vertrauen.</p>
-    <p class="cs-col-quote">«Aber was ist eigentlich swiyu?»</p>
+    <p>Die Schweizer e-ID war vielen Menschen bereits ein Begriff. Schliesslich wurde darüber politisch abgestimmt. Aber was ist eigentlich swiyu? Ein Start-up? Ein ausländisches Unternehmen? Oder steckt doch der Schweizer Bund dahinter? Vielleicht fragst du dich das selber, denn solche Fragen begegneten mir in den Interviews und Usability-Tests für swiyu.</p>
+    <p>swiyu ist eine digitale Brieftasche, bei der deine e-ID, dein Führerausweis wie auch dein Strafregisterauszug aufbewahrt werden kann. Es besitzt unterschiedliche Technologien, um die Sicherheit wichtiger Dokumente zu gewährleisten.</p>
   </div>
   <div>
     <h2>Meine Rolle bei swiyu</h2>
-    <p>Beim Bundesamt für Informatik arbeitete ich im UX Research und in der UX-Konzeption. Mein Aufgabenbereich umfasste sowohl die swiyu Wallet App als auch die Website <strong>swiyu.admin.ch</strong>. Ich plante, moderierte und analysierte Interviews und Usability-Tests mit Privatpersonen und Organisationen. Dabei untersuchte ich, wie Menschen die Produkte verstehen, welche Fragen bei der Nutzung entstehen und wo Konzepte oder Abläufe noch nicht funktionieren. Aus den Ergebnissen leitete ich Empfehlungen für User Flows, Informationsarchitektur, Produktverständnis und Kommunikation ab. Diese präsentierte ich dem Projektteam sowie Vertreterinnen und Vertretern verschiedener Bundesämter.</p>
-    <p>In der Konzeption und Gestaltung war ich beratend tätig. Die Verantwortung für das Design lag beim jeweiligen Designteam. Neben der Projektarbeit half ich dabei, den Research bei swiyu strukturell weiterzuentwickeln. Ich etablierte standardisierte Prozesse und ein zentrales Research-Repository, mit denen Erkenntnisse aus verschiedenen Studien zugänglich blieben. Gemeinsam mit Marketing trug ich ausserdem dazu bei, den internen User-Pool von 600 auf 6'000 Personen auszubauen.</p>
+    <p>Beim Bundesamt für Informatik arbeitete ich im UX Research und in der UX-Konzeption. Mein Aufgabenbereich umfasste das ganze swiyu Ökosystem. Ich plante, moderierte und analysierte Interviews und Usability-Tests mit Privatpersonen und Organisationen. Aus den Ergebnissen leitete ich Empfehlungen für User Flows, Informationsarchitektur, Produktverständnis und Kommunikation ab. Diese präsentierte ich dem Projektteam sowie Vertreterinnen und Vertretern verschiedener Bundesämter.</p>
+    <p>In der Konzeption und Gestaltung war ich beratend tätig. Die Verantwortung für das Design lag beim jeweiligen Designteam und die Konzeption beim Service Design Team.</p>
   </div>
 </div>
-<div class="cs-section cs-two-col">
-  <div>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-01.png" style="width:100%;display:block;" alt="swiyu.admin.ch"></div>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
     <h2>Die Case Study: swiyu.admin.ch</h2>
-    <p>Für diese Case Study nehme ich dich mit in die Entwicklung von <strong>swiyu.admin.ch</strong>.</p>
-    <p>Das Projektteam entwickelte eine neue Website, die die bisherige Informationsseite zur Schweizer e-ID ablösen sollte. Gleichzeitig sollte sie mehr als eine reine Informationsseite sein. Privatpersonen sollten erfahren, was die swiyu Wallet ist, wie die e-ID und weitere digitale Nachweise darin funktionieren und wie sie die Wallet nutzen können.</p>
-    <p>Organisationen sollten konkrete Anwendungsmöglichkeiten, Produktlösungen und Informationen zum Einstieg in das swiyu-Ökosystem finden.</p>
-    <p>Die Website sollte damit eine zentrale Anlaufstelle für beide Zielgruppen werden. Ich war von Anfang an in die Entwicklung eingebunden.</p>
-  </div>
-  <div>
-    <h2>Die Herausforderung</h2>
+    <p>Für diese Case Study nehme ich dich mit in die Entwicklung von <strong>swiyu.admin.ch</strong>. Das Projektteam entwickelte eine neue Website, die die bisherige Informationsseite zur Schweizer e-ID ablösen sollte. Gleichzeitig sollte sie mehr als eine reine Informationsseite sein. Privatpersonen sollten erfahren, was die swiyu Wallet ist, wie die e-ID und weitere digitale Nachweise darin funktionieren und wie sie die Wallet nutzen können.</p>
+    <p>Organisationen sollten konkrete Anwendungsmöglichkeiten, Produktlösungen und Informationen zum Einstieg in das swiyu-Ökosystem finden. Die Website sollte damit eine zentrale Anlaufstelle für beide Zielgruppen werden. Ich war von Anfang an in die Entwicklung eingebunden.</p>
+    <h2 style="margin-top:60px;">Die Herausforderung</h2>
     <p>Die e-ID war für einige Menschen bereits ein bekanntes Thema. Andere hatten sich kaum damit beschäftigt. Doch selbst wer die e-ID kannte, verstand nicht unbedingt, was swiyu damit zu tun hatte. Was ist der Unterschied zwischen e-ID und Wallet? Welche weiteren Nachweise kann man darin speichern? Wer kann solche Nachweise ausstellen?</p>
     <p>Bei Organisationen kamen andere Fragen hinzu.</p>
     <p>Welche Lösung passt zu uns? Was unterscheidet das Produkt swiyu Check von swiyu Platform? Was kostet die Integration? Und welche technischen Voraussetzungen müssen wir erfüllen?</p>
@@ -1283,105 +1271,112 @@
 </div>
 <div class="cs-section">
   <h2>Mein Vorgehen im Überblick</h2>
-  <p style="margin-top:16px;max-width:660px;">Ich begleitete die Website über mehrere Research-Phasen und überprüfte die Konzepte mit beiden Zielgruppen.</p>
-  <div class="cs-vorgehen-grid">
+  <p style="margin-top:16px;max-width:800px;color:var(--text-muted);">Ich begleitete die Website über mehrere Research-Phasen und überprüfte die Konzepte mit beiden Zielgruppen.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;">
     <div>
-      <span class="cs-step-num">01</span>
-      <h3>Interviews &amp; Personas</h3>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">01</div>
+      <h4 style="margin-bottom:12px;">Interviews &amp; Personas</h4>
       <p>Gespräche mit Privatpersonen und Organisationen geplant, moderiert und ausgewertet. Vorwissen, Erwartungen, Bedürfnisse und Bedenken untersucht. Daraus Personas abgeleitet.</p>
     </div>
     <div>
-      <span class="cs-step-num">02</span>
-      <h3>Tree Testing</h3>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">02</div>
+      <h4 style="margin-bottom:12px;">Tree Testing</h4>
       <p>Zwei Navigationsstrukturen in moderierten Tests überprüft und Empfehlungen für die Informationsarchitektur abgeleitet.</p>
     </div>
     <div>
-      <span class="cs-step-num">03</span>
-      <h3>Wireframe-Tests</h3>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">03</div>
+      <h4 style="margin-bottom:12px;">Wireframe-Tests</h4>
       <p>Usability-Tests mit Privatpersonen und Organisationen geplant, moderiert und protokolliert.</p>
     </div>
     <div>
-      <span class="cs-step-num">04</span>
-      <h3>2 × High-Fidelity-Tests</h3>
+      <div style="font-size:clamp(32px,3vw,48px);font-weight:300;line-height:1;margin-bottom:20px;opacity:0.2;">04</div>
+      <h4 style="margin-bottom:12px;">2 &times; High-Fidelity-Tests</h4>
       <p>Verständlichkeit, Navigation, Anwendungsfälle und nächste Schritte mit beiden Zielgruppen getestet.</p>
     </div>
   </div>
 </div>
-<div class="cs-stat-box">
-  <div class="cs-stat-cell"><span class="cs-stat-val">32</span><span class="cs-stat-label">Usability-Sessions</span></div>
-  <div class="cs-stat-cell"><span class="cs-stat-val">4</span><span class="cs-stat-label">Prototypen getestet</span></div>
-  <div class="cs-stat-cell"><span class="cs-stat-val">19</span><span class="cs-stat-label">Teilnehmende Organisationen</span></div>
-  <div class="cs-stat-cell"><span class="cs-stat-val">13</span><span class="cs-stat-label">Teilnehmende Privatpersonen</span></div>
+<div class="cs-section" style="text-align:center;padding-top:60px;padding-bottom:60px;">
+  <h2 style="font-size:clamp(48px,7vw,96px);font-weight:400;letter-spacing:-0.02em;line-height:1;">Insights</h2>
 </div>
-<div class="cs-section">
-  <div class="cs-half">
-    <span class="cs-section-num">01</span>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-team.png" style="width:100%;display:block;" alt="Research Session"></div>
+  <span class="cs-caption">Remote-Usability-Test via Microsoft Teams</span>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
     <h2>Was wissen die Menschen bereits über die e-ID?</h2>
-    <p>Bevor wir die Website im Detail überprüften, war wichtig zu verstehen, mit welchem Vorwissen die Menschen an swiyu herangehen. Die meisten Teilnehmenden hatten bereits von der Schweizer e-ID gehört und eine ungefähre Vorstellung davon, was sie ist. Gleichzeitig gab es Menschen mit wenig oder gar keinem Vorwissen. Nur wenige schätzten ihre Kenntnisse als sehr gut ein.</p>
+    <p>Bevor wir die Website im Detail überprüften, war es wichtig zu verstehen, mit welchem Vorwissen die Menschen an swiyu herangehen. Die meisten Teilnehmenden hatten bereits von der Schweizer e-ID gehört und eine ungefähre Vorstellung davon, was sie ist. Gleichzeitig gab es Menschen mit wenig oder gar keinem Vorwissen. Nur wenige schätzten ihre Kenntnisse als sehr gut ein.</p>
     <p>Das war für die Tests besonders interessant. Die Website musste sowohl Menschen abholen, die sich bereits mit der e-ID beschäftigt hatten, als auch solche, die das Thema zum ersten Mal genauer kennenlernen wollten.</p>
     <p>In den Interviews und Usability-Tests zeigte sich zudem, dass die Bekanntheit der e-ID nicht automatisch bedeutete, dass die Zusammenhänge zwischen e-ID, swiyu Wallet und weiteren digitalen Nachweisen verstanden wurden.</p>
   </div>
 </div>
-<div class="cs-img-split">
-  <div class="cs-img-side">Bild folgt</div>
-  <div class="cs-section">
-    <span class="cs-section-num">02</span>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-02.png" style="width:100%;display:block;" alt="Vorwissen Chart"></div>
+  <span class="cs-caption">Selbsteingeschätztes Vorwissen der Teilnehmenden zur e-ID</span>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
     <h2>Erste Informationsarchitektur und Tree Testing</h2>
-    <p>Am Anfang der Website-Entwicklung stand die Frage, wie sich die unterschiedlichen Inhalte sinnvoll strukturieren lassen. Privatpersonen suchten Informationen über die e-ID, die Wallet und deren Nutzung. Organisationen interessierten sich für Anwendungsfälle, technische Voraussetzungen und die verschiedenen Lösungen. Ich plante und moderierte Tree Tests mit zwei Navigationsvarianten. Die Teilnehmenden sollten bestimmte Informationen finden und zeigen, unter welchen Menüpunkten sie diese erwarteten. Dabei zeigte sich, dass beide Zielgruppen einen eigenen, klar erkennbaren Einstieg beziehungsweise Informationsbereich erwarteten. Aus den Ergebnissen leitete ich Empfehlungen für die weitere Informationsarchitektur ab.</p>
+    <p>Am Anfang der Website-Entwicklung stand die Frage, wie sich die unterschiedlichen Inhalte sinnvoll strukturieren lassen. Privatpersonen suchten Informationen über die e-ID, die Wallet und deren Nutzung. Organisationen interessierten sich für Anwendungsfälle, technische Voraussetzungen und die verschiedenen Lösungen.</p>
+    <p>Ich plante und moderierte Tree Tests mit zwei Navigationsvarianten, die gemeinsam mit dem Service Design erarbeitet wurden. Die Teilnehmenden sollten bestimmte Informationen finden und zeigen, unter welchen Menüpunkten sie diese erwarteten. Dabei zeigte sich, dass beide Zielgruppen einen eigenen, klar erkennbaren Einstieg beziehungsweise Informationsbereich erwarteten. Aus den Ergebnissen leitete ich Empfehlungen für die weitere Informationsarchitektur ab.</p>
   </div>
 </div>
-<div class="cs-section">
-  <div class="cs-half">
-    <span class="cs-section-num">03</span>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-tree.png" style="width:100%;display:block;" alt="Tree Testing Struktur"></div>
+  <span class="cs-caption">Navigationsstruktur für den Tree Test</span>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
     <h2>Funktioniert die Struktur auch als Website?</h2>
-    <p>Auf Basis der Informationsarchitektur entstand ein erster Wireframe-Prototyp. Damit konnten wir überprüfen, wie sich die Inhalte innerhalb einer Website anfühlen und ob sich die beiden Zielgruppen darin orientieren können.</p>
-    <p>Ich plante und moderierte Usability-Tests mit Privatpersonen und Organisationen. Im Mittelpunkt standen die Verständlichkeit der Inhalte, die Navigation und die Erwartungen an die einzelnen Seiten.</p>
-    <p>Die Tests halfen uns, die Konzepte aus Sicht der Nutzenden zu überprüfen, bevor die Website visuell weiter ausgearbeitet wurde.</p>
+    <p>Auf Basis der Informationsarchitektur entstand ein erster Wireframe-Prototyp. Damit konnten wir überprüfen, wie sich die Inhalte innerhalb einer Website anfühlen und ob sich die beiden Zielgruppen darin orientieren können. Im Mittelpunkt standen die Verständlichkeit der Inhalte, die Navigation und die Erwartungen an die einzelnen Seiten. Die Tests halfen uns, die Konzepte aus Sicht der Nutzenden zu überprüfen, bevor die Website visuell weiter ausgearbeitet wurde.</p>
+    <p class="cs-pullquote">«Ist das wirklich eine Website vom Bund?»</p>
+    <p>Einige Teilnehmende erkannten swiyu nicht als Angebot des Schweizer Bundes. Sie vermuteten dahinter ein Start-up, ein privates Unternehmen oder eine eigenständige App. Manche fragten sich, ob sie überhaupt auf der richtigen Website waren, um Informationen zur e-ID zu finden. Die Verbindung zum Bund war für sie nicht selbstverständlich. Aufgrund dieser Beobachtungen ergänzte das Team auf der Startseite eine deutlichere Bundeskennzeichnung. Ausserdem wurden der Begriff «e-ID» und swiyu wallet in der Hauptnavigation sichtbar gemacht.</p>
   </div>
 </div>
-<div class="cs-img-split">
-  <div class="cs-img-side">Bild folgt</div>
-  <div class="cs-section">
-    <span class="cs-section-num">04</span>
-    <h2>Erster High-Fidelity-Prototyp</h2>
-    <p>Mit dem ersten High-Fidelity-Prototyp konnten wir neben Struktur und Inhalten auch das Zusammenspiel von Sprache, Produktnamen und visueller Gestaltung überprüfen. Ich testete die Website mit Privatpersonen und Organisationen. Dabei wurden mehrere Verständnisprobleme sichtbar.</p>
-    <p class="cs-hifi-quote">«Ist das wirklich eine Website vom Bund?»</p>
-    <p>Einige Teilnehmende erkannten swiyu nicht als Angebot des Schweizer Bundes. Sie vermuteten dahinter ein Start-up, ein privates Unternehmen oder eine eigenständige App. Manche fragten sich, ob sie überhaupt auf der richtigen Website waren, um Informationen zur e-ID zu finden. Die Verbindung zum Bund war für sie nicht selbstverständlich. Aufgrund dieser Beobachtungen ergänzte das Team auf der Startseite eine deutlichere Bundeskennzeichnung. Ausserdem wurde der Begriff «e-ID» in der Hauptnavigation sichtbar gemacht.</p>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-03.png" style="width:100%;display:block;" alt="swiyu Website Mockup"></div>
+  <span class="cs-caption">Wireframe-Prototyp der Startseite</span>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was beschäftigt Privatpersonen?</h2>
+    <p>Mit den High-Fidelity-Prototypen konnten wir neben der Struktur und den Inhalten auch das Zusammenspiel von Sprache, Produktnamen und visueller Gestaltung überprüfen. Die verwendeten Bilder waren zu diesem Zeitpunkt noch KI-generierte Platzhalter.</p>
+    <p>Das moderne Design wurde mehrfach gelobt. Gleichzeitig wirkte die Website trotz sichtbarer Bundeskennzeichnung auf einige Teilnehmende zu wenig offiziell, was Zweifel an der Vertrauenswürdigkeit auslöste. Die Informationsarchitektur funktionierte hingegen gut: Privatpersonen fanden die relevanten Themen problemlos. Meine Empfehlung: Die Bundeskennzeichnung in der Navigation platzieren und das swiyu-Branding dezenter und bundesnäher gestalten, ohne den modernen Charakter zu verlieren.</p>
   </div>
 </div>
-<div class="cs-section cs-spread">
-  <div>
-    <span class="cs-section-num">05</span>
-    <h2>Wie finden Organisationen die passende Lösung?</h2>
-    <p class="cs-case-subtitle">Weiterentwickelter High-Fidelity-Prototyp</p>
-  </div>
-  <div>
-    <p>In einer weiteren Testrunde konzentrierte ich mich auf den Organisationsbereich: Sind die verschiedenen Angebote verständlich? Welche Informationen fehlen für eine Entscheidung? Erkennen die Teilnehmenden den nächsten Schritt?</p>
-    <h3 class="cs-sub-h">Vom Produktnamen zum Anwendungsfall</h3>
-    <p>Statt <strong>swiyu Check</strong> als eigenständigen Produktnamen prominent in der Navigation zu platzieren, wurde das Angebot stärker über konkrete Anwendungsfälle erschlossen — zum Beispiel über «e-ID einfach überprüfen». Erst innerhalb dieses Anwendungsfalls begegneten die Nutzenden swiyu Check als mögliche Lösung. Dieser Ansatz funktionierte in den Tests besser.</p>
-    <h3 class="cs-sub-h">Viele lasen nicht alles, sondern scannten</h3>
-    <p>Viele Teilnehmende überflogen die Seiten und bildeten sich aus Überschriften und einzelnen Begriffen eine eigene Erklärung. In der weiteren Entwicklung wurden deshalb Produktnamen in der Navigation zurückgenommen — zugunsten von Begriffen, die näher an den Aufgaben der Nutzenden lagen.</p>
-    <h3 class="cs-sub-h">Was kostet die Integration wirklich?</h3>
-    <p>Bei Organisationen war der Preis häufig nicht die wichtigste Frage. Viel entscheidender waren die Kosten für eine Integration mit einem Partner, der interne Aufwand und die technischen Voraussetzungen. Eine Preisübersicht allein beantwortete diese Fragen nicht.</p>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;"><img src="assets/e-id/cs-04a.png" style="width:100%;display:block;" alt="swiyu Website"></div>
+  <span class="cs-caption">High-Fidelity-Prototyp: Startseite für Privatpersonen</span>
+</div>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Was beschäftigt Organisationen?</h2>
+    <p>Bei den Organisationen zeigte sich deutlich mehr Klärungsbedarf. Verstehen sie die verschiedenen Angebote? Finden sie die Informationen, die sie für eine Entscheidung benötigen? Und wissen sie, wie sie starten können?</p>
+    <p><strong>Besonders die Produktnamen sorgten für Verwirrung</strong></p>
+    <p>Begriffe wie «swiyu Check», «swiyu Platform» oder «Vertrauensinfrastruktur» waren für viele nicht selbsterklärend. Da die Teilnehmenden die Seiten häufig nur überflogen, entwickelten sie anhand einzelner Begriffe teilweise falsche Vorstellungen. Statt die Produkte prominent in der Navigation aufzuführen, rückten wir deshalb konkrete Anwendungsfälle in den Vordergrund, beispielsweise «e-ID einfach überprüfen». Erst dort wurde swiyu Check als passende Lösung vorgestellt. Dieser aufgabenorientierte Einstieg funktionierte in den Tests besser.</p>
+    <p>Auch bei den Kosten zeigte sich eine wichtige Erkenntnis: Nicht der Produktpreis war entscheidend, sondern der tatsächliche Integrationsaufwand. Organisationen wollten wissen, welche Kosten durch externe Partner entstehen, welche internen Ressourcen nötig sind und welche technischen Voraussetzungen sie erfüllen müssen.</p>
+    <p class="cs-label"><strong>Meine Empfehlungen</strong></p>
+    <p>Den Produkteinstieg an konkreten Aufgaben und Anwendungsfällen ausrichten, statt die internen Produktnamen in den Vordergrund zu stellen. Gleichzeitig sollten die Unterschiede zwischen den Lösungen sowie Integrationsaufwand, technische Voraussetzungen und nächste Schritte verständlicher erklärt werden.</p>
   </div>
 </div>
-<div class="cs-section cs-spread">
-  <div>
-    <span class="cs-section-num">06</span>
-    <h2>Die Fragen gingen über die Website hinaus.</h2>
+<div style="border-top:1px solid var(--border);">
+  <div style="overflow:hidden;position:relative;" onclick="(function(el){var v=el.querySelector('video'),b=el.querySelector('.cs-play-btn');if(v.paused){v.play();b.style.opacity='0';}else{v.pause();b.style.opacity='1';}})(this)">
+    <video src="assets/e-id/swiyu_1.mp4" style="width:100%;display:block;" muted playsinline></video>
+    <div class="cs-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.2s;cursor:pointer;">
+      <div style="width:72px;height:72px;background:rgba(255,255,255,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,0.18);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><polygon points="6,4 20,12 6,20" fill="#111"/></svg>
+      </div>
+    </div>
   </div>
-  <div>
-    <p>Während der verschiedenen Testrunden zeigte sich, dass nicht alle Verständnisprobleme durch eine bessere Navigation oder verständlichere Texte gelöst werden konnten.</p>
-    <p>Einige Teilnehmende verstanden den Zusammenhang zwischen e-ID, Wallet und weiteren digitalen Nachweisen nicht. Andere waren unsicher, weshalb auch nichtstaatliche Organisationen digitale Nachweise ausstellen können.</p>
-    <div class="cs-inner-quote">Wer darf digitale Nachweise ausstellen? Weshalb kann man ihnen vertrauen? Und wie erklären wir das Angebot so, dass Menschen seinen Nutzen verstehen?</div>
-    <p>Ich verdichtete die Ergebnisse zu konkreten Empfehlungen für Informationsarchitektur, Produktkommunikation und User Flows. Diese präsentierte ich dem Projektteam sowie Vertreterinnen und Vertretern verschiedener Bundesämter. Die Erkenntnisse flossen damit auch in Diskussionen ein, die über die Website selbst hinausgingen.</p>
-  </div>
+  <span class="cs-caption">Screenrecording der Live-Website swiyu.admin.ch</span>
 </div>
-<div class="cs-section">
-  <h2>Und wie geht es weiter?</h2>
-  <p style="max-width:680px;margin-top:20px;">Mein letzter Usability-Test für <strong>swiyu.admin.ch</strong> fand im Juni 2026 statt. Bis dahin hatte ich die Website von der frühen Informationsarchitektur über Wireframes bis zu mehreren High-Fidelity-Versionen begleitet.</p>
-  <p style="max-width:680px;margin-top:16px;">Seitdem hat sich die Website weiterentwickelt. Die Screenshots in dieser Case Study zeigen deshalb unterschiedliche Entwicklungsstände und nicht durchgehend die aktuelle Umsetzung.</p>
-  <p style="max-width:680px;margin-top:16px;">Das Projekt läuft weiter, und ich bin gespannt, wie sich swiyu entwickelt.</p>
+<div class="cs-section" style="display:flex;justify-content:center;">
+  <div style="max-width:72ch;width:100%;">
+    <h2>Und wie geht es weiter?</h2>
+    <p>Mein letzter Usability-Test für <strong>swiyu.admin.ch</strong> fand im Juni 2026 statt. Bis dahin hatte ich die Website von der frühen Informationsarchitektur über Wireframes bis zu mehreren High-Fidelity-Versionen begleitet.</p>
+    <p>Seitdem hat sich die Website weiterentwickelt. Die Screenshots in dieser Case Study zeigen deshalb unterschiedliche Entwicklungsstände und nicht durchgehend die aktuelle Umsetzung.</p>
+    <p>Das Projekt läuft weiter, und ich bin gespannt, wie sich swiyu entwickelt.</p>
+  </div>
 </div>
 `,
         nextProject: { id: 2, name: 'E-Banking Webseite' }
@@ -2895,28 +2890,6 @@
   </script>
   <script>
     (function() {
-      const heroTitle = document.querySelector('.hero-title');
-      const heroBlob  = document.querySelector('.hero-blob');
-      if (!heroTitle || !heroBlob) return;
-
-      // Adding .active starts the animation fresh (CSS animation only exists on .active).
-      // Removing .active stops it and the eye closes.
-      heroTitle.addEventListener('mouseenter', () => {
-        heroBlob.classList.add('active');
-      });
-
-      // Animation played once → close the eye; user must leave & re-hover to trigger again
-      heroBlob.addEventListener('animationend', (e) => {
-        if (e.animationName !== 'hero-blob-x') return;
-        // rAF ensures the transition fires in a fresh paint frame
-        requestAnimationFrame(() => {
-          heroBlob.classList.remove('active');
-        });
-      });
-    })();
-  </script>
-  <script>
-    (function() {
       const catEar = document.querySelector('.cat-ear');
       if (!catEar) return;
       const svg = document.querySelector('.hero-title svg');
@@ -2942,6 +2915,86 @@
     })();
   </script>
 
+  <!-- Password Gate Modal -->
+  <div id="pw-modal" class="pw-modal" hidden role="dialog" aria-modal="true" aria-labelledby="pw-title">
+    <div class="pw-box">
+      <h2 id="pw-title" data-i18n="pw.title">Passwort eingeben</h2>
+      <p class="pw-desc" data-i18n="pw.desc">Diese Case Study ist passwortgeschützt.</p>
+      <div class="pw-input-row">
+        <input type="password" id="pw-input" placeholder="••••••••" autocomplete="current-password"
+               onkeydown="if(event.key==='Enter')pwSubmit()">
+        <button onclick="pwSubmit()" aria-label="Bestätigen">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <p id="pw-error" class="pw-error" hidden data-i18n="pw.error">Falsches Passwort</p>
+      <button class="pw-back" onclick="pwCancel()" data-i18n="pw.back">← Zurück</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var PROTECTED = { 'project-1': true, 'project-2': true };
+      var HASH = 'fa341d822e2ce2d751f5502e7134b1c388cba3b537f89ef0323997f6702d4cab';
+      var SESSION_KEY = 'portfolio_unlocked';
+      var _pendingPage = null;
+
+      function isUnlocked() {
+        try { return sessionStorage.getItem(SESSION_KEY) === '1'; } catch(e) { return false; }
+      }
+
+      function unlock() {
+        try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e) {}
+      }
+
+      async function sha256(str) {
+        var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+        return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+      }
+
+      window.pwSubmit = async function() {
+        var input = document.getElementById('pw-input');
+        var err   = document.getElementById('pw-error');
+        var hash  = await sha256(input.value);
+        if (hash === HASH) {
+          unlock();
+          document.getElementById('pw-modal').hidden = true;
+          input.value = '';
+          err.hidden = true;
+          if (_pendingPage) { var p = _pendingPage; _pendingPage = null; showPage(p); }
+        } else {
+          err.hidden = false;
+          input.value = '';
+          input.focus();
+          // re-trigger shake animation
+          err.style.animation = 'none';
+          err.offsetWidth; // reflow
+          err.style.animation = '';
+        }
+      };
+
+      window.pwCancel = function() {
+        document.getElementById('pw-modal').hidden = true;
+        document.getElementById('pw-input').value = '';
+        document.getElementById('pw-error').hidden = true;
+        _pendingPage = null;
+      };
+
+      // Wrap showPage to intercept protected pages
+      var _origShowPage = showPage;
+      showPage = function(page, updateHash) {
+        if (PROTECTED[page] && !isUnlocked()) {
+          _pendingPage = page;
+          document.getElementById('pw-modal').hidden = false;
+          setTimeout(function(){ document.getElementById('pw-input').focus(); }, 50);
+          return;
+        }
+        _origShowPage(page, updateHash);
+      };
+    })();
+  </script>
 
 </body>
 </html>
