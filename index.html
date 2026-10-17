@@ -1925,6 +1925,7 @@
     /* ── ENGLISH PROJECT DATA ── */
     PROJECTS[0].en = {
       name: 'Digital Identity', type: 'UX Research · Information Architecture · UX Concept',
+      customHtml: null,
       meta: [
         { label: 'Role', value: 'Lead Researcher, UX Concept' },
         { label: 'Period', value: '2025 to 2026' },
@@ -2620,8 +2621,9 @@
       }
 
       // Full custom case study HTML (bypasses all standard sections except next/contact/footer)
-      if (p.customHtml) {
-        html += p.customHtml;
+      var _customHtml = pl(p, 'customHtml');
+      if (_customHtml) {
+        html += _customHtml;
         // fall through to next-project, contact, footer below
       } else {
 
@@ -2729,10 +2731,10 @@
           });
           html += '</div>';
         }
-        if (p.outcome.badge) {
+        if (_outcome && _outcome.badge) {
           html += '<div style="margin-top:40px;">' +
-            '<a href="' + p.outcome.badge.link + '" target="_blank" rel="noopener" style="display:inline-block;">' +
-            '<img src="' + p.outcome.badge.img + '" alt="Badge" style="width:180px;height:180px;object-fit:contain;border-radius:8px;transition:opacity 0.3s;" onmouseover="this.style.opacity=\'0.8\'" onmouseout="this.style.opacity=\'1\'">' +
+            '<a href="' + _outcome.badge.link + '" target="_blank" rel="noopener" style="display:inline-block;">' +
+            '<img src="' + _outcome.badge.img + '" alt="Badge" style="width:180px;height:180px;object-fit:contain;border-radius:8px;transition:opacity 0.3s;" onmouseover="this.style.opacity=\'0.8\'" onmouseout="this.style.opacity=\'1\'">' +
             '</a></div>';
         }
         html += '</div>';
