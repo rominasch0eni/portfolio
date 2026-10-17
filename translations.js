@@ -61,7 +61,7 @@ window.TRANSLATIONS = {
     'acc.4.text':         'Als UX-Designerin stelle ich den Nutzer in den Fokus. Aber nicht jedes Projekt hat dieselben Ressourcen. Als Solo-Designerin in einem Startup habe ich gelernt, pragmatisch zu denken: Manchmal ist die zweitbeste UX-Lösung die beste Business-Entscheidung.',
 
     'test.heading':       'Was andere über mich sagen',
-    'test.1':             '"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: <strong>ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten.</strong>"',
+    'test.1':             '"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten."',
     'test.2':             '"Was mir an Rominas Arbeit schon immer gefallen hat, ist ihre Fähigkeit, aus einer vagen Idee etwas völlig Neues entstehen zu lassen. Mit ihr zu arbeiten ist wie Pingpong spielen."',
     'test.3':             '"Für jede Organisation, die eine talentierte, erfahrene und leidenschaftliche UX-Designerin sucht, kann ich Romina uneingeschränkt empfehlen. Sie überzeugt nicht nur durch ihr fundiertes Fachwissen, sondern auch durch ihre Kreativität und ihren Innovationsgeist."',
     'test.4':             '"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."',
