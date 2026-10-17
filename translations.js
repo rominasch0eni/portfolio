@@ -48,6 +48,8 @@ window.TRANSLATIONS = {
     'about.strengths':    'Stärken',
     'about.skills.lbl':   'Fähigkeiten',
     'about.tools.lbl':    'Werkzeuge',
+    'about.schwerpunkte.lbl': 'Schwerpunkte',
+    'unfiltered.headline': 'Dinge, die ich mag.<br>Dinge, die ich mache.<br>Ganz ohne Prompt.',
 
     'acc.1.label':        'Schnelle Auffassungsgabe',
     'acc.1.text':         'Neue Domänen, neue Technologien, neue Tools, neue Teams: Ich finde mich schnell zurecht. Die Fähigkeit, komplexe Zusammenhänge rasch zu verstehen, hilft mir, früh sinnvoll beizutragen statt lange zuzuschauen.',
@@ -260,6 +262,8 @@ window.TRANSLATIONS = {
     'about.strengths':    'Strengths',
     'about.skills.lbl':   'Skills',
     'about.tools.lbl':    'Tools',
+    'about.schwerpunkte.lbl': 'Focus Areas',
+    'unfiltered.headline': 'Things I love.<br>Things I make.<br>No prompt required.',
 
     'acc.1.label':        'Fast learner',
     'acc.1.text':         'New domains, new technologies, new tools, new teams, I get up to speed quickly. The ability to rapidly grasp complex contexts helps me contribute meaningfully early on rather than just observing.',
