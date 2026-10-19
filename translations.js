@@ -67,10 +67,10 @@ window.TRANSLATIONS = {
     'test.4':             '"Ich habe eng mit Romina zusammengearbeitet. Ihr Know-how in UX und Design war massgeblich für den Erfolg des Unternehmens. Sie lieferte stets hochwertige Arbeit, auch unter engem Zeitplan. Ihr innovatives Denken war unschätzbar wertvoll, wenn es darum ging, einzigartige Lösungen zu finden."',
 
     'chat.btn':           'Frag mich was',
-    'chat.welcome.title': 'Hi, ich bin Dot!',
-    'chat.welcome.sub':   'Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du über Romina wissen?',
+    'chat.welcome.title': 'Miau.',
+    'chat.welcome.sub':   'Was möchtest du über Romina wissen?',
     'chat.placeholder':   'Deine Frage...',
-    'chat.privacy':       'Gespräche können zur Verbesserung von Dot gespeichert werden.',
+    'chat.privacy':       'Gespräche können zur Verbesserung gespeichert werden.',
 
     /* Project render strings */
     'proj.back':          'Zurück',
@@ -281,8 +281,8 @@ window.TRANSLATIONS = {
     'test.4':             '"I worked closely with Romina. Her expertise in UX and design was instrumental in the company\'s success. She consistently delivered high-quality work, even under tight deadlines. Her innovative thinking was invaluable when it came to finding unique solutions."',
 
     'chat.btn':           'Ask me something',
-    'chat.welcome.title': 'Hi, I\'m Dot!',
-    'chat.welcome.sub':   'Instead of scrolling, you can just ask me.<br>What would you like to know?',
+    'chat.welcome.title': 'Meow.',
+    'chat.welcome.sub':   'What would you like to know?',
     'chat.placeholder':   'Your question...',
     'chat.privacy':       'Conversations may be stored to improve Dot.',
 
