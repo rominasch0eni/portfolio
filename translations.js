@@ -36,7 +36,7 @@ window.TRANSLATIONS = {
     'contact.certs':      'Zertifikate',
     'footer.label':       'UX Portfolio',
 
-    'about.title':        'Immer neugierig.<br>Immer hungrig.<br>Genau wie meine Katzen.',
+    'about.title':        'Immer neugierig.<br>Immer hungrig.<br>Nach Antworten und Ramen.',
     'about.p1':           'Ich bin Romina, UX-Designerin und offizielle Dosenöffnerin für zwei verschlafene Katzen.',
     'about.p2':           'Mein Weg ins UX-Design war nicht gerade geradlinig. Angefangen habe ich im kaufmännischen Bereich, danach ging es ins Marketing und zwischendurch sogar in die Animationsbranche. Irgendwann bin ich beim UX-Design gelandet. Und rückblickend ergibt das ziemlich viel Sinn: Hier kann ich meine Neugier, mein analytisches Denken und meine Freude an Gestaltung verbinden.',
     'about.p3':           'Wenn ich gerade keine digitalen Probleme entwirre, hänge ich manchmal buchstäblich in der Luft. Seit drei Jahren trainiere ich Pole Dance und Aerial Hoop. Ansonsten bin ich irgendwo auf einem Wanderweg unterwegs oder auf der Suche nach etwas Gutem zu essen.',
@@ -250,7 +250,7 @@ window.TRANSLATIONS = {
     'contact.certs':      'Certificates',
     'footer.label':       'UX Portfolio',
 
-    'about.title':        'Always curious.<br>Always hungry.<br>Just like my cats.',
+    'about.title':        'Always curious.<br>Always hungry.<br>For answers and ramen.',
     'about.p1':           'I\'m Romina, UX designer and official can-opener for two sleepy cats.',
     'about.p2':           'My path into UX design wasn\'t exactly straightforward. I started out in business administration, then moved into marketing, with a stint in the animation industry along the way. At some point I ended up in UX design — and looking back, it makes quite a lot of sense: here I can combine my curiosity, my analytical thinking and my love of design.',
     'about.p3':           'And when I\'m not untangling digital problems, I\'m sometimes literally up in the air. I\'ve been training Pole Dance and Aerial Hoop for three years. Otherwise I\'m somewhere on a hiking trail or in search of something good to eat.',
