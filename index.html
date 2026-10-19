@@ -2863,6 +2863,13 @@
           gridMore.innerHTML += html;
         }
       });
+      // Stagger cards: each appears 0.1s after the previous
+      gridUX.querySelectorAll('.project-card').forEach(function(card, i) {
+        card.style.transitionDelay = (i * 0.1) + 's';
+      });
+      gridMore.querySelectorAll('.project-card').forEach(function(card, i) {
+        card.style.transitionDelay = (i * 0.1) + 's';
+      });
     }
 
     function renderAllProjectPages() {
