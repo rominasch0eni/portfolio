@@ -4150,17 +4150,28 @@
         if (sub) sub.style.opacity = '0';
         if (hint) hint.style.opacity = '0';
         document.body.classList.remove('loader-active');
-        // Always start at hero after loader
-        showPage('main', false);
-        startHeroAnim();
-        setTimeout(function() {
-          if (sub) { sub.style.transition = 'opacity 0.6s ease'; sub.style.opacity = '1'; }
-        }, 2400);
-        setTimeout(function() {
-          if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
-          if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; setTimeout(function() { if (window._earReady) window._earReady(); }, 600); }
-          if (hint) { hint.style.transition = 'opacity 0.5s ease'; hint.style.opacity = '1'; }
-        }, 3200);
+        // Restore correct page from URL hash — scroll is always top (scrollRestoration=manual)
+        var hash = window.location.hash.replace('#', '');
+        var onMain = !hash || hash === 'main' || !document.getElementById('page-' + hash);
+        if (!onMain) {
+          showPage(hash, false);
+          if (sub) sub.style.opacity = '';
+          if (hint) hint.style.opacity = '';
+          setTimeout(function() {
+            if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
+            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; if (window._earReady) window._earReady(); }
+          }, 100);
+        } else {
+          startHeroAnim();
+          setTimeout(function() {
+            if (sub) { sub.style.transition = 'opacity 0.6s ease'; sub.style.opacity = '1'; }
+          }, 2400);
+          setTimeout(function() {
+            if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
+            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; setTimeout(function() { if (window._earReady) window._earReady(); }, 600); }
+            if (hint) { hint.style.transition = 'opacity 0.5s ease'; hint.style.opacity = '1'; }
+          }, 3200);
+        }
       }, 520);
     }, 2900);
   })();
