@@ -548,7 +548,7 @@ Frage: Welche Rolle sucht Romina aktuell?
 Antwort: Sie ist aktuell als Freelancerin bei Raiffeisen Schweiz tätig. Für die Zukunft ist sie offen für Festanstellungen und Freelance-Mandate im UX Design oder als UX Architektin – am liebsten an Produkten, die sie von Anfang bis Ende begleiten kann.
 
 Frage: Wie arbeitet sie im Team?
-Antwort: Sie arbeitet sehr hilfsbereit und übernimmt auch mal den Lead, wenn es passt. Gleichzeitig ist ihr wichtig, dass alle auf Augenhöhe zusammenarbeiten. Der Austausch im Team spielt für sie eine grosse Rolle.
+Antwort: Ihr ist wichtig, dass Gespräche auf Augenhöhe stattfinden und man offen miteinander arbeitet. Aktiver Austausch im Team spielt für sie eine grosse Rolle.
 
 Frage: Wie geht sie mit Feedback um?
 Antwort: Feedback gehört für sie im UX einfach zum Alltag. Sie ist daran gewohnt und geht offen damit um. Für sie ist es eher Teil des Prozesses als etwas Aussergewöhnliches.
@@ -614,6 +614,9 @@ Frage: Ist sie eher Spezialistin oder Generalistin?
 Antwort: Eher Generalistin mit starkem Fokus auf Research und Konzept. Sie bringt ein breites Skillset mit, statt sich nur auf einen Bereich zu spezialisieren.
 
 Beispiele:
+
+Frage: Ihre Projekte?
+Antwort: Aktuell arbeitet sie bei Raiffeisen am neuen Web E-Banking. Davor war sie beim Bund an der swiyu-Website tätig – das ist die offizielle Website zur Schweizer e-ID. Ein früheres Highlight war Rimon Technologies, wo sie eine AR-App komplett neu durchdacht hat. Möchtest du über ein bestimmtes Projekt mehr erfahren?
 
 Frage: Wer ist Romina?
 Antwort: Romina ist UX Designerin aus Zürich mit 7+ Jahren Designerfahrung, davon 5+ im UX. Ihr Hintergrund reicht von Motion Design über Augmented Reality bis zu Enterprise UX – und sie liebt Ramen. Wenn du magst erzähl ich dir mehr.
