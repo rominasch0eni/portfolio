@@ -4157,6 +4157,9 @@
           showPage(hash, false);
           if (sub) sub.style.opacity = '';
           if (hint) hint.style.opacity = '';
+          // Instantly reveal hero letters in background so they're ready when user navigates to hero
+          var heroSvg = document.querySelector('.hero-title svg');
+          if (heroSvg) heroSvg.querySelectorAll('.letter').forEach(function(l) { l.classList.add('in'); });
           setTimeout(function() {
             if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
             if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; if (window._earReady) window._earReady(); }
