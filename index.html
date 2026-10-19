@@ -758,13 +758,16 @@
       padding: 40px 40px 56px;
       box-sizing: border-box;
     }
+    #chat-welcome .welcome-row-wrap {
+      text-align: center;
+      margin-bottom: 56px;
+    }
     #chat-welcome .welcome-row {
-      display: flex;
+      display: inline-flex;
       align-items: flex-end;
-      justify-content: center;
       gap: 16px;
       border-bottom: 1px solid var(--chat-text);
-      margin-bottom: 44px;
+      padding: 0 4px;
       overflow: visible;
     }
     #chat-welcome .welcome-title {
@@ -772,7 +775,7 @@
       font-family: var(--font-serif);
       font-size: clamp(24px, 4vw, 44px);
       font-weight: 600;
-      padding-bottom: 10px;
+      padding-bottom: 4px;
       margin-bottom: 0;
     }
     #chat-welcome .welcome-sub {
@@ -785,7 +788,7 @@
     }
     .welcome-cat {
       width: 80px;
-      transform: translateY(28px);
+      transform: translateY(29px);
       color: var(--chat-text);
       --cat-accent: var(--chat-bg, #fff);
     }
@@ -3404,15 +3407,19 @@
     </div>
     <div id="chat-messages">
       <div id="chat-welcome">
-        <div class="welcome-row">
-          <span class="welcome-title" data-i18n="chat.welcome.title">Miau.</span>
-          <div class="welcome-cat" aria-hidden="true">
-            <svg viewBox="-3 -2 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32.1047 40H7.10474L5.10474 0L14.6047 10.5H25.1047L32.6047 0L32.1047 40Z" fill="currentColor"/>
-              <path class="welcome-eye" d="M14.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
-              <path class="welcome-eye" d="M24.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M20.1047 26H17.1047L18.6047 28L20.1047 26Z" fill="#6B3E58"/>
-            </svg>
+        <div class="welcome-row-wrap">
+          <div class="welcome-row">
+            <span class="welcome-title" data-i18n="chat.welcome.title">Miau.</span>
+            <div class="welcome-cat" aria-hidden="true">
+              <svg viewBox="-3 -2 45 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32.1047 40H7.10474L5.10474 0L14.6047 10.5H25.1047L32.6047 0L32.1047 40Z" fill="currentColor"/>
+                <path class="welcome-eye" d="M14.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
+                <path class="welcome-eye" d="M24.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M20.1047 26H17.1047L18.6047 28L20.1047 26Z" fill="#6B3E58"/>
+                <rect x="8.5" y="37" width="9" height="9" rx="4" fill="currentColor"/>
+                <rect x="21.5" y="37" width="9" height="9" rx="4" fill="currentColor"/>
+              </svg>
+            </div>
           </div>
         </div>
         <span class="welcome-sub" data-i18n="chat.welcome.sub">Statt zu scrollen kannst du mich auch einfach fragen.<br>Was möchtest du wissen?</span>
