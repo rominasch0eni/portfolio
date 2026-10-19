@@ -4148,33 +4148,17 @@
         if (sub) sub.style.opacity = '0';
         if (hint) hint.style.opacity = '0';
         document.body.classList.remove('loader-active');
-        // Restore correct page from URL hash after loader
-        var hash = window.location.hash.replace('#', '');
-        var onMain = !hash || hash === 'main' || !document.getElementById('page-' + hash);
-        if (!onMain) {
-          showPage(hash, false);
-          // Reset hero-only elements immediately (they're hidden inside page-main)
-          if (sub) sub.style.opacity = '';
-          if (hint) hint.style.opacity = '';
-          // Fade in nav and chat button quickly
-          setTimeout(function() {
-            if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
-            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; if (window._earReady) window._earReady(); }
-          }, 100);
-        } else {
-          // On hero page: full animation sequence
-          startHeroAnim();
-          // 2. After name fully visible (last letter 1860ms delay + 520ms transition)
-          setTimeout(function() {
-            if (sub) { sub.style.transition = 'opacity 0.6s ease'; sub.style.opacity = '1'; }
-          }, 2400);
-          // 3. After subtitle appears, show nav + button + scroll-hint
-          setTimeout(function() {
-            if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
-            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; setTimeout(function() { if (window._earReady) window._earReady(); }, 600); }
-            if (hint) { hint.style.transition = 'opacity 0.5s ease'; hint.style.opacity = '1'; }
-          }, 3200);
-        }
+        // Always start at hero after loader
+        showPage('main', false);
+        startHeroAnim();
+        setTimeout(function() {
+          if (sub) { sub.style.transition = 'opacity 0.6s ease'; sub.style.opacity = '1'; }
+        }, 2400);
+        setTimeout(function() {
+          if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
+          if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; setTimeout(function() { if (window._earReady) window._earReady(); }, 600); }
+          if (hint) { hint.style.transition = 'opacity 0.5s ease'; hint.style.opacity = '1'; }
+        }, 3200);
       }, 520);
     }, 2900);
   })();
