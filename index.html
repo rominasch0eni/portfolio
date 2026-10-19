@@ -3201,6 +3201,8 @@
       setTimeout(initScrollAnimations, 50);
     }
 
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
     document.addEventListener('DOMContentLoaded', function() {
       applyTranslations();
       // Hash-Routing: beim Laden die richtige Seite anzeigen
