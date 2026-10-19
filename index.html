@@ -13,8 +13,7 @@
     @font-face { font-family: 'Klomisk'; src: url('klomisk/Klomisk.otf') format('opentype'); font-weight: normal; font-style: normal; }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    :focus-visible { outline: 2px solid #8a6500; outline-offset: 4px; border-radius: 2px; }
-    body.dark :focus-visible { outline-color: #c9950d; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
 
     :root {
       --bg: #fafafa;
@@ -240,9 +239,10 @@
     .section-label-secondary { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); }
     .section-label-secondary span { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; }
     .project-card { display: flex; flex-direction: column; border-radius: 0; overflow: hidden; cursor: pointer; background: var(--card-bg); border: 1px solid var(--border); transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease; }
-    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .project-card:hover .card-visual img { transform: scale(1.04); }
-    .project-card:hover .project-name { color: var(--accent); }
+    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); outline: none; }
+    .project-card:focus-visible { transform: translateY(-6px); box-shadow: var(--shadow-md); outline: 2px solid var(--accent); outline-offset: 4px; }
+    .project-card:hover .card-visual img, .project-card:focus-visible .card-visual img { transform: scale(1.04); }
+    .project-card:hover .project-name, .project-card:focus-visible .project-name { color: var(--accent); }
     .project-card .card-visual { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
     .project-overlay { padding: var(--sp-gap) var(--sp-card); background: var(--bg); border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px; }
     .project-num { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; color: var(--text-muted); opacity: 0.5; }
@@ -2675,7 +2675,7 @@
     function buildCardHTML(p) {
       var imgs = p._resolvedImages || [];
       var hasImg = imgs.length > 0;
-      var cardHTML = '<div class="project-card animate" onclick="showPage(\'project-' + p.id + '\')">' +
+      var cardHTML = '<div class="project-card animate" role="button" tabindex="0" onclick="showPage(\'project-' + p.id + '\')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();showPage(\'project-' + p.id + '\');}">' +
         '<div class="card-visual visual-' + p.id + '">';
       if (hasImg) {
         cardHTML += '<img src="' + imgs[0].src + '" alt="' + p.name + '" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.23,1,0.32,1);" ' +
@@ -3350,6 +3350,17 @@
         <div class="unfiltered-gallery-item" style="flex:381;--ar:381/270"><img src="assets/unfiltered/n95-102.png" alt="" loading="lazy"></div>
       </div>
     </div>
+    <div class="about-contact animate">
+      <h2 data-i18n="contact.heading">Noch neugierig?</h2>
+      <div class="contact-links">
+        <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
+        <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
+        <a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener" data-i18n="contact.refs">Arbeitszeugnisse</a>
+        <a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener" data-i18n="contact.certs">Zertifikate</a>
+      </div>
+    </div>
+    <footer class="animate"><span>© 2026 Romina</span><span data-i18n="footer.label">UX Portfolio</span><span class="footer-tagline">Made with curiosity &amp; cat hair</span></footer>
   </div>
 
   <!-- CHAT WIDGET -->
@@ -3359,14 +3370,6 @@
         <path d="M32.1047 40H7.10474L5.10474 0L14.6047 10.5H25.1047L32.6047 0L32.1047 40Z" fill="currentColor"/>
         <path class="cat-eye" d="M14.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
         <path class="cat-eye" d="M24.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
-        <g class="cat-whiskers-right">
-          <path d="M24.1047 27L38.1047 24" stroke="var(--cat-accent)" stroke-linecap="round"/>
-          <path d="M24.1047 27L38.1047 29" stroke="var(--cat-accent)" stroke-linecap="round"/>
-        </g>
-        <g class="cat-whiskers-left">
-          <path d="M14.1047 27L0.104736 24" stroke="var(--cat-accent)" stroke-linecap="round"/>
-          <path d="M14.1047 27L0.104737 29" stroke="var(--cat-accent)" stroke-linecap="round"/>
-        </g>
         <path d="M20.1047 26H17.1047L18.6047 28L20.1047 26Z" fill="#6B3E58"/>
       </svg>
     </div>
