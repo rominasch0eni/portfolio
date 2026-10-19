@@ -774,16 +774,14 @@
       line-height: 1.55;
     }
     .welcome-cat {
-      width: 52px;
-      margin: 0 auto 20px;
-      overflow: hidden;
-      height: 30px;
-      position: relative;
+      width: 48px;
+      margin: 0 auto 16px;
+      display: block;
       color: var(--chat-text);
       --cat-accent: var(--chat-bg, #fff);
     }
     body.dark .welcome-cat { --cat-accent: #000; }
-    .welcome-cat svg { width: 100%; position: absolute; top: 0; }
+    .welcome-cat svg { width: 100%; display: block; }
     .welcome-eye { animation: cat-blink 4s ease 1.8s infinite; }
 
     #chat-messages {
@@ -3398,7 +3396,7 @@
     <div id="chat-messages">
       <div id="chat-welcome">
         <div class="welcome-cat" aria-hidden="true">
-          <svg viewBox="-3 -2 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="-3 -2 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M32.1047 40H7.10474L5.10474 0L14.6047 10.5H25.1047L32.6047 0L32.1047 40Z" fill="currentColor"/>
             <path class="welcome-eye" d="M14.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
             <path class="welcome-eye" d="M24.1047 20V23" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/>
