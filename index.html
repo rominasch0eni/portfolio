@@ -202,9 +202,7 @@
       background: currentColor;
       font-size: inherit;
     }
-    .hero-subtitle { font-family: 'Instrument Sans', sans-serif; font-size: clamp(16px, 2.2vw, 28px); font-weight: 400; letter-spacing: 0.5px; margin-top: 20px; color: var(--text-muted); }
-    .hero-line-svg { width: min(90vw, 900px); display: block; margin: 20px auto 0; overflow: visible; }
-    .hero-line-path { stroke-dasharray: 2000 2000; stroke-dashoffset: 2000; }
+    .hero-subtitle { font-family: 'Instrument Sans', sans-serif; font-size: clamp(16px, 2.2vw, 28px); font-weight: 400; letter-spacing: 0.5px; margin-top: 24px; color: var(--text-muted); }
 
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
 
@@ -1217,9 +1215,6 @@
           </svg>
 
         </h1>
-        <svg class="hero-line-svg" viewBox="0 0 900 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path class="hero-line-path" d="M0 38 C55 12, 140 50, 240 26 C340 4, 410 46, 520 22 C630 0, 710 44, 820 16 C860 6, 885 28, 900 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
         <p class="hero-subtitle" data-i18n="hero.subtitle">UX Design · Research · Animation</p>
       </div>
       <div class="scroll-hint">
@@ -4095,17 +4090,6 @@
       if (!el) return;
       setTimeout(function() { el.classList.add('in'); }, item.delay);
     });
-    // Animated line draws in after letters appear
-    var linePath = document.querySelector('.hero-line-path');
-    if (linePath) {
-      var lineLen = Math.ceil(linePath.getTotalLength()) + 2;
-      linePath.style.strokeDasharray = lineLen + ' ' + lineLen;
-      linePath.style.strokeDashoffset = lineLen;
-      setTimeout(function() {
-        linePath.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        linePath.style.strokeDashoffset = '0';
-      }, 2100);
-    }
   }
   </script>
 
