@@ -11,7 +11,7 @@ window.TRANSLATIONS = {
     'mobile.work':        'Arbeiten',
     'mobile.about':       'Über mich',
 
-    'hero.subtitle':      'Neugierig auf komplexe Fragen. Begeistert davon, Ideen zu entwickeln, auszuprobieren und weiterzudenken.',
+    'hero.subtitle':      'Neugierig auf komplexe Fragen.<br>Begeistert davon, Ideen zu entwickeln, auszuprobieren und weiterzudenken.',
     'scroll.hint':        'Scrollen',
 
     'brief.heading':      'Ich bringe Ordnung in komplexe Systeme.<span class="brief-br"></span> Ob 54 Farbfelder oder 54 User-Interviews.',
@@ -225,7 +225,7 @@ window.TRANSLATIONS = {
     'mobile.work':        'Work',
     'mobile.about':       'About',
 
-    'hero.subtitle':      'Curious about complex questions. Excited to develop ideas, try things out and keep thinking.',
+    'hero.subtitle':      'Curious about complex questions.<br>Excited to develop ideas, try things out and keep thinking.',
     'scroll.hint':        'Scroll',
 
     'brief.heading':      'I bring order to complex systems.<span class="brief-br"></span> Whether 54 colour fields or 54 user interviews.',
