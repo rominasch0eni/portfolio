@@ -170,7 +170,8 @@
     .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 0 48px; }
     .hero-content { z-index: 10; text-align: left; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
     .hero-content.hidden { opacity: 0; transform: translateY(-20px); }
-    .hero-title { display: block; width: clamp(300px, 72vw, 900px); color: var(--text-primary); margin: 0 auto; }
+    .hero-name-wrap { width: clamp(300px, 72vw, 900px); margin: 0 auto; }
+    .hero-title { display: block; width: 100%; color: var(--text-primary); }
     .hero-title svg { display: block; width: 100%; height: auto; overflow: visible; }
     .letter { opacity: 0; filter: blur(10px); transform: translateY(8px); translate: 0 0; pointer-events: bounding-box; transition: opacity 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.5s cubic-bezier(0.2, 0, 0.2, 1); }
     .letter.in { opacity: 1; filter: none; transform: none; }
@@ -202,9 +203,10 @@
       background: currentColor;
       font-size: inherit;
     }
-    .hero-sub-wrap { margin-top: 36px; max-width: 400px; }
-    .hero-sub-main { font-family: 'Instrument Sans', sans-serif; font-size: clamp(17px, 1.8vw, 24px); font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0 0 10px 0; }
-    .hero-sub-body { font-family: 'Instrument Sans', sans-serif; font-size: clamp(13px, 1.2vw, 16px); font-weight: 400; color: var(--text-muted); line-height: 1.65; margin: 0; }
+    .hero-sub-wrap { text-align: right; margin-top: clamp(28px, 3.5vw, 52px); }
+    .hero-sub-wrap::before { content: ''; display: block; width: 48px; height: 2.5px; background: var(--accent); margin-bottom: 22px; margin-left: auto; }
+    .hero-sub-main { font-family: 'Instrument Sans', sans-serif; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0 0 14px 0; }
+    .hero-sub-body { font-family: 'Instrument Sans', sans-serif; font-size: clamp(19px, 1.9vw, 25px); font-weight: 400; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0 auto; max-width: 520px; text-wrap: pretty; }
 
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
 
@@ -1157,7 +1159,7 @@
   <!-- Mobile menu overlay -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Menü schliessen">✕</button>
-    <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu(); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="mobile.work">Arbeiten</a>
+    <a href="javascript:void(0)" onclick="showPage('main'); closeMobileMenu(); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="mobile.work">Projekte</a>
     <a href="javascript:void(0)" onclick="showPage('about'); closeMobileMenu()" data-i18n="mobile.about">Über mich</a>
     <a href="javascript:void(0)" onclick="showPage('unfiltered'); closeMobileMenu()">Unfiltered</a>
     <select class="lang-select mobile-lang-select" onchange="setLang(this.value)" aria-label="Language">
@@ -1169,7 +1171,7 @@
   <nav>
     <div class="logo" onclick="showPage('main'); window.scrollTo({top:0,behavior:'smooth'});" data-i18n="nav.logo">ROMINA</div>
     <div class="nav-links">
-      <a href="javascript:void(0)" data-page="main" onclick="showPage('main'); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="nav.work">Arbeiten</a>
+      <a href="javascript:void(0)" data-page="main" onclick="showPage('main'); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="nav.work">Projekte</a>
       <a href="javascript:void(0)" data-page="about" onclick="showPage('about')" data-i18n="nav.about">Über mich</a>
       <a href="javascript:void(0)" data-page="unfiltered" onclick="showPage('unfiltered')">Unfiltered</a>
     </div>
@@ -1195,6 +1197,7 @@
       <!-- CUBE – uncomment to restore: <canvas id="rubik-canvas"></canvas> -->
 
       <div class="hero-content">
+        <div class="hero-name-wrap">
         <h1 class="hero-title" aria-label="ROMINA SCHOENI">
 
                     <svg viewBox="0 0 1026 383" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" overflow="visible">
@@ -1223,13 +1226,9 @@
 
         </h1>
         <div class="hero-sub-wrap">
-          <p class="hero-sub-main" data-i18n="hero.sub.main">Neugierig auf komplexe Fragen.</p>
-          <p class="hero-sub-body" data-i18n="hero.sub.body">Begeistert davon, Ideen zu entwickeln, auszuprobieren und weiterzudenken.</p>
+          <p class="hero-sub-body" data-i18n="hero.sub.body">UX Designerin mit Freude an komplexen Themen, unfertigen Ideen und dem Mut, Neues&nbsp;auszuprobieren.</p>
         </div>
-      </div>
-      <div class="scroll-hint">
-        <span data-i18n="scroll.hint">Scrollen</span>
-        <div class="scroll-line"></div>
+        </div>
       </div>
     </section>
 
@@ -3185,9 +3184,13 @@
       var rubikCanvas = document.getElementById('rubik-canvas');
       if (rubikCanvas) rubikCanvas.style.display = isMain ? 'block' : 'none';
       if (window._setRubikVisible) window._setRubikVisible(isMain);
-      // Aktiven Nav-Link markieren
+      // Aktiven Nav-Link markieren (Projekte-Link: scroll-gesteuert)
       document.querySelectorAll('.nav-links a[data-page]').forEach(function(a) {
-        a.classList.toggle('nav-active', a.dataset.page === page);
+        if (a.dataset.page === 'main') {
+          a.classList.remove('nav-active');
+        } else {
+          a.classList.toggle('nav-active', a.dataset.page === page);
+        }
       });
       // URL Hash aktualisieren
       if (updateHash !== false) {
@@ -3197,6 +3200,14 @@
       setTimeout(function() {
         initScrollAnimations(document.getElementById('page-' + page));
       }, 20);
+      // Chat button: hide on hero, show on other pages
+      window._onMainPage = isMain;
+      var chatBtnW = document.getElementById('chat-btn-wrapper');
+      if (chatBtnW && window._chatBtnReady) {
+        chatBtnW.style.transition = 'opacity 0.4s ease';
+        chatBtnW.style.opacity = isMain ? '0' : '1';
+        chatBtnW.style.pointerEvents = isMain ? 'none' : '';
+      }
     }
 
     function initPortfolio(manifestData) {
@@ -4073,6 +4084,25 @@
           } else {
             nav.classList.remove('nav-hidden');
           }
+          if (window._chatBtnReady && window._onMainPage) {
+            var cw = document.getElementById('chat-btn-wrapper');
+            if (cw) {
+              var pastHero = y > window.innerHeight * 0.6;
+              cw.style.transition = 'opacity 0.4s ease';
+              cw.style.opacity = pastHero ? '1' : '0';
+              cw.style.pointerEvents = pastHero ? '' : 'none';
+            }
+          }
+          var workLink = document.querySelector('.nav-links a[data-page="main"]');
+          if (workLink) {
+            if (window._onMainPage) {
+              var uxProj = document.getElementById('ux-projects');
+              var atProjects = uxProj ? y >= uxProj.offsetTop - window.innerHeight * 0.5 : false;
+              workLink.classList.toggle('nav-active', atProjects);
+            } else {
+              workLink.classList.remove('nav-active');
+            }
+          }
           lastY = y;
           ticking = false;
         });
@@ -4167,7 +4197,7 @@
           if (heroSvg) heroSvg.querySelectorAll('.letter').forEach(function(l) { l.classList.add('in'); });
           setTimeout(function() {
             if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
-            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; if (window._earReady) window._earReady(); }
+            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; window._chatBtnReady = true; window._onMainPage = false; if (window._earReady) window._earReady(); }
           }, 100);
         } else {
           startHeroAnim();
@@ -4176,7 +4206,7 @@
           }, 2400);
           setTimeout(function() {
             if (nav) { nav.style.transition = 'opacity 0.5s ease'; nav.style.opacity = '1'; setTimeout(function() { if (nav) nav.style.transition = ''; }, 600); }
-            if (chatBtn) { chatBtn.style.transition = 'opacity 0.5s ease'; chatBtn.style.opacity = '1'; setTimeout(function() { if (window._earReady) window._earReady(); }, 600); }
+            if (chatBtn) { window._chatBtnReady = true; window._onMainPage = true; setTimeout(function() { if (window._earReady) window._earReady(); }, 600); }
             if (hint) { hint.style.transition = 'opacity 0.5s ease'; hint.style.opacity = '1'; }
           }, 3200);
         }

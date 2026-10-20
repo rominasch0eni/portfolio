@@ -4,15 +4,15 @@
 window.TRANSLATIONS = {
   de: {
     'nav.logo':           'ROMINA',
-    'nav.work':           'Arbeiten',
+    'nav.work':           'Projekte',
     'nav.about':          'Über mich',
     'nav.dark':           'Dark',
     'nav.light':          'Hell',
-    'mobile.work':        'Arbeiten',
+    'mobile.work':        'Projekte',
     'mobile.about':       'Über mich',
 
     'hero.sub.main':      'Neugierig auf komplexe Fragen.',
-    'hero.sub.body':      'Ich arbeite mich in neue Themen ein, entwickle Konzepte und mache Ideen durch Prototyping und Testing greifbar.',
+    'hero.sub.body':      'UX Designerin mit Freude an komplexen Themen, unfertigen Ideen und dem Mut, Neues auszuprobieren.',
     'scroll.hint':        'Scrollen',
 
     'brief.heading':      'Ich bringe Ordnung in komplexe Systeme.<span class="brief-br"></span> Ob 54 Farbfelder oder 54 User-Interviews.',
@@ -219,15 +219,15 @@ window.TRANSLATIONS = {
 
   en: {
     'nav.logo':           'ROMINA',
-    'nav.work':           'Work',
+    'nav.work':           'Projects',
     'nav.about':          'About',
     'nav.dark':           'Dark',
     'nav.light':          'Light',
-    'mobile.work':        'Work',
+    'mobile.work':        'Projects',
     'mobile.about':       'About',
 
     'hero.sub.main':      'Curious about complex questions.',
-    'hero.sub.body':      'I dive into new topics, develop concepts and make ideas tangible through prototyping and testing.',
+    'hero.sub.body':      'UX designer with a love for complex topics, unfinished ideas, and the courage to try something new.',
     'scroll.hint':        'Scroll',
 
     'brief.heading':      'I bring order to complex systems.<span class="brief-br"></span> Whether 54 colour fields or 54 user interviews.',
