@@ -12,7 +12,7 @@ window.TRANSLATIONS = {
     'mobile.about':       'Über mich',
 
     'hero.sub.main':      'Neugierig auf komplexe Fragen.',
-    'hero.sub.body':      'Begeistert davon, Ideen zu entwickeln, auszuprobieren und weiterzudenken.',
+    'hero.sub.body':      'Ich arbeite mich in neue Themen ein, entwickle Konzepte und mache Ideen durch Prototyping und Testing greifbar.',
     'scroll.hint':        'Scrollen',
 
     'brief.heading':      'Ich bringe Ordnung in komplexe Systeme.<span class="brief-br"></span> Ob 54 Farbfelder oder 54 User-Interviews.',
@@ -227,7 +227,7 @@ window.TRANSLATIONS = {
     'mobile.about':       'About',
 
     'hero.sub.main':      'Curious about complex questions.',
-    'hero.sub.body':      'Excited to develop ideas, try things out and keep thinking.',
+    'hero.sub.body':      'I dive into new topics, develop concepts and make ideas tangible through prototyping and testing.',
     'scroll.hint':        'Scroll',
 
     'brief.heading':      'I bring order to complex systems.<span class="brief-br"></span> Whether 54 colour fields or 54 user interviews.',
