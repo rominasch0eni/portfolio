@@ -155,8 +155,9 @@
     nav .logo { font-family: 'Klomisk', serif; font-size: 24px; font-weight: normal; letter-spacing: 0px; color: var(--text-primary); cursor: pointer; transition: color 0.3s; }
     nav .logo:hover { color: var(--accent); }
     nav .nav-links { display: flex; gap: 32px; }
-    nav .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 500; padding-bottom: 3px; border-bottom: 1.5px solid transparent; transition: color 0.3s, border-color 0.3s; }
-    nav .nav-links a:hover { color: var(--accent); }
+    nav .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 500; padding-bottom: 3px; border-bottom: 1.5px solid transparent; transition: color 0.3s, border-color 0.3s, opacity 0.35s; }
+    nav .nav-links a:hover { color: var(--text-primary); }
+    nav .nav-links:hover a:not(:hover) { opacity: 0.25; }
     nav .nav-links a.nav-active { color: var(--text-primary); border-bottom-color: var(--accent); }
     nav .nav-actions { display: flex; align-items: center; gap: 12px; }
     #theme-toggle:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
@@ -280,10 +281,10 @@
     .projects-list .proj-list-item:first-child { border-top: none; }
     .projects-list-more .proj-list-item:first-child { border-top: none; }
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; width: 32px; flex-shrink: 0; }
-    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease, color 0.35s ease; }
+    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease; }
     .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-muted); text-align: right; max-width: 200px; flex-shrink: 0; line-height: 1.7; opacity: 0.85; }
-    .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 1; }
-    .proj-list-item:hover .proj-list-title { opacity: 1; color: var(--accent); }
+    .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
+    .proj-list-item:hover .proj-list-title { opacity: 1; }
     /* Cursor-following hover image */
     #proj-hover-img { position: fixed; width: 520px; aspect-ratio: 16/9; overflow: hidden; pointer-events: none; z-index: 500; opacity: 0; transition: opacity 0.22s ease; transform: translate(32px, -50%); top: 0; left: 0; }
     #proj-hover-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -435,11 +436,10 @@
     .accordion-item { border-bottom: 1px solid var(--text-primary); }
     .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 24px; transition: color 0.25s; }
     .accordion-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
-    .accordion-trigger span.accordion-label { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 56px); font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); margin: 0; line-height: 1; transition: color 0.25s; }
-    .accordion-trigger:hover span.accordion-label { color: var(--accent); }
-    .accordion-trigger:hover .accordion-icon { color: var(--accent); transform: rotate(90deg); }
+    .accordion-trigger span.accordion-label { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 56px); font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); margin: 0; line-height: 1; transition: color 0.25s, opacity 0.35s; }
+    .accordion-trigger:hover .accordion-icon { transform: rotate(90deg); }
     .accordion-item { border-bottom: 1px solid var(--text-primary); transition: border-color 0.25s; }
-    .accordion-item:hover { border-color: var(--accent); }
+    .accordion:hover .accordion-item:not(:hover) .accordion-label { opacity: 0.2; }
     .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), color 0.25s; }
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
     .accordion-item.open:hover .accordion-trigger:hover .accordion-icon { transform: rotate(135deg); }
@@ -461,16 +461,14 @@
     .about-contact { padding: 80px 48px 60px; border-top: 1px solid var(--border); }
     .about-contact h2 { margin-bottom: 24px; color: var(--text-primary); }
     .about-contact .contact-links { display: flex; gap: 32px; flex-wrap: wrap; }
-    .about-contact a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s; position: relative; }
-    .about-contact a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
-    .about-contact a:hover { color: var(--accent); }
-    .about-contact a:hover::after { width: 100%; }
+    .about-contact a { color: var(--text-primary); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s, opacity 0.35s; position: relative; }
+    .about-contact a:hover { color: var(--text-primary); }
+    .about-contact .contact-links:hover a:not(:hover) { opacity: 0.25; }
     .page-connect { padding: 80px 48px 100px; border-top: 1px solid var(--border); }
     .page-connect h2 { margin-bottom: 24px; color: var(--text-primary); }
-    .page-connect a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s; position: relative; display: inline-flex; align-items: center; gap: 8px; }
-    .page-connect a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
-    .page-connect a:hover { color: var(--accent); }
-    .page-connect a:hover::after { width: 100%; }
+    .page-connect a { color: var(--text-primary); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s, opacity 0.35s; position: relative; display: inline-flex; align-items: center; gap: 8px; }
+    .page-connect a:hover { color: var(--text-primary); }
+    .page-connect .contact-links:hover a:not(:hover) { opacity: 0.25; }
 
     footer { padding: 40px 48px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 300; color: var(--text-muted); opacity: 0.4; }
     footer .footer-tagline { width: 100%; text-align: center; margin-top: 8px; font-size: 13px; }
@@ -1020,13 +1018,9 @@
     /* ── GRADIENT ACCENT ── */
     /* Reusable gradient-text mixin via shared selectors */
     nav .logo:hover,
-    nav .nav-links a:hover,
     .about-brief-label,
     .project-card:hover .project-name,
-    .project-detail-back:hover,
-    .accordion-trigger:hover span.accordion-label,
-    .about-contact a:hover,
-    .page-connect a:hover {
+    .project-detail-back:hover {
       background: var(--accent-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1071,8 +1065,6 @@
     }
 
     /* Accordion hover border */
-    .accordion-item:hover { border-bottom: 2px solid var(--accent); }
-
     /* ── Password Gate ── */
     .pw-modal {
       position: fixed; inset: 0; z-index: 99999;
