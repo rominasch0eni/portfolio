@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Caveat:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Caveat:wght@400;500&display=swap');
     @font-face { font-family: 'Klomisk'; src: url('klomisk/Klomisk.otf') format('opentype'); font-weight: 100 900; font-style: normal; }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,12 +58,12 @@
 
       /* typography */
       --font-serif: 'Source Serif 4', serif;
-      --font-sans:  'Instrument Sans', sans-serif;
+      --font-sans:  'Noto Sans', sans-serif;
       /* sizes */
       --text-xs:    12px;   /* timestamps, tiny labels */
       --text-label: 13px;   /* section labels, meta, project-num */
       --text-ui:    14px;   /* card body, UI elements, links */
-      --text-body:  16px;   /* main body paragraphs */
+      --text-body:  18px;   /* main body paragraphs */
       /* weights */
       --w-light:   300;     /* body paragraphs */
       --w-regular: 400;     /* nav links, values */
@@ -120,7 +120,7 @@
 
 
     body {
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: 16px;
       font-weight: 400;
       line-height: 1.7;
@@ -132,7 +132,7 @@
     h1 { font-family: var(--font-serif); font-weight: var(--w-semi); letter-spacing: -2px; line-height: 1.08; }
     h2 { font-family: var(--font-serif); font-size: clamp(22px, 5vw, 36px); font-weight: 600; letter-spacing: -1px; line-height: 1.2; }
     h3 { font-family: var(--font-serif); font-size: 28px; font-weight: var(--w-medium); letter-spacing: -0.3px; line-height: 1.35; color: var(--text-primary); }
-    p  { font-size: var(--text-body); font-weight: var(--w-light); line-height: 1.7; color: var(--text-muted); }
+    p  { font-size: var(--text-body); font-weight: var(--w-regular); line-height: 1.7; color: var(--text-primary); }
 
     /* label — small uppercase tag used for section markers, meta, project-num */
     .label {
@@ -206,8 +206,8 @@
     }
     .hero-sub-wrap { text-align: right; margin-top: clamp(28px, 3.5vw, 52px); }
     .hero-sub-wrap::before { content: ''; display: block; width: 48px; height: 2.5px; background: var(--accent); margin-bottom: 22px; margin-left: auto; }
-    .hero-sub-main { font-family: 'Instrument Sans', sans-serif; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0 0 14px 0; }
-    .hero-sub-body { font-family: 'Instrument Sans', sans-serif; font-size: clamp(19px, 1.9vw, 25px); font-weight: 400; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0 auto; max-width: 520px; text-wrap: pretty; }
+    .hero-sub-main { font-family: 'Noto Sans', sans-serif; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; color: var(--text-primary); line-height: 1.3; margin: 0 0 14px 0; }
+    .hero-sub-body { font-family: 'Noto Sans', sans-serif; font-size: clamp(19px, 1.9vw, 25px); font-weight: 400; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0 auto; max-width: 520px; text-wrap: pretty; }
 
 
     #rubik-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
@@ -276,15 +276,14 @@
     .section-label-secondary { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: center; align-items: baseline; }
     .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; }
     .section-label-secondary span { display: none; }
-    .proj-list-item { display: flex; align-items: center; gap: 48px; border-top: 1px solid var(--border); padding: 52px 0; cursor: pointer; user-select: none; }
+    .proj-list-item { display: flex; align-items: center; gap: 48px; border-top: 1px solid var(--text-primary); padding: 52px 0; cursor: pointer; user-select: none; }
     .projects-list .proj-list-item:first-child { border-top: none; }
     .projects-list-more .proj-list-item:first-child { border-top: none; }
-    .projects-list .proj-list-item:last-child { border-bottom: 1px solid var(--border); }
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; width: 32px; flex-shrink: 0; }
-    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease; }
-    .proj-list-type { font-size: 13px; font-weight: 400; color: var(--text-muted); text-align: right; max-width: 200px; flex-shrink: 0; line-height: 1.5; opacity: 0.6; }
-    .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
-    .proj-list-item:hover .proj-list-title { opacity: 1; }
+    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease, color 0.35s ease; }
+    .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-muted); text-align: right; max-width: 200px; flex-shrink: 0; line-height: 1.7; opacity: 0.85; }
+    .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 1; }
+    .proj-list-item:hover .proj-list-title { opacity: 1; color: var(--accent); }
     /* Cursor-following hover image */
     #proj-hover-img { position: fixed; width: 520px; aspect-ratio: 16/9; overflow: hidden; pointer-events: none; z-index: 500; opacity: 0; transition: opacity 0.22s ease; transform: translate(32px, -50%); top: 0; left: 0; }
     #proj-hover-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -401,7 +400,7 @@
     .about-left { }
     .about-photo { width: 100%; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
     .about-right { display: flex; flex-direction: column; gap: var(--sp-page); }
-    .about-left h1 { font-size: clamp(52px, 7.5vw, 108px); margin-bottom: 40px; color: var(--text-primary); }
+    .about-left h1 { font-size: clamp(44px, 5.5vw, 72px); margin-bottom: 40px; color: var(--text-primary); }
     .about-left p { max-width: 500px; margin-bottom: 20px; }
     .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     .about-photo-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-muted); opacity: 0.4; }
@@ -417,35 +416,42 @@
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
     .about-profile { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
-    .about-profile > h2 { margin-bottom: var(--sp-page); color: var(--text-primary); }
-    .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--sp-col); }
+    .about-profile > h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; text-align: center; margin-bottom: var(--sp-page); }
+    .profile-grid { display: block; }
     .profile-col { padding-top: 0; }
     .profile-col .accordion { border-top: none; }
     .profile-sub-label { font-family: var(--font-sans); font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; margin-bottom: 4px; }
-    .schwerpunkte-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 40px; }
-    .schwerpunkt-row { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
-    .schwerpunkt-row strong { font-weight: 500; color: var(--text-primary); }
-    .accordion { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
-    .accordion-item { border-bottom: 1px solid var(--border); }
-    .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 16px; transition: color 0.25s; }
+    .about-schwerpunkte { border-top: 1px solid var(--border); padding-bottom: var(--sp-section); }
+    .schwerpunkte-marquee { overflow: hidden; margin: 0; padding: 16px 0 0; }
+    .marquee-track { overflow: hidden; padding: 4px 0; }
+    .marquee-inner { display: flex; width: max-content; will-change: transform; }
+    .marquee-inner:not(.reverse) { animation: marquee-left 30s linear infinite; }
+    .marquee-inner.reverse { animation: marquee-right 30s linear infinite; }
+    @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .marquee-item { white-space: nowrap; padding: 0 clamp(20px, 3vw, 56px); font-family: var(--font-serif); font-size: clamp(32px, 5.5vw, 80px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; color: var(--text-primary); user-select: none; }
+    .marquee-item::after { content: '·'; margin-left: clamp(20px, 3vw, 56px); color: var(--text-muted); opacity: 0.35; }
+    .accordion { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--text-primary); }
+    .accordion-item { border-bottom: 1px solid var(--text-primary); }
+    .accordion-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0; background: none; border: none; cursor: pointer; text-align: left; gap: 24px; transition: color 0.25s; }
     .accordion-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
-    .accordion-trigger span.accordion-label { font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 300; color: var(--text-muted); margin: 0; transition: color 0.25s; }
+    .accordion-trigger span.accordion-label { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 56px); font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); margin: 0; line-height: 1; transition: color 0.25s; }
     .accordion-trigger:hover span.accordion-label { color: var(--accent); }
     .accordion-trigger:hover .accordion-icon { color: var(--accent); transform: rotate(90deg); }
-    .accordion-item { border-bottom: 1px solid var(--border); transition: border-color 0.25s; }
+    .accordion-item { border-bottom: 1px solid var(--text-primary); transition: border-color 0.25s; }
     .accordion-item:hover { border-color: var(--accent); }
-    .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), color 0.25s; }
+    .accordion-icon { width: 32px; height: 32px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), color 0.25s; }
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
     .accordion-item.open:hover .accordion-trigger:hover .accordion-icon { transform: rotate(135deg); }
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
     .about-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .about-testimonials { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
-    .about-testimonials > h2 { margin-bottom: var(--sp-heading); color: var(--text-primary); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-gap); }
-    .testimonial-card { padding: var(--sp-card); border: 1px solid var(--border); border-radius: 0; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease; }
-    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
-    .testimonial-quote { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--text-primary); font-style: italic; }
+    .about-testimonials { padding: 0 var(--sp-page) var(--sp-section); border-top: 1px solid var(--border); }
+    .about-testimonials > h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; text-align: center; padding: 100px 0 var(--sp-heading); margin: 0; }
+    .testimonials-grid { display: flex; flex-direction: column; }
+    .testimonial-card { padding: 48px 0; border: none; border-top: 1px solid var(--text-primary); background: none; display: flex; flex-direction: column; gap: 24px; }
+    .testimonial-card:hover { transform: none; box-shadow: none; }
+    .testimonial-quote { font-family: var(--font-sans); font-size: clamp(22px, 3.5vw, 48px); font-weight: 400; line-height: 1.2; color: var(--text-primary); font-style: normal; letter-spacing: -0.02em; }
     .testimonial-author { display: flex; align-items: center; gap: 12px; }
     .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; letter-spacing: 1px; color: var(--text-muted); flex-shrink: 0; overflow: hidden; }
     .testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -530,7 +536,7 @@
     }
     .mobile-menu.open { opacity: 1; }
     .mobile-menu a {
-      font-family: 'Instrument Sans', sans-serif; font-size: 28px; font-weight: 300;
+      font-family: 'Noto Sans', sans-serif; font-size: 28px; font-weight: 300;
       color: var(--text-primary); text-decoration: none; transition: color 0.2s;
     }
     .mobile-menu a:hover { color: var(--accent); }
@@ -570,7 +576,7 @@
       .about-profile { padding: 48px 24px; }
       .profile-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-testimonials { padding: 48px 24px; }
-      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { flex-direction: column; }
       footer { padding: 24px; flex-direction: column; gap: 8px; }
       .scroll-hint { display: none; }
       .project-detail-hero { padding: 72px 24px 60px; }
@@ -744,7 +750,7 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.18);
       transition: box-shadow 0.3s;
       color: #ffffff;
-      font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 500;
+      font-family: 'Noto Sans', sans-serif; font-size: 14px; font-weight: 500;
       letter-spacing: 0.01em; white-space: nowrap;
     }
     body.dark #chat-btn {
@@ -831,7 +837,7 @@
     }
     #chat-welcome .welcome-sub {
       display: block;
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: clamp(14px, 2vw, 20px);
       font-weight: 400;
       opacity: 0.82;
@@ -931,7 +937,7 @@
     }
     .chat-msg {
       max-width: 72%; font-size: 14px; line-height: 1.65; padding: 12px 18px;
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'Noto Sans', sans-serif;
       animation: msg-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
     .chat-msg.slide-in {
@@ -975,13 +981,13 @@
     }
     #chat-privacy {
       text-align: center; color: var(--chat-text-muted);
-      font-family: 'Instrument Sans', sans-serif; font-size: 13px;
+      font-family: 'Noto Sans', sans-serif; font-size: 13px;
       padding: 8px 20px 16px; margin: 0;
     }
     .chat-suggestion {
       flex: 1;
       background: var(--chat-surface); border: 1px solid var(--chat-border);
-      color: var(--chat-text); font-size: 15px; font-family: 'Instrument Sans', sans-serif;
+      color: var(--chat-text); font-size: 15px; font-family: 'Noto Sans', sans-serif;
       padding: 13px 18px; border-radius: 24px; cursor: pointer;
       transition: background 0.2s, transform 0.15s;
       text-align: center; line-height: 1.3;
@@ -995,7 +1001,7 @@
     }
     #chat-input {
       flex: 1; background: var(--chat-input-bg); border: none;
-      padding: 16px 22px; font-size: 15px; font-family: 'Instrument Sans', sans-serif;
+      padding: 16px 22px; font-size: 15px; font-family: 'Noto Sans', sans-serif;
       color: var(--chat-text); outline: none; resize: none; border-radius: 32px;
       transition: background 0.2s;
     }
@@ -1118,7 +1124,7 @@
       border-radius: 4px;
       height: 34px;
       padding: 0 26px 0 10px;
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: 13px;
       font-weight: 400;
       color: var(--text-muted);
@@ -1188,7 +1194,7 @@
         <option value="de">DE</option>
         <option value="en">EN</option>
       </select>
-      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode umschalten" style="background:none;border:1px solid var(--border);border-radius:4px;height:34px;padding:0 14px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text-muted);font-size:14px;font-weight:400;font-family:'Instrument Sans',sans-serif;transition:all 0.3s;white-space:nowrap;">
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode umschalten" style="background:none;border:1px solid var(--border);border-radius:4px;height:34px;padding:0 14px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text-muted);font-size:14px;font-weight:400;font-family:'Noto Sans',sans-serif;transition:all 0.3s;white-space:nowrap;">
         <svg id="theme-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <span id="theme-label">Dark</span>
       </button>
@@ -1336,7 +1342,6 @@
 
         <!-- Links: Stärken -->
         <div class="profile-col">
-          <div class="profile-sub-label" data-i18n="about.strengths">Stärken</div>
           <div class="accordion">
             <div class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
@@ -1369,27 +1374,25 @@
           </div>
         </div>
 
-        <!-- Rechts: Fähigkeiten + Werkzeuge -->
-        <div class="profile-col">
-          <div class="profile-sub-label" data-i18n="about.schwerpunkte.lbl">Schwerpunkte</div>
-          <div class="schwerpunkte-list">
-            <div class="schwerpunkt-row" data-i18n="cv.schwerpunkt.1"><strong>UX Research</strong> · Interviews, Usability Testing, Research Operations</div>
-            <div class="schwerpunkt-row" data-i18n="cv.schwerpunkt.2"><strong>UX-Konzeption</strong> · Problemanalyse, User Flows, Prototyping, Interaction Design</div>
-            <div class="schwerpunkt-row" data-i18n="cv.schwerpunkt.3"><strong>Produktentwicklung</strong> · Nutzerzentrierte Entscheidungsgrundlagen, Konzeptentwicklung</div>
-            <div class="schwerpunkt-row" data-i18n="cv.schwerpunkt.4"><strong>Visuelle Gestaltung</strong> · Screen Design, Animation, Anwendung bestehender Design-Systeme</div>
-          </div>
-          <div class="profile-sub-label" data-i18n="about.tools.lbl">Werkzeuge</div>
-          <div class="skill-tags">
-            <span>Figma</span>
-            <span>Jira</span>
-            <span>Miro</span>
-            <span>Maze</span>
-            <span>After Effects</span>
-            <span>Unity</span>
-            <span>Claude</span>
+
+      </div>
+    </div>
+
+    <div class="about-schwerpunkte">
+      <div class="section-label-secondary"><h2 data-i18n="about.schwerpunkte.lbl">Schwerpunkte</h2></div>
+      <div class="schwerpunkte-marquee">
+        <div class="marquee-track">
+          <div class="marquee-inner">
+            <span class="marquee-item">UX Research</span><span class="marquee-item">Interviews</span><span class="marquee-item">Usability Testing</span><span class="marquee-item">UX-Konzeption</span><span class="marquee-item">User Flows</span><span class="marquee-item">Prototyping</span>
+            <span class="marquee-item">UX Research</span><span class="marquee-item">Interviews</span><span class="marquee-item">Usability Testing</span><span class="marquee-item">UX-Konzeption</span><span class="marquee-item">User Flows</span><span class="marquee-item">Prototyping</span>
           </div>
         </div>
-
+        <div class="marquee-track">
+          <div class="marquee-inner reverse">
+            <span class="marquee-item">Produktentwicklung</span><span class="marquee-item">Konzeptentwicklung</span><span class="marquee-item">Visuelle Gestaltung</span><span class="marquee-item">Screen Design</span><span class="marquee-item">Animation</span><span class="marquee-item">Design-Systeme</span>
+            <span class="marquee-item">Produktentwicklung</span><span class="marquee-item">Konzeptentwicklung</span><span class="marquee-item">Visuelle Gestaltung</span><span class="marquee-item">Screen Design</span><span class="marquee-item">Animation</span><span class="marquee-item">Design-Systeme</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1859,7 +1862,7 @@
       {
         id: 5, num: '05', folder: 'animation',
         name: 'Animation Showreel',
-        type: 'Motion Design · 2D Animation · 3D Animation · Illustration',
+        type: '2D Animation · 3D Animation · Illustration',
         meta: [
           { label: 'Rolle', value: 'Motion Designerin' },
           { label: 'Zeitraum', value: '2019 bis 2021' },
@@ -2023,7 +2026,7 @@
       {
         id: 7, num: '07', folder: 'hackathon',
         name: 'Hack Zurich',
-        type: 'AR · VR · Prototyping · Unity',
+        type: 'AR & VR · Prototyping · Unity',
         meta: [
           { label: 'Rolle', value: 'Teilnehmerin' },
           { label: 'Zeitraum', value: 'Ein Wochenende' },
@@ -2528,7 +2531,7 @@
       nextProject: { id: 5, name: 'Animation Showreel' }
     };
     PROJECTS[4].en = {
-      name: 'Animation Showreel', type: 'Motion Design · 2D Animation · 3D Animation · Illustration',
+      name: 'Animation Showreel', type: '2D Animation · 3D Animation · Illustration',
       meta: [
         { label: 'Role', value: 'Motion Designer' },
         { label: 'Period', value: '2019 to 2021' },
@@ -2688,7 +2691,7 @@
       nextProject: { id: 7, name: 'Hack Zurich' }
     };
     PROJECTS[6].en = {
-      name: 'Hack Zurich', type: 'AR · VR · Prototyping · Unity',
+      name: 'Hack Zurich', type: 'AR & VR · Prototyping · Unity',
       meta: [
         { label: 'Role', value: 'Participant' },
         { label: 'Period', value: 'One weekend' },
@@ -2855,7 +2858,7 @@
         (imgSrc ? ' data-img="' + imgSrc + '"' : '') + '>' +
         '<span class="proj-list-num">' + num + '</span>' +
         '<span class="proj-list-title">' + pl(p, 'name') + '</span>' +
-        '<span class="proj-list-type">' + pl(p, 'type') + '</span>' +
+        '<span class="proj-list-type">' + pl(p, 'type').replace(/\s*·\s*/g, '<br>') + '</span>' +
         '</div>';
       return html;
     }
