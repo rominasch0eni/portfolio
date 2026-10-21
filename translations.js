@@ -31,7 +31,7 @@ window.TRANSLATIONS = {
     'section.more':       'Weitere Projekte',
     'section.more.year':  '2019 bis 2022',
 
-    'contact.heading':    'Noch neugierig?',
+    'contact.heading':    'Neugierig geworden?',
     'contact.cv':         'Lebenslauf',
     'contact.refs':       'Arbeitszeugnisse',
     'contact.certs':      'Zertifikate',
@@ -246,7 +246,7 @@ window.TRANSLATIONS = {
     'section.more':       'More Projects',
     'section.more.year':  '2019 to 2022',
 
-    'contact.heading':    'Still curious?',
+    'contact.heading':    'Got curious?',
     'contact.cv':         'CV',
     'contact.refs':       'Work references',
     'contact.certs':      'Certificates',
