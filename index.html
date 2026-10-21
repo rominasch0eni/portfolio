@@ -273,10 +273,12 @@
     /* PROJECTS LIST */
     .projects-list { padding: 0 var(--sp-page); margin-bottom: var(--sp-section); }
     .projects-list-more { margin-bottom: 120px; }
-    .section-label-secondary { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); }
-    .section-label-secondary span { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; }
+    .section-label-secondary { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: center; align-items: baseline; }
+    .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; }
+    .section-label-secondary span { display: none; }
     .proj-list-item { display: flex; align-items: center; gap: 48px; border-top: 1px solid var(--border); padding: 52px 0; cursor: pointer; user-select: none; }
     .projects-list .proj-list-item:first-child { border-top: none; }
+    .projects-list-more .proj-list-item:first-child { border-top: none; }
     .projects-list .proj-list-item:last-child { border-bottom: 1px solid var(--border); }
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; width: 32px; flex-shrink: 0; }
     .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease; }
