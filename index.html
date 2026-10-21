@@ -34,6 +34,9 @@
       --shadow-sm: 0 12px 40px rgba(0,0,0,0.04);
       --shadow-md: 0 20px 60px rgba(0,0,0,0.06);
       --scroll-opacity: 0.5;
+      /* page grid — columns align with nav link positions */
+      --grid-col1:  60px;   /* col 1 width = "Projekte" nav item → numbers, labels */
+      --grid-gap:   32px;   /* col gap = nav link gap → col 2 starts at sp-page + col1 + gap */
       /* spacing scale */
       --sp-gap:     24px;   /* gap between cards / grid items */
       --sp-card:    32px;   /* card inner padding */
@@ -152,27 +155,24 @@
       background: var(--nav-bg);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     }
-    nav .logo { font-family: 'Klomisk', serif; font-size: 24px; font-weight: normal; letter-spacing: 0px; color: var(--text-primary); cursor: pointer; transition: color 0.3s; }
-    nav .logo:hover { color: var(--accent); }
     nav .nav-links { display: flex; gap: 32px; }
     nav .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 500; padding-bottom: 3px; border-bottom: 1.5px solid transparent; transition: color 0.3s, border-color 0.3s, opacity 0.35s; }
     nav .nav-links a:hover { color: var(--text-primary); }
     nav .nav-links:hover a:not(:hover) { opacity: 0.25; }
     nav .nav-links a.nav-active { color: var(--text-primary); border-bottom-color: var(--accent); }
     nav .nav-actions { display: flex; align-items: center; gap: 12px; }
-    #theme-toggle:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+    #theme-toggle { background: none; border: none; padding: 0; cursor: pointer; display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 15px; font-weight: 500; font-family: 'Noto Sans', sans-serif; transition: color 0.3s, opacity 0.35s; white-space: nowrap; }
+    #theme-toggle:hover { color: var(--text-primary); }
     .hamburger:hover span { background: var(--accent); }
 
     /* PAGES */
     .page { display: none; min-height: 100vh; }
     .page.active { display: block; max-width: 1800px; margin: 0 auto; }
-    .hero { width: 100vw; margin-left: calc(-50vw + 50%); }
-
     /* HERO */
-    .hero { height: 100vh; box-sizing: border-box; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: var(--nav-h) 48px 0; }
-    .hero-content { z-index: 10; text-align: left; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+    .hero { height: 100vh; box-sizing: border-box; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: var(--nav-h) 0 0; }
+    .hero-content { z-index: 10; text-align: left; pointer-events: none; transition: opacity 0.6s ease, transform 0.6s ease; width: 100%; box-sizing: border-box; padding: 0 max(var(--sp-page), calc((100% - 1800px) / 2 + var(--sp-page))); }
     .hero-content.hidden { opacity: 0; transform: translateY(-20px); }
-    .hero-name-wrap { width: clamp(300px, 72vw, 900px); margin: 0 auto; }
+    .hero-name-wrap { width: 100%; margin: 0; }
     .hero-title { display: block; width: 100%; color: var(--text-primary); }
     .hero-title svg { display: block; width: 100%; height: auto; overflow: visible; }
     .letter { opacity: 0; filter: blur(10px); transform: translateY(8px); translate: 0 0; pointer-events: bounding-box; transition: opacity 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.5s cubic-bezier(0.2, 0, 0.2, 1); }
@@ -277,12 +277,12 @@
     .section-label-secondary { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: center; align-items: baseline; }
     .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; }
     .section-label-secondary span { display: none; }
-    .proj-list-item { display: flex; align-items: center; gap: 48px; border-top: 1px solid var(--text-primary); padding: 52px 0; cursor: pointer; user-select: none; }
+    .proj-list-item { display: grid; grid-template-columns: var(--grid-col1) 1fr auto; column-gap: var(--grid-gap); align-items: center; border-top: 1px solid var(--text-primary); padding: 52px 0; cursor: pointer; user-select: none; }
     .projects-list .proj-list-item:first-child { border-top: none; }
     .projects-list-more .proj-list-item:first-child { border-top: none; }
-    .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; width: 32px; flex-shrink: 0; }
-    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease; }
-    .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 200px; flex-shrink: 0; line-height: 1.7; }
+    .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; }
+    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); transition: opacity 0.35s ease; }
+    .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 200px; line-height: 1.7; }
     .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
     .proj-list-item:hover .proj-list-title { opacity: 1; }
     /* Cursor-following hover image */
@@ -1019,7 +1019,6 @@
 
     /* ── GRADIENT ACCENT ── */
     /* Reusable gradient-text mixin via shared selectors */
-    nav .logo:hover,
     .about-brief-label,
     .project-card:hover .project-name,
     .project-detail-back:hover {
@@ -1114,26 +1113,20 @@
     /* ── LANG SWITCHER ── */
     .lang-select {
       background: none;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      height: 34px;
-      padding: 0 26px 0 10px;
+      border: none;
+      padding: 0;
       font-family: 'Noto Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 400;
+      font-size: 15px;
+      font-weight: 500;
       color: var(--text-muted);
       cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
+      transition: color 0.3s, opacity 0.35s;
       appearance: none;
       -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 8px center;
-      padding-right: 26px;
+      outline: none;
     }
-    .lang-select:hover { color: var(--text-primary); border-color: var(--accent); }
-    .lang-select:focus { outline: none; border-color: var(--accent); }
-    .lang-select:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,60,172,0.15); }
+    .lang-select:hover { color: var(--text-primary); }
+    .lang-select:focus { outline: none; }
     body.dark .lang-select { background-color: transparent; color: var(--text-muted); }
     body.dark .lang-select option { background: #1c1c1c; color: var(--text-primary); }
   </style>
@@ -1177,7 +1170,6 @@
   </div>
 
   <nav>
-    <div class="logo" onclick="showPage('main'); window.scrollTo({top:0,behavior:'smooth'});" data-i18n="nav.logo">ROMINA</div>
     <div class="nav-links">
       <a href="javascript:void(0)" data-page="main" onclick="showPage('main'); setTimeout(function(){ var el = document.getElementById('ux-projects'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 80);" data-i18n="nav.work">Projekte</a>
       <a href="javascript:void(0)" data-page="about" onclick="showPage('about')" data-i18n="nav.about">Über mich</a>
@@ -1188,8 +1180,7 @@
         <option value="de">DE</option>
         <option value="en">EN</option>
       </select>
-      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode umschalten" style="background:none;border:1px solid var(--border);border-radius:4px;height:34px;padding:0 14px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text-muted);font-size:14px;font-weight:400;font-family:'Noto Sans',sans-serif;transition:all 0.3s;white-space:nowrap;">
-        <svg id="theme-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode umschalten">
         <span id="theme-label">Dark</span>
       </button>
       <button class="hamburger" id="hamburger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
@@ -1208,7 +1199,7 @@
         <div class="hero-name-wrap">
         <h1 class="hero-title" aria-label="ROMINA SCHOENI">
 
-                    <svg viewBox="0 0 1026 383" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" overflow="visible">
+                    <svg viewBox="31.3 -5 970.5 393" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" overflow="visible">
             <defs>
               <clipPath id="cat-clip" clipPathUnits="userSpaceOnUse">
                 <rect x="752" y="-25" width="26" height="23"/>
