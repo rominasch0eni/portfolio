@@ -282,7 +282,7 @@
     .projects-list-more .proj-list-item:first-child { border-top: none; }
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; width: 32px; flex-shrink: 0; }
     .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); flex: 1; transition: opacity 0.35s ease; }
-    .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-muted); text-align: right; max-width: 200px; flex-shrink: 0; line-height: 1.7; opacity: 0.85; }
+    .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 200px; flex-shrink: 0; line-height: 1.7; }
     .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
     .proj-list-item:hover .proj-list-title { opacity: 1; }
     /* Cursor-following hover image */
@@ -470,8 +470,10 @@
     .page-connect a:hover { color: var(--text-primary); }
     .page-connect .contact-links:hover a:not(:hover) { opacity: 0.25; }
 
-    footer { padding: 40px 48px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 300; color: var(--text-muted); opacity: 0.4; }
-    footer .footer-tagline { width: 100%; text-align: center; margin-top: 8px; font-size: 13px; }
+    footer { padding: 0 var(--sp-page) 48px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; color: var(--text-muted); font-size: 14px; font-weight: 400; }
+    .footer-cat-wrap { margin-top: -74px; position: relative; z-index: 1; }
+    footer .footer-tagline { font-size: 14px; font-style: italic; opacity: 0.5; margin-top: 8px; }
+    footer .footer-bottom { display: flex; gap: 32px; font-size: 13px; opacity: 0.4; }
 
     .showreel-highlights { padding: 0 48px 80px; }
     .showreel-highlights h2 { margin-bottom: 32px; color: var(--text-primary); }
@@ -1293,7 +1295,11 @@
       </div>
     </div>
 
-    <footer><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span><span class="footer-tagline">Made with curiosity &amp; cat hair</span></footer>
+    <footer>
+      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
+      <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
+      <div class="footer-bottom"><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span></div>
+    </footer>
   </div>
 
   <!-- PROJECT DETAIL PAGES -->
@@ -1433,7 +1439,11 @@
       </div>
     </div>
 
-    <footer class="animate"><span>© 2026 Romina</span><span>UX Portfolio</span><span class="footer-tagline">Made with curiosity &amp; cat hair</span></footer>
+    <footer class="animate">
+      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
+      <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
+      <div class="footer-bottom"><span>© 2026 Romina</span><span>UX Portfolio</span></div>
+    </footer>
   </div>
 
   <!-- CUBE – uncomment to restore: <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
@@ -3133,7 +3143,8 @@
         '<a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener">' + t('contact.refs') + '</a>' +
         '<a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener">' + t('contact.certs') + '</a>' +
         '</div></div>';
-      html += '<footer><span>© 2026 Romina</span><span>' + t('footer.label') + '</span><span class="footer-tagline">Made with curiosity &amp; cat hair</span></footer>';
+      var catSvg = '<div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>';
+      html += '<footer>' + catSvg + '<span class="footer-tagline">Made with curiosity &amp; cat hair</span><div class="footer-bottom"><span>© 2026 Romina</span><span>' + t('footer.label') + '</span></div></footer>';
 
       page.innerHTML = html;
     }
@@ -3565,7 +3576,11 @@
         <a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener" data-i18n="contact.certs">Zertifikate</a>
       </div>
     </div>
-    <footer class="animate"><span>© 2026 Romina</span><span data-i18n="footer.label">UX Portfolio</span><span class="footer-tagline">Made with curiosity &amp; cat hair</span></footer>
+    <footer class="animate">
+      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
+      <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
+      <div class="footer-bottom"><span>© 2026 Romina</span><span data-i18n="footer.label">UX Portfolio</span></div>
+    </footer>
   </div>
 
   <!-- CHAT WIDGET -->
