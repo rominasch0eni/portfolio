@@ -406,11 +406,11 @@
     .next-btn:hover { color: var(--accent); gap: 12px; }
 
     /* ABOUT PAGE */
-    .about-hero { padding: 140px var(--sp-page) var(--sp-section); display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-section); align-items: start; }
+    .about-hero { padding: 140px max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); display: grid; grid-template-columns: 1fr 0.75fr; gap: clamp(40px, 5vw, 100px); align-items: start; }
     .about-left { }
     .about-photo { width: 100%; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
     .about-right { display: flex; flex-direction: column; gap: var(--sp-page); }
-    .about-left h1 { font-size: clamp(44px, 5.5vw, 72px); margin-bottom: 40px; color: var(--text-primary); }
+    .about-left h1 { font-size: clamp(44px, 5.5vw, 88px); margin-bottom: 40px; color: var(--text-primary); }
     .about-left p { max-width: 500px; margin-bottom: 20px; }
     .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     .about-photo-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-muted); opacity: 0.4; }
@@ -419,13 +419,13 @@
     .skill-tags { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 12px; }
     .skill-tags span { font-size: 14px; font-weight: 300; color: var(--text-muted); }
 
-    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); text-align: center; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: var(--sp-section) max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); border-top: 1px solid var(--border); text-align: center; }
     .stat h4 { font-family: var(--font-serif); font-size: 56px; font-weight: 600; color: var(--text-primary); letter-spacing: -2px; }
     .stat h4 .stat-count { font-variant-numeric: tabular-nums; }
     .stat h4 .stat-sfx { letter-spacing: -1px; }
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
-    .about-profile { padding: var(--sp-section) var(--sp-page); border-top: 1px solid var(--border); }
+    .about-profile { padding: var(--sp-section) max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); border-top: 1px solid var(--border); }
     .about-profile > h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; text-align: center; margin-bottom: var(--sp-page); }
     .profile-grid { display: block; }
     .profile-col { padding-top: 0; }
@@ -457,7 +457,7 @@
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
     .about-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .about-testimonials { padding: 0 var(--sp-page) var(--sp-section); border-top: 1px solid var(--border); }
+    .about-testimonials { padding: 0 max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); border-top: 1px solid var(--border); }
     .about-testimonials > h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; text-align: center; padding: 100px 0 var(--sp-heading); margin: 0; }
     .testimonials-grid { display: flex; flex-direction: column; }
     .testimonial-card { padding: 48px 0; border: none; border-top: 1px solid var(--text-primary); background: none; display: flex; flex-direction: column; gap: 24px; }
