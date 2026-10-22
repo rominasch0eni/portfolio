@@ -267,14 +267,16 @@
     .about-brief-link:hover .about-brief-label::after { width: 100%; }
 
     /* SECTION LABEL */
-    .section-label { padding: 0 var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; }
+    .section-label { padding: 0 var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); }
     .section-label h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label span { display: none; }
 
     /* PROJECTS LIST */
+    .proj-section { position: relative; }
+    .proj-section + .proj-section { margin-top: var(--sp-section); }
     .projects-list { padding: 0 var(--sp-page); margin-bottom: var(--sp-section); }
     .projects-list-more { margin-bottom: var(--sp-section); }
-    .section-label-secondary { padding: var(--sp-section) var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; }
+    .section-label-secondary { padding: 0 var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); }
     .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label-secondary span { display: none; }
     .proj-list-item { display: grid; grid-template-columns: var(--grid-col1) 1fr auto; column-gap: var(--grid-gap); align-items: center; border-top: none; padding: 52px 0; cursor: pointer; user-select: none; position: relative; }
@@ -581,12 +583,14 @@
       .hamburger { display: flex; }
       .mobile-menu { display: flex; pointer-events: none; }
       .mobile-menu.open { pointer-events: all; }
-      .section-label { padding: 80px 24px 24px; }
+      .proj-section { padding-top: 60px; }
+      .proj-section + .proj-section { padding-top: 0; margin-top: 60px; }
+      .section-label { padding: 0 24px 24px; }
       .projects-list { padding: 0 24px; }
       .proj-list-type { display: none; }
       .proj-list-title { font-size: clamp(28px, 8vw, 52px); }
       .proj-list-item { padding: 28px 0; }
-      .section-label-secondary { padding: 80px 24px 24px; }
+      .section-label-secondary { padding: 0 24px 24px; }
       .about-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 120px 24px 60px; gap: 40px; }
       .about-photo { order: 1; grid-column: 1; grid-row: auto; }
       .about-left { order: 2; grid-column: 1; grid-row: auto; }
@@ -1294,19 +1298,21 @@
     </section>
     -->
 
-    <div class="section-label" id="ux-projects">
-      <h2 data-i18n="section.ux">UX Projekte</h2>
-      <span data-i18n="section.ux.year">2021 bis 2026</span>
+    <div class="proj-section">
+      <div class="section-label" id="ux-projects">
+        <h2 data-i18n="section.ux">UX Projekte</h2>
+        <span data-i18n="section.ux.year">2021 bis 2026</span>
+      </div>
+      <div class="projects-list" id="projects-grid-ux"></div>
     </div>
 
-    <div class="projects-list" id="projects-grid-ux"></div>
-
-    <div class="section-label-secondary">
-      <h2 data-i18n="section.more">Weitere Projekte</h2>
-      <span data-i18n="section.more.year">2019 bis 2022</span>
+    <div class="proj-section">
+      <div class="section-label-secondary">
+        <h2 data-i18n="section.more">Weitere Projekte</h2>
+        <span data-i18n="section.more.year">2019 bis 2022</span>
+      </div>
+      <div class="projects-list projects-list-more" id="projects-grid-more"></div>
     </div>
-
-    <div class="projects-list projects-list-more" id="projects-grid-more"></div>
 
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
