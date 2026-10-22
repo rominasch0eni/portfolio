@@ -678,6 +678,7 @@
     .accordion-item.animate { opacity: 1; transform: none; transition: none; }
     .accordion-item.animate .accordion-label { transform: translateY(100%) rotateX(50deg); transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0s); }
     .accordion-item.in-view .accordion-label { transform: translateY(0) rotateX(0deg); }
+    .accordion-item.animating .accordion-trigger:hover .accord-label-clip { transform: none; }
     h1.h1-reveal { opacity: 1; transform: none; transition: none; }
     .h1-clip { display: block; perspective: 700px; perspective-origin: center 110%; clip-path: inset(0 -9999px 0 -9999px); padding-bottom: 0.12em; margin-bottom: -0.12em; }
     .h1-inner { display: block; transform-origin: bottom center; }
@@ -3183,18 +3184,30 @@
     var scrollObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          scrollObserver.unobserve(entry.target);
+          var target = entry.target;
+          target.classList.add('in-view');
+          scrollObserver.unobserve(target);
+          if (target.classList.contains('accordion-item')) {
+            target.classList.add('animating');
+            var label = target.querySelector('.accordion-label');
+            if (label) {
+              label.addEventListener('transitionend', function() {
+                target.classList.remove('animating');
+              }, { once: true });
+            }
+          }
         }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
     function initScrollAnimations(scope) {
       var root = scope || document;
-      root.querySelectorAll('.animate').forEach(function(el) {
-        // Reset if re-entering page
-        el.classList.remove('in-view');
-        scrollObserver.observe(el);
+      var els = Array.from(root.querySelectorAll('.animate'));
+      els.forEach(function(el) { el.classList.remove('in-view'); });
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          els.forEach(function(el) { scrollObserver.observe(el); });
+        });
       });
     }
 
