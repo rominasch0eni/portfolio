@@ -267,7 +267,7 @@
     .about-brief-link:hover .about-brief-label::after { width: 100%; }
 
     /* SECTION LABEL */
-    .section-label { padding: 12px var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
+    .section-label { padding: 24px var(--sp-page) 16px; display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
     .section-label h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label span { display: none; }
 
@@ -276,7 +276,7 @@
     .proj-section + .proj-section { margin-top: var(--sp-section); }
     .projects-list { padding: 0 var(--sp-page); margin-bottom: var(--sp-section); }
     .projects-list-more { margin-bottom: var(--sp-section); }
-    .section-label-secondary { padding: 12px var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
+    .section-label-secondary { padding: 24px var(--sp-page) 16px; display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
     .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label-secondary span { display: none; }
     :root:has(nav.nav-hidden) .section-label,
@@ -587,12 +587,12 @@
       .mobile-menu.open { pointer-events: all; }
       .proj-section { padding-top: 60px; }
       .proj-section + .proj-section { padding-top: 0; margin-top: 60px; }
-      .section-label { padding: 12px 24px 24px; }
+      .section-label { padding: 20px 24px 14px; }
       .projects-list { padding: 0 24px; }
       .proj-list-type { display: none; }
       .proj-list-title { font-size: clamp(28px, 8vw, 52px); }
       .proj-list-item { padding: 28px 0; }
-      .section-label-secondary { padding: 12px 24px 24px; }
+      .section-label-secondary { padding: 20px 24px 14px; }
       .about-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 120px 24px 60px; gap: 40px; }
       .about-photo { order: 1; grid-column: 1; grid-row: auto; }
       .about-left { order: 2; grid-column: 1; grid-row: auto; }
