@@ -297,6 +297,7 @@
     .proj-list-item.animate .proj-list-type { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease calc(var(--anim-delay, 0s) + 0.42s), transform 0.6s ease calc(var(--anim-delay, 0s) + 0.42s); }
     .proj-list-item.in-view .proj-list-type { opacity: 1; transform: translateY(0); }
     .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
+    .proj-list-mobile-img { display: none; }
     /* Cursor-following hover image */
     #proj-hover-img { position: fixed; left: 0; top: 0; width: 400px; aspect-ratio: 16/9; overflow: hidden; pointer-events: none; z-index: 500; opacity: 0; border-radius: 3px; clip-path: inset(16% 0 16% 0 round 3px); transition: opacity 0.28s ease, clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
     #proj-hover-img.visible { opacity: 1; clip-path: inset(0% 0 0% 0 round 3px); }
@@ -583,6 +584,7 @@
       nav { padding: 20px 24px; }
       nav .nav-links { display: none; }
       .hamburger { display: flex; }
+      nav .nav-actions { margin-left: auto; }
       .mobile-menu { display: flex; pointer-events: none; }
       .mobile-menu.open { pointer-events: all; }
       .proj-section { padding-top: 60px; }
@@ -593,6 +595,9 @@
       .proj-list-title { font-size: clamp(28px, 8vw, 52px); }
       .proj-list-item { padding: 28px 0; }
       .section-label-secondary { padding: 20px 24px 14px; }
+      .proj-list-mobile-img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 3px; grid-column: 1 / -1; margin-top: 14px; }
+      .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 1; }
+      .proj-list-item:hover .proj-title-clip { transform: none; }
       .about-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 120px 24px 60px; gap: 40px; }
       .about-photo { order: 1; grid-column: 1; grid-row: auto; }
       .about-left { order: 2; grid-column: 1; grid-row: auto; }
@@ -2893,6 +2898,7 @@
         '<span class="proj-list-num">' + num + '</span>' +
         '<span class="proj-title-clip"><span class="proj-list-title">' + pl(p, 'name') + '</span></span>' +
         '<span class="proj-list-type">' + pl(p, 'type').replace(/\s*·\s*/g, '<br>') + '</span>' +
+        (imgSrc ? '<img class="proj-list-mobile-img" src="' + imgSrc + '" alt="" loading="lazy" />' : '') +
         '</div>';
       return html;
     }
@@ -3264,6 +3270,7 @@
     }
 
     function initProjListHover() {
+      if (window.innerWidth <= 768) return;
       var hoverEl = document.getElementById('proj-hover-img');
       if (!hoverEl) return;
       var img = hoverEl.querySelector('img');
