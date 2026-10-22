@@ -281,10 +281,10 @@
     .projects-list .proj-list-item:first-child { border-top: none; }
     .projects-list-more .proj-list-item:first-child { border-top: none; }
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; }
-    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); transition: opacity 0.35s ease; }
+    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.25, 0, 0.25, 1); transform: translateX(0); }
     .proj-list-type { font-size: 18px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 220px; line-height: 1.7; }
     .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
-    .proj-list-item:hover .proj-list-title { opacity: 1; }
+    .proj-list-item:hover .proj-list-title { opacity: 1; transform: translateX(calc(-1 * var(--grid-gap) + 4px)); }
     /* Cursor-following hover image */
     #proj-hover-img { position: fixed; width: 520px; aspect-ratio: 16/9; overflow: hidden; pointer-events: none; z-index: 500; opacity: 0; transition: opacity 0.22s ease; transform: translate(32px, -50%); top: 0; left: 0; }
     #proj-hover-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
