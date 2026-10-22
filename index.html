@@ -284,11 +284,11 @@
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
     .proj-list-item.animate .proj-list-num { opacity: 0; transform: translateY(10px); transition: opacity 0.6s ease calc(var(--anim-delay, 0s) + 0.3s), transform 0.6s ease calc(var(--anim-delay, 0s) + 0.3s); }
     .proj-list-item.in-view .proj-list-num { opacity: 0.45; transform: translateY(0); }
-    .proj-title-clip { display: block; overflow-x: visible; overflow-y: clip; padding-bottom: 0.1em; margin-bottom: -0.1em; transition: transform 0.45s cubic-bezier(0.25, 0, 0.25, 1); }
+    .proj-title-clip { display: block; overflow-x: visible; overflow-y: clip; padding-bottom: 0.15em; margin-bottom: -0.15em; perspective: 900px; perspective-origin: center top; transition: transform 0.45s cubic-bezier(0.25, 0, 0.25, 1); }
     .proj-list-item:hover .proj-title-clip { transform: translateX(calc(-1 * var(--grid-gap) + 4px)); }
-    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); display: block; }
-    .proj-list-item.animate .proj-list-title { transform: translateY(110%); transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0s), opacity 0.35s ease; }
-    .proj-list-item.in-view .proj-list-title { transform: translateY(0); }
+    .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); display: block; transform-origin: top center; }
+    .proj-list-item.animate .proj-list-title { transform: translateY(112%) rotateX(18deg); transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0s), opacity 0.35s ease; }
+    .proj-list-item.in-view .proj-list-title { transform: translateY(0) rotateX(0deg); }
     .proj-list-type { font-size: 18px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 220px; line-height: 1.7; }
     .proj-list-item.animate .proj-list-type { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease calc(var(--anim-delay, 0s) + 0.42s), transform 0.6s ease calc(var(--anim-delay, 0s) + 0.42s); }
     .proj-list-item.in-view .proj-list-type { opacity: 1; transform: translateY(0); }
@@ -2888,10 +2888,10 @@
       });
       // Stagger items: each appears 0.08s after the previous
       gridUX.querySelectorAll('.proj-list-item').forEach(function(item, i) {
-        item.style.setProperty('--anim-delay', (i * 0.09) + 's');
+        item.style.setProperty('--anim-delay', (0.1 + i * 0.13) + 's');
       });
       gridMore.querySelectorAll('.proj-list-item').forEach(function(item, i) {
-        item.style.setProperty('--anim-delay', (i * 0.09) + 's');
+        item.style.setProperty('--anim-delay', (0.1 + i * 0.13) + 's');
       });
     }
 
