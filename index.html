@@ -174,7 +174,7 @@
     .hero-content.hidden { opacity: 0; transform: translateY(-20px); }
     .hero-name-wrap { width: 100%; margin: 0; }
     .hero-title { display: block; width: 100%; color: var(--text-primary); }
-    .hero-title svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .hero-title svg { display: block; width: 100%; height: auto; max-height: 40vh; overflow: visible; }
     .letter { opacity: 0; filter: blur(10px); transform: translateY(8px); translate: 0 0; pointer-events: bounding-box; transition: opacity 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.5s cubic-bezier(0.2, 0, 0.2, 1); }
     .letter.in { opacity: 1; filter: none; transform: none; }
     .letter.in:nth-child(-n+8):not([data-letter="A"]):not([data-letter="cat"]):hover { translate: 0 -24px; }
@@ -267,22 +267,22 @@
     .about-brief-link:hover .about-brief-label::after { width: 100%; }
 
     /* SECTION LABEL */
-    .section-label { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: center; align-items: baseline; }
-    .section-label h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; }
+    .section-label { padding: 0 var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; }
+    .section-label h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label span { display: none; }
 
     /* PROJECTS LIST */
     .projects-list { padding: 0 var(--sp-page); margin-bottom: var(--sp-section); }
-    .projects-list-more { margin-bottom: 120px; }
-    .section-label-secondary { padding: 100px var(--sp-page) var(--sp-heading); display: flex; justify-content: center; align-items: baseline; }
-    .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; }
+    .projects-list-more { margin-bottom: var(--sp-section); }
+    .section-label-secondary { padding: var(--sp-section) var(--sp-page) var(--sp-heading); display: flex; justify-content: flex-start; align-items: baseline; }
+    .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label-secondary span { display: none; }
     .proj-list-item { display: grid; grid-template-columns: var(--grid-col1) 1fr auto; column-gap: var(--grid-gap); align-items: center; border-top: 1px solid var(--text-primary); padding: 52px 0; cursor: pointer; user-select: none; }
     .projects-list .proj-list-item:first-child { border-top: none; }
     .projects-list-more .proj-list-item:first-child { border-top: none; }
     .proj-list-num { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.45; }
     .proj-list-title { font-family: var(--font-serif); font-size: clamp(48px, 7.5vw, 112px); font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); transition: opacity 0.35s ease; }
-    .proj-list-type { font-size: 15px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 200px; line-height: 1.7; }
+    .proj-list-type { font-size: 18px; font-weight: 400; color: var(--text-primary); text-align: right; max-width: 220px; line-height: 1.7; }
     .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
     .proj-list-item:hover .proj-list-title { opacity: 1; }
     /* Cursor-following hover image */
@@ -458,22 +458,26 @@
     .testimonial-name { font-size: 14px; font-weight: 500; color: var(--text-primary); }
     .testimonial-role { font-size: 14px; font-weight: 300; color: var(--text-muted); margin-top: 2px; }
 
-    .about-contact { padding: 120px var(--sp-page) 100px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .about-contact h2 { font-family: var(--font-sans); font-size: clamp(32px, 5vw, 72px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 48px; color: var(--text-primary); }
-    .about-contact .contact-links { display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; align-items: center; }
-    .about-contact a { color: var(--text-primary); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s, opacity 0.35s; position: relative; }
-    .about-contact a:hover { color: var(--text-primary); }
-    .about-contact .contact-links:hover a:not(:hover) { opacity: 0.25; }
+    .about-contact { padding: clamp(24px, 6vh, 80px) var(--sp-page); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-top: 1px solid var(--border); }
+    .about-contact h2 { font-family: var(--font-serif); font-size: clamp(32px, 3.5vw, 56px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; color: var(--text-primary); }
+    .about-contact .contact-email { font-family: var(--font-serif); font-size: clamp(20px, 2.2vw, 36px); font-weight: 400; letter-spacing: -0.01em; color: var(--text-primary); text-decoration: none; text-transform: none; margin-bottom: 48px; display: block; position: relative; transition: opacity 0.35s; line-height: 1.2; opacity: 1; }
+    .about-contact .contact-email::after { content: ''; position: absolute; bottom: -3px; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: var(--text-primary); transition: width 0.4s ease; }
+    .about-contact .contact-email:hover::after { width: 100%; }
+    .about-contact .contact-email:hover { opacity: 1; }
+    .about-contact .contact-links { display: flex; gap: 36px; flex-wrap: wrap; justify-content: center; align-items: center; }
+    .about-contact a { color: var(--text-muted); text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s, opacity 0.35s; position: relative; opacity: 0.5; }
+    .about-contact a:hover { color: var(--text-primary); opacity: 1; }
+    .about-contact .contact-links:hover a:not(:hover) { opacity: 0.2; }
     .page-connect { padding: 80px 48px 100px; border-top: 1px solid var(--border); }
     .page-connect h2 { margin-bottom: 24px; color: var(--text-primary); }
     .page-connect a { color: var(--text-primary); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s, opacity 0.35s; position: relative; display: inline-flex; align-items: center; gap: 8px; }
     .page-connect a:hover { color: var(--text-primary); }
     .page-connect .contact-links:hover a:not(:hover) { opacity: 0.25; }
 
-    footer { padding: 0 var(--sp-page) 48px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; color: var(--text-muted); font-size: 14px; font-weight: 400; }
+    footer { padding: 0 var(--sp-page) 56px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; color: var(--text-muted); font-size: 14px; font-weight: 400; }
     .footer-cat-wrap { margin-top: -74px; position: relative; z-index: 1; }
-    footer .footer-tagline { font-size: 14px; font-style: italic; opacity: 0.5; margin-top: 8px; }
-    footer .footer-bottom { display: flex; gap: 32px; font-size: 13px; opacity: 0.4; }
+    footer .footer-tagline { font-size: 13px; font-style: italic; opacity: 0.45; margin-top: 12px; letter-spacing: 0.02em; }
+    footer .footer-bottom { display: flex; gap: 32px; font-size: 12px; opacity: 0.35; letter-spacing: 0.05em; }
 
     .showreel-highlights { padding: 0 48px 80px; }
     .showreel-highlights h2 { margin-bottom: 32px; color: var(--text-primary); }
@@ -1277,8 +1281,8 @@
 
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
+      <a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
       <div class="contact-links">
-        <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
         <a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener" data-i18n="contact.refs">Arbeitszeugnisse</a>
@@ -1421,8 +1425,8 @@
 
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
+      <a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
       <div class="contact-links">
-        <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
         <a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener" data-i18n="contact.refs">Arbeitszeugnisse</a>
@@ -3127,8 +3131,8 @@
       '</div>';
 
       html += '<div class="about-contact"><h2>' + t('contact.heading') + '</h2>' +
+        '<a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>' +
         '<div class="contact-links">' +
-        '<a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>' +
         '<a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>' +
         '<a href="cv.html" target="_blank">' + t('contact.cv') + '</a>' +
         '<a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener">' + t('contact.refs') + '</a>' +
@@ -3559,8 +3563,8 @@
     </div>
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
+      <a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
       <div class="contact-links">
-        <a href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
         <a href="https://drive.google.com/file/d/1ZnddKHY8jbLK3YmiRjBVugU52ehnNwrJ/view" target="_blank" rel="noopener" data-i18n="contact.refs">Arbeitszeugnisse</a>
