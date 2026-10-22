@@ -161,7 +161,7 @@
     nav .nav-links:hover a:not(:hover) { opacity: 0.25; }
     nav .nav-links a.nav-active { color: var(--text-primary); border-bottom-color: var(--accent); }
     nav .nav-actions { display: flex; align-items: center; gap: 12px; }
-    #theme-toggle { border: 1.5px solid var(--text-primary); border-radius: 999px; background: var(--bg); padding: 5px 14px; cursor: pointer; display: flex; align-items: center; color: var(--text-primary); font-size: 13px; font-weight: 400; font-family: var(--font-sans); transition: color 0.3s, opacity 0.35s; white-space: nowrap; }
+    #theme-toggle { border: 1.5px solid var(--text-primary); border-radius: 999px; background: var(--bg); padding: 7px 20px; cursor: pointer; display: flex; align-items: center; color: var(--text-primary); font-size: 15px; font-weight: 400; font-family: var(--font-sans); transition: color 0.3s, opacity 0.35s; white-space: nowrap; }
     #theme-toggle:hover { color: var(--text-primary); }
     .hamburger:hover span { background: var(--accent); }
 
@@ -279,6 +279,8 @@
     .section-label-secondary { padding: 24px var(--sp-page) 16px; display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
     .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label-secondary span { display: none; }
+    .about-bringt .section-label-secondary h2,
+    .about-testimonials-section .section-label-secondary h2 { margin-left: 0; }
     :root:has(nav.nav-hidden) .section-label,
     :root:has(nav.nav-hidden) .section-label-secondary { top: 0; }
     .proj-list-item { display: grid; grid-template-columns: var(--grid-col1) 1fr auto; column-gap: var(--grid-gap); align-items: center; border-top: none; padding: 52px 0; cursor: pointer; user-select: none; position: relative; }
