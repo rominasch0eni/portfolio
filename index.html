@@ -492,9 +492,8 @@
     .page-connect a:hover { color: var(--text-primary); }
     .page-connect .contact-links:hover a:not(:hover) { opacity: 0.25; }
 
-    footer { padding: 0 var(--sp-page) 56px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; color: var(--text-muted); font-size: 14px; font-weight: 400; }
-    .footer-cat-wrap { margin-top: -74px; position: relative; z-index: 1; }
-    footer .footer-tagline { font-size: 13px; font-style: italic; opacity: 0.45; margin-top: 12px; letter-spacing: 0.02em; }
+    footer { padding: 48px var(--sp-page) 48px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; color: var(--text-muted); font-size: 14px; font-weight: 400; }
+    footer .footer-tagline { font-size: 13px; font-style: italic; opacity: 0.45; letter-spacing: 0.02em; }
     footer .footer-bottom { display: flex; gap: 32px; font-size: 12px; opacity: 0.35; letter-spacing: 0.05em; }
 
     .showreel-highlights { padding: 0 48px 80px; }
@@ -1085,20 +1084,15 @@
     .unfiltered-gallery { padding: 0 var(--sp-page) 120px; }
     .unfiltered-gallery-featured { width: 100%; margin-bottom: 16px; overflow: hidden; border-radius: 4px; }
     .unfiltered-gallery-featured img { width: 100%; display: block; }
-    .gallery-row { display: flex; gap: 16px; margin-bottom: 16px; }
-    .unfiltered-gallery-item { overflow: hidden; border-radius: 4px; min-width: 0; }
+    .gallery-row { display: contents; }
+    .unfiltered-gallery-item { overflow: hidden; border-radius: 4px; width: 100%; display: block; margin-bottom: 16px; }
     .unfiltered-gallery-item img,
-    .unfiltered-gallery-item video { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+    .unfiltered-gallery-item video { width: 100%; display: block; transition: transform 0.5s cubic-bezier(0.23,1,0.32,1); }
     .unfiltered-gallery-item:hover img,
     .unfiltered-gallery-item:hover video { transform: scale(1.03); }
     @media (max-width: 768px) {
       .unfiltered-gallery { padding: 0 24px 80px; }
       .unfiltered-hero { padding: 162px 24px 40px; }
-      .gallery-row { flex-wrap: wrap; gap: 8px; aspect-ratio: unset !important; }
-      .gallery-row .unfiltered-gallery-item { flex: none !important; width: calc(50% - 4px); aspect-ratio: var(--ar, 1); }
-    }
-    @media (max-width: 480px) {
-      .gallery-row .unfiltered-gallery-item { width: 100%; }
     }
 
     /* Gradient for lines & underlines */
@@ -1339,7 +1333,6 @@
     </div>
 
     <footer>
-      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
       <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
       <div class="footer-bottom"><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span></div>
     </footer>
@@ -3651,9 +3644,8 @@
       </div>
     </div>
     <footer class="animate">
-      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
       <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
-      <div class="footer-bottom"><span>© 2026 Romina</span><span data-i18n="footer.label">UX Portfolio</span></div>
+      <div class="footer-bottom"><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span></div>
     </footer>
   </div>
 
