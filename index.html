@@ -280,9 +280,7 @@
     .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label-secondary span { display: none; }
     :root:has(nav.nav-hidden) .section-label,
-    :root:has(nav.nav-hidden) .section-label-secondary,
-    :root:has(nav.nav-hidden) .about-profile > h2,
-    :root:has(nav.nav-hidden) .about-testimonials > h2 { top: 0; }
+    :root:has(nav.nav-hidden) .section-label-secondary { top: 0; }
     .proj-list-item { display: grid; grid-template-columns: var(--grid-col1) 1fr auto; column-gap: var(--grid-gap); align-items: center; border-top: none; padding: 52px 0; cursor: pointer; user-select: none; position: relative; }
     .proj-list-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: var(--text-primary); transform-origin: left center; transform: scaleX(0); transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1) var(--anim-delay, 0s); }
     .proj-list-item.in-view::before { transform: scaleX(1); }
@@ -432,8 +430,8 @@
     .stat h4 .stat-sfx { letter-spacing: -1px; }
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
-    .about-profile { padding: var(--sp-section) max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); border-top: 1px solid var(--border); }
-    .about-profile > h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); padding: 24px 0 16px; margin: 0 calc(-1 * max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page)))) 0; padding-left: max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); padding-right: max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
+    .about-bringt { border-top: 1px solid var(--border); }
+    .about-profile { padding: 0 max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); }
     .profile-grid { display: block; }
     .profile-col { padding-top: 0; }
     .profile-col .accordion { border-top: none; }
@@ -464,8 +462,8 @@
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
     .about-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .about-testimonials { padding: 0 max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); border-top: 1px solid var(--border); }
-    .about-testimonials > h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); padding: 24px 0 16px; margin: 0 calc(-1 * max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page)))); padding-left: max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); padding-right: max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
+    .about-testimonials-section { border-top: 1px solid var(--border); }
+    .about-testimonials { padding: 0 max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); }
     .testimonials-grid { display: flex; flex-direction: column; }
     .testimonial-card { padding: 48px 0; border: none; border-top: 1px solid var(--text-primary); background: none; display: flex; flex-direction: column; gap: 24px; }
     .testimonial-card:hover { transform: none; box-shadow: none; }
@@ -613,9 +611,9 @@
       .about-brief-img { aspect-ratio: 4/3; }
       .about-contact { padding: 48px 24px 80px; }
       .page-connect { padding: 48px 24px 80px; }
-      .about-profile { padding: 48px 24px; }
+      .about-profile { padding: 0 24px 48px; }
       .profile-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-testimonials { padding: 48px 24px; }
+      .about-testimonials { padding: 0 24px 48px; }
       .testimonials-grid { flex-direction: column; }
       footer { padding: 24px; flex-direction: column; gap: 8px; }
       .scroll-hint { display: none; }
@@ -1377,8 +1375,11 @@
       <div class="stat animate" style="transition-delay:0.2s;"><h4>20+</h4><p data-i18n="about.stat.3">Usability Studien</p></div>
     </div>
 
-    <div class="about-profile animate">
-      <h2 data-i18n="about.brings">Was ich mitbringe</h2>
+    <div class="about-bringt">
+      <div class="section-label-secondary">
+        <h2 data-i18n="about.brings">Was ich mitbringe</h2>
+      </div>
+      <div class="about-profile animate">
       <div class="profile-grid">
 
         <!-- Links: Stärken -->
@@ -1417,6 +1418,7 @@
 
 
       </div>
+      </div>
     </div>
 
     <div class="about-schwerpunkte">
@@ -1437,8 +1439,11 @@
       </div>
     </div>
 
-    <div class="about-testimonials animate">
-      <h2 data-i18n="test.heading">Was andere über mich sagen</h2>
+    <div class="about-testimonials-section">
+      <div class="section-label-secondary">
+        <h2 data-i18n="test.heading">Was andere über mich sagen</h2>
+      </div>
+      <div class="about-testimonials animate">
       <div class="testimonials-grid">
         <div class="testimonial-card animate">
           <p class="testimonial-quote" data-i18n="test.1">"Die Zusammenarbeit mit Romina hat mir sehr viel Freude bereitet: ihr Engagement, ihr Ehrgeiz und ihr Wissen haben dem Team enorm dabei geholfen, grossartige Produkte zu gestalten."</p>
@@ -1468,6 +1473,7 @@
             <div><div class="testimonial-name">Minh Tien Mai</div><div class="testimonial-role">Chief Product Officer · Annanow AG</div></div>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
