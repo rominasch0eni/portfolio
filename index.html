@@ -156,10 +156,10 @@
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     }
     nav .nav-links { display: flex; gap: 32px; }
-    nav .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 400; font-family: var(--font-sans); padding-bottom: 3px; border-bottom: 1.5px solid transparent; transition: color 0.3s, border-color 0.3s, opacity 0.35s; }
+    nav .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 400; font-family: var(--font-sans); padding-bottom: 3px; border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s, opacity 0.35s; }
     nav .nav-links a:hover { color: var(--text-primary); }
     nav .nav-links:hover a:not(:hover) { opacity: 0.25; }
-    nav .nav-links a.nav-active { color: var(--text-primary); border-bottom-color: var(--accent); }
+    nav .nav-links a.nav-active { color: var(--text-primary); border-bottom-color: var(--text-primary); }
     nav .nav-actions { display: flex; align-items: center; gap: 12px; }
     #theme-toggle { border: 1.5px solid var(--text-primary); border-radius: 999px; background: var(--bg); padding: 7px 20px; cursor: pointer; display: flex; align-items: center; color: var(--text-primary); font-size: 15px; font-weight: 400; font-family: var(--font-sans); transition: color 0.3s, opacity 0.35s; white-space: nowrap; }
     #theme-toggle:hover { color: var(--text-primary); }
@@ -268,7 +268,7 @@
 
     /* SECTION LABEL */
     .section-label { padding: 24px var(--sp-page) 16px; display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
-    .section-label h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
+    .section-label h2 { font-size: 16px; font-weight: var(--w-medium); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; font-family: var(--font-sans); margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label span { display: none; }
 
     /* PROJECTS LIST */
@@ -277,9 +277,10 @@
     .projects-list { padding: 0 var(--sp-page); margin-bottom: var(--sp-section); }
     .projects-list-more { margin-bottom: var(--sp-section); }
     .section-label-secondary { padding: 24px var(--sp-page) 16px; display: flex; justify-content: flex-start; align-items: baseline; position: sticky; top: var(--nav-h); z-index: 50; background: var(--bg); transition: top 0.35s cubic-bezier(0.25, 0, 0, 1); }
-    .section-label-secondary h2 { font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); opacity: 0.5; font-family: inherit; margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
+    .section-label-secondary h2 { font-size: 16px; font-weight: var(--w-medium); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; font-family: var(--font-sans); margin-left: calc(var(--grid-col1) + var(--grid-gap)); }
     .section-label-secondary span { display: none; }
     .about-bringt .section-label-secondary h2,
+    .about-schwerpunkte .section-label-secondary h2,
     .about-testimonials-section .section-label-secondary h2 { margin-left: 0; }
     :root:has(nav.nav-hidden) .section-label,
     :root:has(nav.nav-hidden) .section-label-secondary { top: 0; }
@@ -301,7 +302,7 @@
     .projects-list:hover .proj-list-item:not(:hover) .proj-list-title { opacity: 0.2; }
     .proj-list-mobile-img { display: none; }
     /* Cursor-following hover image */
-    #proj-hover-img { position: fixed; left: 0; top: 0; width: 520px; aspect-ratio: 16/9; overflow: hidden; pointer-events: none; z-index: 500; opacity: 0; border-radius: 3px; clip-path: inset(16% 0 16% 0 round 3px); transition: opacity 0.28s ease, clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    #proj-hover-img { position: fixed; left: 0; top: 0; width: clamp(380px, 40vw, 820px); aspect-ratio: 16/9; overflow: hidden; pointer-events: none; z-index: 500; opacity: 0; border-radius: 3px; clip-path: inset(16% 0 16% 0 round 3px); transition: opacity 0.28s ease, clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
     #proj-hover-img.visible { opacity: 1; clip-path: inset(0% 0 0% 0 round 3px); }
     #proj-hover-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -327,8 +328,8 @@
     .project-process h2,
     .project-gallery h2,
     .project-outcome h2,
-    .cs-section h2 { font-family: var(--font-sans); font-size: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; }
-    .project-detail-content h2 { margin-bottom: 20px; color: var(--text-primary); }
+    .cs-section h2 { font-family: var(--font-sans); font-size: 16px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; color: var(--text-muted); opacity: 0.6; }
+    .project-detail-content h2 { margin-bottom: 20px; }
     .project-detail-content p { margin-bottom: 16px; max-width: 560px; }
 
     .project-detail-content.stacked { grid-template-columns: 1fr; gap: 0; }
@@ -438,14 +439,14 @@
     .stat h4 .stat-sfx { letter-spacing: -1px; }
     .stat p { color: var(--text-muted); opacity: 0.6; margin-top: 8px; }
 
-    .about-bringt { border-top: 1px solid var(--border); }
+    .about-bringt { border-top: 1px solid var(--border); padding-top: var(--sp-section); }
     .about-profile { padding: 0 max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); }
     .profile-grid { display: block; }
     .profile-col { padding-top: 0; }
     .profile-col .accordion { border-top: none; }
     .profile-sub-label { font-family: var(--font-sans); font-size: var(--text-label); font-weight: var(--w-medium); letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; margin-bottom: 4px; }
-    .about-schwerpunkte { border-top: 1px solid var(--border); padding-bottom: var(--sp-section); }
-    .schwerpunkte-marquee { overflow: hidden; margin: 0; padding: 16px 0 0; }
+    .about-schwerpunkte { border-top: 1px solid var(--border); padding-top: var(--sp-section); }
+    .schwerpunkte-marquee { overflow: hidden; margin: 0; padding: clamp(16px, 3vh, 32px) 0 var(--sp-section); }
     .marquee-track { overflow: hidden; padding: 4px 0; }
     .marquee-inner { display: flex; width: max-content; will-change: transform; }
     .marquee-inner:not(.reverse) { animation: marquee-left 30s linear infinite; }
@@ -470,10 +471,11 @@
     .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1); }
     .accordion-body p { padding-bottom: 24px; color: var(--text-secondary); max-width: 640px; }
     .about-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .about-testimonials-section { border-top: 1px solid var(--border); }
+    .about-testimonials-section { border-top: none; padding-top: var(--sp-section); }
     .about-testimonials { padding: 0 max(var(--sp-page), calc((100% - 1500px) / 2 + var(--sp-page))) var(--sp-section); }
     .testimonials-grid { display: flex; flex-direction: column; }
     .testimonial-card { padding: 48px 0; border: none; border-top: 1px solid var(--text-primary); background: none; display: flex; flex-direction: column; gap: 24px; }
+    .testimonials-grid .testimonial-card:first-child { border-top: none; padding-top: 0; }
     .testimonial-card:hover { transform: none; box-shadow: none; }
     .testimonial-quote { font-family: var(--font-sans); font-size: clamp(22px, 3.5vw, 48px); font-weight: 400; line-height: 1.2; color: var(--text-primary); font-style: normal; letter-spacing: -0.02em; }
     .testimonial-author { display: flex; align-items: center; gap: 12px; }
@@ -482,14 +484,14 @@
     .testimonial-name { font-size: 14px; font-weight: 500; color: var(--text-primary); }
     .testimonial-role { font-size: 14px; font-weight: 300; color: var(--text-muted); margin-top: 2px; }
 
-    .about-contact { padding: clamp(24px, 6vh, 80px) var(--sp-page); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-top: 1px solid var(--border); }
-    .about-contact h2 { font-family: var(--font-serif); font-size: clamp(32px, 3.5vw, 56px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; color: var(--text-primary); }
+    .about-contact { padding: clamp(64px, 10vh, 140px) var(--sp-page); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-top: 1px solid var(--border); }
+    .about-contact h2 { font-family: var(--font-serif); font-size: clamp(32px, 3.5vw, 56px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 48px; color: var(--text-primary); }
     .about-contact .contact-email { font-family: var(--font-serif); font-size: clamp(20px, 2.2vw, 36px); font-weight: 400; letter-spacing: -0.01em; color: var(--text-primary); text-decoration: none; text-transform: none; margin-bottom: 48px; display: block; position: relative; transition: opacity 0.35s; line-height: 1.2; opacity: 1; }
     .about-contact .contact-email::after { content: ''; position: absolute; bottom: -3px; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: var(--text-primary); transition: width 0.4s ease; }
     .about-contact .contact-email:hover::after { width: 100%; }
     .about-contact .contact-email:hover { opacity: 1; }
     .about-contact .contact-links { display: flex; gap: 36px; flex-wrap: wrap; justify-content: center; align-items: center; }
-    .about-contact a { color: var(--text-muted); text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s, opacity 0.35s; position: relative; opacity: 0.5; }
+    .about-contact a { color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; transition: color 0.3s, opacity 0.35s; position: relative; opacity: 0.55; }
     .about-contact a:hover { color: var(--text-primary); opacity: 1; }
     .about-contact .contact-links:hover a:not(:hover) { opacity: 0.2; }
     .page-connect { padding: 80px 48px 100px; border-top: 1px solid var(--border); }
@@ -590,8 +592,8 @@
     @media (max-width: 768px) {
       nav { padding: 20px 24px; }
       nav .nav-links { display: none; }
-      .hamburger { display: flex; }
-      nav .nav-actions { margin-left: auto; }
+      .hamburger { display: flex; margin-left: auto; }
+      nav .nav-actions { margin-left: 0; }
       .mobile-menu { display: flex; pointer-events: none; }
       .mobile-menu.open { pointer-events: all; }
       .proj-section { padding-top: 60px; }
@@ -716,6 +718,45 @@
     h1.h1-reveal.in-view .h1-inner { transform: translateY(0) rotateX(0deg); transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1); }
     @media (prefers-reduced-motion: reduce) {
       .animate { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* Case study image clip-path reveal */
+    .gallery-item.animate {
+      opacity: 1;
+      transform: none;
+      clip-path: inset(7% 0 7% 0);
+      transition: clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0s);
+    }
+    .gallery-item.animate img {
+      transform: scale(1.06);
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--anim-delay, 0s);
+    }
+    .gallery-item.in-view {
+      clip-path: inset(0% 0 0% 0);
+    }
+    .gallery-item.in-view img {
+      transform: scale(1);
+    }
+    .img-reveal {
+      clip-path: inset(7% 0 7% 0);
+      transition: clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-reveal > img {
+      display: block;
+      transform: scale(1.06);
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-reveal.in-view {
+      clip-path: inset(0% 0 0% 0);
+    }
+    .img-reveal.in-view > img {
+      transform: scale(1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-item.animate { clip-path: none; }
+      .gallery-item.animate img { transform: none; }
+      .img-reveal { clip-path: none; }
+      .img-reveal > img { transform: none; }
     }
 
     /* ── CHAT WIDGET ── */
@@ -1111,7 +1152,7 @@
     .scroll-line { background: var(--accent-gradient) !important; }
 
     nav .nav-links a.nav-active {
-      border-bottom: 2.5px solid var(--accent);
+      border-bottom: 1px solid var(--text-primary);
     }
 
     .about-contact a::after,
@@ -1334,7 +1375,6 @@
 
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
-      <a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
@@ -1344,6 +1384,7 @@
     </div>
 
     <footer>
+      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
       <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
       <div class="footer-bottom"><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span></div>
     </footer>
@@ -1485,7 +1526,6 @@
 
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
-      <a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
@@ -1497,7 +1537,7 @@
     <footer class="animate">
       <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
       <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
-      <div class="footer-bottom"><span>© 2026 Romina</span><span>UX Portfolio</span></div>
+      <div class="footer-bottom"><span>© 2026 Romina Schöni</span><span>UX Portfolio</span></div>
     </footer>
   </div>
 
@@ -2959,7 +2999,7 @@
         var isFirst = i === 0;
         var isLastAndOdd = !isFirst && isOdd && i === total - 1;
         var spanFull = isFirst || isLastAndOdd;
-        html += '<div class="gallery-item auto-height' + (spanFull ? ' span-full' : '') + '">' +
+        html += '<div class="gallery-item auto-height animate' + (spanFull ? ' span-full' : '') + '">' +
           '<img src="' + img.src + '" alt="Bild ' + (i + 1) + '" style="width:100%;height:auto;display:block;border-radius:0;" ' +
           'onerror="this.parentElement.style.display=\'none\';" />' +
           '</div>';
@@ -3192,7 +3232,6 @@
       '</div>';
 
       html += '<div class="about-contact"><h2>' + t('contact.heading') + '</h2>' +
-        '<a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>' +
         '<div class="contact-links">' +
         '<a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>' +
         '<a href="cv.html" target="_blank">' + t('contact.cv') + '</a>' +
@@ -3200,7 +3239,7 @@
         '<a href="https://drive.google.com/file/d/1F2NBGsEGOiPMLSv196w4K1877jCafL12/view" target="_blank" rel="noopener">' + t('contact.certs') + '</a>' +
         '</div></div>';
       var catSvg = '<div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>';
-      html += '<footer>' + catSvg + '<span class="footer-tagline">Made with curiosity &amp; cat hair</span><div class="footer-bottom"><span>© 2026 Romina</span><span>' + t('footer.label') + '</span></div></footer>';
+      html += '<footer>' + catSvg + '<span class="footer-tagline">Made with curiosity &amp; cat hair</span><div class="footer-bottom"><span>© 2026 Romina Schöni</span><span>' + t('footer.label') + '</span></div></footer>';
 
       page.innerHTML = html;
     }
@@ -3223,12 +3262,15 @@
     ============================================ */
     var scrollObserver = new IntersectionObserver(function(entries) {
       var galleryBatch = [];
+      var itemBatch = [];
       entries.forEach(function(entry) {
         if (!entry.isIntersecting) return;
         var target = entry.target;
         scrollObserver.unobserve(target);
         if (target.classList.contains('gallery-row') || target.classList.contains('unfiltered-gallery-featured')) {
           galleryBatch.push(target);
+        } else if (target.classList.contains('gallery-item') || target.classList.contains('img-reveal')) {
+          itemBatch.push(target);
         } else {
           target.classList.add('in-view');
           if (target.classList.contains('accordion-item')) {
@@ -3248,11 +3290,26 @@
           setTimeout(function() { target.classList.add('in-view'); }, i * 130);
         });
       }
+      if (itemBatch.length) {
+        itemBatch.sort(function(a, b) { return a.getBoundingClientRect().top - b.getBoundingClientRect().top; });
+        itemBatch.forEach(function(target, i) {
+          setTimeout(function() { target.classList.add('in-view'); }, i * 100);
+        });
+      }
     }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
     function initScrollAnimations(scope) {
       var root = scope || document;
-      var els = Array.from(root.querySelectorAll('.animate'));
+      // Auto-detect inline image containers (customHtml divs with overflow:hidden + direct img)
+      Array.from(root.querySelectorAll('div')).forEach(function(div) {
+        if (div.classList.contains('img-reveal') || div.classList.contains('gallery-item') ||
+            div.classList.contains('animate') || div.classList.contains('gallery-row') ||
+            div.classList.contains('project-detail-image')) return;
+        if (div.style.overflow !== 'hidden') return;
+        var hasDirectImg = Array.from(div.children).some(function(c) { return c.tagName === 'IMG'; });
+        if (hasDirectImg) div.classList.add('img-reveal');
+      });
+      var els = Array.from(root.querySelectorAll('.animate, .img-reveal'));
       els.forEach(function(el) { el.classList.remove('in-view'); });
       requestAnimationFrame(function() {
         requestAnimationFrame(function() {
@@ -3673,7 +3730,6 @@
     </div>
     <div class="about-contact animate">
       <h2 data-i18n="contact.heading">Neugierig geworden?</h2>
-      <a class="contact-email" href="mailto:romina.schoeni@gmail.com">romina.schoeni@gmail.com</a>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.html" target="_blank" data-i18n="contact.cv">Lebenslauf</a>
@@ -3682,6 +3738,7 @@
       </div>
     </div>
     <footer class="animate">
+      <div class="footer-cat-wrap"><div class="loader-cat-stage"><div class="loader-body-clip"><svg viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.1047 36H7.10474L5.10474 0L14.6047 8H25.1047L32.6047 0L32.1047 36Z" fill="currentColor"/><g class="loader-eye-l"><path d="M14.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><g class="loader-eye-r"><path d="M24.1047 18V21" stroke="var(--cat-accent)" stroke-width="1.5" stroke-linecap="round"/></g><path d="M20.1047 24H17.1047L18.6047 26L20.1047 24Z" fill="#6B3E58"/></svg></div><svg class="loader-paws-svg" viewBox="-3 -2 45 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="32" width="8" height="12" rx="4" fill="currentColor"/><rect x="28" y="32" width="8" height="12" rx="4" fill="currentColor"/></svg></div></div>
       <span class="footer-tagline">Made with curiosity &amp; cat hair</span>
       <div class="footer-bottom"><span>© 2026 Romina Schöni</span><span data-i18n="footer.label">UX Portfolio</span></div>
     </footer>

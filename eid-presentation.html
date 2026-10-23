@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elektronische Identität · swiyu · Romina Schöni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Noto Sans', system-ui, sans-serif;
+    --ink: #111110;
+    --bg: #F7F5F2;
+    --dark: #111110;
+    --white: #F7F5F2;
+    --muted: rgba(247,245,242,0.4);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; background: #1c1c1b; overflow: hidden; -webkit-font-smoothing: antialiased; }
+
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #deck { position: relative; width: 1280px; height: 720px; transform-origin: center center; }
+
+  .slide {
+    position: absolute; inset: 0; overflow: hidden;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  .slide.active { opacity: 1; pointer-events: all; }
+
+  /* ── Type ── */
+  .label {
+    font-family: var(--sans); font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    display: block; margin-bottom: 18px;
+  }
+  .label.dim { color: var(--muted); }
+  .label.dark { color: rgba(17,17,16,0.38); }
+
+  .hed {
+    font-family: var(--serif); font-weight: 600;
+    line-height: 1.12; letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .hed.on-light { color: var(--ink); }
+  .hed.sm  { font-size: clamp(26px, 2.8vw, 38px); }
+  .hed.md  { font-size: clamp(32px, 3.5vw, 48px); }
+  .hed.lg  { font-size: clamp(42px, 5vw, 66px); }
+  .hed.xl  { font-size: clamp(52px, 6vw, 80px); }
+  .hed.italic { font-style: italic; }
+
+  /* ── Split: image + text panel ── */
+  .split { display: grid; width: 100%; height: 100%; }
+  .split.img-left  { grid-template-columns: 3fr 2fr; }
+  .split.img-right { grid-template-columns: 2fr 3fr; }
+  .split.half      { grid-template-columns: 1fr 1fr; }
+
+  .img-panel { display: flex; align-items: center; justify-content: center; background: #F5F4F0; padding: 28px; }
+  .img-panel img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .img-panel.photo { padding: 0; background: #2e2d2c; }
+  .img-panel.photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .text-panel {
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 64px 72px;
+  }
+  .text-panel.dark { background: var(--dark); }
+  .text-panel.light { background: var(--bg); }
+  .text-panel.border-l { border-left: 1px solid rgba(17,17,16,0.1); }
+
+  /* ── Full-text slides ── */
+  .full-dark {
+    background: var(--dark);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 88px;
+  }
+  .full-light {
+    background: var(--bg);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 88px;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--dark);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 72px 80px 48px; }
+  .cover-foot { padding: 22px 80px; border-top: 1px solid rgba(247,245,242,0.1); display: flex; justify-content: space-between; align-items: center; }
+  .cover-foot span { font-family: var(--sans); font-size: 12px; font-weight: 300; color: rgba(247,245,242,0.32); letter-spacing: 0.04em; }
+  .tags { display: flex; gap: 8px; margin-top: 28px; flex-wrap: wrap; }
+  .tag { font-family: var(--sans); font-size: 11px; font-weight: 400; letter-spacing: 0.06em; color: rgba(247,245,242,0.45); border: 1px solid rgba(247,245,242,0.18); padding: 4px 11px; border-radius: 100px; }
+
+  /* ── Process ── */
+  .process { background: var(--bg); display: flex; flex-direction: column; }
+  .process-head { padding: 52px 80px 36px; border-bottom: 1px solid rgba(17,17,16,0.1); }
+  .process-steps { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .ps { padding: 40px 48px 40px 40px; border-right: 1px solid rgba(17,17,16,0.1); }
+  .ps:last-child { border-right: none; }
+  .ps-num { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1; color: rgba(17,17,16,0.15); margin-bottom: 24px; }
+  .ps-title { font-family: var(--sans); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+  .ps-stat { font-family: var(--sans); font-size: 14px; font-weight: 400; color: rgba(17,17,16,0.5); }
+
+  /* ── End ── */
+  .end { background: var(--dark); display: flex; flex-direction: column; justify-content: space-between; }
+  .end-body { flex: 1; padding: 80px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .end-foot { padding: 22px 80px; border-top: 1px solid rgba(247,245,242,0.1); display: flex; justify-content: space-between; align-items: center; }
+  .end-foot a { font-family: var(--sans); font-size: 12px; color: rgba(247,245,242,0.4); text-decoration: none; letter-spacing: 0.04em; }
+  .end-foot a:hover { color: rgba(247,245,242,0.85); }
+  .end-links { display: flex; gap: 24px; }
+
+  /* ── Nav ── */
+  #nav-bar {
+    position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center;
+    background: rgba(17,17,16,0.9); backdrop-filter: blur(14px);
+    border-radius: 100px; padding: 6px 14px;
+    z-index: 100; user-select: none;
+  }
+  #nav-bar button { background: none; border: none; cursor: pointer; color: rgba(247,245,242,0.6); padding: 5px 10px; font-size: 15px; line-height: 1; transition: color 0.2s; }
+  #nav-bar button:hover { color: var(--white); }
+  #nav-bar button:disabled { opacity: 0.2; cursor: default; }
+  #slide-counter { font-family: var(--sans); font-size: 11px; color: rgba(247,245,242,0.38); padding: 0 4px; min-width: 40px; text-align: center; }
+  #progress { position: fixed; top: 0; left: 0; height: 2px; background: rgba(247,245,242,0.3); transition: width 0.45s; z-index: 100; }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div id="stage"><div id="deck">
+
+  <!-- 01 · Cover -->
+  <div class="slide cover active">
+    <div class="cover-body">
+      <span class="label dim">Case Study · Bundesamt für Informatik</span>
+      <h1 class="hed xl">Informationsseite<br>über die e-ID</h1>
+      <div class="tags">
+        <span class="tag">UX Research</span>
+        <span class="tag">Informationsarchitektur</span>
+        <span class="tag">UX-Konzeption</span>
+      </div>
+    </div>
+    <div class="cover-foot">
+      <span>Romina Schöni</span>
+      <span>swiyu.admin.ch</span>
+    </div>
+  </div>
+
+  <!-- 02 · Definition -->
+  <div class="slide full-dark" style="justify-content: center;">
+    <p class="hed lg" style="max-width:780px;">Die e-ID ist der digitale Ausweis.</p>
+  </div>
+
+  <!-- 03 · Abstimmung -->
+  <div class="slide full-dark" style="justify-content: center; gap: 0;">
+    <span class="label dim" style="margin-bottom:32px;">Zweite Volksabstimmung</span>
+    <p style="font-family:var(--serif);font-weight:600;font-size:clamp(80px,11vw,144px);line-height:1;letter-spacing:-0.03em;color:var(--white);">50.39 %</p>
+    <p style="font-family:var(--serif);font-weight:600;font-size:clamp(24px,3vw,40px);line-height:1.2;letter-spacing:-0.02em;color:rgba(247,245,242,0.45);margin-top:20px;">Ja-Stimmen für die Schweizer e-ID.</p>
+  </div>
+
+  <!-- 03 · Was ist swiyu? -->
+  <div class="slide split img-left">
+    <div class="img-panel">
+      <img src="assets/e-id/cs-01.png" alt="swiyu.admin.ch">
+    </div>
+    <div class="text-panel dark">
+      <span class="label dim">Kontext</span>
+      <p class="hed sm">swiyu ist die digitale Brieftasche für die Schweizer e-ID.</p>
+    </div>
+  </div>
+
+  <!-- 03 · Meine Rolle -->
+  <div class="slide split img-left">
+    <div class="img-panel photo">
+      <img src="assets/e-id/cs-team.webp" alt="Remote Interview">
+    </div>
+    <div class="text-panel dark">
+      <span class="label dim">Meine Rolle</span>
+      <p class="hed sm">Ich verantwortete den gesamten UX Research beim Bundesamt für Informatik.</p>
+    </div>
+  </div>
+
+  <!-- 04 · Herausforderung -->
+  <div class="slide full-dark">
+    <span class="label dim">Die Herausforderung</span>
+    <p class="hed lg" style="max-width:820px;">Selbst wer die e-ID kannte, verstand nicht, was swiyu damit zu tun hatte.</p>
+  </div>
+
+  <!-- 05 · Vorgehen -->
+  <div class="slide process">
+    <div class="process-head">
+      <span class="label dark">Vorgehen</span>
+      <p class="hed sm on-light">Vier Research-Phasen, von Interviews bis zum HiFi-Test.</p>
+    </div>
+    <div class="process-steps">
+      <div class="ps">
+        <div class="ps-num">01</div>
+        <div class="ps-title">Interviews &amp; Personas</div>
+        <div class="ps-stat">24 Teilnehmende · 30 Min.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-num">02</div>
+        <div class="ps-title">Tree Testing</div>
+        <div class="ps-stat">Beide Zielgruppen</div>
+      </div>
+      <div class="ps">
+        <div class="ps-num">03</div>
+        <div class="ps-title">Wireframe-Tests</div>
+        <div class="ps-stat">12 Teilnehmende · 60 Min.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-num">04</div>
+        <div class="ps-title">HiFi-Prototyp-Tests</div>
+        <div class="ps-stat">Privatpersonen &amp; Organisationen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 · Interviews Ergebnis -->
+  <div class="slide full-dark" style="justify-content: center;">
+    <span class="label dim">Phase 01 · Interviews</span>
+    <p class="hed lg" style="max-width:820px;">Beide Gruppen interessierten vor allem Anwendungsbeispiele und Sicherheit.</p>
+  </div>
+
+  <!-- 07 · Tree Testing -->
+  <div class="slide split img-right">
+    <div class="text-panel dark">
+      <span class="label dim">Phase 02 · Tree Testing</span>
+      <p class="hed sm">Beide Zielgruppen brauchen einen eigenen, klar abgegrenzten Bereich.</p>
+    </div>
+    <div class="img-panel">
+      <img src="assets/e-id/cs-tree.png" alt="Tree Testing">
+    </div>
+  </div>
+
+  <!-- 08 · Wireframe -->
+  <div class="slide split img-left" style="grid-template-columns: 3fr 2fr;">
+    <div class="img-panel">
+      <img src="assets/e-id/cs-03.png" alt="Wireframe-Prototyp">
+    </div>
+    <div class="text-panel dark">
+      <span class="label dim">Phase 03 · Wireframe</span>
+      <p class="hed sm">Die Bundeszugehörigkeit muss in der Navigation sichtbar sein.</p>
+    </div>
+  </div>
+
+  <!-- 09 · HiFi -->
+  <div class="slide split img-left" style="grid-template-columns: 3fr 2fr;">
+    <div class="img-panel">
+      <img src="assets/e-id/cs-04a.png" alt="High-Fidelity-Prototyp">
+    </div>
+    <div class="text-panel dark">
+      <span class="label dim">Phase 04 · High-Fidelity</span>
+      <p class="hed sm">In den Folgetests wurde die Bundeszugehörigkeit nicht mehr hinterfragt.</p>
+    </div>
+  </div>
+
+  <!-- 10 · Zentrale Frage -->
+  <div class="slide full-dark">
+    <span class="label dim">Phase 03 · Zentrale Erkenntnis</span>
+    <p class="hed lg italic" style="max-width:860px;">«Ist das wirklich eine Website vom Bund?»</p>
+  </div>
+
+  <!-- 11 · Learning -->
+  <div class="slide full-dark">
+    <span class="label dim">Was ich mitgenommen habe</span>
+    <p class="hed lg" style="max-width:860px;">Vertrauen entsteht durch Branding, Sprache und Struktur — gleichzeitig.</p>
+  </div>
+
+  <!-- 12 · Ende -->
+  <div class="slide end">
+    <div class="end-body">
+      <span class="label dim">Danke</span>
+      <h1 class="hed xl">Romina Schöni<br><span class="italic" style="opacity:0.42;">UX Designerin</span></h1>
+    </div>
+    <div class="end-foot">
+      <div class="end-links">
+        <a href="https://www.linkedin.com/in/romina-schoeni/" target="_blank">LinkedIn</a>
+        <a href="index.html">Portfolio</a>
+      </div>
+      <span style="font-family:var(--sans);font-size:11px;color:rgba(247,245,242,0.2);">Elektronische Identität · swiyu</span>
+    </div>
+  </div>
+
+</div></div>
+
+<div id="nav-bar">
+  <button id="btn-prev" disabled>←</button>
+  <span id="slide-counter">1 / 14</span>
+  <button id="btn-next">→</button>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let cur = 0;
+
+  const deck = document.getElementById('deck');
+  const progress = document.getElementById('progress');
+  const counter = document.getElementById('slide-counter');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+
+  function scale() {
+    const s = Math.min(window.innerWidth / 1280, window.innerHeight / 720) * 0.94;
+    deck.style.transform = `scale(${s})`;
+  }
+
+  function go(n) {
+    slides[cur].classList.remove('active');
+    cur = Math.max(0, Math.min(total - 1, n));
+    slides[cur].classList.add('active');
+    counter.textContent = `${cur + 1} / ${total}`; // auto from slides.length
+    btnPrev.disabled = cur === 0;
+    btnNext.disabled = cur === total - 1;
+    progress.style.width = `${((cur + 1) / total) * 100}%`;
+  }
+
+  btnPrev.addEventListener('click', () => go(cur - 1));
+  btnNext.addEventListener('click', () => go(cur + 1));
+
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight','ArrowDown',' '].includes(e.key)) { e.preventDefault(); go(cur + 1); }
+    if (['ArrowLeft','ArrowUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(total - 1);
+  });
+
+  let tx = 0;
+  deck.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  deck.addEventListener('touchend', e => {
+    if (Math.abs(e.changedTouches[0].clientX - tx) > 50)
+      go(e.changedTouches[0].clientX < tx ? cur + 1 : cur - 1);
+  }, { passive: true });
+
+  window.addEventListener('resize', scale);
+  scale();
+</script>
+</body>
+</html>
